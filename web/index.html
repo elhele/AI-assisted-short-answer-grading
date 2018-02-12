@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<title>Password protection</title>
+	<script type="text/javascript">
+	// PASSWORD PROTECTION SCRIPT
+
+	function TheLogin() {
+
+	var password = 'autograder';
+
+	if (this.document.login.pass.value == password) {
+	  top.location.href="about.html";
+	}
+	else {
+	  window.alert("Incorrect password, please try again.");
+	  }
+	}
+
+	</script>
+	<!-- Let it snow. TODO: remove after New Year -->
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+	<meta name="format-detection" content="telephone=no"/>
+	</head>
+	<body>
+		<script src="https://unpkg.com/magic-snowflakes/dist/snowflakes.js"></script>
+    <script>
+        Snowflakes();
+    </script>
+		<div style="text-align: center; margin: 0 auto; color: #0000FF; font: normal 13px arial, sans-serif;">
+		Enter your password:<br>
+		<form name="login" style="margin: 5px 0px 0px 0px;">
+		<input type="text" name="pass" size="17" onkeydown="if(event.keyCode==13) event.keyCode=9;" style="width: 130px;"><br>
+		<input type="button" value="Click to Login" style="width: 134px; margin: 4px auto 4px auto;" onclick="javascript:TheLogin(this.form)">
+		</form>
+		</div>
+
+	</body>
+</html>
