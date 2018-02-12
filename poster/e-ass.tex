@@ -1,0 +1,283 @@
+\documentclass[25pt, 
+               a0paper, 
+               portraitmargin = 0mm, 
+               margin = 0mm,
+               innermargin = 50mm,
+               blockverticalspace = 1mm,
+               colspace = 40mm,
+               subcolspace = 8mm]
+               {tikzposter}
+
+%%%%% packages %%%%%
+\usepackage[utf8]{inputenc}
+\usepackage{wrapfig}
+\usepackage{enumitem}
+\usetikzlibrary{positioning,calc}
+
+\usepackage{subfig}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage[flushleft]{threeparttable}
+
+\captionsetup[subfloat]{justification=RaggedRight,singlelinecheck=off}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\usepackage{fix-cm}    
+
+\makeatletter
+\newcommand\HUGE{\@setfontsize\Huge{75}{90}}
+\makeatother   
+
+%itemize
+\setitemize{labelindent=1.5em,labelsep=1em,leftmargin=*}
+\setenumerate{labelindent=1.5em,labelsep=1em,leftmargin=*}
+
+
+%%%%% remove inner sep within fbox
+\setlength{\fboxsep}{0pt}%
+\setlength{\fboxrule}{1pt}%
+
+%%%%% Remove “LaTeX Tikzposter” in bottom right corner
+\tikzposterlatexaffectionproofoff
+
+%%%%% Font family
+\renewcommand{\familydefault}{\sfdefault}
+
+% footnote for minipage with no separator
+% and arabic numbers
+\usepackage[splitrule]{footmisc}
+\renewcommand{\mpfootnoterule}{}
+\renewcommand{\thempfootnote}{\arabic{mpfootnote}}
+
+
+%%%%% layout %%%%%
+\definecolor{b-it_blue}{HTML}{016ABA}
+\definecolor{b-it-bots_blue}{HTML}{0071BD}
+\definecolor{brsu_blue}{HTML}{0BA1E2}
+\definecolor{mas-group_dark-blue}{HTML}{0072bb}
+\definecolor{mas-group_light-blue}{HTML}{2889c7}
+\definecolor{mas-group_cyan}{HTML}{42a3e1}
+\definecolor{mas-group_light-gray}{HTML}{dcdcdc}
+\definecolor{mas-group_dark-gray}{HTML}{8c8c8c}
+
+
+% color scheme
+\usetheme{Simple}
+\definecolorstyle{BrsuColorStyle}
+{
+	\definecolor{colorOne}{named}{white}
+	\definecolor{colorTwo}{named}{black}
+	\definecolor{colorThree}{named}{b-it_blue}
+}
+{
+	\colorlet{backgroundcolor}{colorOne}
+	\colorlet{framecolor}{colorOne}	
+	\colorlet{titlefgcolor}{colorThree}
+	\colorlet{titlebgcolor}{colorOne}
+	\colorlet{blocktitlebgcolor}{colorOne}
+	\colorlet{blocktitlefgcolor}{brsu_blue}
+	\colorlet{blockbodybgcolor}{colorOne}
+	\colorlet{blockbodyfgcolor}{colorTwo}
+}
+\usecolorstyle{BrsuColorStyle}
+
+
+% blocks
+\defineblockstyle{BrsuBlockStyle}
+{
+	titlewidthscale=1.0, 
+	bodywidthscale=1.0,
+	titleleft,
+	titleoffsetx=-5mm,
+	titleoffsety=0mm,
+	bodyoffsetx=0mm,
+	bodyoffsety=0mm,
+	bodyverticalshift=8mm,
+	roundedcorners=0,
+	linewidth=0pt,
+	titleinnersep=5mm,
+	bodyinnersep=0mm
+}{
+	\draw[color=framecolor, fill=blockbodybgcolor, rounded corners=\blockroundedcorners] (blockbody.south west) rectangle (blockbody.north east);
+	\ifBlockHasTitle
+		%\draw[color=framecolor, fill=blocktitlebgcolor, rounded corners=\blockroundedcorners] (blocktitle.south west) rectangle (blocktitle.north east);
+		\draw [dash pattern=on 5pt off 10pt, color=brsu_blue, line width = 2mm] (blockbody.north west) -- (blockbody.north east);	
+	\fi
+}
+\useblockstyle{BrsuBlockStyle}
+
+\title{\parbox{0.95\linewidth}{E-Assessment}}
+\author{\parbox{0.85\linewidth}{Paul G. Pl\"oger, Deebul Nair, Evgeniya Ovchinnikova, Octavio Arriaga, Kiran Vasudev, Ramesh Kumar, Md Zahiduzzaman, Ramit Sharma}}
+\institute{Autonomous Systems Group, Hochschule Bonn-Rhein-Sieg, Germany}
+\date{\today}
+
+
+
+
+% format title
+\definetitlestyle{BrsuTitle}{linewidth = 0mm,
+							innersep = 0pt,
+							titletotopverticalspace = 1.3cm,
+							titletoblockverticalspace = 0.3cm
+}{
+	\begin{scope}[line width=0pt]
+		\draw[color=blocktitlebgcolor, fill=titlebgcolor]
+		(\titleposleft,\titleposbottom) rectangle (\titleposright,\titlepostop);
+	\end{scope}
+}
+\usetitlestyle{BrsuTitle}
+
+\settitle
+{
+	\vbox
+	{
+		\color{titlefgcolor} {\bfseries \HUGE \sc \textbf{\@title} \par}
+		\vspace*{1em}
+		{\LARGE \@author \par}
+		\vspace*{0.5em} 
+		{\large \textit{\@institute} \par}
+		\vspace*{0.5em}
+		{\large Email: \color{black} \texttt{evgeniya.ovchinnikova@inf.h-brs.de}}
+	}
+}
+
+
+\begin{document}
+
+\maketitle[width=0.87\textwidth]
+
+%%%% LAYOUT BLOCK
+\block{}
+{
+\begin{tikzpicture}[remember picture,overlay]
+\pgfmathsetmacro\barwidth{2.86}
+\pgfmathsetmacro\topbarlength{12}
+
+
+% left side
+\node at (current page.north west) {\draw [fill=b-it_blue, draw=b-it_blue] (-0.13,0) rectangle (\barwidth, -\topbarlength);};
+\node at (current page.north west) {\draw [fill=brsu_blue, draw=brsu_blue] (-0.13,-13) rectangle (\barwidth,-110);};  \node at (current page.south west) {\draw [fill=mas-group_dark-gray, draw=mas-group_dark-gray] (-0.14, 8) rectangle (\barwidth, 0);};
+    
+% top right
+\node at (current page.north east) {\draw [fill=b-it_blue, b-it_blue] (-0.36,0) rectangle (-3.36,-\topbarlength);};
+\node at (current page.north east) {\draw [fill=brsu_blue, brsu_blue] (-4.36,0) rectangle (-7.36,-\topbarlength / 4 * 3);};
+\node at (current page.north east) {\draw [fill=mas-group_dark-gray, mas-group_dark-gray] (-8.36,0) rectangle (-11.36,-\topbarlength / 4 * 2);};
+\node at (current page.north east) {\draw [fill=mas-group_light-gray, mas-group_light-gray] (-12.36,0) rectangle (-15.36,-\topbarlength / 4);};
+	
+\end{tikzpicture}
+}
+
+ \vspace{1cm}
+\begin{columns}
+%%%%% LEFT COLUMN %%%%%%%%%%%%%%%%%%%%%%
+    \column{0.5}
+   
+    \block{Motivation}	
+    {
+		\LARGE
+{Our project concentrates on development of a system
+for E-assessment that would cover the whole process
+of study: from homework to exams. Now a lot of
+software is used for homework during the semester, but
+exams are still pen and paper. It is important to change
+the workflow in such a way that students would use the
+same software tools for all assignments, tests and
+exams, because work during the semester plays a
+significant role in exam preparation.}
+    }
+    
+    \block{Autograding}	
+    {
+    
+
+
+
+
+
+\LARGE
+
+We focus on automated grading of the answers those
+contain the following:
+\begin{itemize}
+\item program code -- Unit tests
+\item formulas
+\item short text
+\item pictures (in the later versions)
+\end{itemize}
+
+	\includegraphics[width=0.5\linewidth]{images/handwriting.jpeg}
+	\includegraphics[width=0.5\linewidth]{images/studLaptop.jpeg}
+Formulas checking is easy to generalize and automate, but text and pictures grading are harder tasks. Automated short answer grading (ASAG) is a form of automated grading along with automated essay and fill the gap gradings. This answer type normally from one sentence to one paragraph long. In general one is concerned neither with writing style nor with spelling or grammar in ASAG. However, we are going to add a feature that would allow the professor who conducts a test to set the strictness of the evaluation: set if the answers with misspelled words, especially specific terms, should be accepted. The teacher should also be able to estimate how large should be the range of synonyms that the student can use.\\
+
+\includegraphics[width=\linewidth]{images/students.jpg}
+
+    }
+    \column{0.5}
+    \block{Software}
+    {
+\LARGE
+The system will be integrated into an
+open-source system for creating and grading
+assigments ”nbgrader”[1],[2], ”Jupyter Notebook”[3] and
+other ”Jupyter Notebook-compatible libraries.
+”Jupyter Notebook”is a web-based application that one
+can use to create textual and programming documents
+– the assignments in our case. In the figure below you
+can find the workflow for the its usage:    \\ 
+     
+    	        \includegraphics[width=0.9\linewidth]{images/jupyter.png}
+”nbgrader” allows to choose if the assignment can be
+graded manually or automatically. Now the system
+allows only code assignments autograding, but we are
+going to extend it in such a way that it is possible to
+autograde formulas, natural language answers and
+pictures as well. An example of ”nbgrader”assignment
+in Jupyter notebook is shown below: \\
+\begin{center}
+	        \includegraphics[width=\linewidth]{images/nbgrader}
+\end{center}
+	}  
+   
+    \block{References}
+	{
+	\begin{itemize}
+	\item[1] \url{https://github.com/jupyter/nbgrader}
+	\item[2] \url{https://nbgrader.readthedocs.io/en/stable/}
+	\item[3] \url{http://jupyter.org/}
+	\end{itemize}
+	
+ 	}
+    
+    
+    \block{Visit our website}
+    {
+    	\url{https://www.lonebytesoft.com/~elhe/about.html}\\
+    	\begin{center}
+    	\includegraphics[width=0.5\linewidth]{images/QR.png}
+    	\end{center}
+    }         
+    
+   
+\end{columns}
+
+
+%%%%% FOOTER %%%%%%%%%%%%%%%%%%%%%%
+\block{}
+{
+\begin{tikzpicture}[remember picture,overlay] 
+
+	\node [shift={(20.5cm, 6cm)}] at (current page.south west) {\includegraphics[height=4cm]{gfx/brsu.pdf}};
+	
+\end{tikzpicture}
+}
+
+ 
+\end{document}
+
