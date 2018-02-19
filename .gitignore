@@ -1,0 +1,7 @@
+src/venv/
+src/venv1/
+src/venv2/
+src/.idea/
+src/__pycache__/
+src/.directory
+.directory
