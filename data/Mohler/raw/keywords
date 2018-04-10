@@ -1,0 +1,87 @@
+1.1 simulate behaviour software 
+1.2 testing stage coding refinement
+1.3 abstraction reusability
+1.4 main function
+1.5 location memory store value
+1.6 variables declared function local global
+1.7 block inside statement execute least
+2.1 data members attributes member functions
+2.2 data members functions class defintion local variables defines
+2.3 constructor object created function called explicitely return type
+2.4 constructor provided compiler defined class the default
+2.5 unlimited number
+2.6 function prototype signature name return type parameters definition body
+2.7 store class interface data members function prototypes
+3.1 name function types  parameters
+3.2 file scope
+3.3 copy function code call made
+3.4 avoids copies large data structures calling functions
+3.5 function signature overloaded compiler call
+3.6 recursion step incorrectly base case
+3.7 both repetition termination occur infinitely
+4.1 array declaration, or by using an initializer list.
+4.2 strings array characters null element end
+4.3 reference
+4.4 arrays static program initialized once one first called
+4.5 dimensions first 
+4.6 run-time error.
+4.7 rows
+5.1 array element position sorted
+5.2 array element minimum swaps
+5.3 length array operations sort
+5.4 size array sorted 1
+6.1 variable address memory
+6.2 memory address operand
+6.3 alias synonym name object operand memory dereferencing operator
+6.4 pointer point first element array incrementing index
+6.5 size bytes operand
+6.6 nonconstant pointer constant data
+6.7 address location memory function code
+7.1 collection elements allocated dynamically
+7.2 linked lists variable length
+7.3 elements array access directly
+7.4 reference
+7.5 last element circular linked list point head
+7.6 deletion insertion operations constant time location list
+7.7 extra space back pointers
+8.1 data structure store elements last item added first removed last-in-first-out
+8.2 push pop
+8.3 top stack array push pop add remove elements right side
+8.4 top stack pointing head linked list push pop add remove elements beginning
+8.5 link-based dynamic size constraints
+8.6 converted postfix form evaluation expression
+8.7 pop elements store stack push
+9.1 data structure store elements last item added removed or first-in-first-out
+9.2 enqueue and dequeue
+9.3 circular array rear queue end front toward pointer wrap
+9.4 rear queue pointing tail linked list enqueue end list front head dequeue beginning
+9.5 link-based dynamic size constraints
+9.6 push
+9.7 queue
+10.1 collection nodes root partitioned disjoint sets tree
+10.2 length longest path root leaves
+10.3 node children
+10.4 tree maximum number children node two
+10.5 binary tree node left child parent right
+10.6 traverse left subtree root right subtree
+10.7 height tree log
+11.1 function members data
+11.2 private public
+11.3 constructors
+11.4 name function list parameters types
+11.5 function call itself
+11.6 iteration
+11.7 static arrays intialized once function called
+11.8 char[] add null end string
+11.9 subproblems recursively combine
+11.10 split array sorts merges
+12.1 address location memory
+12.2 algorithm running time
+12.3 log
+12.4 minimum array position
+12.5 linked lists dynamic variable store
+12.6 data structure  elements first in first out queue enqueue dequeue
+12.7 push and pop
+12.8 walk around tree root left below right.
+12.9 node replace leftmost right subtree rightmost left
+12.10 height tree
