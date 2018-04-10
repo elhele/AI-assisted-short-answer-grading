@@ -20,11 +20,9 @@ import multiprocessing
 from scipy import exp
 from scipy.linalg import eigh
 import codecs
-import pickle
 import distance
 import termcolor
 from unidecode import unidecode
-import argparse
 from nltk import ngrams
 import matplotlib.pyplot as plt
 
@@ -120,6 +118,21 @@ class KernelPCA:
         sum = sum / min(min(len(s1.split()) + 1, len(s2.split()) + 1), self.max_ngrams)
 
         return 1 - sum
+
+    def similarity_sentence_bag_of_ngrams(self, s1, s2):
+        ng1 = self.init_list_of_objects(min(len(s1.split()) + 1, self.max_ngrams) - 2)
+        ng2 = self.init_list_of_objects(min(len(s2.split()) + 1, self.max_ngrams) - 2)
+        for j in range(2, min(len(s1.split()) + 1, self.max_ngrams)):
+            for ngram in ngrams(s1.split(), j):
+                ng1[j - 2].append(ngram)
+        for j in range(2, min(len(s2.split()) + 1, self.max_ngrams)):
+            for ngram in ngrams(s2.split(), j):
+                ng2[j - 2].append(ngram)
+        ng1_set = set(ng1)
+        ng2_set = set(ng2)
+        dist = distance.jaccard(ng1_set, ng2_set)
+        print(dist)
+        return 1 - dist
 
     def projection_matrix(self, pool_tuple):
         line = pool_tuple[0]

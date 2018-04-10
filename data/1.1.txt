@@ -1,13 +1,13 @@
-High risk problems are address in the prototype program to make sure that the program is feasible.  A prototype may also be used to show a company that the software can be possibly programmed.
-To simulate portions of the desired final product with a quick and easy program that does a small specific job. It is a way to help see what the problem is and how you may solve it in the final project.
-A prototype program simulates the behaviors of portions of the desired software product to allow for error checking.
-Defined in the Specification phase a prototype stimulates the behavior of portions of the desired software product.  Meaning, the role of a prototype is a temporary solution until the program itself is refined to be used extensively in problem solving.
-It is used to let the users have a first idea of the completed program and allow the clients to evaluate the program. This can generate much feedback including software specifications and project estimations of the total project.
-To find problem and errors in a program before it is finalized
-To address major issues in the creation of the program. There is no way to account for all possible bugs in the program, but it is possible to prove the program is tangible. 
-you can break the whole program into prototype programs to simulate parts of the final program
-Simulating the behavior of only a portion of the desired software product.
-A program that stimulates the behavior of portions of the desired software product.
-A program that simulates the behavior of portions of the desired software product.
-To lay out the basics and give you a starting point in the actual problem solving.
-To simulate problem solving for parts of the problem
+High risk problems are address in the prototype program to make sure that the program is feasible.  A prototype may also be used to show a company that the software can be possibly programmed. 4
+To simulate portions of the desired final product with a quick and easy program that does a small specific job. It is a way to help see what the problem is and how you may solve it in the final project. 5
+A prototype program simulates the behaviors of portions of the desired software product to allow for error checking. 5
+Defined in the Specification phase a prototype stimulates the behavior of portions of the desired software product.  Meaning, the role of a prototype is a temporary solution until the program itself is refined to be used extensively in problem solving. 5
+It is used to let the users have a first idea of the completed program and allow the clients to evaluate the program. This can generate much feedback including software specifications and project estimations of the total project. 3
+To find problem and errors in a program before it is finalized 2
+To address major issues in the creation of the program. There is no way to account for all possible bugs in the program, but it is possible to prove the program is tangible.  3
+you can break the whole program into prototype programs to simulate parts of the final program 5
+Simulating the behavior of only a portion of the desired software product. 5
+A program that stimulates the behavior of portions of the desired software product. 5
+A program that simulates the behavior of portions of the desired software product. 5
+To lay out the basics and give you a starting point in the actual problem solving. 5
+To simulate problem solving for parts of the problem 2
