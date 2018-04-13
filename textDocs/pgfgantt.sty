@@ -1,0 +1,628 @@
+%%
+%% This is file `pgfgantt.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% pgfgantt.dtx  (with options: `pgfgantt')
+%% 
+%% Copyright (C) 2011 by Wolfgang Skala
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%% 
+\ProvidesPackage{pgfgantt}[2011/04/18 v1.1 Draw Gantt diagrams with TikZ]
+\NeedsTeXFormat{LaTeX2e}[1999/12/01]
+
+
+\RequirePackage{tikz}
+  \usetikzlibrary{arrows,backgrounds,calc,patterns,positioning}
+
+\newcounter{gtt@width}
+\newcounter{gtt@currentline}
+\newcounter{gtt@lastline}
+\newcounter{gtt@lasttitleline}
+\newcounter{gtt@lasttitleslot}
+\def\gtt@lastslot{0}
+\newif\ifgtt@intitle
+
+\def\ganttset#1{\pgfqkeys{/pgfgantt}{#1}}
+
+\def\@gtt@keydef#1{%
+  \pgfkeysdef{/pgfgantt/#1}{%
+    \expandafter\def\csname gtt@#1\endcsname{##1}%
+  }%
+}
+\def\@gtt@get#1{\csname gtt@#1\endcsname}
+\def\@gtt@stylekeydef#1{%
+  \pgfkeysdef{/pgfgantt/#1}{%
+    \pgfkeys{/pgfgantt/#1@style/.style={##1}}%
+  }%
+}
+\def\@gtt@linkkeydef#1#2#3#4{%
+  \pgfkeysdef{/pgfgantt/#2-#3}{%
+    \def\gtt@link@type{#1}%
+    \def\gtt@link@starttype{#2}%
+    \def\gtt@link@endtype{#3}%
+  }%
+  \def\@tempa{#4}%
+  \ifx\@tempa\relax\else\ganttset{link label={#2-#3}{#4}}\fi%
+}
+
+\@gtt@stylekeydef{hgrid style}
+\newif\ifgtt@hgrid
+\pgfkeysdef{/pgfgantt/hgrid}{%
+  \def\@tempa{#1}%
+  \def\@tempb{false}%
+  \ifx\@tempa\@tempb%
+    \gtt@hgridfalse%
+  \else%
+    \gtt@hgridtrue%
+    \def\@tempb{true}%
+    \ifx\@tempa\@tempb%
+      \pgfkeys{/pgfgantt/hgrid style={dotted}}%
+    \else%
+      \pgfkeys{/pgfgantt/hgrid style={#1}}%
+    \fi%
+  \fi%
+}
+\pgfkeys{/pgfgantt/hgrid/.default=dotted}
+
+\@gtt@stylekeydef{vgrid style}
+\newif\ifgtt@vgrid
+\pgfkeysdef{/pgfgantt/vgrid}{%
+  \def\@tempa{#1}%
+  \def\@tempb{false}%
+  \ifx\@tempa\@tempb%
+    \gtt@vgridfalse%
+  \else%
+    \gtt@vgridtrue%
+    \def\@tempb{true}%
+    \ifx\@tempa\@tempb%
+      \pgfkeys{/pgfgantt/vgrid style={dotted}}%
+    \else%
+      \pgfkeys{/pgfgantt/vgrid style={#1}}%
+    \fi%
+  \fi%
+}
+\pgfkeys{/pgfgantt/vgrid/.default=dotted}
+\pgfkeysdef{/pgfgantt/vgrid lines list}{%
+  \def\gtt@vgridlineslist{#1}%
+}
+
+\@gtt@stylekeydef{canvas}
+\@gtt@keydef{today}
+\@gtt@stylekeydef{today rule}
+\@gtt@keydef{today label}
+\@gtt@keydef{hgrid shift}
+\@gtt@keydef{last line height}
+
+\@gtt@stylekeydef{title}
+\@gtt@keydef{title label font}
+\@gtt@stylekeydef{title label anchor}
+\pgfkeysdef{/pgfgantt/title list options}{%
+  \def\gtt@titlelistoptions{[#1]}%
+}
+\@gtt@keydef{title left shift}
+\@gtt@keydef{title right shift}
+\@gtt@keydef{title top shift}
+\@gtt@keydef{title height}
+
+\newif\ifgtt@includetitle
+\pgfkeys{/pgfgantt/include title in canvas/.is if=gtt@includetitle}
+
+\@gtt@keydef{time slot modifier}
+\@gtt@stylekeydef{bar}
+\pgfkeysdef{/pgfgantt/bar label text}{%
+  \def\gtt@barlabeltext##1{#1}%
+}
+\@gtt@keydef{bar label font}
+\@gtt@stylekeydef{bar label anchor}
+\@gtt@keydef{bar left shift}
+\@gtt@keydef{bar right shift}
+\@gtt@keydef{bar top shift}
+\@gtt@keydef{bar height}
+
+\@gtt@stylekeydef{group}
+\pgfkeysdef{/pgfgantt/group label text}{%
+  \def\gtt@grouplabeltext##1{#1}%
+}
+\@gtt@keydef{group label font}
+\@gtt@stylekeydef{group label anchor}
+\@gtt@keydef{group left shift}
+\@gtt@keydef{group right shift}
+\@gtt@keydef{group top shift}
+\@gtt@keydef{group height}
+\pgfkeysdefnargs{/pgfgantt/group left peak}{3}{%
+  \def\@tempa{#1}%
+  \ifx\@tempa\@empty\else\def\gtt@groupleftpeakmidx{#1}\fi%
+  \def\@tempa{#2}%
+  \ifx\@tempa\@empty\else\def\gtt@groupleftpeakinnerx{#2}\fi%
+  \def\@tempa{#3}%
+  \ifx\@tempa\@empty\else\def\gtt@groupleftpeaky{#3}\fi%
+}
+\pgfkeysdefnargs{/pgfgantt/group right peak}{3}{%
+  \def\@tempa{#1}%
+  \def\@tempb{-}%
+  \ifx\@tempa\@empty\else%
+    \ifx\@tempa\@tempb\else\def\gtt@grouprightpeakmidx{#1}\fi%
+  \fi%
+  \def\@tempa{#2}%
+  \ifx\@tempa\@empty\else%
+    \ifx\@tempa\@tempb\else\def\gtt@grouprightpeakinnerx{#2}\fi%
+  \fi%
+  \def\@tempa{#3}%
+  \ifx\@tempa\@empty\else\def\gtt@grouprightpeaky{#3}\fi%
+}
+\pgfkeysdefnargs{/pgfgantt/group peaks}{3}{%
+  \ganttset{group left peak={#1}{#2}{#3}, group right peak={-#1}{-#2}{#3}}%
+}
+
+\@gtt@keydef{progress}
+\@gtt@stylekeydef{bar incomplete}
+\@gtt@stylekeydef{group incomplete}
+\pgfkeysdef{/pgfgantt/incomplete}{%
+  \ganttset{bar incomplete={#1}, group incomplete={#1}}%
+}
+\pgfkeysdef{/pgfgantt/progress label text}{%
+  \def\gtt@progresslabeltext##1{#1}%
+}
+\@gtt@keydef{progress label font}
+\@gtt@stylekeydef{progress label anchor}
+
+\@gtt@stylekeydef{milestone}
+\pgfkeysdef{/pgfgantt/milestone label text}{%
+  \def\gtt@milestonelabeltext##1{#1}%
+}
+\@gtt@keydef{milestone label font}
+\@gtt@stylekeydef{milestone label anchor}
+\@gtt@keydef{milestone width}
+\@gtt@keydef{milestone height}
+\@gtt@keydef{milestone xshift}
+\@gtt@keydef{milestone yshift}
+
+\@gtt@stylekeydef{link}
+\@gtt@keydef{link label font}
+\@gtt@stylekeydef{link label anchor}
+\pgfkeysdefnargs{/pgfgantt/link label}{2}{%
+  \expandafter\def\csname gtt@link@#1@labeltext\endcsname{#2}%
+}
+\@gtt@keydef{link mid}
+\@gtt@keydef{link bulge}
+\@gtt@keydef{link tolerance}
+\@gtt@linkkeydef 0 b b \relax
+\@gtt@linkkeydef 0 b m \relax
+\@gtt@linkkeydef 0 m b \relax
+\@gtt@linkkeydef 0 m m \relax
+\@gtt@linkkeydef 1 s s {start-to-start}
+\@gtt@linkkeydef 1 s f {start-to-finish}
+\@gtt@linkkeydef 1 f s {finish-to-start}
+\@gtt@linkkeydef 1 f f {finish-to-finish}
+
+\ganttset{
+  canvas={fill=white},
+  hgrid style=dotted,
+  vgrid style=dotted,
+  vgrid lines list={2,3,...,\value{gtt@width}},
+  today=none,
+  today rule={dashed, line width=1pt},
+  today label=TODAY,
+  hgrid shift=-.3,
+  last line height=.7,
+  title={fill=white},
+  title label font=\small,
+  title label anchor={anchor=mid},
+  title left shift=0,
+  title right shift=0,
+  title top shift=0,
+  title height=.6,
+  title list options={var=\x, evaluate=\x},
+  include title in canvas,
+  time slot modifier=-1,
+  bar={fill=white},
+  bar label text={\strut#1},
+  bar label font=\normalsize,
+  bar label anchor={anchor=east},
+  bar left shift=0,
+  bar right shift=0,
+  bar top shift=0,
+  bar height=.4,
+  group={fill=black},
+  group label text={\strut#1},
+  group label font=\normalsize\bfseries,
+  group label anchor={anchor=east},
+  group left shift=-.1,
+  group right shift=.1,
+  group top shift=.1,
+  group height=.2,
+  group peaks={.2}{.4}{.1},
+  progress=none,
+  incomplete={fill=black!25},
+  progress label text={#1\% complete},
+  progress label font=\scriptsize,
+  progress label anchor={anchor=west},
+  milestone={fill=black},
+  milestone label text={\strut#1},
+  milestone label font=\normalsize\itshape,
+  milestone label anchor={anchor=east},
+  milestone width=.8,
+  milestone height=.4,
+  milestone xshift=0,
+  milestone yshift=.2,
+  link={-latex, rounded corners=1pt},
+  link label font=\scriptsize\itshape,
+  link label anchor={anchor=west},
+  b-b,
+  link mid=.5,
+  link bulge=.4,
+  link tolerance=0.6,
+}
+
+\newenvironment{ganttchart}[2][]{%
+  \ganttset{#1}%
+  \setcounter{gtt@width}{#2}%
+  \setcounter{gtt@currentline}{0}%
+  \setcounter{gtt@lastline}{0}%
+  \setcounter{gtt@lasttitleline}{0}%
+  \gtt@intitletrue%
+  \let\\\ganttnewline%
+}{%
+  \begin{scope}[on background layer]%
+    \ifgtt@includetitle%
+      \def\y@upper{0}%
+    \else%
+      \def\y@upper{\value{gtt@lasttitleline}-\@gtt@get{hgrid shift}}%
+    \fi%
+    \def\y@lower{\value{gtt@currentline}-\@gtt@get{last line height}}%
+    \draw[/pgfgantt/canvas@style]
+      (0, \y@upper) rectangle
+      (\value{gtt@width}, \y@lower);%
+    \ifgtt@vgrid%
+      \foreach \t [evaluate=\t using \t-1]
+          in \gtt@vgridlineslist {%
+        \draw[/pgfgantt/vgrid style@style]
+          (\t, \value{gtt@lasttitleline}-\@gtt@get{hgrid shift}) --
+          (\t, \y@lower);%
+      }%
+    \fi%
+    \ifgtt@hgrid%
+      \ifgtt@includetitle\else\addtocounter{gtt@lasttitleline}{-1}\fi%
+      \foreach \t [evaluate=\t]
+          in {\value{gtt@lasttitleline},...,\value{gtt@currentline}} {%
+        \draw[/pgfgantt/hgrid style@style]
+          (0, \t-\@gtt@get{hgrid shift}) --
+          (\value{gtt@width}, \t-\@gtt@get{hgrid shift});%
+      }%
+      \ifgtt@includetitle\else\stepcounter{gtt@lasttitleline}\fi%
+    \fi%
+    \def\@tempa{none}%
+    \ifx\gtt@today\@tempa\else%
+      \draw[/pgfgantt/today rule@style]
+        (\@gtt@get{today},
+          \value{gtt@lasttitleline}-\@gtt@get{hgrid shift}) --
+        (\@gtt@get{today}, \y@lower);%
+      \node at (\@gtt@get{today}, \y@lower)
+        [anchor=north] {\@gtt@get{today label}};%
+    \fi%
+  \end{scope}%
+}
+
+\newcommand\ganttnewline[1][]{%
+  \def\@tempa{#1}%
+  \def\@tempb{grid}%
+  \ifx\@tempa\@tempb%
+    \draw[/pgfgantt/hgrid style@style]
+      (0, \value{gtt@currentline}-1-\@gtt@get{hgrid shift}) --
+      (\value{gtt@width},
+        \value{gtt@currentline}-1-\@gtt@get{hgrid shift});%
+  \fi%
+  \addtocounter{gtt@currentline}{-1}%
+  \ifgtt@intitle\addtocounter{gtt@lasttitleline}{-1}\fi%
+  \setcounter{gtt@lasttitleslot}{0}%
+}
+
+\newcommand\gantttitle[3][]{%
+  \begingroup%
+  \ganttset{#1}%
+  \def\x@left{\value{gtt@lasttitleslot}+\@gtt@get{title left shift}}%
+  \def\x@right{\value{gtt@lasttitleslot}+#3+\@gtt@get{title right shift}}%
+  \def\y@upper{\value{gtt@currentline}-\@gtt@get{title top shift}}%
+  \def\y@lower{\value{gtt@currentline}-\@gtt@get{title top shift}%
+    -\@gtt@get{title height}}%
+  \draw[/pgfgantt/title@style]
+    (\x@left, \y@upper) rectangle
+    (\x@right, \y@lower);%
+  \@gtt@get{title label font}%
+  \node at ($(\x@left,\y@upper)!.5!(\x@right,\y@lower)$)
+    [/pgfgantt/title label anchor@style] {#2};%
+  \addtocounter{gtt@lasttitleslot}{#3}%
+  \setcounter{gtt@lastline}{\value{gtt@currentline}}%
+  \endgroup%
+}
+
+\newcommand\gantttitlelist[3][]{%
+  \begingroup%
+  \ganttset{#1}%
+  \expandafter\foreach\gtt@titlelistoptions in {#2} {\gantttitle{\x}{#3}}%
+  \endgroup%
+}
+
+\newcommand\ganttbar[4][]{%
+  \begingroup%
+  \ganttset{#1}%
+  \def\x@left{#3+\@gtt@get{time slot modifier}+\@gtt@get{bar left shift}}%
+  \def\x@right{#4+\@gtt@get{bar right shift}}%
+  \def\y@upper{\value{gtt@currentline}-\@gtt@get{bar top shift}}%
+  \def\y@lower{\value{gtt@currentline}-\@gtt@get{bar top shift}%
+    -\@gtt@get{bar height}}%
+  \def\@tempa{#2}%
+  \ifx\@tempa\@empty\else%
+    \node at ($(0, \y@upper)!.5!(0, \y@lower)$)
+      [/pgfgantt/bar label anchor@style]
+      {\@gtt@get{bar label font}{\gtt@barlabeltext{#2}}};%
+  \fi%
+  \def\@tempa{none}%
+  \ifx\gtt@progress\@tempa%
+    \def\gtt@progress{100}%
+    \let\gtt@pl@draw\relax%
+  \else
+    \expandafter\ifx\gtt@progresslabeltext\relax\relax%
+      \let\gtt@pl@draw\relax%
+    \else%
+      \def\gtt@pl@draw{%
+        \node at ($(\x@right, \y@upper)!.5!(\x@right, \y@lower)$)
+          [/pgfgantt/progress label anchor@style] {%
+            \@gtt@get{progress label font}{%
+              \@gtt@get{progresslabeltext}{\@gtt@get{progress}}%
+            }%
+          };%
+      }%
+    \fi%
+  \fi%
+  \begin{scope}%
+    \clip (\x@left,\y@upper) rectangle
+      ($(\x@left, \y@lower)!\gtt@progress/100!(\x@right, \y@lower)$);%
+    \draw[/pgfgantt/bar@style, draw=none] (\x@left, \y@upper)
+      rectangle (\x@right, \y@lower);%
+  \end{scope}%
+  \begin{scope}%
+    \clip ($(\x@left,\y@upper)!\gtt@progress/100!(\x@right,\y@upper)$)
+      rectangle (\x@right,\y@lower);%
+    \draw[/pgfgantt/bar incomplete@style, draw=none]
+      (\x@left, \y@upper) rectangle (\x@right, \y@lower);%
+  \end{scope}%
+  \draw[/pgfgantt/bar@style, fill=none]
+    (\x@left, \y@upper) rectangle (\x@right, \y@lower);%
+  \gtt@pl@draw%
+  \gdef\gtt@lastslot{#4}%
+  \setcounter{gtt@lastline}{\value{gtt@currentline}}%
+  \global\gtt@intitlefalse%
+  \endgroup%
+}
+
+\newcommand\ganttlinkedbar[4][]{%
+  \begingroup%
+  \ganttset{#1}%
+  \ganttlink{\gtt@lastslot}{-\value{gtt@lastline}-1}%
+    {#3}{-\value{gtt@currentline}-1}%
+  \ganttbar{#2}{#3}{#4}%
+  \endgroup%
+}
+
+\newcommand\ganttlink[5][]{%
+  \begingroup%
+  \ganttset{#1}%
+  \ifcase\gtt@link@type%
+    \def\x@left{#2+\@gtt@get{bar right shift}}%
+    \def\x@right{%
+      #4+\@gtt@get{time slot modifier}+\@gtt@get{bar left shift}%
+    }%
+    \def\y@upper{-#3+1-\@gtt@get{bar top shift}/2-\@gtt@get{bar height}/2}%
+    \def\y@lower{-#5+1-\@gtt@get{bar top shift}/2-\@gtt@get{bar height}/2}%
+    \def\@tempa{m}
+    \ifx\gtt@link@starttype\@tempa
+      \def\x@left{%
+        #2+\@gtt@get{milestone xshift}+\@gtt@get{milestone width}/2%
+       }%
+      \def\y@upper{-#3+1-\@gtt@get{milestone yshift}}%
+    \fi
+    \ifx\gtt@link@endtype\@tempa
+      \def\x@right{%
+        #4+\@gtt@get{milestone xshift}-\@gtt@get{milestone width}/2%
+      }%
+      \def\y@lower{-#5+1-\@gtt@get{milestone yshift}}%
+    \fi
+    \pgfmathparse{#3==#5}%
+    \ifcase\pgfmathresult%
+      \pgfmathparse{%
+        (#4+\@gtt@get{time slot modifier}-#2)>=\@gtt@get{link tolerance}%
+      }%
+      \ifcase\pgfmathresult%
+        \draw[/pgfgantt/link@style]
+          (\x@left, \y@upper) --
+          (\x@left+\@gtt@get{link bulge}, \y@upper) --
+          ($(\x@left+\@gtt@get{link bulge},\y@upper)!%
+            \@gtt@get{link mid}!%
+            (\x@left+\@gtt@get{link bulge},\y@lower)$) --
+          ($(\x@right-\@gtt@get{link bulge},\y@upper)!%
+            \@gtt@get{link mid}!%
+            (\x@right-\@gtt@get{link bulge},\y@lower)$) --
+          (\x@right-\@gtt@get{link bulge}, \y@lower) --
+          (\x@right, \y@lower);%
+      \else%
+        \draw[/pgfgantt/link@style]
+          (\x@left, \y@upper) --
+          ($(\x@left,\y@upper)!\@gtt@get{link mid}!(\x@right,\y@upper)$) --
+          ($(\x@left,\y@lower)!\@gtt@get{link mid}!(\x@right,\y@lower)$) --
+          (\x@right, \y@lower);%
+      \fi%
+    \else%
+      \pgfmathparse{(#4+\@gtt@get{time slot modifier})==#2}%
+      \ifcase\pgfmathresult%
+        \draw[/pgfgantt/link@style]
+          (\x@left, \y@upper) -- (\x@right, \y@lower);%
+      \fi%
+    \fi%
+  \else%
+    \def\@tempa{f}%
+    \ifx\gtt@link@starttype\@tempa%
+      \def\x@left{#2+\@gtt@get{bar right shift}}%
+    \else
+      \def\@tempa{s}
+      \ifx\gtt@link@starttype\@tempa
+        \def\x@left{%
+          #2+\@gtt@get{time slot modifier}+\@gtt@get{bar right shift}%
+        }%
+      \fi%
+    \fi%
+    \def\@tempa{f}%
+    \ifx\gtt@link@endtype\@tempa%
+      \def\x@right{#4+\@gtt@get{bar left shift}}%
+    \else
+      \def\@tempa{s}
+      \ifx\gtt@link@endtype\@tempa
+        \def\x@right{%
+          #4+\@gtt@get{time slot modifier}+\@gtt@get{bar left shift}%
+        }%
+      \fi%
+    \fi%
+    \def\y@upper{-#3+1-\@gtt@get{bar height}}%
+    \def\y@lower{-#5+1-\@gtt@get{bar top shift}}%
+    \draw[/pgfgantt/link@style]
+      (\x@left, \y@upper) --
+      (\x@right, \y@lower);%
+    \node at ($(\x@left, \y@upper)!.5!(\x@right, \y@lower)$)
+      [/pgfgantt/link label anchor@style] {%
+        \@gtt@get{link label font}{%
+          \csname gtt@link@\gtt@link@starttype-\gtt@link@endtype%
+            @labeltext\endcsname%
+        }%
+      };%
+  \fi%
+  \endgroup%
+}
+
+\newcommand\ganttgroup[4][]{%
+  \begingroup%
+  \ganttset{#1}%
+  \def\x@left{%
+    #3+\@gtt@get{time slot modifier}+\@gtt@get{group left shift}%
+  }%
+  \def\x@right{#4+\@gtt@get{group right shift}}%
+  \def\y@upper{\value{gtt@currentline}-\@gtt@get{group top shift}}%
+  \def\y@lower{\value{gtt@currentline}-\@gtt@get{group top shift}%
+    -\@gtt@get{group height}}%
+  \def\@tempa{#2}%
+  \ifx\@tempa\@empty\else%
+    \node at ($(0, \y@upper)!.5!(0, \y@lower)$)
+      [/pgfgantt/group label anchor@style]
+      {\@gtt@get{group label font}{\gtt@grouplabeltext{#2}}};%
+  \fi%
+  \def\@tempa{none}%
+  \ifx\gtt@progress\@tempa%
+    \def\gtt@progress{100}%
+    \let\gtt@pl@draw\relax%
+  \else
+    \expandafter\ifx\gtt@progresslabeltext\relax\relax%
+      \let\gtt@pl@draw\relax%
+    \else%
+      \def\gtt@pl@draw{%
+        \node at ($(\x@right, \y@upper)!.5!(\x@right, \y@lower)$)
+          [/pgfgantt/progress label anchor@style] {%
+            \@gtt@get{progress label font}{%
+              \@gtt@get{progresslabeltext}{\@gtt@get{progress}}%
+            }%
+          };%
+      }%
+    \fi%
+  \fi%
+  \pgfmathsetmacro\@maxpeak{%
+    \gtt@grouprightpeaky>\gtt@groupleftpeaky?%
+    \gtt@grouprightpeaky:\gtt@groupleftpeaky%
+  }%
+  \begin{scope}%
+    \clip (\x@left,\y@upper) rectangle
+      ($(\x@left,\y@lower-\@maxpeak)!%
+        \gtt@progress/100!%
+        (\x@right,\y@lower-\@maxpeak)$);%
+    \path[/pgfgantt/group@style,draw=none]
+      (\x@left, \y@upper) --
+      (\x@right, \y@upper) --
+      (\x@right, \y@lower) --
+      (\x@right+\gtt@grouprightpeakmidx, \y@lower-\gtt@grouprightpeaky) --
+      (\x@right+\gtt@grouprightpeakinnerx, \y@lower) --
+      (\x@left+\gtt@groupleftpeakinnerx, \y@lower) --
+      (\x@left+\gtt@groupleftpeakmidx, \y@lower-\gtt@groupleftpeaky) --
+      (\x@left, \y@lower) --
+      cycle;%
+  \end{scope}%
+  \begin{scope}%
+    \clip ($(\x@left,\y@upper)!%
+        \gtt@progress/100!%
+        (\x@right,\y@upper)$)
+      rectangle (\x@right,\y@lower-\@maxpeak);
+    \path[/pgfgantt/group incomplete@style]
+      (\x@left, \y@upper) --
+      (\x@right, \y@upper) --
+      (\x@right, \y@lower) --
+      (\x@right+\gtt@grouprightpeakmidx, \y@lower-\gtt@grouprightpeaky) --
+      (\x@right+\gtt@grouprightpeakinnerx, \y@lower) --
+      (\x@left+\gtt@groupleftpeakinnerx, \y@lower) --
+      (\x@left+\gtt@groupleftpeakmidx, \y@lower-\gtt@groupleftpeaky) --
+      (\x@left, \y@lower) --
+      cycle;%
+  \end{scope}%
+  \path[/pgfgantt/group@style,fill=none]
+    (\x@left, \y@upper) --
+    (\x@right, \y@upper) --
+    (\x@right, \y@lower) --
+    (\x@right+\gtt@grouprightpeakmidx, \y@lower-\gtt@grouprightpeaky) --
+    (\x@right+\gtt@grouprightpeakinnerx, \y@lower) --
+    (\x@left+\gtt@groupleftpeakinnerx, \y@lower) --
+    (\x@left+\gtt@groupleftpeakmidx, \y@lower-\gtt@groupleftpeaky) --
+    (\x@left, \y@lower) --
+    cycle;%
+  \gtt@pl@draw%
+  \global\gtt@intitlefalse%
+  \endgroup%
+}
+
+\newcommand\ganttmilestone[3][]{%
+  \begingroup%
+  \ganttset{#1}%
+  \def\x@mid{#3+\@gtt@get{milestone xshift}}%
+  \def\y@mid{\value{gtt@currentline}-\@gtt@get{milestone yshift}}%
+  \def\@tempa{#2}%
+  \ifx\@tempa\@empty\else%
+    \node at (0, \y@mid)
+      [/pgfgantt/milestone label anchor@style]
+      {\@gtt@get{milestone label font}{\gtt@milestonelabeltext{#2}}};%
+  \fi%
+  \path[/pgfgantt/milestone@style]
+    (\x@mid-\@gtt@get{milestone width}/2, \y@mid) --
+    (\x@mid, \y@mid-\@gtt@get{milestone height}/2) --
+    (\x@mid+\@gtt@get{milestone width}/2, \y@mid) --
+    (\x@mid, \y@mid+\@gtt@get{milestone height}/2) --
+    cycle;%
+  \gdef\gtt@lastslot{#3}%
+  \setcounter{gtt@lastline}{\value{gtt@currentline}}%
+  \global\gtt@intitlefalse%
+  \endgroup%
+}
+
+\newcommand\ganttlinkedmilestone[3][]{%
+  \begingroup%
+  \ganttset{b-m,#1}%
+  \ganttlink{\gtt@lastslot}{-\value{gtt@lastline}-1}%
+    {#3}{-\value{gtt@currentline}-1}%
+  \ganttmilestone{#2}{#3}%
+  \endgroup%
+}
+\endinput
+%%
+%% End of file `pgfgantt.sty'.
