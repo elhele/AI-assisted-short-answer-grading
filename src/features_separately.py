@@ -1,8 +1,10 @@
 import matplotlib.pyplot as plt
 
-accuracies = [0.677217928004, 0.691322937824, 0.684630030776, 0.693957037441, 0.688757256379, 0.700518340123, 0.700338038117, 0.679394833249 ]
-features = ["allR+B", "allR", "BLUE", "R1", "R2", 'RSU', 'R12', "RSU+BLEU"] #, "R12+BLEU"]
-y_axis = range(1, 9)
+accuracies = [0.69005, 0.69045, 0.69710, 0.67747, 0.64711, 0.68781, 0.69540, 0.69973 ]
+features = ["R1", "R2", "RL", "RS4", "BLUE", "R", "R12L", "keywords_R12L"  ]
+
+
+y_axis = range(1, 8)
 
 plt.plot(y_axis, accuracies)
 plt.plot(y_axis, accuracies, "bo")
