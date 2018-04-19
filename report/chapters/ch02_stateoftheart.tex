@@ -1,97 +1,12 @@
-\documentclass[11pt]{report}
-\usepackage{listings}
-\usepackage{graphicx}
-\usepackage{amsmath}
-\usepackage{enumitem}
-\usepackage{makecell}
-\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
-%\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
-\usepackage{hyperref}
-\usepackage[english]{babel} % English language/hyphenation
-%\usepackage{amsmath,amsfonts,amsthm} % Math packages
-\usepackage{placeins} % keeps floats (e.g. Tables) within "\FloatBarrier" boundaries
-\usepackage{float}
-\usepackage{mathptmx}
-\usepackage{sectsty} % Allows customizing section commands
-\allsectionsfont{\normalfont} % Make all sections centered, the default font and small caps \sectionfont{\fontsize{12}{15}\selectfont}
-\usepackage{gensymb}
-\usepackage{fancyhdr} % Custom headers and footers
-\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
-\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
-\fancyfoot[L]{} % Empty left footer
-\fancyfoot[C]{} % Empty center footer
-\fancyfoot[R]{\thepage} % Page numbering for right footer
-\renewcommand{\headrulewidth}{0pt} % Remove header underlines
-\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
-\setlength{\headheight}{13.6pt} % Customize the height of the header
-\usepackage{cite}
-\usepackage{chngcntr}
-\setcounter{equation}{0}
+%!TEX root = ../report.tex
 
-\makeatother
-
-%usepackage[backend=bibtex,style=verbose-trad2]{biblatex}
-
-%\bibliography{grasp_bibtex_papers}
-\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
-%\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
-%\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
-\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
-\usepackage{preview}
-\usepackage{gantt}
-%----------------------------------------------------------------------------------------
-%	TITLE SECTION
-%----------------------------------------------------------------------------------------
-
-%\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
-
-\title{
-\normalfont \huge
-\textsc{AI-assisted short answer grading: comprehensive classification and evaluation of the existing state of the art techniques \\Proposal for RnD Project
-} % Your university, school and/or department name(s)
-%\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
-%\normalfont Probabilistic Assignment 4 \\ % The assignment title
-%\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
-}
-\usepackage{amsmath,amsthm,amssymb}
-\author{Student: \\Evgeniya Ovchinnikova\\
-\\Supervised by:
-\\Prof. Dr. Paul Ploeger
-\\M.Sc. Deebul Nair } % Your name
-
-\date{\normalsize 16 April, 2018} % Today's date or a custom date
-
-
-\begin{document}
-
-\counterwithout{equation}{chapter}
-\counterwithout{equation}{section}
-\counterwithout{equation}{subsection}
-\maketitle % Print the title
-\thispagestyle{empty}
-%----------------------------------------------------------------------------------------
-%With This template you can add code, image and sections.
-%----------------------------------------------------------------------------------------------
-\newpage
-\pagenumbering{arabic}
-\chapter{\textbf{Introduction} }
-
-The process of teaching is very challenging and takes considerable time and effort. In many areas, especially computer science, it requires keeping the curriculum and assignments up to date and relevant. Personal communication with students and giving feedback on tests and homework is also essential as well as time-consuming. These activities are the most visible to students, but there are many more things a teacher or professor must do, such as paperwork, organizational issues, to name just a few. For this reason it is important to optimize the time dedicated to each different aspect of work. Keeping course content relevant as well as personal communication cannot be easily outsourced, but grading tests and assignments is usually straightforward enough and does not require a professor's expertise. Students often make similar mistakes, making the task well-suited for automation using machine learned models. This clearly shows that it is an ideal task to be automated.\\
-
-Assignments and test answers include different aspects, such as text, pictures and programming code. In this work we focus on the text. There are several main text answer types: "fill the gap", short as well as long answer essays ~\cite{Hasanah}. The first type does not represent a complex problem because there would normally be only one possible answer and the only challenges that one can face here are handwriting recognition, if the test was not on a computer; or spelling correction, if the incorrectly spelled answers can be accepted. Two other types are more challenging from the text analysis point of view. Automated essay scoring (AES) focuses on evaluating texts longer than one paragraph, whereas automated short answer grading (ASAG) concentrates on answers consisting of a small number of sentences ~\cite{Hasanah}. The other important difference is that ASAG only concerns the with the meaning of the answer, while for AES the writing style is also very important ~\cite{Burrows}. \\
-
-AES is a rather complex task. Some massive open online courses (MOOC), such as those offered by EdX, MIT and Harvard's non-profit organization HarvardX, and organizations like ETS have already started using the automated essay grading systems  ~\cite{Balfour}, ~\cite{aesOverview}. This is a logical step, since most of the online courses are either free or very cheap in comparison to the ones in real universities and institutes and it is impossible to find many teachers who are willing to work for free. They use an algorithm developed by one of the contestants ~\cite{vikGit} of "The Hewlett Foundation: Automated Essay Scoring" competition on Kaggle ~\cite{HewlettKaggle} and an EASE library ~\cite{edxGit}, which can be used for machine learning text classification. Although AES has been received rather positively ~\cite{aesOverview},~\cite{Shermis},~\cite{Alikaniotis}, there are still many people who have strong doubts about the feasibility of automated essay grading. Many people, including even Noam Chomsky, have signed a petition "Professionals Against Machine Scoring Of Student Essays In High-Stakes Assessment" ~\cite{petition}. Moreover, there were a lot of papers criticizing either state of the art AES or its general appropriateness ~\cite{Perelman}, ~\cite{Byrne}, ~\cite{Ramineni}.\\
-
-Good AES research requires a solid computational linguistics background. Moreover, this area is more relevant for the humanities. This research concentrates on developing an AI assistant for grading assessments and exams in the fields of computer science, electrical engineering, physics and other technical disciplines. Here the answers are usually shorter and more concrete. Furthermore, stylistics and spelling are not of interest, but that depends on the individual professor. Therefore this work focuses on ASAG. This task is viable and the solution should be helpful for both professors and students. It can allow professors more time for other teaching activities and provide students with faster and less biased feedback on their work.
-
- 
-\chapter{\textbf{State of the art}}
+\chapter{State of the Art}
 
 \section{\textbf{Natural language processing}}
 
 \subsection{Natural language processing development}
 
-This work focuses on ASAG that is a very narrow subfield of natural language processing (NLP). Therefore it is important to consider what actually is NLP first.\\
+This work focuses on ASAG that is a very narrow subfield of Natural Language Processing (NLP). Therefore it is important to consider what actually is NLP first.\\
 
 NLP is an very important research area that developed from the simple algorithms those could be performed on punch cards to huge sufisticated and heavy calculations those are performed by compamies like Google and Facebook now ~\cite{Cambria}. NLP is based on many other subject areas, such as linguistics, mathematics, computer science, artificial intelligence, robotics, and psychology. It can be applied in such areas as machine translation, summary generation, simplification of the texts, multilingual and cross-language information retrieval, diagnosing, chat-bots development, etc. ~\cite{Chowdhury}. The common idea among these tasks is that the computer must truely understand the language, the meaning of the phrases, sentences and whole texts. However, we cannot just tell the machine to "understand", its "understanding" must be formalized. This formalization is the subject of NLP. In a broader sense NLP task includes all levels of language processing and understanding: acoustic (speech recognition), analytical (syntactics and semantics), contextectual (anaphora, inference of referents, etc.), inferential (detection of inferences and implicatures), planning (sense, text and speech generation). Otherwise NLP can be narrowed mainly to analytical part, i.e. be considered as a set of techniques and methods for grammatical structure extraction and analysis for text understanding  ~\cite{Steedman}. Current work is not interested in such aspects of NLP as speech recognition and generation or in detailed research on grammars, the most interesting NLP aspect is an information extraction -- "subset of knowledge discovery and data mining that aims to extract useful bits of textual information from natural language texts" ~\cite{Chowdhury}.
 However, text generation can be another useful tool for teachers who are interested in automated generation of examination questions, and speech recognition can be interesting for oral exams aytomation in the future. Therefore we will briefly consider all seven stages that may include a task of NLP ~\cite{Chowdhury}, ~\cite{Saad}:
@@ -117,14 +32,14 @@ Semantic is a higher level analysis that considers extraction of meaning of word
 
 Discourse the highest level information extraction that considers the information extraction of text parts larger than a sentence, or the whole text. It deals with the whole structure of the document. The knowledge from this level can be very helpful for text summarization. \\
 
-Pragmatics is the outer level of information extraction that includes the knowledge about the world, which is not contained in the document. It consists of two stages: finding ambiguities and disambiguation. The are following types of ambiguities: one-word long lexical (homonym) and referential ("it", "he", etc.), several-words long syntactic, sentence-long semantic, local (context requiring, which is usually a great issue for translation). Disambiguation includes the following methods: probabilistic (simple choice of the most common meaning of the word, optionally -- most possible in the subject field of this text), conditional probability (choice of the most common meaning of the word in the subject field of this text), context (most probable meaning of this word when it is surrounded by certain words or grammatical structure), world models (disambiguation by usage of world states)  ~\cite{Saad}. The conditional probability can be especially important for this work, because the tests are subject-specific and would normally use only one meaning of the certain word. For example, the word "operation" in a computer science exam will with almost 100\% probability not mean mean "surgery" . \\
+Pragmatics is the outer level of information extraction that includes the knowledge about the world, which is not contained in the document. It consists of two stages: finding ambiguities and disambiguation. The are following types of ambiguities: one-word long lexical (homonym) and referential ("it", "he", etc.), several-words long syntactic, sentence-long semantic, local (context requiring, which is usually a great issue for translation). Disambiguation includes the following methods: probabilistic (simple choice of the most common meaning of the word, optionally -- most possible in the subject field of this text), conditional probability (choice of the most common meaning of the word in the subject field of this text), context (most probable meaning of this word when it is surrounded by certain words or grammatical structure), world models (disambiguation by usage of world states)  ~\cite{Saad}. The conditional probability can be especially important for this work, because the tests are subject-specific and would normally use only one meaning of the certain word. For example, the word "operation" in a computer science exam will most likely not mean mean "surgery" . \\
 
-History and prediction of integration of the methods mentioned above into NLP over is shown in Fig.\ref{fig:NLPLevels}. One can clearly see how the computers could grasp gradually more general meaning of the text. From understanding of single words to acquiring the meaning of whole sentences and paragraphs. Such differences are always easy to see in machine translation. One can compare the translation given by Google-translator (\url{translate.google.com}) that uses the bleeding-edge NLP-methods and PROMT (\url{http://www.online-translator.com/}) that translates almost word by word. The original sentence was takes from the beginning of "Faust" by Johann Wolfgang Von Goethe: "Ihr n{\"a}hert sich wieder, schwankende Gestalten, Die vor sich selbst ist der Tr{\"u}ben Blick gezeigt.". The translation by Google is "You approach again, swaying figures, who in front of themselves is shown the murky gaze.", by PROMT -- "You approach again, fluctuating shapes, early to yourselves once the murky look shown.". PROMT couldn't even detect the German structure of the sentence and just put the English words in the initial order. Google translation is not perfect, but it is clear that it translates the whole sentence and not only the separate words. However, even a relatively good automated translator has problems with textual ambiguity and especially stylistics and it will take some time before it is able to translate the literature like human translators: "Again ye come, ye hovering Forms! I find ye, As early to my clouded sight ye shone!" ~\cite{Faust}.\\ 
+History and prediction of integration of the methods mentioned above into NLP over is shown in Fig. \ref{fig:NLPLevels}. One can clearly see how the computers could grasp gradually more general meaning of the text. From understanding of single words to acquiring the meaning of whole sentences and paragraphs. Such differences are always easy to see in machine translation. One can compare the translation given by Google-translator (\url{translate.google.com}) that uses the bleeding-edge NLP-methods and PROMT (\url{http://www.online-translator.com/}) that translates almost word by word. PROMT uses rule-based and statistical machine translation, whereas Google-translator uses eight layers of Long Short-Term Memory-Recurrent Neural Network (LSTM-RNN). The original sentence was taken from the beginning of "Faust" by Johann Wolfgang Von Goethe: "Ihr n{\"a}hert sich wieder, schwankende Gestalten, Die vor sich selbst ist der Tr{\"u}ben Blick gezeigt.". The translation by Google is "You approach again, swaying figures, who in front of themselves is shown the murky gaze.", by PROMT -- "You approach again, fluctuating shapes, early to yourselves once the murky look shown.". PROMT couldn't even detect the German structure of the sentence and just put the English words in the initial order. Google translation is not perfect, but it is clear that it translates the whole sentence and not only the separate words. However, even a relatively good automated translator has problems with textual ambiguity and especially stylistics and it will take some time before it is able to translate the literature like human translators: "Again ye come, ye hovering Forms! I find ye, As early to my clouded sight ye shone!" ~\cite{Faust}.\\ 
 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.8\textwidth]{img/NLPLevels}
-    \caption{ Envisioned evolution of NLP research through three different eras or curves ~\cite{Cambria} }\label{fig:NLPLevels}
+    \caption{ NLP developement through three different eras or curves ~\cite{Cambria} }\label{fig:NLPLevels}
 \end{figure}
 
 Though semantic approach is slowly starting being used more commonly, syntactic approach is still used more often. That is why it is important to mention the main methods used there ~\cite{Cambria}:
@@ -142,14 +57,14 @@ Though semantic approach is slowly starting being used more commonly, syntactic 
 \item maximum-likelihood
 \item expectation maximization
 \item conditional random fields
-\item support vector machines 
+\item support vector machines (SVM)
 \end{itemize}
 The method allows to learn by training on a large text corpora the valence of the buzzwords, while also taking into consideration punctuation and how often certain words occur together. The problem of this method is semantic weakness: it's too focused on the buzzwords and cannot work efficiently enough with other words, therefore it requires a very large amount of text to train.
 \end{itemize}
 
 Semantic or concept-based level is fundamentally different: it is focused on the meaning of sentences as a whole and not on spotting of separate buzzwords, learning the concepts and not the words. One can distinguish the following concept-based NLP approaches ~\cite{Cambria}:
 \begin{itemize}
-\item internal knowledge-based techniques (endogenous) -- uses only information from a given document. It integrates machine learning in order to conduct lexical-semantic analysis of a large amount of textual information to extract concepts. The following machine learning methods are used:  
+\item internal knowledge-based techniques (endogenous) -- uses only information froinly to analytical part, i.e. be considered as a set of techniques and methods for grammatical structure extraction and analysis for text understam a given document. It integrates machine learning in order to conduct lexical-semantic analysis of a large amount of textual information to extract concepts. The following machine learning methods are used:  
 \begin{itemize}
 \item latent semantic analysis -- vector documents in a terms space;
 \item latent Dirichlet allocation -- assigning terms to topics;
@@ -169,10 +84,10 @@ Semantic or concept-based level is fundamentally different: it is focused on the
 
 
 
-\subsection{Linguistics and NLP.}
+\subsection{From linguistics to NLP}
 
 
-All the concepts mentioned above originate in pure linguistics and it is obvious that NLP area would strongly rely on linguistics. However, it is a hard question, how much NLP should rely on pure linguistics and which modifications should be applied to linguistic methods so they would be efficiently applicable to NLP. Linguistics provides a highly-formalized model of the language. Raskin in ~\cite{Raskin} names the following manifestations and interpretations of linguistic formality:
+All the concepts mentioned above originate in pure linguistics and it is obvious that NLP area would strongly rely on it. However, it is a hard question, how much NLP should rely on pure linguistics and which modifications should be applied to linguistic methods so they would be efficiently applicable to NLP. Linguistics provides a highly-formalized model of the language. Raskin in ~\cite{Raskin} names the following manifestations and interpretations of linguistic formality:
 
 \begin{itemize}
 \item mathematical notation usage
@@ -194,13 +109,9 @@ This approach seems formal enough to directly transfer it to a format acceptable
 
 Table \ref{NLPvsL} shows the main differences between NLP and pure linguistics those help to understand how to use linguistics for the task of NLP.\\
 
-\subsection{NLP and ASAG.}
-
-//add the methods I'm going to use
-
 \begin{table}[]
 \centering
-\caption{Difference between linguistics and NLP ~\cite{Raskin}}
+\caption{Linguistics vs NLP ~\cite{Raskin}}
 \label{NLPvsL}
 \begin{tabular}{|l|l|}
 \hline
@@ -214,7 +125,6 @@ Table \ref{NLPvsL} shows the main differences between NLP and pure linguistics t
 \end{tabular}
 \end{table}
 
-
 The last point is especially important for the current work. It shows that it is common to use a very limited subset of the words existing in a language for NLP in general. It is also the case for our task, because each exam is dedicated to a certain subject with its own lexicon. Moreover, the formal nature of examinations allows to discard all informal and colloquial words. A student is normally not allowed to use sentences with slang and colloquial terminology similar to the following examples: "Yukio Mishima was a totally screwed wacko and a bent, but it is not the only reason why we all like him", "You should never forget to shiled the qubits properly, otherwise your experiment will be absolutely screwed". In the set of words those a formal exam would allow, "screw" as a verb should only mean "an act of turning a screw or other object having a thread" (\url{https://www.google.de/search?q=Dictionary}) and "bent" would only be a past or an adjective form of "bend".  That is why it is not efficient to try using general linguistic methods, though they are supported by the whole power of the language. Instead it makes sense to focus on NLP-methods those would allow to concentrate on specific subject-specific words. Raskin names the following advantages of the sublexicons ~\cite{Raskin}:
 
 \begin{itemize}
@@ -224,6 +134,34 @@ The last point is especially important for the current work. It shows that it is
 \end{itemize}
 
 However, it is important not to forget that this approach can overlimit the lexicon and make the approach not extrapolatable enough. For example, if one develops an exam in the area of physics, he or she might want to reduce the set in such a way that a word "induction" would mean only "electromagnetic or magnetic induction" and it cannot mean "mathematical induction". It doesn't make much sense though, because adding this sense to such word is not very costly and in general it is possible to use a similar set of words for mathematics and physics, which would allow to have more train exam samples. Moreover, this approach is dangerous because even in one area it is not always possible to foresee all possible vocabulary that will be used.
+
+\subsection{NLP methods for ASAG}
+
+In this section some general NLP methods those are used in various ASAG systems are considered. More specific, e.g. syntactic pattern matching or parse tree matching, are considered in details in ASAG section.\\
+
+\textbf{N-grams} is a method that breaks a sentence into a set of word sequences of certain length. For example, bigrams and trigrams for a sentence "Penrose's model of quantum consciousness is rather questionable" are the following: bigrms -- \{"Penrose's model", "model of", "of quantum", "quantum consciousness", "consciousness is", "is rather", "rather questionable"\}, trigrams -- \{"Penrose's model of", "model of quantum", "of quantum consciousness", "quantum consciousness is", "consciousness is rather", "is rather questionable"\}. A similar approach can be used on a word level. For example, bigrams for a word "quantum" are the following: \{"qu", "ua", "an", "nt", "tu", "um"\}.\\
+
+\textbf{Skip-grams} is a method in which "n-grams are still stored to model language, but they allow for tokens to be skipped" ~\cite{Skip-gram}. Guthrie  ~\cite{Skip-gram} defines k-skip-n-grams for a sentence containing words $w_1,w_2,...,w_n$ in the following way:
+
+\begin{equation} \label{eq:kskip}
+\{w_{i1},w_{i2},...,w_{in} | \sum_{j-1}^n i_j - i_{j-1} < k\}, 
+\end{equation}
+
+where n is strictly higher than one. For better understanding of the concept the following example can be made. A sentence "A new art colour for our Irish poets: snotgreen. " ~\cite{Ulysses} broken into bigrams and 2-skip-bigrams takes the following form: bigrams = \{"A new", "new art", "colour for", "for our", "our Irish", "Irish poets", "poets snotgreen"\}, 2-skip-bigrams = \{"A new", "A art", "A colour", "new art", "new colour", "new for", "for our", "for Irish", "for poets", "our Irish", "our poets", "our snotgreen", "Irish poets", "Irish snotgreen",  "poets snotgreen"\}. One can see that in many cases it creates senseless sequences of the words like "A art", however, k-skip-n-gram "for Irish" would make total sense, because the sentence without word "our" is as valid as the initial one. Moreover, the wrong k-skip-n-grams are too random and often grammatically senseless, that is why they can with very low probability create false positives, which means that it is at least harmless to use them.\\
+
+\textbf{Tokenization} is breaking a sentence into separate words – tokens – and removing punctuation, which is basically extraction of unigrams ~\cite{token}. For example, a sentence "Tokenization is breaking a sentence into separate words – tokens – and removing punctuation, which is basically extraction of unigrams" will take the following form: \{Tokenization"", "is","breaking", "a", "sentence", "into", "separate", "words", "tokens", "and", "", "removing", "punctuation", "which","unigrams","is","basically","extraction","of","unigrams"\}. \\
+
+\textbf{Stemming and lemmatization} are techniques those allow to returned a word in a specific form to its original form, e.g. a verb "is" is lemmatized as "be", genitive case "des Herzens" -- as "das Herz", plural "mice" -- as "mouse", etc. ~\cite{lemm}.\\
+
+\textbf{Spelling correction} allows to change the wrongly written words to the correct form, e.g. "corrrect" -- "correct". However, it can be dangerous in cases when there are several possible correction options: "fhy" -- "fry" or "fly".\\
+
+\textbf{Noun phrase chunking} is a method for breaking sentences into subconstituents, i.e. verbs, nouns, and prepositional phrases ~\cite{chunk}. For example: "The saddest music in the world." -- \{("the", "DT"), ("saddest", "JJ"), ("music", "NN"), ("in", "IN"), ("the", "DT"), ("world", "NN") \}, where "DT" is a definite article, "JJ" -- adjective, "NN" -- noun and "IN" -- preposition.\\
+
+\textbf{Pronoun or anaphora resolution} -- methods those allow to identify to which word refers a pronoun or anoun phrase. For example, in a sentence "One of the outstanding traits of Nabokov's writing is that he could write, and actually wrote, equally well in Russian and English, which allows speakers of both languages read his books in original." "he" is "Nabokov" ~\cite{anaphora}.\\
+
+\textbf{Stop words spotting and removal} -- finding and removing overly common and thereby semantically non-selective words, such as "a", "an", "the", "its", etc. ~\cite{stop}. For example "A cat sit on a mat." transforms to "cat sit mat".\\
+
+\textbf{Part Of Speech (POS) tagging} -- assigning part of speech to each word in a sentence: "Many ideas of Buddhismus are strongly supported by evolutionary biology." -- \{ ("many", "adjective"), ("ideas", "noun"), ("of", "preposition"), ("Buddhismus", "noun"), ("are", "verb"), ("strongly", "adjective"), ("supported", "verb"), ("by", "preposition"), ("evolutionary", "adjective"),  ("biology", "noun")\} ~\cite{POS}.
 
 
 \section{\textbf{Automated grading}}
@@ -249,6 +187,8 @@ Research in natural language processing (NLP) started in 1950. The following top
 
 \subsection{AES}
 
+\subsubsection{Overview of the systems}
+
 In recent years massive tests, such as language proficiency exams (TOEFL, IELTS, TestDaF, DELF, etc.) or MOOC assessments, are becoming increasingly popular. All language tests and many MOOC assignments contain parts where the students have to either summarize a given text or write his/her own text or essay. Scoring these long text is a huge task that requires tremendous amount of human power. Language tests are rather expensive, thereby it is possible to find enough people to grade them. The idea of MOOCs, however, is to make the courses from the best universities affordable for people and that is why it is why scoring is a big issue in this case. It is possible to automate multiple-choice tests, but the quality of such check of knowledge is very low. Therefore, it was essential to automate free text grading as well. Moreover, it is still important for the language tests, because the autograding would allow to give a faster and less biased response.\\
 
 Both, automated and human essay grading, have several important issues those must be faced -- see table \ref{Issues} ~\cite{Blood}. Therefore, starting the automated grading was a long process, but now it is rapidly developing. \\
@@ -269,38 +209,175 @@ Both, automated and human essay grading, have several important issues those mus
 \end{table}
 
 
-The first multiple-choice grader was developed in 1938, whereas the first idea of the free text grader appeared only in 1960's in a work of Ellis Page ~\cite{Blood}. The system was called Project Essay Grade (\textbf{PEG}). His approach was based on usage of proxes and trins -- the variables recognizable by a machine and a human graders accordingly, e.g. a number of words could be a prox and elaboration -- a trin. The method was based on training the multiple-regression algorithm to grade like humans in a train set, not on the analysis of the text itself. The main features of the texts were the number of words and word length, which allowed to reach a correlation of 0.71 (0.77 in the later releases) with the human graders. The correlation between the machine grading and human graders was shown to be higher than the correlation between different human garders ~\cite{Blood}. This grader, however, was very vulnarable to "gibberish" texts, i.e. the ones containing completely senseless words like "bzhykhlvyazsk" or "bdvfngjvsbcdhkuhlhdsskmlklewnmx" ~\cite{Shermis}. The words are long and the text can be as long as the writer please, however, it is not a real essay and by a human teacher it would be graded with zero points. The 0.77 correlation was obtained in absence of such important test cases. It shows a great importance of proper dataset that would cover most of the possible test cases. \\
+The first multiple-choice grader was developed in 1938, whereas the first idea of the free text grader appeared only in 1960's in a work of Ellis Page ~\cite{Blood}. The system was called Project Essay Grade (\textbf{PEG}). The approach was based on usage of proxes and trins -- the variables recognizable by a machine and a human graders accordingly, e.g. a number of words could be a prox and elaboration -- a trin. The method was based on training the multiple-regression algorithm to grade like humans in a train set, not on the analysis of the text itself. The main features of the texts were the number of words and word length, which allowed to reach a correlation of 71\% (77\% in the later releases) with the human graders. The correlation between the machine grading and human graders was shown to be higher than the correlation between different human garders ~\cite{Blood}. This grader, however, was very vulnarable to "gibberish" texts, i.e. the ones containing completely senseless words like "bzhykhlvyazsk" or "bdvfngjvsbcdhkuhlhdsskmlklewnmx" ~\cite{Shermis}. The words are long and the text can be as long as the writer please, however, it is not a real essay and by a human teacher it would be graded with zero points. The 77\% correlation was obtained in absence of such important test cases. It shows a great importance of proper dataset that would cover most of the possible test cases. \\
 
-Almost 40 years after the development of Page's approach of using the human graders' scores instead of a real understanding of text by computer as a main training criterion was of current interest. For example, \textbf{E-Rater} developed by ETS (the organization that conducts TOEFL and GRE) in 1990's operated in the similar way and also used multiple-regression method combined, however, with NLP, which allowed to include grammatical accuracy. The latest (2006) version had an additional feature that took into account word overlap between test and train essays, which was considered rather advanced, because it allowed to reduce importance of essay length, which essentially should not be an indicator of quality. This system is now used in GRE, TOEFL and several other ETS's tests. Correlation with human scores is very high -- 0.97, again higher than between human raters ~\cite{Blood}. However, there is still a lot of criticism. For example, it was shown that examnee can submit a text -- so-called "word salad" -- that is long enough, contains all right and long words and constructions, but still doesn't make any sense, and the system will still grade it highly, for it meets all the needed requirements ~\cite{Hearst}. Another point voiced by critics is that the system can grade a good and creative essay, which doesn't meet some formal requirements, badly. That is another reason why many people including prominent scientists like Noam Chomsky argue that AES brings no good to the education ~\cite{petition}. It is true, however, such requirements is one of the examples when people expect from machine a way better performance than from humans. A human rater receives a massive amount of written works those must be graded in a short time. Human grading in this case is as formal as machine grading and creativity can be punished by a bad grade as possibly as in case of machine grading. Moreover, human graders are shown to have less unity among each other in their judgements than with machine, as it was shown in experiments with both, PEG and E-Rater ~\cite{Blood}. Individual approach is important, but it is feasible only in small groups. In case of massive courses it is equally formal, no matter if it is an automated or human grading.\\
+Almost 40 years after the development of Page's approach of using the human graders' scores instead of a real understanding of text by computer as a main training criterion was of current interest. For example, \textbf{E-Rater} developed by ETS (the organization that conducts TOEFL and GRE) in 1990's operated in the similar way and also used multiple-regression method combined, however, with NLP, which allowed to include grammatical accuracy. The latest (2006) version had an additional feature that took into account word overlap between test and train essays, which was considered rather advanced, because it allowed to reduce importance of essay length, which essentially should not be an indicator of quality. This system is now used in GRE, TOEFL and several other ETS's tests. Correlation with human scores is very high -- 97\%, again higher than between human raters ~\cite{Blood}. However, there is still a lot of criticism. For example, it was shown that examnee can submit a text -- so-called "word salad" -- that is long enough, contains all right and long words and constructions, but still doesn't make any sense, and the system will still grade it highly, for it meets all the needed requirements ~\cite{Hearst}. Another point voiced by critics is that the system can grade a good and creative essay, which doesn't meet some formal requirements, badly. That is another reason why many people including prominent scientists like Noam Chomsky argue that AES brings no good to the education ~\cite{petition}. It is true, however, such requirements is one of the examples when people expect from machine a way better performance than from humans. A human rater receives a massive amount of written works those must be graded in a short time. Human grading in this case is as formal as machine grading and creativity can be punished by a bad grade as possibly as in case of machine grading. Moreover, human graders are shown to have less unity among each other in their judgements than with machine, as it was shown in experiments with both, PEG and E-Rater ~\cite{Blood}. Individual approach is important, but it is feasible only in small groups. In case of massive courses it is equally formal, no matter if it is an automated or human grading.\\
 
-PEG and E-Rater had the same base idea. A fundamentally new approach was introduced in 1998 by \textbf{Latent Semantic Analysis} (LSA) ~\cite{LSA}. The main difference was that the method started caring about the meaning of the text and not only on breaking it into linguistically non-meaningful features those will be weighted and learned in relation to the human grades. In this method statistical  computations on a large corpus of text are used to extract the contextual meaning of words, which places the method semantic part NLP curve (Fig. \ref{fig:NLPLevels}) ~\cite{LSA}. Moreover, the goal of methods developers was to imitate the way humans obtain and classify knowledge from the piece of text, as well as they resolve ambiguities by context ~\cite{Blood}. LSA-based essay grader was called Intelligent Essay Assessor (IEA). This system is closer to ASAG than classical AES, because it focuses only on context and not the writing style. Moreover, it doesn't use the human raters' grades as a reference value, but learns based on essay examples -- domain-representative text. These essays are divided in quality categories, and a text to be graded is compared to them and rated with the same grade that the most similar essays. This method can fail in case an essay is too original, but in this case the text can be just marked as "unclassifiable" and be send to the human teacher. The method was tested with GMAT essays and showed correlation with human raters of 86\%, whereas the correlation among human raters was 87\% and 86\% for different essay types. It is interesting that IEA was very positively met by students -- 98\% of the ones who tested it very willing to take more tests graded by this system.\\
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.8\textwidth]{img/IEAArch}
+    \caption{Architecture of IEA ~\cite{Dikli}.\label{fig:IEAArch}}
+\end{figure}
 
+PEG and E-Rater had the same base idea. A fundamentally new approach was introduced in 1998 by Landauer in "An Introduction to Latent Semantic Analysis" (LSA) ~\cite{LSA}. The main difference was that the method started caring about the meaning of the text and not only on breaking it into linguistically non-meaningful features those will be weighted and learned in relation to the human grades. In this method statistical  computations on a large corpus of text are used to extract the contextual meaning of words, which places the method semantic part NLP curve (Fig. \ref{fig:NLPLevels}) ~\cite{LSA}. Moreover, the goal of methods developers was to imitate the way humans obtain and classify knowledge from the piece of text, as well as they resolve ambiguities by context ~\cite{Blood}. LSA-based essay grader was called Intelligent Essay Assessor (\textbf{IEA}). Its architecture is shown in Fig. \ref{fig:IEAArch}. This system is closer to ASAG than classical AES, because it focuses only on context and not the writing style. Moreover, it doesn't use the human raters' grades as a reference value, but learns based on essay examples -- domain-representative text. These essays are divided in quality categories, and a text to be graded is compared to them and rated with the same grade that the most similar essays. The main idea of LSA is an collecting of various contexts of a word and thereby word meaning similarity and possible text patterns where the word may occur. LSA can be used for estimation of word-word, word-phrase and phrase-phrase similarity. It is important that for this LSA doesn't use any external knowledge. The method consists of the following steps:
+
+\begin{itemize}
+\item a text must be represented as a matrix, in which each row is a unique word and each column -- context of the corresponding word. For example, for a set of sentences {("The sun is bright.", "S1"), ("Such a bright, bright student!", "S2"), ("Lying student is lying in the sun.", "S3"), ("That's a lie!", "S4")} it may take the form shown in Table. \ref{LSA} (note: the sentences went through lemmatization and stop words removal). One can see that percent of co-occurrence of the words "sun" and "student "  This example also shows how important it is to have a large text corpora in order to use LSA efficiently: in these four sentences words "bright" and "lie" were used in completely different meanings and thereby it is not possible to derive much sense from them.
+\begin{table}[h!]
+\centering
+\caption{LSA matrix example}
+\label{LSA}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+        & S1 & S2 & S3 & S4 \\ \hline
+sun     & 1 & 0 & 1 & 0 \\ \hline
+bright  & 1 & 1 & 0 & 0 \\ \hline
+student & 0 & 1 & 0 & 0 \\ \hline
+lie     & 0 & 0 & 2 & 1 \\ \hline
+\end{tabular}
+\end{table}
+
+\item Single Value Decomposition (SVD) is applied to the matrix. In SVD a rectangular matrix $\boldsymbol{M}$ of a size $m \times n$ is decomposed in the following way:
+\begin{equation} \label{eq:SVD}
+\boldsymbol{M} = \boldsymbol{U \Sigma V^*}, 
+\end{equation}
+where $\boldsymbol U$ is a unitary matrix of a size $m \times m$, $\boldsymbol{\Sigma}$ -- diagonal matrix that contains non-negative real numbers of a size $m \times n$ and $\boldsymbol{V^*}$ -- conjugate transpose of a unitary matrix  of a size $m \times n$. SVD-decomposition for the matrix above is shown below:
+
+\begin{equation} \label{eq:U}
+\boldsymbol U = \begin{pmatrix}
+sun & -0.46 & 0.65 & 0.67 & 0.51 \\
+bright & -0.12 & 0.81 & 0 & -0.57 \\
+student & -0.02 & 0.43 & -0.67 & 0.61 \\
+lie & -0.88 & -0.28 & -0.33 & -0.21
+\end{pmatrix}
+\end{equation}
+
+\begin{equation} \label{eq:Sigma}
+\boldsymbol {\Sigma} = \begin{pmatrix}
+2.46 & 0 & 0 & 0 \\
+0 & 1.7 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0.24
+\end{pmatrix}
+\end{equation}
+
+\begin{equation} \label{eq:V}
+\boldsymbol V* = \begin{pmatrix}
+-0.24 & -0.06 & -0.09 & -0.36 \\
+ 0.65 & 0.73 & -0.15 & -0.16 \\
+ 0.67 & -0.67 & 0 & -0.33 \\
+-0.28 & 0.15 & 0.4 & -0.86 \\
+\end{pmatrix}
+\end{equation}
+
+If a solution dimensionality reduction is needed, one can remove coefficients from  $\boldsymbol{\Sigma}$, in the case, for example, two dimensions are needed, so 1 and 0.24 can be nullified. In this case initial matrix takes the form shown in Table \ref{LSAR}. After nullification the SVD equations will take the following form:
+
+\begin{equation} \label{eq:U0}
+\boldsymbol U = \begin{pmatrix}
+sun & -0.46 & 0.65 \\
+bright & -0.12 & 0.81 \\
+student & -0.02 & 0.43 \\
+lie & -0.88 & -0.28 
+\end{pmatrix}
+\end{equation}
+
+\begin{equation} \label{eq:Sigma0}
+\boldsymbol {\Sigma} = \begin{pmatrix}
+2.46 & 0 & 0 & 0 \\
+0 & 1.7 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix}
+\end{equation}
+
+\begin{equation} \label{eq:V0}
+\boldsymbol V* = \begin{pmatrix}
+-0.24 & -0.06 & -0.09 & -0.36 \\
+ 0.65 & 0.73 & -0.15 & -0.16 \\0
+\end{pmatrix}
+\end{equation}
+
+\begin{table}[h!]
+\centering
+\caption{LSA reduced dimensionality example}
+\label{LSAR}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+ &  & bright & student  & lie \\ \hline
+S1 & 0.59 & 0.43 & 0.04 & 0.33 \\ \hline
+S2 & 0.96 & 1.02 & 0.95 & 0.12 \\ \hline
+S3 & 0.49 & 0.53 & 0.06 & -0.1 \\ \hline
+S3 & 0.21 & -0.22 & 2.02 & 0.85 \\ \hline
+\end{tabular}
+\end{table}
+
+\item Based on the decomposition the words can be clusterized by sense over the chosen number of dimensions.
+
+\end{itemize}
+
+This method can fail in case an essay is too original, but in this case the text can be just marked as "unclassifiable" and be send to the human teacher. The method was tested with GMAT essays and showed correlation with human raters of 86\%, whereas the correlation among human raters was 87\% and 86\% for different essay types. It is interesting that IEA was very positively met by students -- 98\% of the ones who tested it very willing to take more tests graded by this system. The system has a user-friendly interface -- see Fig. \ref{fig:IEAInt}. \\
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.8\textwidth]{img/IEAInt}
+    \caption{Architecture of IEA ~\cite{Dikli}.\label{fig:IEAInt}}
+\end{figure}
+
+
+Next important step in AES was an integration of artificial intelligence. \textbf{IntelliMetric$^{TM}$} or its enterprise version MY Access!$^{\tiny{\textregistered}}$ didn't follow coprus-based path of LSA-based work and, as PEG e-rater, mostly relies on NLP. However, it tries to emulate the work of human brain and uses CogniSearch$^{TM}$ -- an NLP AI system, which is able to perform POS tagging, morphological analysis, spelling recognition, and collocation grammar (the whole algorithm is, however, not published openly and  protected by patents). It allows the system to go deeper into the language structure and rate essays in accordance to the norms of language -- see Figure \ref{fig:IntelliMetric}. For grading the systems requires a large set of pre-graded essays. The system was tested with Graduate Management Admission Test$^{\tiny{\textregistered}}$ (GMAT$^{\tiny{\textregistered}}$) prompts and showed human-computer correlation of 97\% on average. MY Access!$^{\tiny{\textregistered}}$ is widely used in USA: in California, Pennsylvania, Massachusetts, Virginia, Oregon, and Texas. Moreover, the following companies use the system as well: The College Board, ACT, Harcourt Assessment, Inc., CTB/McGraw Hill, Thomson Learning. Microsoft, Apple Computer, AOL and Sun Microsystems. 
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.4\textwidth]{img/IntelliMetric}
+    \caption{IntelliMetric$^{TM}$ grading model ~\cite{Dikli}.\label{fig:IntelliMetric}}
+\end{figure}
+
+Bayesian Essay Test Scoring sYstem$^{TM}$ (\textbf{BETSY}) ~\cite{BETSY} is a probabilistic AES system that performs text classification based on a large training corpus (1000 texts). To rate the essays BETSY performs the following:
+
+\begin{itemize}
+\item words and word pairs training
+\item database statistics evaluation
+\item uncommon words and word pairs removal
+\item stop words removal
+\item lemmatization
+\item removal of wrongly classified essays 
+\end{itemize}
+
+The system uses such NLP features as word frequency in a certain context, specific words and phrases, sentence length, number of verbs, noun-verbs pairs. It combines PEG, early e-rater and LSA methods.\\
+
+One of the important steps in AES was a kaggle competition "The Hewlett Foundation: Automated Essay Scoring" ~\cite{HewlettKaggle}. The winning algorithms are not published, but there is an open information about some principles of their work from a winner of a second place. His team uses the following features: number of sentences, lengths of sentences and words, presence or absence of certain words. The features were combined with random forest (RF) and regression. An important feature of the approach is that the system can detect a work, which cannot be graded with a good confidence, send it to a human rater and include the grade he/her gave to this work into the train dataset. This method has a name "active learning" ~\cite{vikGit}.\\
+
+The most well-known and cited approaches has already been named, however, it is important to consider tat least one of the newest approaches.
 
 Table \ref{AES} summarized the AES systems' performance over the years.\\
 
-\begin{table}[]
+\begin{table}[h!]
 \centering
 \caption{Comparison of AES systems}
 \label{AES}
-\begin{tabular}{|l|l|l|l|l|}
+\begin{tabular}{|l|l|l|l|}
 \hline
-\makecell{Year} & \makecell{System} & \makecell{Scoring base} &  \makecell{Methods}  & \makecell{Result} \\ \hline
-\makecell{1968} & \makecell{PEG} & \makecell{comparison to human grading} & \makecell{multiple-regression}  & \makecell{0.77} \\ \hline
- \makecell{1990\\-2010} & \makecell{E-Rater} & \makecell{comparison to human grading} & \makecell{multiple-regression\\ + NLP}  & \makecell{0.97} \\ \hline
-  \makecell{1999} & \makecell{IEA} & \makecell{domain-representative text} & \makecell{latent semantic\\analysis}  & \makecell{0.86} \\ \hline
+\makecell{Year} & \makecell{System} & \makecell{Approach}  & \makecell{Accuracy} \\ \hline
+\makecell{1968} & \makecell{PEG} & \makecell{comparison to human grading,\\ multiple-regression}  & \makecell{77\%} \\ \hline
+\makecell{1999} & \makecell{IEA} & \makecell{domain-representative text, \\ LSA}  & \makecell{86\%} \\ \hline
+\makecell{2003} & \makecell{IntelliMetric$^{TM}$} & \makecell{comparison to human grading, \\ NLP + unknown \\ patented techniques}  & \makecell{ 97\%} \\ \hline
+\makecell{2005} & \makecell{BETSY$^{TM}$} & \makecell{large essays corpus,\\ NLP-features,\\ Bayesian theorem}  & \makecell{ 80\%} \\ \hline
+\makecell{2012} & \makecell{The Hewlett Foundation:\\ Automated Essay Scoring} & \makecell{comparison to human grading,\\ NLP, \\ RF and \\ linear regression}  & \makecell{ 81\%} \\ \hline
+\makecell{2013} & \makecell{E-Rater} & \makecell{comparison to human grading, \\ multiple-regression\\ + NLP}  & \makecell{97\%} \\ \hline
+\makecell{2018} & \makecell{} & \makecell{}  & \makecell{\%} \\ \hline
 \end{tabular}
 \end{table}
 
 
-Examples above show a crucial importance of gibberish detection.
+\subsubsection{Gibberish detection}
+
+Examples above show a crucial importance of gibberish detection.//////////
+
 
 Gibberish classification and detection (Handbook of Automated Essay Evaluation: Current Applications and New Directions).
 
 
 \subsection{ASAG}
-
-// add in asag that the style can be subtracted thereby making it totally unbiased\\
-
 
 ASAG is a form of automated grading of texts that focuses on short answers -- from one sentence to one paragraph. Apart from that the answer must contain some external knowledge not mentioned in the question and the grader mostly concerns about the meaning of the answer and not about writing style, though the last point is under discussion, because a professor or teacher might want to include such grading criteria as spelling or grammar. ASAG has the same benefits in comparison to human graders those are mentioned in Table \ref{Issues}, but it has clearer criteria of correctness and it is less vulnerable to gibberish, because the ASAG solutions usually use more concrete criteria than AES. For example, if the simplest AES system was based only on text and word lengths, the simplest ASAG system would care about keywords and thereby it is less vulnerable to gibberish. Therefore, a simplified ASAG task is more feasible than simplified AES. "Simplified" is because in the end both systems from different starting points are heading  to the truly-human understanding of meaning and writing style, thereby becoming rather similar.\\
 
@@ -371,7 +448,7 @@ Table \ref{CFM} shows the comparison of methods above. Accuracy between certain 
 
 \subsubsection{Information extraction}
 
-Information extraction (IE) has already been cosidered in NLP section of thei work. For ASAG it is also basically a pattern or fact template matching, template merging and resolution of referential ambiguities ~\cite{Burrows}, ~\cite{Pulman}. It allows to extract a structures information from unstructured sources. A significant advantage of this approach is its robustness. To certain extend it is immune to grammatically wrong sentences and therefore requires less text preprocessing. The main IE approches are listed below ~\cite{Hasanah}, ~\cite{Pulman}: 
+Information extraction (IE) has already been cosidered in NLP section of the work. For ASAG it is also basically a pattern or fact template matching, template merging and resolution of referential ambiguities ~\cite{Burrows}, ~\cite{Pulman}. It allows to extract a structures information from unstructured sources. A significant advantage of this approach is its robustness. To certain extend it is immune to grammatically wrong sentences and therefore requires less text preprocessing. The main IE approches are listed below ~\cite{Hasanah}, ~\cite{Pulman}: 
 
 \begin{itemize}
 \item \textbf{parse tree matching} uses specific templates for correct and wrong answers. Each answer is being preprocessed and compared to templates with different grades. An example of such approach is \textbf{AutoMark} grader.
@@ -427,9 +504,9 @@ From the Gantt chart above and Burrows's review paper one can see that this rese
 
 \subsubsection{Corpus-based methods}
 
-This group of methods is widely used for analyzing of large texts and it has already been considered in AES section, but can also be useful for ASAG, because it allows a better paraphrasing detection by efficient interpreting of synonyms ~\cite{Burrows}. These are statistical methods those use information from the large amount of text, so short answers should be preprocessed in order for corpus-based methods to be applied. Below the most significant corpus-based methods are considered.\\
+This group of methods is widely used for analyzing of large texts. It has already been considered in AES section, but corpus-based methods can also be useful for ASAG, because they allows a better paraphrasing detection by efficient interpreting of synonyms ~\cite{Burrows}. These are statistical methods those use information from the large amount of text, so short answers should be preprocessed in order for corpus-based methods to be applied. Below the most significant corpus-based methods are considered.\\
 
-\textbf{Atenea} system uses a weighted combination of an extended version of BiLingual Evaluation Understudy (BLEU) metric and LSA ~\cite{ERB}. LSA has already been considered in AES section. BLEU in turn was initially used in machine translation, but later it become used in all fields of machine text-processing including ASAG systems. The key concept of this metric is a modified unified n-gram precision (MUP) measure: all n-grams (consequtive sequences of n words in the sentence) and number of their occurances are taken into account, n-grams of certain type are summed up and divided by the total number of n-grams. It is calculated in the following way ~\cite{BLEU}:\\
+\textbf{Atenea} system uses a weighted combination of an extended version of BiLingual Evaluation Understudy (BLEU) metric and LSA ~\cite{ERB}. LSA has already been considered in AES section. BLEU in turn was initially used in machine translation, but later it become used in all fields of machine text-processing including ASAG systems. The key concept of this metric is a modified unified n-gram precision (MUP) measure: all n-grams and number of their occurances are taken into account, n-grams of certain type are summed up and divided by the total number of n-grams. It is calculated in the following way ~\cite{BLEU}:\\
 
 \begin{equation} \label{eq:MUP}
 MUP_n = \frac{\sum\limits_{C \in \{AnswerSentences\}} \sum\limits_{n-gram \in C} count_{matches}(n-gram)}{\sum\limits_{C' \in \{AnswerSentences\}} \sum\limits_{n-gram \in C'} count_{matches}(n-gram')}.
@@ -458,7 +535,7 @@ An extended version of BLEU -- Evaluating Responses with BLEU (ERB) adds recall 
 SIM_{ERB}(answer) = MBP(answer)\times e^{\sum^{N}_{n=0}\frac{log(MUP(n))}{N}},
 \end{equation}
 
-where n -- number of n-grams, N -- highest possible value of n. \\
+where n -- length of n-grams-sequence and N -- highest possible value of n. \\
 
 Another system for corpus-based ASAG is \textbf{Willow} developed on the base of Atenea ~\cite{Willow}. The system is different from the previous ones, because it extensively uses various shallow NLP techniques, such as stemming and lemmatization, disambiguation, and multiword term identification. Basically, Willow is based on ERB with an NLP preprocessing. The architecture of the system is shown in Fig. \ref{fig:WillowArch}. It doesn't include LSA part explicitly, but it is normally being used in combination with LSA: LSA + Willow (NLP (stemming + removal of closed-class words + no disambiguation) + ERB). The combination is calculated in the following way:
 
@@ -608,11 +685,7 @@ where $BP_r$ is a modified weighted brevity penalty, $SIM_{BLUE_ra}$ -- weighted
 \item ROUGE-N -- estimates n-gram with $n>1$ co-occurrences, similar to BLEU.
 \item ROUGE-L -- finds and calculates the length of longest common subsequence of two answers.
 \item ROUGE-W -- finds similar subsequences and takes them into account according to weights.
-\item ROUGE-S -- uses skip-bigram. Skip-grams is a method in which "n-grams are still stored to model language, but they allow for tokens to be skipped" ~\cite{Skip-gram}. Guthrie  ~\cite{Skip-gram} defines k-skip-n-grams for a sentence containing words $w_1,w_2,...,w_n$ in the following way:\\
-$\{w_{i1},w_{i2},...,w_{in} | \sum_{j-1}^n i_j - i_{j-1} < k\}$.\\
-is strictly higher than one. For better understanding of the concept the following example can be made. For a sentence "A new art colour for our Irish
-poets: snotgreen. " ~\cite{Ulysses} it would be so: bi-grams = {"A new", "new art", "colour for", "for our", "our Irish", "Irish
-poets", "poets snotgreen"} and 2-skip-bi-grams = {"A new", "A art", "A colour", "new art", "new colour", "new for", "for our", "for Irish", "for poets", "our Irish", "our poets", "our snotgreen", "Irish poets", "Irish snotgreen",  "poets snotgreen"}. One can see that in many cases it creates senseless sequences of the words like "A art", however, k-skip-n-gram "for Irish" would make total sense, because the sentence without word "our" is as valid as the initial one. Moreover, the wrong k-skip-n-grams are too random and often grammatically senseless, that is why they can with very low probability create false positives, which shows that it is at least harmless to use them.
+\item ROUGE-S -- uses skip-bigram.
 \item ROUGE-SU -- uses the same idea that ROUGE-S, but also takes into account unigrams.
 \end{itemize}
 \item Combination of LSA and n-grams -- answers are broken into sentences, each of them is a vector for LSA and closeness of the answers is evaluated as a cosin distance. Separately n-gram n-gram co-occurrence is calculated. After this, two similarities are combined:\\
@@ -696,8 +769,8 @@ Corpus-based similarity methods are represented by the following:
 \begin{itemize}
 \item LSA -- considered above in AES section.
 \item ESA -- considered above in the description of Mohler's system.
-\item Pointwise Mutual Information - Information Retrieval ( ) -- uses  AltaVista's Advanced Search query syntax to calculate the matching between word pairs by calculating the probability of co-occurrence of the words based on web pages corpus.
-\item extracting DIstributionally related words using CO-occurrences (DISCO) -- Java application for calculating similarity between words or short texts, finding the most similar words in texts, e.g. "smart" and "clever", and finding the related words, e.g. "beer" $\rightarrow$ "K\"olsch", alcohol, foam, barrel. It requires a database of word similarities (word space) precalculated on a large text corpora by "DISCO Builder". It is similar to word2vec --  log-bilinear prediction-based bag-of-words and skip-n-gram algorithms for vectorizing words developed by Google  ~\cite{word2vec} -- and Global Vectors for Word Representation (GloVe) -- log-bilinear regression unsupervised algorithm for word vectorization ~\cite{GloVe}. Architecture of the system is shown in Fig. \ref{DISCO}. DISCO Builder is trained on Wikipedia and BNC. 
+\item Pointwise Mutual Information -- uses  AltaVista's Advanced Search query syntax to calculate the matching between word pairs by calculating the probability of co-occurrence of the words based on web pages corpus.
+\item extracting DIstributionally related words using CO-occurrences (DISCO) -- Java application for calculating similarity between words or short texts, finding the most similar words in texts, e.g. "smart" and "clever", and finding the related words, e.g. "beer" $\rightarrow$ "K\"olsch", alcohol, foam, barrel. It requires a database of word similarities (word space) precalculated on a large text corpora by "DISCO Builder". It is similar to word2vec --  log-bilinear prediction-based bag-of-words and skip-n-gram algorithms for vectorizing words developed by Google  ~\cite{word2vec} -- and Global Vectors for Word Representation (GloVe) -- log-bilinear regression unsupervised algorithm for word vectorization ~\cite{GloVe}. Architecture of the system is shown in Fig. \ref{fig:DISCO}. DISCO Builder is trained on Wikipedia and BNC. 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.8\textwidth]{img/DISCO}
@@ -756,12 +829,12 @@ The system has a user-friendly interface, where user can choose which of the ROU
 \begin{figure}[h!]
   \centering
   \includegraphics[width=\textwidth]{img/e-examiner_Interface}
-    \caption{ Architecture of e-Examiner ~\cite{e-examiner}. }\label{fig:e-examiner_Interface}
+    \caption{ Interface of e-Examiner ~\cite{e-examiner}. }\label{fig:e-examiner_Interface}
 \end{figure}
 
 To evaluate the performance of the system datasets from The Institute for Information Systems and New Media (IICM) and Faculty of Engineering, Al-Quds University, Jerusalem were chosen. IICM consists of 5 computer science questions, 5 example answers and 23 sets of students' answers. From the second dataset were taken 3 questions, 3 example answer and also 23 sets of student's answers. The best result -- 81\% -- was achieved using a combination of all ROUGE techniques and cosine similarity.\\
 
-Content Assessment Module (\textbf{CAM}) ~\cite{CAM} is a system for grading of assignments on  English as a Second Language (ESL) test. A dataset for evaluation of the system is taken from this test. It includes 75 questions 566 students' answers, having an example answer is not required. In this method the answers are divided into a graded and test sets and the answers from the test set are compared to the ones from the graded set using a number of NLP techniques: tokenization (breaking a sentence into separate words -- tokens -- and removing punctuation, basically unigrams), lemmatization, spelling correction and noun phrase chunking (NP chunking -- break sentences into subconstituents, i.e. verbs, nouns, and prepositional phrases) -- for preprocessing, and similarity metrics -- for preprocessed text similarity calculation. For these tasks the following tools were used:
+Content Assessment Module (\textbf{CAM}) ~\cite{CAM} is a system for grading of assignments on  English as a Second Language (ESL) test. A dataset for evaluation of the system is taken from this test. It includes 75 questions 566 students' answers, having an example answer is not required. In this method the answers are divided into a graded and test sets and the answers from the test set are compared to the ones from the graded set using a number of NLP techniques: tokenization, lemmatization, spelling correction and noun phrase chunking -- for preprocessing, and similarity metrics -- for preprocessed text similarity calculation. For these tasks the following tools were used:
 \begin{itemize}
 \item MontyLingua -- Java/Python NLP toolkit (\url{http://alumni.media.mit.edu/~hugo/montylingua/doc/MontyLingua.html}),
 \item PC-KIMMO --  morphological analysis two-level processor  (\url{http://www.ai.mit.edu/courses/6.863/doc/pckimmo.html}),
@@ -944,247 +1017,3 @@ RE3D (Relationship and Entity Extraction Evaluation Dataset)
  M-BLEU (N)& 2011 & 85\% \\ \hline
 \end{tabular}
 \end{table}
-
-
-\chapter{\textbf{Problem formulation}}
-In this work we focus on automated short answer grading. 
-
-In general one is concerned neither with writing style nor with spelling or grammar in ASAG. However, we are going to add a feature that would allow the professor who conducts a test to set the strictness of the evaluation: he or she should be able to set if the answers with misspelled words, especially specific terms, should be accepted. The teacher should also be able to estimate how large should be the range of synonyms that the student can use. For example, a professor might not want students to use a word "thing" instead of "entity", though in a certain context from a linguistical point of view it may look as a valid synonym.\\
-
-
-//Spelling correction is an important aspect of the input
-understanding, as students frequently misspell words,
-abbreviate creatively, and make word boundary
-errors (two words joined together or a single word
-split in two). Spelling correction is based on a three-
-way match algorithm which slides a small window
-simultaneously across both the unknown input word
-and a candidate word from the lexicon.
-Transpositions, elisions, substitutions, and similar
-errors are counted and the most likely candidate is
-picked.(Evens, M.W., Zhang, Y., Michael, J.A., \& Rovick, A.A.
-(1997). CIRCSIM-Tutor: An Intelligent Tutoring System
-Using Natural Language Dialogue. Morgan Kaufmann
-Publishers, 13-14.)// 
-
-As for the result of the grading, it is important to provide not only the grade, but a level of certainty of the grading and in the perfect case -- generate the comments to each graded answer. For the comment generating we will need an additional set of teachers' comments corresponding to the answers. \\
-
-Another side of the problem is a small amount of data that we posess now. Moreover, this data should be also carefully examined, because the ASAG questions can be formulated in improper way. The questions must meet certain criteria ~\cite{Hasanah}:
-\begin{itemize}
-\item The question must not contain any information that can let a student to obtain the answer from the question, i.e. the student must be able to formulate the answer based only on his or her external knowledge;
-\item In general the question must require a strictly natural language answer. Current work focuses on the natural language part. However, in our project we are going to allow a combination of natural language, formulas, pictures and programming code.
-\item The question must be formulated in such a way that student could give an answer between one sentence and one paragraph length.
-\item The question must be formulated in the least ambiguous way to increase the level of close-ended responses.
-\end{itemize}
-
-
-\section*{\textbf{Software overview}}
-\subsection{Software for e-assessments}
-
-Before introducing a new system it is crucial to consider the existing ones. Since the autograding system will be tested in Hochschule Bonn-Rhein-Sieg first, we need to consider the question and answer types provided in the testing system of LEA -- see Table \ref{lea}.
-
-// add a table with other systems used in different schools
-
-Question types: \url{https://lea.hochschule-bonn-rhein-sieg.de/goto.php?target=wiki\_360501\_Welche\_Fragentypen\_gibt\_es\_und\_was\_mache\_ich\_damit\%3F}
-\begin{table}[]
-\centering
-\caption{LEA question types}
-\label{lea}
-\begin{tabular}{|l|l|l|}
-\hline
-Single Choice Frage	
- & Eine der vorgegebenen Antworten auswählbar & Autograded \\ \hline
- Multiple Choice Frage & Frage	
-Mehrere der vorgegebenen Antworten auswaehlbar & Autograded \\ \hline
- Kprim Choice & 	
-Vierfachauswahl "richtig/falsch" & Autograded\\ \hline
- Fehler/Worte markieren & Fehler in vorgegebenem Text markieren & Autograded\\ \hline
- Hotspot/ImageMap-Frage & Richtige Stellen in anklickbarem Bild anklicken & Autograded\\ \hline
- Lückentextfrage & 	
-Antworten in Lückentext eingeben & Autograded\\ \hline
- Numerische Antwort & Eingabe einer Zahl & Autograded\\ \hline
- Formelfrage (only numbers)	
- & Rechenaufgabe
-(Formel mit Variablen werden vorgegeben, Zahlenwerte werden zufällig aus definierten Zahlenräumen gewählt) & Autograded\\ \hline
- Begriffe benennen & 	
-Auflistung geforderter Begriffe & Autograded\\ \hline
- Anordnungsfrage  & Reihenfolge vorgegebener Antworten in vertikaler Anordnung anpassen & Autograded\\ \hline
- Zuordnungsfrage & Elemente einer Teilmenge(Eigenschaften) einem Begriff (Definitionen) zuordnen & Autograded\\ \hline
- Freitext eingeben & Textantwort & Autograded\\ \hline
- Datei hochladen & Antwort in Dateiform hochladbar & Autograded\\ \hline
- Eingebettete Frage: Flash & Frage/Antwort mittels Flash-Objekt einbinden & Autograded\\ \hline
- Eingebettete Frage: Java Applet & Frage/Antwort mittels Java-Applet einbinden & Autograded\\ \hline
-\end{tabular}
-\end{table}
- insert pictures with example of questions
- write about the interface, 1 question at a time and all this
- 
-\subsection{GUI and grading: Jupyter and Nbgrader}
-
-\subsection{Software for ASAG}
-
-
-
-
-\chapter*{\textbf{Our approach}}
-
-// feature -- answer length: "A
-candidate's lack of knowledge can lead to answers that are
-difficult to comprehend, and excessively lengthy answers can mask this lack of knowledge. " ~\cite{Thomas}
-...
-
-\section{Architecture}
-
-draw an architecture similar to Willow's
-
-\section{Dataset description}
-
-\section*{English vs German}
-
-\begin{itemize}
-\item More word forms -> lemmization
-\item Separable prefixes. words like "davon"
-\item verb position in different subordinate clauses
-\item less fixed non-verb word order -- one can easily exchange word positions to emphasize some idea
-\end{itemize}
-
-\section*{Kernel Principal Component Analysis (KPCA)}
-
-//write more about N-grams and distance evaluation in one of the previous parts 
-
-N-grams representation allows a simple calculation of the distance between long sentences. It is not much more complex than a simple keywords approach, but allows to take into consideration sequences of the words, which is important for avoidance of senseless word order similar to the one in the following example  ~\cite{cover}: "A complex pattern-classification problem, cast in a \textbf{low-dimensional} space nonlinearly, is more likely to be linearly separable than in a \textbf{high-dimensional}, provided that the space is not densely populated.". Here words "low-dimensional" and "high-dimensional" are exchanged and a perfectly correct from the keywords point of view formulation of Cover's theorem becomes completely wrong. However, n-gram analysis can help to avoid it, because it is looking not only for "low-dimensional", but for n-grams like "cast in a high-dimensional" and "than in a low-dimensional", so  "cast in a low-dimensional" and "than in a high-dimensional" are incorrect.\\
-
-N-gram distance solely is not enough to create a sensible feature for the machine learning. It requires further preprocessing. ~\cite{eduardo} describes KPCA for word embedding based on n-gram similarity, where n-grams are sequences of the letters inside the word. In combination with k-means this algorithm was shown to be more effective for german verbs classification ~\cite{eduardo} than word2vec ~\cite{word2vec}, because word2vec doesn't take into account morphological structure of the words. That is why this method was chosen to be extended in such a way that it will be accepting sentences and calculate distances between n-grams those are words sequences.\\
-
-The idea of the KPCA is mapping of data vectors to the feature space for principal component extraction. It is quite similar to the regular PCA, but the inner product in the feature space is computed using a kernel function, which is usually RBF or polynomial. The following derivation is based on ~\cite{eduardo} and  ~\cite{readingGroup}. To perform KPCA one should take the m-dimensional data matrix: $\pmb{X} = [\pmb{x_1}, \pmb{x_2}, ..., \pmb{x_n}]$ and start with PCA representation:
-
-\begin{equation} \label{eq:1}
-\pmb{Cv}=\lambda \pmb{v},
-\end{equation}
-
-where $\pmb{C} = \frac{1}{n}\pmb{XX^T}$ -- covariance matrix of  $\pmb{X}$, $\lambda$ and $\pmb{v}$ -- eigenvalue and corresponding eigenvector. That is why \ref{eq:1} can be rewritten in the following way:
-
-\begin{equation} \label{eq:2}
-\frac{1}{n\lambda}\pmb{XX^T}\pmb{v} = \pmb{X\alpha} = \pmb{v},
-\end{equation}
-
-where $\pmb{\alpha} \in R^m$ and it will play a role of an eigenvector for kernalized PCA:
-
-\begin{equation} \label{eq:3}
-\pmb{XXX^T}\pmb{v} = n\lambda \pmb{X\alpha},
-\end{equation}
-
-adding $\pmb{X^T}$ from the left:
-
-\begin{equation} \label{eq:4}
-\pmb{X^TXXX^T}\pmb{v} = n\lambda \pmb{X^TX\alpha},
-\end{equation}
-
-$ \pmb{X^TX}$ would be the kernel matrix $\pmb{K}$ and $n\lambda$ = $\widetilde{\lambda}$, which would be the new eigenvalue:
-
-\begin{equation} \label{eq:5}
-\pmb{KK}\pmb{v} = \widetilde{\lambda} \pmb{K\alpha},
-\end{equation}
-
-dividing both parts by $\pmb{K}$ we obtain the final form of KPCA equation:
-
-\begin{equation} \label{eq:6}
-\pmb{K}\pmb{v} = \widetilde{\lambda} \pmb{\alpha},
-\end{equation}
-
-Kernel matrix $\pmb{K}$ is obtained by applying a kernel function to similarity matrix $\pmb{S}$, which is calculated by evaluating similarity between each pair of data elements (words, sentences, etc.) in the given dataset. In our case it is based on  S{\o}rensen-Dice or Jaccard distances between the n-grams in sentences.\\
-
-// add "bag of n-grams"
-
-//write more about the distances after reading more
-
-Problem with German: "some morphologically rich languages \ref{eq:1}
-(where these models are supposed to perform specially well) may contain very
-long words. This leads to a dramatic increase of the number of necessary n-gram
-representations, increasing time and space complexity as well."
-
-
-Method: page with formulas from Eduardo's paper
-
-compare it to word2vec
-
-
-\begin{thebibliography}{3}
-\bibitem{Hasanah} U. Hasanah, A. E. Permanasari, S. S. Kusumawardani and F. S. Pribadi, "A review of an information extraction technique approach for automatic short answer grading," 2016 1st International Conference on Information Technology, Information Systems and Electrical Engineering (ICITISEE), Yogyakarta, 2016, pp. 192-196.
-\bibitem{Burrows} Burrows S., Gurevych I., Stein B. The eras and trends of automatic short answer grading //International Journal of Artificial Intelligence in Education. -- 2015. -- T. 25. -- No. 1. -- C. 60-117.
-\bibitem{Balfour} Balfour, S. P. (2013). Assessing writing in MOOCS: Automated essay scoring and Calibrated Peer Review. Research \& Practice in Assessment, 8(1), 40--48.
-\bibitem{aesOverview} S. Dikli  An overview of automated scoring of essays //The Journal of Technology, Learning and Assessment. -- 2006. -- T. 5.-- No. 1.
-\bibitem{vikGit} \url{https://github.com/VikParuchuri/vikparuchuri-affirm/blob/master/on-the-automated-scoring-of-essays.md}
-\bibitem{HewlettKaggle} \url{https://www.kaggle.com/c/asap-aes/discussion}
-\bibitem{edxGit} \url{https://github.com/edx/ease}
-\bibitem{Shermis} M. Shermis and B. Hammer. 2012. Contrasting state-of-the-art automated scoring of essays: analysis. Technical report, The University of Akron and Kaggle
-\bibitem{Alikaniotis} Alikaniotis D., Yannakoudakis H., Rei M. Automatic text scoring using neural networks //arXiv preprint arXiv:1606.04289. – 2016.
-\bibitem{petition} \url{http://humanreaders.org/petition/index.php}
-\bibitem{Perelman} Perelman, Les. "Critique of Mark D. Shermis \& Ben Hamner,"Contrasting state-of-the-art automated scoring of essays: analysis"." Journal of Writing Assessment 6.1 (2013).
-\bibitem{Byrne} Byrne, Roxanne, Tang, Michael, Truduc, John \& Tang, Matthew. (2010). eGrader, a software application that automatically scores student essays: with a postscript on the ethical complexities. Journal of Systemics, Cybernetics \& Informatics, 8(6), 30-35.
-\bibitem{Ramineni} Ramineni, Chaitanya, and David M. Williamson. "Automated essay scoring: Psychometric guidelines and practices." Assessing Writing 18.1 (2013): 25-39. 
-\bibitem{Cambria} E. Cambria and B. White, "Jumping NLP Curves: A Review of Natural Language Processing Research [Review Article]," in IEEE Computational Intelligence Magazine, vol. 9, no. 2, pp. 48-57, May 2014.
-\bibitem{Page}  Page, E. B. (1966). "The Imminence of Grading Essays by Computer" Phi Delta Kappan, 47(5), 238-243.
-\bibitem{Chowdhury} Chowdhury, Gobinda G. "Natural language processing." Annual review of information science and technology 37.1 (2003): 51-89
-\bibitem{Steedman} Steedman, Mark. "Natural language processing." Handbook of perception and cognition (2nd ed.). Artificial intelligence (1996): 229-266.
-\bibitem{Saad} Ahmad, Saad. "Tutorial on Natural Language Processing." Artificial Intelligence 810.161 (2007).
-\bibitem{Raskin}  Raskin, Victor. "Linguistics and natural language processing." Machine Translation: Theoretical and Methodological Issues. Cambridge University Press, Cambridge (1987): 42-58.
-\bibitem{Faust} Von Goethe, Johann Wolfgang, "Faust", January 4, 2005 [EBook \#14591], \url{http://www.gutenberg.org/files/14591/14591-h/14591-h.htm}
-\bibitem{Blood} Blood, Ian. "Automated essay scoring: a literature review." Teachers College, Columbia University Working Papers in TESOL \& Applied Linguistics 11.2 (2012): 40-64.
-\bibitem{Hearst} Marti A. Hearst, ``The debate on automated essay grading'' (http://www.knowledge-technologies.com/presskit/KAT\_IEEEdebate.pdf) 
-\bibitem{LSA} Landauer, Thomas K., Peter W. Foltz, and Darrell Laham. "An introduction to latent semantic analysis." Discourse processes 25.2-3 (1998): 259-284.
-\bibitem{Dzikovska} Dzikovska, M. O., Nielsen, R. D., Brew, C., Leacock, C., Giampiccolo, D., Bentivogli, L., Clark, P., Dagan, I., and Dang, H. T. (2013). SemEval-2013 Task 7: The Joint Student Response Analysis and Eighth Recognizing Textual Entailment Challenge. In M. Diab, T. Baldwin, and M. Baroni, editors, Proceedings of the Second Joint Conference on Lexical and Computational Semantics, pages 1-12, Atlanta, Georgia.
-\bibitem{c-rater}  Leacock, Claudia, and Martin Chodorow. "C-rater: Automated scoring of short-answer questions." Computers and the Humanities 37.4 (2003): 389-405.
-\bibitem{Wang} Wang, Hao-Chuan, Chun-Yen Chang, and Tsai-Yen Li. "Assessing creative problem-solving with automated text grading." Computers \& Education 51.4 (2008): 1450-1466.
-\bibitem{Pulman} Stephen G. Pulman and Jana Z. Sukkarieh. 2005. Automatic short answer marking. In Proceedings of the second workshop on Building Educational Applications Using NLP (EdAppsNLP 05). Association for Computational Linguistics, Stroudsburg, PA, USA, 9-16.
-\bibitem{Thomas} Pete Thomas. 2003. The evaluation of electronic marking of examinations. In Proceedings of the 8th annual conference on Innovation and technology in computer science education (ITiCSE '03), David Finkel (Ed.). ACM, New York, NY, USA, 50-54. DOI=http://dx.doi.org/10.1145/961511.961528
-\bibitem{CREG} \url{https://github.com/carolscarton/CREG-MT-eval}
-\bibitem{Hahn} Hahn, Michael, and Detmar Meurers. "Evaluating the meaning of answers to reading comprehension questions a semantics-based approach." Proceedings of the Seventh Workshop on Building Educational Applications Using NLP. Association for Computational Linguistics, 2012.
-\bibitem{ERB} Pérez, Diana, Alfio Gliozzo, and Carlo Strapparava. "Automatic Assessment of Students’ free-text Answers underpinned by the Combination of a BLEU-inspired algorithm and Latent Semantic Analysis." (2005).
-\bibitem{BLEU} Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu. 2002. BLEU: a method for automatic evaluation of machine translation. In Proceedings of the 40th Annual Meeting on Association for Computational Linguistics (ACL '02). Association for Computational Linguistics, Stroudsburg, PA, USA, 311-318. DOI: https://doi.org/10.3115/1073083.1073135
-\bibitem{Willow} Pérez-Marín, Diana, and Ismael Pascual-Nieto. "Willow: a system to automatically assess students’ free-text answers by using a combination of shallow NLP techniques." International Journal of Continuing Engineering Education and Life Long Learning 21.2-3 (2011): 155-169.
-\bibitem{SAMText} Bukai, Ohad Lisral, Robert Pokorny, and Jacqueline A. Haynes. "Automated short free-text scoring method and system." U.S. Patent Application No. 11/895,267.
-\bibitem{Mohler} Mohler, Michael, and Rada Mihalcea. "Text-to-text semantic similarity for automatic short answer grading." Proceedings of the 12th Conference of the European Chapter of the Association for Computational Linguistics. Association for Computational Linguistics, 2009.
-\bibitem{Gabrilovich} E. Gabrilovich and S. Markovitch. 2006. Overcoming the brittleness bottleneck using Wikipedia: Enhancing text categorization with encyclopedic knowledge. In Proceedings of the National Conference on Artificial Intelligence (AAAI), Boston.
-\bibitem{Klein} R. Klein, A. Kyrilov, and M. Tokman. 2011. Automated assessment of short free-text responses in computer science using latent semantic analysis. In Proceedings of the 16th annual joint conference on Innovation and technology in computer science education (ITiCSE '11). ACM, New York, NY, USA, 158-162. 
-\bibitem{Noorbehbahani} Noorbehbahani, Fakhroddin, and Ahmad A. Kardan. "The automatic assessment of free text answers using a modified BLEU algorithm." Computers \& Education 56.2 (2011): 337-345.
-\bibitem{Skip-gram} Guthrie, David, et al. "A closer look at skip-gram modelling." Proceedings of the 5th international Conference on Language Resources and Evaluation (LREC-2006). sn, 2006.
-\bibitem{Ulysses} Joyce, J. (1969). Ulysses. London: Bodley Head.
-\bibitem{Li} Yanling Li and Yonghong Yan, "New similarity measures for automatic short answer scoring in spontaneous non-native speech," International Conference on Automatic Control and Artificial Intelligence (ACAI 2012), Xiamen, 2012, pp. 1398-1402.
-\bibitem{Gomaa} Gomaa, Wael H., and Aly A. Fahmy. "Short answer grading using string similarity and corpus-based similarity." International Journal of Advanced Computer Science and Applications (IJACSA) 3.11 (2012).
-\bibitem{Jaro} \url{https://rosettacode.org/wiki/Jaro_distance}
-\bibitem{DISCO} \url{http://www.linguatools.de/disco/disco_en.html}
-\bibitem{word2vec} \url{https://code.google.com/archive/p/word2vec/}
-\bibitem{GloVe} Pennington, Jeffrey, Richard Socher, and Christopher Manning. "Glove: Global vectors for word representation." Proceedings of the 2014 conference on empirical methods in natural language processing (EMNLP). 2014.
-\bibitem{e-examiner} Guetl, Christian. (2008). Moving towards a Fully Automatic Knowledge Assessment Tool. International Journal of Emerging Technologies in Learning. 3. 
-\bibitem{CAM} Bailey, S. \& D. Meurers (2008). Diagnosing meaning errors in short answers to reading comprehension questions. In J. Tetreault, J. Burstein \& R. D. Felice (eds.), Proceedings of the 3rd Workshop on Innovative Use of NLP for Building Educational Applications (BEA-3) at ACL'08. Columbus, Ohio, pp. 107-115.
-\bibitem{TiMBL} Daelemans, Walter, et al. "Timbl: Tilburg memory-based learner." version 6 (2007): 07-03.
-\bibitem{CoMiC-EN} Meurers, Detmar, et al. "Integrating parallel analysis modules to evaluate the meaning of answers to reading comprehension questions." International Journal of Continuing Engineering Education and Life Long Learning 21.4 (2011): 355-369.
-\bibitem{CoMiC-DE} Meurers, Detmar, et al. "Evaluating answers to reading comprehension questions in context: Results for German and the role of information structure." Proceedings of the TextInfer 2011 Workshop on Textual Entailment. Association for Computational Linguistics, 2011.
-\bibitem{UIMA} Ferrucci, David, and Adam Lally. "UIMA: an architectural approach to unstructured information processing in the corporate research environment." Natural Language Engineering 10.3-4 (2004): 327-348.
-\bibitem{Zbontar} Zbontar, J. "Short Answer Scoring by Stacking" ASAP'12 SAS methodology paper (2012).
-\bibitem{kaggleSas} \url{https://www.kaggle.com/c/asap-sas}
-
-
-
-\bibitem{Horbach} Horbach, Andrea, Alexis Palmer, and Manfred Pinkal. "Using the text to evaluate short answers for reading comprehension exercises." * SEM@ NAACL-HLT. 2013.
-\bibitem{Zhang} Zhang, Yuan, Rajat Shah, and Min Chi. "Deep Learning+ Student Modeling+ Clustering: a Recipe for Effective Automatic Short Answer Grading." EDM. 2016.
-\bibitem{Sultan} Sultan, Md Arafat, Cristobal Salazar, and Tamara Sumner. "Fast and easy short answer grading with high accuracy." Proceedings of NAACL-HLT. 2016
-
-\bibitem{Ziai} Ziai, Ramon, Niels Ott, and Detmar Meurers. "Short answer assessment: Establishing links between research strands." Proceedings of the Seventh Workshop on Building Educational Applications Using NLP. Association for Computational Linguistics, 2012.
-\bibitem{Roy} Roy, Shourya, Himanshu S. Bhatt, and Y. Narahari. "An Iterative Transfer Learning Based Ensemble Technique for Automatic Short Answer Grading." arXiv preprint arXiv:1609.04909 (2016).
-\bibitem{Yin} Yin, Wenpeng, et al. "Comparative Study of CNN and RNN for Natural Language Processing." arXiv preprint arXiv:1702.01923 (2017).
-\bibitem{Zanzotto} Zanzotto, Fabio Massimo, Marco Pennacchiotti, and Alessandro Moschitti. "A machine learning approach to textual entailment recognition." Natural Language Engineering 15.4 (2009): 551-582
-\bibitem{ipython} \url{https://ipython.org/notebook.html}
-\bibitem{nbgrader} \url{https://github.com/jupyter/nbgrader}
-
-
-\bibitem{eduardo} Brito, Eduardo \& Sifa, Rafet \& Bauckhage, Christian. (2017). KPCA Embeddings: an Unsupervised Approach to Learn Vector Representations of Finite Domain Sequences.
-\bibitem{cover} Cover, T.M., Geometrical and Statistical properties of systems of linear inequalities with applications in pattern recognition, 1965 (hghlighted words are exchanged)
-\bibitem{readingGroup} \url{https://www.researchgate.net/project/reading-group-machine-learning-AI}
-
-
-\end{thebibliography}
-
-
-\end{document}

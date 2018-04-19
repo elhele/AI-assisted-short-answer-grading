@@ -20,3 +20,4 @@ for chapter in range(1, len(question_number) + 1):
         grades_array.append([grades_me, grades_other])
         grades_corr.append(sm.ratio())
 print(sum(grades_corr)/len(grades_corr))
+

@@ -1,0 +1,187 @@
+%
+% LaTeX2e Style for MAS R&D and master thesis reports
+% Author: Argentina Ortega Sainz, Hochschule Bonn-Rhein-Sieg, Germany
+% Please feel free to send issues, suggestions or pull requests to:
+% https://github.com/mas-group/project-report
+% Based on the template created by Ronni Hartanto in 2003
+%
+
+% \documentclass[thesis]{mas_report}
+\documentclass[rnd]{mas_report}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{makecell}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{gantt}
+\usepackage{preview}
+
+
+% ****************************************************
+% THIS INFORMATION SHOULD BE UPDATED FOR YOUR REPORT
+% ****************************************************
+\author{Evgeniya Ovchinnikova}
+\title{AI-assisted short answer grading: comprehensive classification and evaluation of the existing state of the art techniques}
+\supervisors{%
+Prof. Dr. Paul Pl{\"o}ger\\
+M.Sc. Deebul Nair\\
+}
+\date{Month 20XX}
+
+
+% \thirdpartylogo{path/to/your/image}
+
+\begin{document}
+\begin{titlepage}
+    \maketitle
+\end{titlepage}
+
+%----------------------------------------------------------------------------------------
+%	PREFACE
+%----------------------------------------------------------------------------------------
+
+\pagestyle{plain}
+
+
+\cleardoublepage
+\statementpage
+
+\begin{abstract}
+Assignment evaluation is one of the most time-consuming parts of teacher's work. Therefore nowadays many assignment types, such as multiple-choice answers or fill-the-gap, are automated. Free text answer grading is a harder task. There are two types of free text assignments: automated essay grading (AES) and short answer grading (ASAG). AES systems are already successfully used by some organizations including Educational Testing Service (ETS). However, ASAG is still not popular, because the existing systems haven't shown sufficient robustness yet. This research concentrates on development of an AI assistant for grading assessments and exams in the fields of computer science, electrical engineering, physics and other technical disciplines. In this case answers are shorter than one paragraph and concrete. Furthermore, stylistics and spelling are not of interest, only the meaning of the answer should be taken into account. This study focuses on comprehensive analysis of existing ASAG methods. Based on this analysis a new ASAG system is developed. It uses similarity between the students' and teachers' answers for grading. Such sentence similarity measures as ROUGE, BLUE and various k-skip-n-gram distances in combination with Kernel Principal Component Analysis (KPCA) are considered. A significant advantage of this vectorization technique is that it allows an efficient clusterization of small amount of data, which is often a case for ASAG, since an offline course can be attended by 10-300 people and not by thousands. KPCA has already been shown to be more powerful than word2vec for word embedding, and this work shows that it is more powerful than doc2vec for paragraph embedding as well.
+\end{abstract}
+
+
+\begin{acknowledgements}
+I would like to express my great appreciation to Professor Pl{\"o}ger and Mr. Nair, my research supervisors, for their thoughtful advice and assistance during the my RnD project. I would also like to thank Stifterverband for accepting me as a part Digital Learning Transfer Fellowship, which was a significant support for the project. 
+\end{acknowledgements}
+
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+%-------------------------------------------------------------------------------
+%	CONTENT CHAPTERS
+%-------------------------------------------------------------------------------
+
+\mainmatter % Begin numeric (1,2,3...) page numbering
+
+\pagestyle{mainmatter}
+
+\subfile{chapters/ch01_introduction}
+\subfile{chapters/ch02_stateoftheart}
+\subfile{chapters/ch03_problem_statement}
+\subfile{chapters/ch04_solution}
+\subfile{chapters/ch05_evaluation_results}
+\subfile{chapters/ch06_conclusion}
+
+
+%-------------------------------------------------------------------------------
+%	APPENDIX
+%-------------------------------------------------------------------------------
+
+%\begin{appendices}
+%\subfile{chapters/appendix}
+
+%\end{appendices}
+
+\backmatter
+
+%-------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%-------------------------------------------------------------------------------
+\addcontentsline{toc}{chapter}{References}
+\bibliographystyle{plainnat} % Use the plainnat bibliography style
+\begin{thebibliography}{3}
+\bibitem{Hasanah} U. Hasanah, A. E. Permanasari, S. S. Kusumawardani and F. S. Pribadi, "A review of an information extraction technique approach for automatic short answer grading," 2016 1st International Conference on Information Technology, Information Systems and Electrical Engineering (ICITISEE), Yogyakarta, 2016, pp. 192-196.
+\bibitem{Burrows} Burrows S., Gurevych I., Stein B. The eras and trends of automatic short answer grading //International Journal of Artificial Intelligence in Education. -- 2015. -- T. 25. -- No. 1. -- C. 60-117.
+\bibitem{Balfour} Balfour, S. P. (2013). Assessing writing in MOOCS: Automated essay scoring and Calibrated Peer Review. Research \& Practice in Assessment, 8(1), 40--48.
+\bibitem{aesOverview} S. Dikli  An overview of automated scoring of essays //The Journal of Technology, Learning and Assessment. -- 2006. -- T. 5.-- No. 1.
+\bibitem{Blood} Blood, Ian. "Automated essay scoring: a literature review." Teachers College, Columbia University Working Papers in TESOL \& Applied Linguistics 11.2 (2012): 40-64.
+\bibitem{vikGit} \url{https://github.com/VikParuchuri/vikparuchuri-affirm/blob/master/on-the-automated-scoring-of-essays.md}, last visited 19.04.2018
+\bibitem{HewlettKaggle} \url{https://www.kaggle.com/c/asap-aes}, last visited 19.04.2018
+\bibitem{edxGit} \url{https://github.com/edx/ease}, last visited 19.04.2018
+\bibitem{Shermis} M. Shermis and B. Hammer. 2012. Contrasting state-of-the-art automated scoring of essays: analysis. Technical report, The University of Akron and Kaggle
+\bibitem{Alikaniotis} Alikaniotis D., Yannakoudakis H., Rei M. Automatic text scoring using neural networks //arXiv preprint arXiv:1606.04289. – 2016.
+\bibitem{petition} \url{http://humanreaders.org/petition/index.php}, last visited 19.04.2018
+\bibitem{Perelman} Perelman, Les. "Critique of Mark D. Shermis \& Ben Hamner,"Contrasting state-of-the-art automated scoring of essays: analysis"." Journal of Writing Assessment 6.1 (2013).
+\bibitem{Byrne} Byrne, Roxanne, Tang, Michael, Truduc, John \& Tang, Matthew. (2010). eGrader, a software application that automatically scores student essays: with a postscript on the ethical complexities. Journal of Systemics, Cybernetics \& Informatics, 8(6), 30-35.
+\bibitem{Ramineni} Ramineni, Chaitanya, and David M. Williamson. "Automated essay scoring: Psychometric guidelines and practices." Assessing Writing 18.1 (2013): 25-39. 
+\bibitem{Mohler} Mohler, Michael, and Rada Mihalcea. "Text-to-text semantic similarity for automatic short answer grading." Proceedings of the 12th Conference of the European Chapter of the Association for Computational Linguistics. Association for Computational Linguistics, 2009.
+\bibitem{Cambria} E. Cambria and B. White, "Jumping NLP Curves: A Review of Natural Language Processing Research [Review Article]," in IEEE Computational Intelligence Magazine, vol. 9, no. 2, pp. 48-57, May 2014.
+\bibitem{Page}  Page, E. B. (1966). "The Imminence of Grading Essays by Computer" Phi Delta Kappan, 47(5), 238-243.
+\bibitem{Chowdhury} Chowdhury, Gobinda G. "Natural language processing." Annual review of information science and technology 37.1 (2003): 51-89
+\bibitem{Steedman} Steedman, Mark. "Natural language processing." Handbook of perception and cognition (2nd ed.). Artificial intelligence (1996): 229-266.
+\bibitem{Saad} Ahmad, Saad. "Tutorial on Natural Language Processing." Artificial Intelligence 810.161 (2007).
+\bibitem{Raskin}  Raskin, Victor. "Linguistics and natural language processing." Machine Translation: Theoretical and Methodological Issues. Cambridge University Press, Cambridge (1987): 42-58.
+\bibitem{Faust} Von Goethe, Johann Wolfgang, "Faust", January 4, 2005 [EBook \#14591], \url{http://www.gutenberg.org/files/14591/14591-h/14591-h.htm}
+\bibitem{Skip-gram} Guthrie, David, et al. "A closer look at skip-gram modelling." Proceedings of the 5th international Conference on Language Resources and Evaluation (LREC-2006). sn, 2006.
+\bibitem{Ulysses} Joyce, J. (1969). Ulysses. London: Bodley Head.
+\bibitem{token} \url{https://nlp.stanford.edu/IR-book/html/htmledition/tokenization-1.html}, last visited 19.04.2018
+\bibitem{lemm} \url{https://nlp.stanford.edu/IR-book/html/htmledition/stemming-and-lemmatization-1.html}, last visited 19.04.2018
+\bibitem{chunk} \url{http://www.nltk.org/book/ch07.html}, last visited 19.04.2018
+\bibitem{anaphora} Mitkov, Ruslan, Branimir Boguraev, and Shalom Lappin. "Introduction to the special issue on computational anaphora resolution." Computational Linguistics 27.4 (2001): 473-477.
+\bibitem{stop} \url{https://nlp.stanford.edu/IR-book/html/htmledition/dropping-common-terms-stop-words-1.html}, last visited 19.04.2018
+\bibitem{POS} \url{https://nlp.stanford.edu/software/tagger.shtml}, last visited 19.04.2018
+\bibitem{Hearst} Marti A. Hearst, ``The debate on automated essay grading'' (http://www.knowledge-technologies.com/presskit/KAT\_IEEEdebate.pdf) 
+\bibitem{LSA} Landauer, Thomas K., Peter W. Foltz, and Darrell Laham. "An introduction to latent semantic analysis." Discourse processes 25.2-3 (1998): 259-284.
+\bibitem{Dikli} Dikli, Semire. "An overview of automated scoring of essays." The Journal of Technology, Learning and Assessment 5.1 (2006).
+\bibitem{IntelliMetric} Rudner, Lawrence M., Veronica Garcia, and Catherine Welch. "An evaluation of IntelliMetric$^{TM}$ essay scoring system." The Journal of Technology, Learning and Assessment 4.4 (2006).
+\bibitem{BETSY} Rudner, Lawrence M., and Tahung Liang. "Automated essay scoring using Bayes' theorem." The Journal of Technology, Learning and Assessment 1.2 (2002).
+\bibitem{Madala} Madala, Deva Surya Vivek, et al. "An empirical analysis of machine learning models for automated essay grading." PeerJ PrePrints (2018).
+
+\bibitem{Dzikovska} Dzikovska, M. O., Nielsen, R. D., Brew, C., Leacock, C., Giampiccolo, D., Bentivogli, L., Clark, P., Dagan, I., and Dang, H. T. (2013). SemEval-2013 Task 7: The Joint Student Response Analysis and Eighth Recognizing Textual Entailment Challenge. In M. Diab, T. Baldwin, and M. Baroni, editors, Proceedings of the Second Joint Conference on Lexical and Computational Semantics, pages 1-12, Atlanta, Georgia.
+\bibitem{c-rater}  Leacock, Claudia, and Martin Chodorow. "C-rater: Automated scoring of short-answer questions." Computers and the Humanities 37.4 (2003): 389-405.
+\bibitem{Wang} Wang, Hao-Chuan, Chun-Yen Chang, and Tsai-Yen Li. "Assessing creative problem-solving with automated text grading." Computers \& Education 51.4 (2008): 1450-1466.
+\bibitem{Pulman} Stephen G. Pulman and Jana Z. Sukkarieh. 2005. Automatic short answer marking. In Proceedings of the second workshop on Building Educational Applications Using NLP (EdAppsNLP 05). Association for Computational Linguistics, Stroudsburg, PA, USA, 9-16.
+\bibitem{Thomas} Pete Thomas. 2003. The evaluation of electronic marking of examinations. In Proceedings of the 8th annual conference on Innovation and technology in computer science education (ITiCSE '03), David Finkel (Ed.). ACM, New York, NY, USA, 50-54. DOI=http://dx.doi.org/10.1145/961511.961528
+\bibitem{CREG} \url{https://github.com/carolscarton/CREG-MT-eval}, last visited 19.04.2018
+\bibitem{Hahn} Hahn, Michael, and Detmar Meurers. "Evaluating the meaning of answers to reading comprehension questions a semantics-based approach." Proceedings of the Seventh Workshop on Building Educational Applications Using NLP. Association for Computational Linguistics, 2012.
+\bibitem{ERB} Pérez, Diana, Alfio Gliozzo, and Carlo Strapparava. "Automatic Assessment of Students’ free-text Answers underpinned by the Combination of a BLEU-inspired algorithm and Latent Semantic Analysis." (2005).
+\bibitem{BLEU} Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu. 2002. BLEU: a method for automatic evaluation of machine translation. In Proceedings of the 40th Annual Meeting on Association for Computational Linguistics (ACL '02). Association for Computational Linguistics, Stroudsburg, PA, USA, 311-318. DOI: https://doi.org/10.3115/1073083.1073135
+\bibitem{Willow} Pérez-Marín, Diana, and Ismael Pascual-Nieto. "Willow: a system to automatically assess students’ free-text answers by using a combination of shallow NLP techniques." International Journal of Continuing Engineering Education and Life Long Learning 21.2-3 (2011): 155-169.
+\bibitem{SAMText} Bukai, Ohad Lisral, Robert Pokorny, and Jacqueline A. Haynes. "Automated short free-text scoring method and system." U.S. Patent Application No. 11/895,267.
+\bibitem{Gabrilovich} E. Gabrilovich and S. Markovitch. 2006. Overcoming the brittleness bottleneck using Wikipedia: Enhancing text categorization with encyclopedic knowledge. In Proceedings of the National Conference on Artificial Intelligence (AAAI), Boston.
+\bibitem{Klein} R. Klein, A. Kyrilov, and M. Tokman. 2011. Automated assessment of short free-text responses in computer science using latent semantic analysis. In Proceedings of the 16th annual joint conference on Innovation and technology in computer science education (ITiCSE '11). ACM, New York, NY, USA, 158-162. 
+\bibitem{Noorbehbahani} Noorbehbahani, Fakhroddin, and Ahmad A. Kardan. "The automatic assessment of free text answers using a modified BLEU algorithm." Computers \& Education 56.2 (2011): 337-345.
+\bibitem{Li} Yanling Li and Yonghong Yan, "New similarity measures for automatic short answer scoring in spontaneous non-native speech," International Conference on Automatic Control and Artificial Intelligence (ACAI 2012), Xiamen, 2012, pp. 1398-1402.
+\bibitem{Gomaa} Gomaa, Wael H., and Aly A. Fahmy. "Short answer grading using string similarity and corpus-based similarity." International Journal of Advanced Computer Science and Applications (IJACSA) 3.11 (2012).
+\bibitem{Jaro} \url{https://rosettacode.org/wiki/Jaro_distance}, last visited 19.04.2018
+\bibitem{DISCO} \url{http://www.linguatools.de/disco/disco_en.html}, last visited 19.04.2018
+\bibitem{word2vec} \url{https://code.google.com/archive/p/word2vec/}, last visited 19.04.2018
+\bibitem{GloVe} Pennington, Jeffrey, Richard Socher, and Christopher Manning. "Glove: Global vectors for word representation." Proceedings of the 2014 conference on empirical methods in natural language processing (EMNLP). 2014.
+\bibitem{e-examiner} Guetl, Christian. (2008). Moving towards a Fully Automatic Knowledge Assessment Tool. International Journal of Emerging Technologies in Learning. 3. 
+\bibitem{CAM} Bailey, S. \& D. Meurers (2008). Diagnosing meaning errors in short answers to reading comprehension questions. In J. Tetreault, J. Burstein \& R. D. Felice (eds.), Proceedings of the 3rd Workshop on Innovative Use of NLP for Building Educational Applications (BEA-3) at ACL'08. Columbus, Ohio, pp. 107-115.
+\bibitem{TiMBL} Daelemans, Walter, et al. "Timbl: Tilburg memory-based learner." version 6 (2007): 07-03.
+\bibitem{CoMiC-EN} Meurers, Detmar, et al. "Integrating parallel analysis modules to evaluate the meaning of answers to reading comprehension questions." International Journal of Continuing Engineering Education and Life Long Learning 21.4 (2011): 355-369.
+\bibitem{CoMiC-DE} Meurers, Detmar, et al. "Evaluating answers to reading comprehension questions in context: Results for German and the role of information structure." Proceedings of the TextInfer 2011 Workshop on Textual Entailment. Association for Computational Linguistics, 2011.
+\bibitem{UIMA} Ferrucci, David, and Adam Lally. "UIMA: an architectural approach to unstructured information processing in the corporate research environment." Natural Language Engineering 10.3-4 (2004): 327-348.
+\bibitem{Zbontar} Zbontar, J. "Short Answer Scoring by Stacking" ASAP'12 SAS methodology paper (2012).
+\bibitem{kaggleSas} \url{https://www.kaggle.com/c/asap-sas}, last visited 19.04.2018
+
+
+
+\bibitem{Horbach} Horbach, Andrea, Alexis Palmer, and Manfred Pinkal. "Using the text to evaluate short answers for reading comprehension exercises." * SEM@ NAACL-HLT. 2013.
+\bibitem{Zhang} Zhang, Yuan, Rajat Shah, and Min Chi. "Deep Learning+ Student Modeling+ Clustering: a Recipe for Effective Automatic Short Answer Grading." EDM. 2016.
+\bibitem{Sultan} Sultan, Md Arafat, Cristobal Salazar, and Tamara Sumner. "Fast and easy short answer grading with high accuracy." Proceedings of NAACL-HLT. 2016
+
+\bibitem{Ziai} Ziai, Ramon, Niels Ott, and Detmar Meurers. "Short answer assessment: Establishing links between research strands." Proceedings of the Seventh Workshop on Building Educational Applications Using NLP. Association for Computational Linguistics, 2012.
+\bibitem{Roy} Roy, Shourya, Himanshu S. Bhatt, and Y. Narahari. "An Iterative Transfer Learning Based Ensemble Technique for Automatic Short Answer Grading." arXiv preprint arXiv:1609.04909 (2016).
+\bibitem{Yin} Yin, Wenpeng, et al. "Comparative Study of CNN and RNN for Natural Language Processing." arXiv preprint arXiv:1702.01923 (2017).
+\bibitem{Zanzotto} Zanzotto, Fabio Massimo, Marco Pennacchiotti, and Alessandro Moschitti. "A machine learning approach to textual entailment recognition." Natural Language Engineering 15.4 (2009): 551-582
+\bibitem{ipython} \url{https://ipython.org/notebook.html}, last visited 19.04.2018
+\bibitem{nbgrader} \url{https://github.com/jupyter/nbgrader}, last visited 19.04.2018
+
+
+\bibitem{eduardo} Brito, Eduardo \& Sifa, Rafet \& Bauckhage, Christian. (2017). KPCA Embeddings: an Unsupervised Approach to Learn Vector Representations of Finite Domain Sequences.
+\bibitem{cover} Cover, T.M., Geometrical and Statistical properties of systems of linear inequalities with applications in pattern recognition, 1965 (hghlighted words are exchanged)
+\bibitem{readingGroup} \url{https://www.researchgate.net/project/reading-group-machine-learning-AI}, last visited 19.04.2018
+
+
+\end{thebibliography}
+
+
+\end{document}
