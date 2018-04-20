@@ -196,7 +196,7 @@ Both, automated and human essay grading, have several important issues those mus
 
 \begin{table}[]
 \centering
-\caption{Issues of automated and human grading}
+\caption{Issues of machine and human grading}
 \label{Issues}
 \begin{tabular}{|l|l|}
 \hline
@@ -219,10 +219,10 @@ Almost 40 years after the development of Page's approach of using the human grad
     \caption{Architecture of IEA ~\cite{Dikli}.\label{fig:IEAArch}}
 \end{figure}
 
-PEG and E-Rater had the same base idea. A fundamentally new approach was introduced in 1998 by Landauer in "An Introduction to Latent Semantic Analysis" (LSA) ~\cite{LSA}. The main difference was that the method started caring about the meaning of the text and not only on breaking it into linguistically non-meaningful features those will be weighted and learned in relation to the human grades. In this method statistical  computations on a large corpus of text are used to extract the contextual meaning of words, which places the method semantic part NLP curve (Fig. \ref{fig:NLPLevels}) ~\cite{LSA}. Moreover, the goal of methods developers was to imitate the way humans obtain and classify knowledge from the piece of text, as well as they resolve ambiguities by context ~\cite{Blood}. LSA-based essay grader was called Intelligent Essay Assessor (\textbf{IEA}). Its architecture is shown in Fig. \ref{fig:IEAArch}. This system is closer to ASAG than classical AES, because it focuses only on context and not the writing style. Moreover, it doesn't use the human raters' grades as a reference value, but learns based on essay examples -- domain-representative text. These essays are divided in quality categories, and a text to be graded is compared to them and rated with the same grade that the most similar essays. The main idea of LSA is an collecting of various contexts of a word and thereby word meaning similarity and possible text patterns where the word may occur. LSA can be used for estimation of word-word, word-phrase and phrase-phrase similarity. It is important that for this LSA doesn't use any external knowledge. The method consists of the following steps:
+PEG and E-Rater had the same base idea. A fundamentally new approach was introduced in 1998 by Landauer in "An Introduction to Latent Semantic Analysis" (LSA) ~\cite{LSA}. The main difference was that the method started caring about the meaning of the text and not only on breaking it into linguistically non-meaningful features those will be weighted and learned in relation to the human grades. In this method statistical  computations on a large corpus of text are used to extract the contextual meaning of words, which places the method semantic part NLP curve (Figure \ref{fig:NLPLevels}) ~\cite{LSA}. Moreover, the goal of methods developers was to imitate the way humans obtain and classify knowledge from the piece of text, as well as they resolve ambiguities by context ~\cite{Blood}. LSA-based essay grader was called Intelligent Essay Assessor (\textbf{IEA}). Its architecture is shown in Fig. \ref{fig:IEAArch}. This system is closer to ASAG than classical AES, because it focuses only on context and not the writing style. Moreover, it doesn't use the human raters' grades as a reference value, but learns based on essay examples -- domain-representative text. These essays are divided in quality categories, and a text to be graded is compared to them and rated with the same grade that the most similar essays. The main idea of LSA is an collecting of various contexts of a word and thereby word meaning similarity and possible text patterns where the word may occur. LSA can be used for estimation of word-word, word-phrase and phrase-phrase similarity. It is important that for this LSA doesn't use any external knowledge. The method consists of the following steps:
 
 \begin{itemize}
-\item a text must be represented as a matrix, in which each row is a unique word and each column -- context of the corresponding word. For example, for a set of sentences {("The sun is bright.", "S1"), ("Such a bright, bright student!", "S2"), ("Lying student is lying in the sun.", "S3"), ("That's a lie!", "S4")} it may take the form shown in Table. \ref{LSA} (note: the sentences went through lemmatization and stop words removal). One can see that percent of co-occurrence of the words "sun" and "student "  This example also shows how important it is to have a large text corpora in order to use LSA efficiently: in these four sentences words "bright" and "lie" were used in completely different meanings and thereby it is not possible to derive much sense from them.
+\item a text must be represented as a matrix, in which each row is a unique word and each column -- context of the corresponding word. For example, for a set of sentences \{("The sun is bright.", "S1"), ("Such a bright, bright student!", "S2"), ("Lying student is lying in the sun.", "S3"), ("That's a lie!", "S4")\} it may take the form shown in Table. \ref{LSA} (note: the sentences went through lemmatization and stop words removal, because only the meaningful words are of interest). This example also shows how important it is to have a large text corpora in order to use LSA efficiently: in these four sentences words "bright" and "lie" were used in completely different meanings and thereby it is not possible to derive much sense from them.
 \begin{table}[h!]
 \centering
 \caption{LSA matrix example}
@@ -263,6 +263,7 @@ lie & -0.88 & -0.28 & -0.33 & -0.21
 
 \begin{equation} \label{eq:V}
 \boldsymbol V* = \begin{pmatrix}
+S1 & S2 & S3 & S4 \\
 -0.24 & -0.06 & -0.09 & -0.36 \\
  0.65 & 0.73 & -0.15 & -0.16 \\
  0.67 & -0.67 & 0 & -0.33 \\
@@ -270,7 +271,7 @@ lie & -0.88 & -0.28 & -0.33 & -0.21
 \end{pmatrix}
 \end{equation}
 
-If a solution dimensionality reduction is needed, one can remove coefficients from  $\boldsymbol{\Sigma}$, in the case, for example, two dimensions are needed, so 1 and 0.24 can be nullified. In this case initial matrix takes the form shown in Table \ref{LSAR}. After nullification the SVD equations will take the following form:
+\item Next step is dimensionality reduction: one can removes coefficients from  $\boldsymbol{\Sigma}$ and keeps only as much coefficients as much dimensions are needed. In the case, for example, we can take two dimensions, so 1 and 0.24 can be nullified. In this case initial matrix takes the form shown in Table \ref{LSAR}. After nullification the SVD equations will take the following form:
 
 \begin{equation} \label{eq:U0}
 \boldsymbol U = \begin{pmatrix}
@@ -292,8 +293,9 @@ lie & -0.88 & -0.28
 
 \begin{equation} \label{eq:V0}
 \boldsymbol V* = \begin{pmatrix}
+S1 & S2 & S3 & S4 \\
 -0.24 & -0.06 & -0.09 & -0.36 \\
- 0.65 & 0.73 & -0.15 & -0.16 \\0
+ 0.65 & 0.73 & -0.15 & -0.16 \\
 \end{pmatrix}
 \end{equation}
 
@@ -303,7 +305,7 @@ lie & -0.88 & -0.28
 \label{LSAR}
 \begin{tabular}{|l|l|l|l|l|}
 \hline
- &  & bright & student  & lie \\ \hline
+ & sun & bright & student  & lie \\ \hline
 S1 & 0.59 & 0.43 & 0.04 & 0.33 \\ \hline
 S2 & 0.96 & 1.02 & 0.95 & 0.12 \\ \hline
 S3 & 0.49 & 0.53 & 0.06 & -0.1 \\ \hline
@@ -311,11 +313,17 @@ S3 & 0.21 & -0.22 & 2.02 & 0.85 \\ \hline
 \end{tabular}
 \end{table}
 
-\item Based on the decomposition the words can be clusterized by sense over the chosen number of dimensions.
+\item Based on the decomposition the words are clusterized by sense over the chosen number of dimensions: words coordinates are taken from $\boldsymbol U$ and sentences -- from $\boldsymbol{V^*}$. In Figure \ref{fig:LSAExample} one can see the results of LSA clusterized by k-Nearest-Neighbor (kNN) for the example we consider. Because of the size of the "dataset" the results are not satisfactory, but one can already see that the word "lie" right near "S3", where it occurred twice and relatively close to "S4" though it was not put into the same cluster. Word "bright" is in one cluster with both sentences it was in. "Student" is in one cluster with "S2" and not far from "S3", and "sun" is clusterized incorrectly, but it is between "S1" and "S3", so it could be classified better if more dimensions were used. Implementation of this example can be found via the link: \url{...}.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.8\textwidth]{img/LSAExample}
+    \caption{LSA clustering for the following set of sentences: set of sentences \{("The sun is bright.", "S1"), ("Such a bright, bright student!", "S2"), ("Lying student is lying in the sun.", "S3"), ("That's a lie!", "S4")\}.\label{fig:LSAExample}}
+\end{figure}
 
 \end{itemize}
 
-This method can fail in case an essay is too original, but in this case the text can be just marked as "unclassifiable" and be send to the human teacher. The method was tested with GMAT essays and showed correlation with human raters of 86\%, whereas the correlation among human raters was 87\% and 86\% for different essay types. It is interesting that IEA was very positively met by students -- 98\% of the ones who tested it very willing to take more tests graded by this system. The system has a user-friendly interface -- see Fig. \ref{fig:IEAInt}. \\
+This method can fail in case an essay is too original, but in this case the text can be just marked as "unclassifiable" and be sent to the human teacher. The method was tested with Graduate Management Admission Test$^{\tiny{\textregistered}}$ (GMAT$^{\tiny{\textregistered}}$) essays and showed correlation with human raters of 86\%, whereas the correlation among human raters was 87\% and 86\% for different essay types. It is interesting that IEA was very positively met by students -- 98\% of the ones who tested it very willing to take more tests graded by this system. The system has a user-friendly interface -- see Fig. \ref{fig:IEAInt}. \\
 
 \begin{figure}[h!]
   \centering
@@ -323,8 +331,7 @@ This method can fail in case an essay is too original, but in this case the text
     \caption{Architecture of IEA ~\cite{Dikli}.\label{fig:IEAInt}}
 \end{figure}
 
-
-Next important step in AES was an integration of artificial intelligence. \textbf{IntelliMetric$^{TM}$} or its enterprise version MY Access!$^{\tiny{\textregistered}}$ didn't follow coprus-based path of LSA-based work and, as PEG e-rater, mostly relies on NLP. However, it tries to emulate the work of human brain and uses CogniSearch$^{TM}$ -- an NLP AI system, which is able to perform POS tagging, morphological analysis, spelling recognition, and collocation grammar (the whole algorithm is, however, not published openly and  protected by patents). It allows the system to go deeper into the language structure and rate essays in accordance to the norms of language -- see Figure \ref{fig:IntelliMetric}. For grading the systems requires a large set of pre-graded essays. The system was tested with Graduate Management Admission Test$^{\tiny{\textregistered}}$ (GMAT$^{\tiny{\textregistered}}$) prompts and showed human-computer correlation of 97\% on average. MY Access!$^{\tiny{\textregistered}}$ is widely used in USA: in California, Pennsylvania, Massachusetts, Virginia, Oregon, and Texas. Moreover, the following companies use the system as well: The College Board, ACT, Harcourt Assessment, Inc., CTB/McGraw Hill, Thomson Learning. Microsoft, Apple Computer, AOL and Sun Microsystems. 
+Next important step in AES was an integration of artificial intelligence. \textbf{IntelliMetric$^{TM}$} or its enterprise version MY Access!$^{\tiny{\textregistered}}$ didn't follow coprus-based path of LSA work and, as PEG e-rater, mostly relies on NLP. However, it tries to emulate the work of human brain and uses CogniSearch$^{TM}$ -- an NLP AI system, which is able to perform POS tagging, morphological analysis, spelling recognition, and collocation grammar (the whole algorithm is, however, not published openly and  protected by patents). It allows the system to go deeper into the language structure and rate essays in accordance to the norms of language -- see Figure \ref{fig:IntelliMetric}. For grading the systems requires a large set of pre-graded essays. The system was tested with GMAT$^{\tiny{\textregistered}}$ prompts and showed human-computer correlation of 97\% on average. MY Access!$^{\tiny{\textregistered}}$ is widely used in USA: in California, Pennsylvania, Massachusetts, Virginia, Oregon, and Texas. Moreover, the following companies use the system as well: The College Board, ACT, Harcourt Assessment, Inc., CTB/McGraw Hill, Thomson Learning. Microsoft, Apple Computer, AOL and Sun Microsystems. 
 
 \begin{figure}[h!]
   \centering
@@ -345,9 +352,39 @@ Bayesian Essay Test Scoring sYstem$^{TM}$ (\textbf{BETSY}) ~\cite{BETSY} is a pr
 
 The system uses such NLP features as word frequency in a certain context, specific words and phrases, sentence length, number of verbs, noun-verbs pairs. It combines PEG, early e-rater and LSA methods.\\
 
-One of the important steps in AES was a kaggle competition "The Hewlett Foundation: Automated Essay Scoring" ~\cite{HewlettKaggle}. The winning algorithms are not published, but there is an open information about some principles of their work from a winner of a second place. His team uses the following features: number of sentences, lengths of sentences and words, presence or absence of certain words. The features were combined with random forest (RF) and regression. An important feature of the approach is that the system can detect a work, which cannot be graded with a good confidence, send it to a human rater and include the grade he/her gave to this work into the train dataset. This method has a name "active learning" ~\cite{vikGit}.\\
+One of the important steps in AES was a kaggle competition \textbf{"The Hewlett Foundation: Automated Essay Scoring"} ~\cite{HewlettKaggle}. The winning algorithms are not published, but there is an open information about some principles of their work from a winner of a second place. His team uses the following features: number of sentences, lengths of sentences and words, and presence or absence of certain words. The features were combined with random forest (RF) and regression. An important feature of the approach is that the system can detect a work, which cannot be graded with a good confidence, send it to a human rater and include the grade he/her gave to this work into the train dataset. This method has a name "active learning" ~\cite{vikGit}. The dataset contains eight subsets with 12978 essays in a test set and 4254 in a train set -- see "Essay\_Set\_Descriptions.zip" that can be downloaded on the following page: \url{https://www.kaggle.com/c/asap-aes/data}, last visited 20.04.2018, registration is required. Essays length is between 150 and 550 words ~\cite{Madala}. \\
 
-The most well-known and cited approaches has already been named, however, it is important to consider tat least one of the newest approaches.
+The main idea of \textbf{Cummins}'s~\cite{Cummins} work is a generalization of AES: he claims that the most hindering problem of most of the AES systems is that they are not general enough and require a lot of retraining each time a new essay badge has to be graded. Cummins addresses this problem by using multi-task learning, which grasps the general and specific features of the essays by using a shared-representation vectorized model of the essays, and preference-ranking model, which is based basically on a perceptron classifier. All essays are tokenized. The following features are used:
+\begin{itemize}
+\item POS tagging
+\item n-grams (1-3)
+\item unique words number
+\item words length
+\item sentences length
+\item linking words presence ("nevertheless", "moreover", etc.)
+\item grammatical and spelling mistakes
+\item grammatical relations between constituents in a clause
+\end{itemize}
+A dataset from "The Hewlett Foundation: Automated Essay Scoring"  was used to evaluate the algorithm. Human-computer correlation is between 60\% and 80\% for different essay subsets.\\
+
+
+The most well-known and widely used approaches has already been named, however, it is important to consider at least one of the newest approaches. One of the latest AES systems was developed by \textbf{Madala} ~\cite{Madala} in 2018. Nine NLP features are used for the grading: 
+\begin{itemize}
+\item reachness of the used vocabulary 
+\item relation between a given word number limit and actual length of an essay
+\item length of sentences
+\item voice -- active is preferred
+\item tense -- must be consistent
+\item spelling
+\item grammar
+\item semantic similarity:
+\begin{itemize}
+\item between the essay and a given topic
+\item between the parts of essay -- how coherent it is
+\end{itemize} 
+\end{itemize}
+
+The features are preprocessed and combined with the following machine learning techniques: kNN, linear regression and SVM. The system is implemented in Python and uses the following libraries: NLTK, SpaCy. A dataset from "The Hewlett Foundation: Automated Essay Scoring"  was used to evaluate the algorithm. The results, depending on the essay type, are in range between 73\% to 93\%. \\
 
 Table \ref{AES} summarized the AES systems' performance over the years.\\
 
@@ -364,17 +401,30 @@ Table \ref{AES} summarized the AES systems' performance over the years.\\
 \makecell{2005} & \makecell{BETSY$^{TM}$} & \makecell{large essays corpus,\\ NLP-features,\\ Bayesian theorem}  & \makecell{ 80\%} \\ \hline
 \makecell{2012} & \makecell{The Hewlett Foundation:\\ Automated Essay Scoring} & \makecell{comparison to human grading,\\ NLP, \\ RF and \\ linear regression}  & \makecell{ 81\%} \\ \hline
 \makecell{2013} & \makecell{E-Rater} & \makecell{comparison to human grading, \\ multiple-regression\\ + NLP}  & \makecell{97\%} \\ \hline
-\makecell{2018} & \makecell{} & \makecell{}  & \makecell{\%} \\ \hline
+\makecell{2016} & \makecell{Cummins} & \makecell{comparison to human grading,\\NLP-features,\\multi-task learning,\\preference-ranking model\\on a perceptron }  & \makecell{ 60\%-80\%} \\ \hline
+\makecell{2018} & \makecell{Madala} & \makecell{comparison to human grading,\\NLP features, kNN,\\ linear regression,\\ SVM}  & \makecell{ 73\% to 93\%} \\ \hline
 \end{tabular}
 \end{table}
 
 
 \subsubsection{Gibberish detection}
 
-Examples above show a crucial importance of gibberish detection.//////////
+The systems considered in a previous section show impressive results. However, even the most recent ones are vulnerable to various sorts of gibberish, because they mostly use the datasets with real tests written by the students who are were unaware of being graded automatically. Therefore, it is important to consider the topic of gibberish detection separately. Moreover, some of the gibberish detection techniques can be used for ASAG as well, though most of the ASAG systems don't put enough attention to this problem.\\
 
+There are the following types of gibberish ~\cite{gibberishShermis}, ~\cite{gibberish} those also obey the NLP development curve from Figure \ref{fig:NLPLevels}:
+\begin{itemize}
+\item word level ("keyboard-banging") -- words don't make sense and represent random letters sequences, e.g. "bzhyhlvyazsk". PEG was vulnerable even to this gibberish type. This can be spotted by detecting ill-formed words.
+\item sentence level ("word salad") -- essay contains real words, but in a random order, e.g. "Went umbrella grump. Handbook keyboard trump. Begone.". The previous and this gibberish types were solved in e-rater. It can be spotted by a sentence analysis and POS tagging.
+\item paragraph level ("copied-prompt") -- essay only or mostly consists of an essay topic copied multiple times. This gibberish type can be easily detected by spotting the phrases from the topic in the text.
+\item text level:
+\begin{itemize}
+\item "unexpected-topic" -- essay is a sensible well-written text, but on a topic completely different from the required one, e.g. the topic was "Character of Natasha Rostova from War and Peace" and the essay was about mating habits of baboons.
+\item "bad faith" -- each part of essay separately makes sense and related to the main topic, but the parts are incoherent to each other.
+\end{itemize}
+For these gibberish types Madala offers a semantic similarity solution, the essay should be similar to the topic and its parts -- to each other.
+\end{itemize}
 
-Gibberish classification and detection (Handbook of Automated Essay Evaluation: Current Applications and New Directions).
+ASAG systems are unlikely to be vulnerable to "keyword-banging" and "unexpected topic", because in one way or another they normally use keyword spotting. "Copied-prompt" issues are also unlikely, because the question for ASAG must not contain too much information about the topic. However, ASAG can have problems with a word salad in case in contains important words from the example answer. "Bad faith" answer can also be the case, because the sentences in an answer can be put in a wrong, non-sensible order.
 
 
 \subsection{ASAG}
@@ -965,7 +1015,7 @@ AES is the most adjacent to ASAG area. The very first AES and ASAG methods were 
 
 AES research started earlier than ASAG and that is why papers on this topic contain some useful general information. The first important idea is the comparison of human graders and computers. The correlation between the human rates was lower -- around 76\% -- than even the very first AES system. ASAG questions are more straightforward, which usually rises the correlation between humans to 80\%-85\%, but it is still far from perfect. That is why 80\%-90\% result for an ASAG system is already satisfying. Moreover, it is not possible to reach 100\% correlation with a human rater, because the human raters simply give different grades.\\
 
-Another important moment is the reason why the first AES system achieved good results. It was trained on rather convenient dataset. The system was vulnerable to any sort of gibberish, but was only trained and tested on a meaningful dataset. It shows that it is always important to test the method on different datasets and, to compare to other works, try to use the same datasets those were used in those works. The importance of datasets one can see also in further ASAG papers, when in the paper that presents the system it achieves 87\% to 94\% ~\cite{c-rater} and, when tested on another dataset by other author, it reaches only 22\% ~\cite{Mohler}. That is why all the accuracies provided in the tables above or below don't provide enough clarity on how good the methods are. However, without testing the each system manually on different kinds of data, it is the only way to compare them at least approximately. The performance of the most significant ASAG systems is shown in Table *ref*.
+Another important moment is the reason why the first AES system achieved good results. It was trained on rather convenient dataset. The system was vulnerable to any sort of gibberish, but was only trained and tested on a meaningful dataset. It shows that it is always important to test the method on different datasets and, to compare to other works, try to use the same datasets those were used in those works. Moreover, it is essential to keep in mind that certain types of gibberish, namely "word salad" and "bad faith", can become a problem not only for an AES system, but also for ASAG. The importance of datasets one can see also in further ASAG papers, when in the paper that presents the system it achieves 87\% to 94\% ~\cite{c-rater} and, when tested on another dataset by other author, it reaches only 22\% ~\cite{Mohler}. That is why all the accuracies provided in the tables above or below don't provide enough clarity on how good the methods are. However, without testing the each system manually on different kinds of data, it is the only way to compare them at least approximately. The performance of the most significant ASAG systems is shown in Table *ref*.
 
 -- best methods table
 
