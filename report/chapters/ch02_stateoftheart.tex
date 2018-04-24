@@ -163,6 +163,65 @@ where n is strictly higher than one. For better understanding of the concept the
 
 \textbf{Part Of Speech (POS) tagging} -- assigning part of speech to each word in a sentence: "Many ideas of Buddhismus are strongly supported by evolutionary biology." -- \{ ("many", "adjective"), ("ideas", "noun"), ("of", "preposition"), ("Buddhismus", "noun"), ("are", "verb"), ("strongly", "adjective"), ("supported", "verb"), ("by", "preposition"), ("evolutionary", "adjective"),  ("biology", "noun")\} ~\cite{POS}.
 
+\textbf{Term frequency (TF)}  is how often a word occurs in a text corpora, e.g. in students' answers:
+\begin{equation} \label{eq:tf}
+tf_{i,j} = \frac{n_{i,j}}{\sum_k n_{k,j}},
+\end{equation}
+where $n_{i,j}$ is a number of occurrences of a i$^{th}$ word in a j$^{th}$ text, e.g. in a student's answer ~\cite{Hou}.\\
+
+\textbf{Term frequency-inverse document frequency (TF-IDF or tfid)} is a measure of importance of the word to a text in a corpus. It is proportional to the word's occurrence frequency:
+\begin{equation} \label{eq:tfid}
+tfid_i = log\frac{|T|}{|{t:w_i \in T}|},
+\end{equation}
+where $|T|$ is the numbers of texts in the corpus, $w_i$ is an i$^{th}$ word and t is a number of texts where the word $w_i$ occurs ~\cite{Hou}.\\
+
+\textbf{Entropy-variation (EV)} is a measure of uncertainty of word occurrence in a text corpora:
+\begin{equation} \label{eq:ev}
+normH(w) = -\frac{1}{n}\sum^n_{i=1}p(w)log_2p(w_i),
+\end{equation}
+where $normH(x)$ is a normalized entropy, $p(w)$ -- probability of the word $w$ occurrence in a text and n -- number of texts in a corpora ~\cite{Hou}.\\
+
+\textbf{Textual entailment (TE)}. A hypothesis entails a text iff a human infers a high likelihood of the hypothesis while reading the text ~\cite{SemEval}.\\
+
+\textbf{Word alignment} is such a feature that measures a proportion of semantically similar words in two pieces of text ~\cite{Sultan}. The similar words or phrases are found by a word aligner that uses a paraphrase database. An example of processing of two sentences by the aligner is depicted in Figure \ref{fig:align}.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.6\textwidth]{img/align}
+    \caption{Word alignment. Words those are strongly similar are denoted by dark-green and weekly similar -- by light-green. \label{fig:align}}
+\end{figure}
+
+\subsection{NLP software tools used for ASAG}
+
+All of the ASAG systems considered below in this work use either Java or Python. The following software tools were used:
+
+\begin{itemize}
+\item Global Vectors for Word Representation (GloVe) -- log-bilinear regression unsupervised algorithm for word vectorization (Python/Octave) (\url{https://nlp.stanford.edu/projects/glove/})
+\item word2vec -- log-bilinear prediction-based bag-of-words and skip-n-gram algorithms for vectorizing words developed by Google, can be used with Python, Java, C and Scala (\url{https://code.google.com/archive/p/word2vec/})
+\item Natural Language Toolkit (NLTK) -- a Python tool for NLP. Mainly used in scientific projects (\url{https://www.nltk.org/}).
+\item Industrial-Strength Natural Language Processing (spaCy) -- another Python tool for NLP. The tool is meant for industrial usage, but it is also used in scientific projects (\url{https://spacy.io/})
+\item WordNet -- a lexical database for English language (\url{https://wordnet.princeton.edu/})
+\item extracting DIstributionally related words using CO-occurrences (DISCO) -- Java application for calculating similarity between words or short texts, finding the most similar words in texts, e.g. "smart" and "clever", and finding the related words, e.g. "beer" $\rightarrow$ "K\"olsch", alcohol, foam, barrel. It requires a database of word similarities (word space) precalculated on a large text corpora by "DISCO Builder". It is similar to word2vec and GloVe. Architecture of the system is shown in Fig. \ref{fig:DISCO}. DISCO Builder is trained on Wikipedia and British National Corpus (BNC) (\url{http://www.linguatools.de/disco/disco_en.html}). 
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.8\textwidth]{img/DISCO}
+    \caption{ Architecture of DISCO ~\cite{DISCO}. }\label{fig:DISCO}
+\end{figure}
+\item InfoMap NLP Software -- a package for LSA (\url{http://infomap-nlp.sourceforge.net/})
+\item MontyLingua -- Java/Python NLP toolkit (\url{http://alumni.media.mit.edu/~hugo/montylingua/doc/MontyLingua.html})
+\item PC-KIMMO --  morphological analysis two-level processor  (\url{http://www.ai.mit.edu/courses/6.863/doc/pckimmo.html})
+\item Spell Checker Oriented Word Lists (SCOWL) -- spelling correction for English (\url{https://github.com/en-wl/wordlist})
+\item TreeTagger -- POS annotation tool for many languages (\url{http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/})
+\item CASS -- a tool for chunking (\url{http://spraakdata.gu.se/svedk/cass_swe.html})
+\item Pointwise Mutual Information (PMI-IR) -- uses AltaVista's Advanced Search query
+syntax to calculate the matching between word pairs by calculating the
+probability of co-occurrence of the words based on web pages corpus.
+\item Stanford parser -- a statistical tool for structure of sentences parsing (\url{https://nlp.stanford.edu/software/lex-parser.shtml})
+\item Apache OpenNLP -- Java NLP toolkit (\url{https://opennlp.apache.org/})
+\item Morpha -- Java tool for morphological analysis (\url{https://github.com/stanfordnlp/CoreNLP})
+\item MaltParser -- a tool data-driven sentence dependency parsing (\url{http://www.maltparser.org/})
+\end{itemize}
+
 
 \section{\textbf{Automated grading}}
 
@@ -313,22 +372,22 @@ S3 & 0.21 & -0.22 & 2.02 & 0.85 \\ \hline
 \end{tabular}
 \end{table}
 
-\item Based on the decomposition the words are clusterized by sense over the chosen number of dimensions: words coordinates are taken from $\boldsymbol U$ and sentences -- from $\boldsymbol{V^*}$. In Figure \ref{fig:LSAExample} one can see the results of LSA clusterized by k-Nearest-Neighbor (kNN) for the example we consider. Because of the size of the "dataset" the results are not satisfactory, but one can already see that the word "lie" right near "S3", where it occurred twice and relatively close to "S4" though it was not put into the same cluster. Word "bright" is in one cluster with both sentences it was in. "Student" is in one cluster with "S2" and not far from "S3", and "sun" is clusterized incorrectly, but it is between "S1" and "S3", so it could be classified better if more dimensions were used. Implementation of this example can be found via the link: \url{https://github.com/elhele/AI-assisted-short-answer-grading/blob/master/src/LSA_tiny_example.py}.
+\item Based on the decomposition the words are clusterized by sense over the chosen number of dimensions: words coordinates are taken from $\boldsymbol U$ and sentences -- from $\boldsymbol{V^*}$. In Figure \ref{fig:LSAExample} one can see the results of LSA clusterized by k-Nearest-Neighbor (KNN) for the example we consider. Because of the size of the "dataset" the results are not satisfactory, but one can already see that the word "lie" right near "S3", where it occurred twice and relatively close to "S4" though it was not put into the same cluster. Word "bright" is in one cluster with both sentences it was in. "Student" is in one cluster with "S2" and not far from "S3", and "sun" is clusterized incorrectly, but it is between "S1" and "S3", so it could be classified better if more dimensions were used. SImilar sentences are also close to each other. Implementation of this example can be found via the link: \url{https://github.com/elhele/AI-assisted-short-answer-grading/blob/master/src/LSA_tiny_example.py}.
 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.8\textwidth]{img/LSAExample}
-    \caption{LSA clustering for the following set of sentences: set of sentences \{("The sun is bright.", "S1"), ("Such a bright, bright student!", "S2"), ("Lying student is lying in the sun.", "S3"), ("That's a lie!", "S4")\}.\label{fig:LSAExample}}
+    \caption{LSA clustering for the following set of sentences: set of sentences \{("The sun is bright.", "S1"), ("Such a bright, bright student!", "S2"), ("Lying student is lying in the sun.", "S3"), ("That's a lie!", "S4")\}. Block dots are cluster centers; red, green and blue ones -- three different clusters. \label{fig:LSAExample}}
 \end{figure}
 
 \end{itemize}
 
-This method can fail in case an essay is too original, but in this case the text can be just marked as "unclassifiable" and be sent to the human teacher. The method was tested with Graduate Management Admission Test$^{\tiny{\textregistered}}$ (GMAT$^{\tiny{\textregistered}}$) essays and showed correlation with human raters of 86\%, whereas the correlation among human raters was 87\% and 86\% for different essay types. It is interesting that IEA was very positively met by students -- 98\% of the ones who tested it very willing to take more tests graded by this system. The system has a user-friendly interface -- see Fig. \ref{fig:IEAInt}. \\
+This method can fail in case an essay is too original, but in this case the text can be just marked as "unclassifiable" and be sent to the human teacher. The method was tested with Graduate Management Admission Test$^{\tiny{\textregistered}}$ (GMAT$^{\tiny{\textregistered}}$) essays and showed correlation with human raters of 86\%, whereas the correlation among human raters was 87\% and 86\% for different essay types. It is interesting that IEA was very positively met by students -- 98\% of the ones who tested it very willing to take more tests graded by this system. The system has a user-friendly interface -- see Figure \ref{fig:IEAInt}. \\
 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.8\textwidth]{img/IEAInt}
-    \caption{Architecture of IEA ~\cite{Dikli}.\label{fig:IEAInt}}
+    \caption{Interface of IEA ~\cite{Dikli}.\label{fig:IEAInt}}
 \end{figure}
 
 Next important step in AES was an integration of artificial intelligence. \textbf{IntelliMetric$^{TM}$} or its enterprise version MY Access!$^{\tiny{\textregistered}}$ didn't follow coprus-based path of LSA work and, as PEG e-rater, mostly relies on NLP. However, it tries to emulate the work of human brain and uses CogniSearch$^{TM}$ -- an NLP AI system, which is able to perform POS tagging, morphological analysis, spelling recognition, and collocation grammar (the whole algorithm is, however, not published openly and  protected by patents). It allows the system to go deeper into the language structure and rate essays in accordance to the norms of language -- see Figure \ref{fig:IntelliMetric}. For grading the systems requires a large set of pre-graded essays. The system was tested with GMAT$^{\tiny{\textregistered}}$ prompts and showed human-computer correlation of 97\% on average. MY Access!$^{\tiny{\textregistered}}$ is widely used in USA: in California, Pennsylvania, Massachusetts, Virginia, Oregon, and Texas. Moreover, the following companies use the system as well: The College Board, ACT, Harcourt Assessment, Inc., CTB/McGraw Hill, Thomson Learning. Microsoft, Apple Computer, AOL and Sun Microsystems. 
@@ -470,7 +529,7 @@ When the correctly-formulated questions are prepared and the student answers obt
 
 The oldest direction in ASAG research is, in its pure form, mostly interesting from the historical point of view, for it is not being actively used nowadays. The main idea is searching for the presence/absence of certain concepts those students can mention on their answers. This can be used either on a sentence or facet level. The facet normally contains three or two words ~\cite{Burrows}. This approach is in a way similar to textual entailment, because entailment also concerns, if one sentence means the same that another, contains the same concept -- entails it -- or not.\\
 
-The biggest disadvantage of this approach for ASAG is that it can detect the presence of the concept, but not if it was mentioned in a correct way ~\cite{Dzikovska}. For example, a student can write "Q: What is PCA? A: PCA is a method that affects dimensionality. It increases it.", which is incorrect, but the algorithm may still accept or partially accept this answer, because PCA really affects the dimensionality and it might match the concept, whereas the second part can be not accounted into the same concept estimation.\\
+The biggest disadvantage of this approach for ASAG is that it can detect the presence of the concept, but not if it was mentioned in a correct way ~\cite{SemEval}. For example, a student can write "Q: What is PCA? A: PCA is a method that affects dimensionality. It increases it.", which is incorrect, but the algorithm may still accept or partially accept this answer, because PCA really affects the dimensionality and it might match the concept, whereas the second part can be not accounted into the same concept estimation.\\
 
 The first concept mapping system was developed by \textbf{Burstein} in 1996 ~\cite{Burrows}. It uses  Lexical Conceptual Structure representation, which means that the system detects a presence of certain words and grammatical structures. The approach was rather limited, because it only allowed a certain type of question -- the  hypothesis-style, which means that the answer to this question must contain several explanations of the hypothesis.\\
 
@@ -478,7 +537,7 @@ Another mapping system is Automatic Text Marker (\textbf{ATM}). It operates with
 
 A concept mapping system developed by ETS is called a Concept Rater or \textbf{c-rater}. It focuses on sentence-level comparison of example and students' answers. An example answer is intentionally formulated in such a way that each sentence contains only one concept. Sentence comparison is rule-based and includes a paraphrase recognizer that can distinguish syntactic variations, pronoun references, morphological variations, and synonyms. Moreover, it uses spelling correction ~\cite{c-rater}. \\
 
-Later concept mapping stated including machine learning. \textbf{Wang} in ~\cite{Wang} compares pure heuristics-based concept mapping with  data-driven classification by support vector machines (SVM) and combination of those two methods. In a combination of methods SVM was used with bag-of-words features, whereas pure machine learning used unigrams and bigrams. The best result was reached using the combination of methods.\\
+Later concept mapping stated including machine learning. \textbf{Wang} in ~\cite{Wang} compares pure heuristics-based concept mapping with  data-driven classification by SVM and combination of those two methods. In a combination of methods SVM was used with bag-of-words features, whereas pure machine learning used unigrams and bigrams. The best result was reached using the combination of methods.\\
 
 Table \ref{CFM} shows the comparison of methods above. Accuracy between certain numbers means that the algorithm gives different correlation with human graders on different datasets.
 
@@ -552,11 +611,11 @@ Information extraction (IE) has already been cosidered in NLP section of the wor
 
 From the Gantt chart above and Burrows's review paper one can see that this research direction tends to stay in the past as well as the concept mapping, but Hasanah ~\cite{Hasanah} in 2016 year's paper argues that it is a valid method that can be used in combination with corpus-based methods, which can help to deal with synonyms, in the future.
 
-\subsubsection{Corpus-based methods}
+\subsubsection{Similarity measures}
 
-This group of methods is widely used for analyzing of large texts. It has already been considered in AES section, but corpus-based methods can also be useful for ASAG, because they allows a better paraphrasing detection by efficient interpreting of synonyms ~\cite{Burrows}. These are statistical methods those use information from the large amount of text, so short answers should be preprocessed in order for corpus-based methods to be applied. Below the most significant corpus-based methods are considered.\\
+Next two sections are dedicated to corpus-based and machine learning ASAG systems. Both of them extensively use various text similarity measures. Therefore, this section focuses on summarization of the similarity measures those are essential for understanding of further sections.\\
 
-\textbf{Atenea} system uses a weighted combination of an extended version of BiLingual Evaluation Understudy (BLEU) metric and LSA ~\cite{ERB}. LSA has already been considered in AES section. BLEU in turn was initially used in machine translation, but later it become used in all fields of machine text-processing including ASAG systems. The key concept of this metric is a modified unified n-gram precision (MUP) measure: all n-grams and number of their occurances are taken into account, n-grams of certain type are summed up and divided by the total number of n-grams. It is calculated in the following way ~\cite{BLEU}:\\
+BiLingual Evaluation Understudy (\textbf{BLEU}) was initially used in machine translation, but later it become used in all fields of machine text-processing including ASAG systems. The key concept of this metric is a modified unified n-gram precision (MUP) measure: all n-grams and number of their occurances are taken into account, n-grams of certain type are summed up and divided by the total number of n-grams. It is calculated in the following way ~\cite{BLEU}:\\
 
 \begin{equation} \label{eq:MUP}
 MUP_n = \frac{\sum\limits_{C \in \{AnswerSentences\}} \sum\limits_{n-gram \in C} count_{matches}(n-gram)}{\sum\limits_{C' \in \{AnswerSentences\}} \sum\limits_{n-gram \in C'} count_{matches}(n-gram')}.
@@ -577,9 +636,7 @@ SIM_{BLUE} = BP \times e^{\sum^N_{n=1}w_n \times log(MUP_n)},
 
 where N is a maximum size of an n-gram and $w_n$ -- weight of the corresponding n-gram size. For estimation of BLUE similarity usually $log(SIM_{BLUE})$ is used. \\
 
-For convenience of the reader, these and further similarity measures are summarized in a table \ref{sim} in the "State of the art summary" section.\\
-
-An extended version of BLEU -- Evaluating Responses with BLEU (ERB) adds recall accommodating to precision that uses modified brevity penalty (MBP) factor. The ERB similarity is calculated in the following way ~\cite{ERB}:
+An extended version of BLEU -- Evaluating Responses with BLEU (\textbf{ERB}) adds recall accommodating to precision that uses modified brevity penalty (MBP) factor. The ERB similarity is calculated in the following way ~\cite{ERB}:
 
 \begin{equation} \label{eq:ERB}
 SIM_{ERB}(answer) = MBP(answer)\times e^{\sum^{N}_{n=0}\frac{log(MUP(n))}{N}},
@@ -587,13 +644,124 @@ SIM_{ERB}(answer) = MBP(answer)\times e^{\sum^{N}_{n=0}\frac{log(MUP(n))}{N}},
 
 where n -- length of n-grams-sequence and N -- highest possible value of n. \\
 
-Another system for corpus-based ASAG is \textbf{Willow} developed on the base of Atenea ~\cite{Willow}. The system is different from the previous ones, because it extensively uses various shallow NLP techniques, such as stemming and lemmatization, disambiguation, and multiword term identification. Basically, Willow is based on ERB with an NLP preprocessing. The architecture of the system is shown in Fig. \ref{fig:WillowArch}. It doesn't include LSA part explicitly, but it is normally being used in combination with LSA: LSA + Willow (NLP (stemming + removal of closed-class words + no disambiguation) + ERB). The combination is calculated in the following way:
+Recall-Oriented Understudy for Gisting Evaluation (\textbf{ROUGE}) was initially developed for evaluation of quality of the summaries. There are the following implementation of ROUGE  ~\cite{Noorbehbahani}:
+\begin{itemize}
+\item ROUGE-N -- estimates n-gram with $n>1$ co-occurrences, similar to BLEU.
+\item ROUGE-L -- finds and calculates the length of longest common subsequence of two answers.
+\item ROUGE-W -- finds similar subsequences and takes them into account according to weights.
+\item ROUGE-S -- uses skip-bigram.
+\item ROUGE-SU -- uses the same idea that ROUGE-S, but also takes into account unigrams.
+\end{itemize}
+
+\textbf{N-gram co-occurrence} --  number of similar n-grams ~\cite{Noorbehbahani}
+\begin{equation} \label{eq:n-gram}
+SIM_{n-gram} = \frac{N_{sim}}{N_{total}},
+\end{equation}
+where $N_{sim}$ -- number of matching n-grams between the student's and example answers and $N_{total}$ -- total number of n-grams in student's answer.\\
+
+\textbf{Jaccard} distance -- percent of intersection of two sets (words of answers) ~\cite{Li}:
+\begin{equation} \label{eq:Jaccard}
+SIM_{Jaccard} = \frac{answer_1 \cap answer_2}{answer_1 \cup answer_2}.
+\end{equation}
+
+\textbf{Levenshtein} distance is a "minimum number of operations needed to transform one string into the other" ~\cite{Gomaa}):
+\begin{equation} \label{eq:Levenshtein}
+SIM_{Levenshtein} = \frac{max(length(currentWord,keyword)) - minLev}{length(keyword)},
+\end{equation}
+where $minLev$ is the distance between the current keyword the most similar word in a student's answer. If it is larger or equal to the minimal length of the two words, $SIM_{Levenshtein}$ nullifies. \\
+
+\textbf{S{\o}rensen-Dice} coefficient -- a number of overlap words in two answers:
+\begin{equation} \label{eq:Dice}
+SIM_{Dice} = \frac{2 \times (answer_1 \cap answer_2)}{|answer_1| + |answer_2|}.
+\end{equation}
+
+\textbf{Jaro-Winkler} distance calculates the number of similar characters in two answers taking into account their order. Similarity is calculated in the following way ~\cite{Jaro}:
+\begin{equation} \label{eq:Jaro}
+SIM_{Jaro} = \begin{cases}
+   0 &\text{0 if $m = 0$}\\
+   \text{$\frac{1}{3}(\frac{m}{answer_1} + \frac{m}{answer_2} + \frac{m - t}{m})$}&\text{otherwise},
+ \end{cases}
+\end{equation}
+where m is the number of matching characters and t -- half of the total transpositions number.\\
+
+\textbf{Keywords coverage rate} -- basically it is a count of present and absent keywords or their synonyms ~\cite{Li}. It can be used, for example, with Levenshtein distance:
+\begin{equation} \label{eq:keywordCover}
+keywordCoverage = \sum_{i} SIM_{Levenshtein} / numberOfKeywords,
+\end{equation}
+
+Similarity measures bases on the \underline{distance ($length$) between the concepts}, e.g. from WordNet taxonomy, calculated based on node-counting with the following similarity metric:	\begin{equation} \label{eq:maxsim}
+	maxsim(W,C) = max SIM_x(W,w_i),
+	\end{equation}
+where $C$ is a word class, $W$ -- a word of the class from the example answer, $w_i$ -- a word of the class from the student answer, $SIM_x$ -- one of the 		following similarity measures ~\cite{Mohler}:
+\begin{itemize}
+\item \textbf{shortest path}:
+\begin{equation} \label{eq:shortestPath}
+SIM_{shortestPath} = \frac{1}{length},
+\end{equation}
+where $length$ is the shortest path between the concepts calculated based on node-counting.
+\item \textbf{C-Rater} (has already been considered in "Concept/facet mapping" section):
+\begin{equation} \label{eq:c-rater}
+SIM_{c-rater} = -log \frac{length}{2 \times D},
+\end{equation}
+where $length$ is calculated similar to the shortest path approach and D is the maximum depth of the taxonomy.
+\item \textbf{Lesk}:
+\begin{equation} \label{eq:Lesk}
+SIM_{Lesk} = f(two\_concepts\_overlap).
+\end{equation}
+\item \textbf{Wu and Palmer}:
+\begin{equation} \label{eq:Wu}
+SIM_{Wu} = \frac{2 \times depth(least\_common\_subsumer)}{depth(concept_1) + depth(concept_2)}.
+\end{equation}
+\item \textbf{Resnik}:
+\begin{equation} \label{eq:Resnik}
+SIM_{Resnik} = -log P(least\_common\_subsumer),
+\end{equation}
+where $P(concept)$ is a probability to find an instance of the concept in a given corpus.
+\item \textbf{Lin}:
+\begin{equation} \label{eq:Lin}
+SIM_{Lin} = \frac{2 \times log P(least\_common\_subsumer))}{log P(concept_1) + log P(concept_2)}.
+\end{equation}
+\item \textbf{Jiang and Conrath}:
+\begin{equation} \label{eq:Jiang}
+SIM_{Jiang} = - \frac{1}{log P(concept_1) + log P(concept_2) - 2 \times log P(least\_common\_subsumer) }.
+\end{equation}
+\item \textbf{Hirst and St-Onge}:
+\begin{equation} \label{eq:Hirst}
+SIM_{Hirst} = f(strength\_of\_pair\_of\_synonym\_sets),
+\end{equation}
+which is based on lexical chains detection in WordNet taxonomy.
+\end{itemize}
+
+Vector-based similarities require a prior vectorization of the words, e.g. with word2vec. The following \underline{vector similarities} can be calculated ~\cite{Klein}:
+
+\begin{itemize}
+\item \textbf{cosine} distance:
+\begin{equation} \label{eq:cos}
+SIM_{cos} = \frac{\pmb{answer_1} \times \pmb{answer_2}}{||\pmb{answer_1}|| \times ||\pmb{answer_2}||},
+\end{equation}
+\item \textbf{Euclidean} distance:
+\begin{equation} \label{eq:Euclidean}
+SIM_{Euclidean} = 1 - \sqrt{\sum^k_{i=1}(answer_{1_i} - answer_{2_i})^2},
+\end{equation}
+\item \textbf{Manhattan} distance ~\cite{Li}. Each answer is represented by a vector, e.g. $ \pmb{answer_1} = (answer_{1_1}, answer_{1_2},..., answer_{1_n})$, where n is a length of the answer in words. The similarity is calculated between the student's answer and multiple example answers in the following way:
+\begin{equation} \label{eq:Manhattan}
+SIM_{Manhattan} = 1 - \sum^n_{k=1}|answer_{1_k} - answer_{2_k}| / m,
+\end{equation}
+where m is the total number of words in two answers. As a reference answer the most similar example answer is chosen, i.e. similarity between this and student answer would be taken into account for grading.
+\end{itemize} 
+
+
+\subsubsection{Corpus-based methods}
+
+This group of methods is widely used for analyzing of large texts. It has already been considered in AES section, but corpus-based methods can also be useful for ASAG, because they allows a better paraphrasing detection by efficient interpreting of synonyms ~\cite{Burrows}. These are statistical methods those use information from the large amount of text, so short answers should be preprocessed in order for corpus-based methods to be applied. Below the most significant corpus-based methods are considered.\\
+
+\textbf{Willow} ~\cite{Willow} is a system developed on the base of \textbf{Atenea} ~\cite{ERB} -- the first system that introduced ERB similarity measure. The system extensively uses various shallow NLP techniques, such as stemming and lemmatization and disambiguation. Basically, Willow is based on LSA and ERB with NLP preprocessing. The architecture of the system is shown in Fig. \ref{fig:WillowArch}. It doesn't include LSA part explicitly, but it is normally being used in combination with LSA: LSA + Willow (NLP (stemming + removal of closed-class words + no disambiguation) + ERB). The combination is calculated in the following way:
 
 \begin{equation} \label{eq:Willow}
 SIM_{Willow} = \alpha \times SIM_{PureWillow} + (1 - \alpha \times SIM_{LSA}),
 \end{equation}
 
-where $\alpha$ is a parameter that defines the weights of LSA and Willow parts, the best result was reached with $\alpha = 0.489$. WordNet and British National Corpus (BNC) for English and EuroWordNet for Spanish were used for LSA.\\
+where $\alpha$ is a parameter that defines the weights of LSA and Willow parts, the best result was reached with $\alpha = 0.489$. WordNet and BNC for English and EuroWordNet for Spanish were used for LSA.\\
 
  \begin{figure}[h!]
   \centering
@@ -619,74 +787,31 @@ In \textbf{Short Answer Measurement of Text (SAMText)} author uses modified LSA.
 \end{itemize}
 Whereas a regular LSA uses a large corpus to model semantic relatedness, the given LSA modification is based on inverted index data structure, which requires general-corpus and topic-specific keywords to create the corpora. The advantage of the approach is that it allows to use a subject-specific sublanguage  instead of the whole language. Thereby, modified LSA can work properly with short answers and only requires a few example answers ~\cite{Burrows}.\\
 
-\textbf{Mohler} ~\cite{Mohler} focuses on unsupervised ASAG systems and evaluates ten of them on the same dataset obtained from  Data Structures course. It is important, because, as it was mentioned above, it is usually hard to compare the  systems tested on completely different datasets. Moreover, the dataset was published and thereby the other authors later also have the opportunity to use this dataset to evaluate their algorithms ~\cite{Sultan}, which allows to obtain comparable results. The following methods were evaluated: 
+\textbf{Mohler} ~\cite{Mohler} focuses on unsupervised ASAG systems and evaluates ten of them on the same dataset obtained from  Data Structures course. The dataset consists of 80 questions, 2273 students' answers and two sets of grades given by two different people. It is important, because, as it was mentioned above, it is usually hard to compare the  systems tested on completely different datasets. Moreover, the dataset was published and thereby the other authors later also have the opportunity to use this dataset to evaluate their algorithms ~\cite{Sultan}, which allows to obtain comparable results. The following methods were evaluated: 
 \begin{itemize}
-\item knowledge-based methods with the following maximum similarity metric:
-\begin{equation} \label{eq:maxsim}
-maxsim(W,C) = max SIM_x(W,w_i),
-\end{equation}
-where $C$ is a word class, W -- a word of the class from the example answer, $w_i$ -- a word of the class from the student answer, $SIM_x$ -- one of the following similarity measures:
-\begin{itemize}
-\item shortest path:
-\begin{equation} \label{eq:shortestPath}
-SIM_{shortestPath} = \frac{1}{length},
-\end{equation}
-where $length$ is the shortest path between the concepts calculated based on node-counting. Accuracy: 44.14\%.
-\item C-Rater (has already been considered in "Concept/facet mapping" section):
-\begin{equation} \label{eq:c-rater}
-SIM_{c-rater} = -log \frac{length}{2 \times D},
-\end{equation}
-where $length$ is calculated similar to the shortest path approach and D is the maximum depth of the taxonomy. Accuracy: 22.31\%.
-\item Lesk:
-\begin{equation} \label{eq:Lesk}
-SIM_{Lesk} = f(two\_concepts\_overlap).
-\end{equation}
-Accuracy: 36.3\%.
-\item Wu and Palmer:
-\begin{equation} \label{eq:Wu}
-SIM_{Wu} = \frac{2 \times depth(least\_common\_subsumer)}{depth(concept_1) + depth(concept_2)},
-\end{equation}
-where the concepts are from WordNet taxonomy. Accuracy: 33.66\%.
-\item Resnik:
-\begin{equation} \label{eq:Resnik}
-SIM_{Resnik} = -log P(least\_common\_subsumer),
-\end{equation}
-where $P(concept)$ is a probability to find an instance of the concept in a given corpus. Accuracy: 25.20\%.
-\item Lin:
-\begin{equation} \label{eq:Lin}
-SIM_{Lin} = \frac{2 \times log P(least\_common\_subsumer))}{log P(concept_1) + log P(concept_2)}.
-\end{equation}
-Accuracy: 39.16\%.
-\item Jiang and Conrath:
-\begin{equation} \label{eq:Jiang}
-SIM_{Jiang} = - \frac{1}{log P(concept_1) + log P(concept_2) - 2 \times log P(least\_common\_subsumer) }.
-\end{equation}
-Accuracy: 44.99\%.
-\item Hirst and St-Onge:
-\begin{equation} \label{eq:Hirst}
-SIM_{Hirst} = f(strength\_of\_pair\_of\_synonym\_sets),
-\end{equation}
-which is based on lexical chains detection in WordNet taxonomy. Accuracy: 19.61\%.
-\end{itemize}
-The implementation of the methods above is WordNet-based.
-\item corpus-based methods :
-\begin{itemize}
-\item LSA (considered in details in "AES" section) trained on BNC and English Wikipedia (September 2017 version). For implementation of LSA InfoMap package (\url{http://infomap-nlp.sourceforge.net/}) is used. Accuracy: 67.35\% -- on reduced computer science Wikipedia corpus with adding new good students' answers to the examples list.
-\item Explicit Semantic Analysis (ESA or ESA Wikipedia) -- concept-vector features approach trained on Wikipedia (September 2017 version) corpus, each article is a concept vector. This algorithm is implemented by the authors themselves based on work by Gabrilovich and Markovitch ~\cite{Gabrilovich}. Accuracy: 64.98\% -- on full Wikipedia corpus with adding new good students' answers to the examples list.
-\end{itemize}
-It was shown that the accuracy of LSA strongly depends on the size of training corpus and on how close the corpus topic is to the topic of exam, i.e. the better results for the Data Structures test was obtained using domain-specific corpus that contained Wikipedia articles on computer science. However, for ESA the size is more important and it performs worse on a smaller domain-specific corpus. Also, in addition to the example correct answers the system added the best student answers to the list of examples, which helped to improve the quality of grading significantly. 
+	\item knowledge-based methods (see Equations \ref{eq:shortestPath}-\ref{eq:Hirst}):
+	\begin{itemize}
+	\item shortest path, accuracy: 44.14\%.
+	\item C-Rater, accuracy: 22.31\%.
+	\item Lesk, accuracy: 36.3\%.
+	\item Wu and Palmer, accuracy: 33.66\%.
+	\item Resnik, accuracy: 25.20\%.
+	\item Lin, accuracy: 39.16\%.
+	\item Jiang and Conrath, accuracy: 44.99\%.
+	\item Hirst and St-Onge, accuracy: 19.61\%.
+	\end{itemize}
+	\item corpus-based methods :
+	\begin{itemize}
+		\item LSA (considered in details in "AES" section) trained on BNC and English Wikipedia (September 2017 version). For implementation of LSA InfoMap 			package is used. Accuracy: 67.35\% -- on reduced computer science Wikipedia corpus with adding new good students' answers to the examples list.
+		\item Explicit Semantic Analysis (ESA or ESA Wikipedia) -- concept-vector features approach trained on Wikipedia (September 2017 version) corpus, 				each article is a concept vector. This algorithm is implemented by the authors themselves based on work by Gabrilovich and Markovitch ~							\cite{Gabrilovich}. Accuracy: 64.98\% -- on full Wikipedia corpus with adding new good students' answers to the examples list.
+	\end{itemize}
+	It was shown that the accuracy of LSA strongly depends on the size of training corpus and on how close the corpus topic is to the topic of exam, i.e. 	the better results for the Data Structures test was obtained using domain-specific corpus that contained Wikipedia articles on computer science. 			However, for ESA the size is more important and it performs worse on a smaller domain-specific corpus. Also, in addition to the example correct 			answers the system added the best student answers to the list of examples, which helped to improve the quality of grading significantly. 
 \end{itemize}
 
 It is interesting that the result of LSA, which was said to be unsuitable for ASAG in Bukai's work ~\cite{SAMText} shows the best results in Mohler's work ~\cite{Mohler}. However, the best result is 67.35\%, therefore it is still questionable, if LSA сan be used for ASAG. \\
 
-As it was shown by Mohler ~\cite{Mohler}, LSA performs better when trained on domain-specific corpus. Therefore, \textbf{Klein} ~\cite{Klein} trains LSA on even more specific corpus that consists only of partially manually-graded student's answers. To determine the distance between the answers, a linear combination of cosin and Euclidean similarities was chosen:
+As it was shown by Mohler ~\cite{Mohler}, LSA performs better when trained on domain-specific corpus. Therefore, \textbf{Klein} ~\cite{Klein} trains LSA on even more specific corpus that consists only of partially manually-graded student's answers. To determine the distance between the answers, a linear combination of cosine and Euclidean similarities (see Equations \ref{eq:cos}-\ref{eq:Euclidean}) was chosen:
 
-\begin{equation} \label{eq:cos}
-SIM_{cos} = \frac{\pmb{answer_1} \times \pmb{answer_2}}{||\pmb{answer_1}|| \times ||\pmb{answer_2}||},
-\end{equation}
-\begin{equation} \label{eq:Euclidean}
-SIM_{Euclidean} = 1 - \sqrt{\sum^k_{i=1}(answer_{1_i} - answer_{2_i})^2},
-\end{equation}
 \begin{equation} \label{eq:combinedCE}
 \begin{array}{l}
 SIM_{combined} = \alpha  \times SIM_{Euclidean}(\pmb{answer_1}, \pmb{answer_2}) + \\ + (1-\alpha) \times SIM_{cos}(\pmb{answer_1}, \pmb{answer_2}),
@@ -705,17 +830,15 @@ The Min-Max algorithm was shown to be the most efficient and k-means was on the 
 The work of \textbf{Noorbehbahani} ~\cite{Noorbehbahani} deserves a special attention, for it contains a good description of various metrics:
 
 \begin{itemize}
-\item n-gram co-occurrence --  number of similar n-grams:\\
-$SIM_{n-gram} = \frac{N_{sim}}{N_{total}},$\\
-where $N_{sim}$ -- number of matching n-grams between the student's and example answers and $N_{total}$ -- total number of n-grams in student's answer.
-\item BLUE -- has already been considered above in this section -- in the description of Atenea system, see equation \ref{eq:BLUE}. In addition to that
-Noorbehbahani mentions the following drawbacks of the system ~\cite{Noorbehbahani}:
+\item n-gram co-occurrence -- see Equation \ref{eq:n-gram}. Accuracy: 48\%.
+\item BLUE \ref{eq:BLUE} -- see Equation \ref{eq:BLUE}. Noorbehbahani mentions the following drawbacks of the system ~\cite{Noorbehbahani}:
 \begin{itemize}
 \item BLUE only recognizes exactly-matching words, which means that it discards even misspelled words, and will certainly ignore synonyms;
 \item all words have the same weights, which means that the essential for the meaning of the answer special terms would have as much meaning as articles or transition words;
 \item the system compares the student answer with all reference answers and counts matches from different references;
 \item brevity penalty punishes all answers those are longer than the reference ones, which doesn't always makes sense.
 \end{itemize}
+Accuracy: 36\%.
 \item M-BLUE -- the system proposed by Noorbehbahani. It is based on the same idea, but includes the following modifications:
 \begin{itemize}
 \item spelling correction;
@@ -729,20 +852,15 @@ SIM_{M-BLUE} = \lambda \times BP_r \times SIM_{M-BLUE} + (1 - \lambda) \times S_
 \end{equation}
 where $BP_r$ is a modified weighted brevity penalty, $SIM_{BLUE_ra}$ -- weighted similarity measure between a student answer and one reference answer, $S_0$ --  measure for calculating the common-words order similarity and $\lambda$ is a similarity components weight parameter, which is taken in range between 0.5 and 1. In Noorbehbahani's work $\lambda = 0.85$ was chosen experimentally. The whole derivation of the equation \ref{eq:M-BLUE} is intentionally omitted, because the meaning of the equation members is clear from the list items above and the formulas for them can be found in ~\cite{Noorbehbahani}.
 \end{itemize}
-\item ERB -- has already been considered above in this section -- in the description of Atenea system, see equation \ref{eq:ERB}.
-\item Recall-oriented understudy for gisting evaluation (ROUGE) was initially developed for evaluation of quality of the summaries. There are the following implementation of ROUGE:
-\begin{itemize}
-\item ROUGE-N -- estimates n-gram with $n>1$ co-occurrences, similar to BLEU.
-\item ROUGE-L -- finds and calculates the length of longest common subsequence of two answers.
-\item ROUGE-W -- finds similar subsequences and takes them into account according to weights.
-\item ROUGE-S -- uses skip-bigram.
-\item ROUGE-SU -- uses the same idea that ROUGE-S, but also takes into account unigrams.
-\end{itemize}
+Accuracy: 85\%.
+\item ERB -- see equation \ref{eq:ERB}. Accuracy: 41\%.
+\item ROUGE. Accuracy: 22\%.
+\item LSA. Accuracy: 51\%.
 \item Combination of LSA and n-grams -- answers are broken into sentences, each of them is a vector for LSA and closeness of the answers is evaluated as a cosin distance. Separately n-gram n-gram co-occurrence is calculated. After this, two similarities are combined:\\
 \begin{equation} \label{eq:LSA+n-grams}
 SIM_{LSA+n-grams} = \frac{SIM_{LSA} + SIM_{n-gram}}{2}.
 \end{equation}
-The method can be modified by a more complex -- weighted -- calculating of the similarity.
+The method can be modified by a more complex -- weighted -- calculating of the similarity. Accuracy: 59\%.
 \end{itemize}
 
 The dataset used in this paper was obtained from a computer science e-learning course. It contained 45 questions, 300 example answers and 237 student's answers.\\
@@ -750,35 +868,11 @@ The dataset used in this paper was obtained from a computer science e-learning c
 There were several important papers on corpus-based methods published 2012. The first one by \textbf{Li} ~\cite{Li} concentrates on various similarity metrics, which allows us to extend the list of the metrics given by Mohler and Noorbehbahani. The following similarity metrics are considered:
 
 \begin{itemize}
-\item cosine similarity -- has already been considered above in this section -- in the description of Mohler's system. \\
-Accuracy: 75.3\%.
-\item Jaccard similarity -- percent of intersection of two sets (words of answers):
-\begin{equation} \label{eq:Jaccard}
-SIM_{Jaccard} = \frac{answer_1 \cap answer_2}{answer_1 \cup answer_2}.
-\end{equation}
-Accuracy: 73.9\%.
-\item S{\o}rensen-Dice coefficient -- a number of overlap words in two answers:
-\begin{equation} \label{eq:Dice}
-SIM_{Dice} = \frac{2 \times (answer_1 \cap answer_2)}{|answer_1| + |answer_2|}.
-\end{equation}
-Accuracy: 76.6\%.
-\item Manhattan similarity -- introduced by Li for ASAG. Each answer is represented by a vector, e.g. $ \pmb{answer_1} = (answer_{1_1}, answer_{1_2},..., answer_{1_n})$, where n is a length of the answer in words. The similarity is calculated between the student's answer and multiple example answers in the following way:
-\begin{equation} \label{eq:Manhattan}
-SIM_{Manhattan} = 1 - \sum^n_{k=1}|answer_{1_k} - answer_{2_k}| / m,
-\end{equation}
-where m is the total number of words in two answers.\\
-As a reference answer the most similar example answer is chosen, i.e. similarity between this and student answer would be taken into account for grading.\\
-Accuracy: 76.2\%.
-\item Keywords coverage rate -- basically it is a count of present and absent keywords or their synonyms. For this Levenshtein distance ("minimum number of operations needed to transform one string into the other" ~\cite{Gomaa}) is used, because it allows to evaluate substitutions and deletions in strings. \\
-
-\begin{equation} \label{eq:Levenshtein}
-SIM_{Levenshtein} = \frac{max(length(currentWord,keyword)) - minLev}{length(keyword)},
-\end{equation}
-where $minLev$ is the distance between the current keyword the most similar word in a student's answer. If it is larger or equal to the minimal length of the two words, $SIM_{Levenshtein}$ nullifies. 
-\begin{equation} \label{eq:keywordCover}
-keywordCoverage = \sum_{i} SIM_{Levenshtein} / numberOfKeywords,
-\end{equation}
-Accuracy: 64.6\%.
+\item cosine distance -- see Equation \ref{eq:cos}. Accuracy: 75.3\%.
+\item Jaccard distance -- see Equation \ref{eq:Jaccard}. Accuracy: 73.9\%.
+\item S{\o}rensen-Dice coefficient see Equation \ref{eq:Dice}. Accuracy: 76.6\%.
+\item Manhattan distance -- introduced by Li for ASAG. See Equation \ref{eq:Manhattan}. Accuracy: 76.2\%.
+\item Keywords coverage rate -- see Equation \ref{eq:keywordCover}. Accuracy: 64.6\%.
 \end{itemize}
 
 The similarity measures were tested separately and then combined with different weights those were determined by linear regression.\\
@@ -789,26 +883,19 @@ Another paper published in 2012 by \textbf{Gomaa} ~\cite{Gomaa} also uses a comb
 \begin{itemize}
 \item Character-based distance measures
 \begin{itemize}
-\item Levenshtein distance -- described in the work considered before.
-\item Jaro-Winkler distance -- calculates the number of similar characters in two answers taking into account their order. Similarity is calculated in the following way ~\cite{Jaro}
-\begin{equation} \label{eq:Jaro}
-SIM_{Jaro} = \begin{cases}
-   0 &\text{0 if $m = 0$}\\
-   \text{$\frac{1}{3}(\frac{m}{answer_1} + \frac{m}{answer_2} + \frac{m - t}{m})$}&\text{otherwise},
- \end{cases}
-\end{equation}
-where m is the number of matching characters and t -- half of the total transpositions number.
+\item Levenshtein distance -- see Equation \ref{eq:Levenshtein}.
+\item Jaro-Winkler distance -- see \ref{eq:Jaro}.
 \item Needleman-Wunsch algorithm -- dynamical-programming algorythm initially used for protein or nucleotide sequences similarity calculations. It searches for the best alignment over the whole two answers.
 \item Smith-Waterman algorithm -- also from dynamic programming, looks for similarities over conserved domain of two answers. 
-\item n-gram co-occurrence -- considered above in the description of Noorbehbahani's work.
+\item n-gram co-occurrence see Equation \ref{eq:n-gram}.
 \end{itemize}
 \item Term-based distance measures
 \begin{itemize}
-\item Manhattan distance -- considered above in the description of Li's work.
-\item cosine similarity -- considered above in the description of Mohler's system.
-\item S{\o}rensen-Dice distance -- considered above in the description of Li's work.
-\item Euclidean distance -- considered above in the description of Mohler's system.
-\item Jaccard similarity -- considered above in the description of Mohler's system.
+\item Manhattan distance -- see Equation \ref{eq:Manhattan}.
+\item cosine similarity -- see Equation \ref{eq:cos}.
+\item S{\o}rensen-Dice distance -- see Equation \ref{eq:Dice}.
+\item Euclidean distance -- see Equation \ref{eq:Euclidean}.
+\item Jaccard distance -- see Equation \ref{eq:Jaccard}.
 \item Matching Coefficient -- number of non-zero values over the term axes those are similar for two answer-vectors.
 \item Overlap coefficient -- modified S{\o}rensen-Dice distance: if only a subset of one answer is similar to the whole other answer, these answers are 100\% match.
 \end{itemize}
@@ -817,15 +904,10 @@ where m is the number of matching characters and t -- half of the total transpos
 Corpus-based similarity methods are represented by the following:
 
 \begin{itemize}
-\item LSA -- considered above in AES section.
-\item ESA -- considered above in the description of Mohler's system.
-\item Pointwise Mutual Information -- uses  AltaVista's Advanced Search query syntax to calculate the matching between word pairs by calculating the probability of co-occurrence of the words based on web pages corpus.
-\item extracting DIstributionally related words using CO-occurrences (DISCO) -- Java application for calculating similarity between words or short texts, finding the most similar words in texts, e.g. "smart" and "clever", and finding the related words, e.g. "beer" $\rightarrow$ "K\"olsch", alcohol, foam, barrel. It requires a database of word similarities (word space) precalculated on a large text corpora by "DISCO Builder". It is similar to word2vec --  log-bilinear prediction-based bag-of-words and skip-n-gram algorithms for vectorizing words developed by Google  ~\cite{word2vec} -- and Global Vectors for Word Representation (GloVe) -- log-bilinear regression unsupervised algorithm for word vectorization ~\cite{GloVe}. Architecture of the system is shown in Fig. \ref{fig:DISCO}. DISCO Builder is trained on Wikipedia and BNC. 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=0.8\textwidth]{img/DISCO}
-    \caption{ Architecture of DISCO ~\cite{DISCO}. }\label{fig:DISCO}
-\end{figure}
+\item LSA
+\item ESA
+\item PMI-IR
+\item DISCO
 \end{itemize}
 
 ASAG is performed in three stages:
@@ -834,14 +916,19 @@ ASAG is performed in three stages:
 \item DISCO similarities are calculated, at the same step lammatization and stop-words removal are made.
 \item combination of first two steps and deriving the grade based on maximum and average overall similarities
 \end{itemize}
-To evaluate the efficiency of the introduced methods, Mohle'r dataset is used. The best human-computer correlation among string-based methods was achieved by n-gram co-occurrence -- 39.8\%. The best DISCO result was shown after training on Wikipedia corpus -- 47.5\%. The three methods mentioned above were combined and the total result reached 50.4\%. This work shows not very high results in comparison to many other papers, however, there are several important points:
+To evaluate the efficiency of the introduced methods, Mohler's dataset is used. The best human-computer correlation among string-based methods was achieved by n-gram co-occurrence -- 39.8\%. The best DISCO result was shown after training on Wikipedia corpus -- 47.5\%. The three methods mentioned above were combined and the total result reached 50.4\%. This work shows not very high results in comparison to many other papers, however, there are several important points:
 \begin{itemize}
 \item it uses Mohler's dataset, which  makes the result comparable. Moreover, the obtained result is not that low if we compare it to the other algorithms trained on the same data.
 \item The algorithm was trained on whole Wikipedia corpus. It is very likely that the result would be better if only computer science Wikipedia would have been used, as it helped to improve LSA's performance in Mohler's work.
 \item The work also shows the importance of combination of various metrics and methods and thereby leads to using them as features in machine learning.
 \end{itemize}
+
+\textbf{Pribadi} ~\cite{Pribadi} uses Mohler's dataset with word overlap features based on Dice, Jaccard and cosine distances. It doesn't create much of a scientific contribution to what has already been done, however, an interesting analysis of the dataset structure was performed. It shows that a simple word overlap doesn't always help and its usefulness depends on the answer type. Some questions require a short and very concrete answer that cannot be paraphrased, e.g. "What are the access-specifiers that can be used in a C++ class definition?"-"Private and public.". In this case a very high accuracy can be achieved by using a word overlap approach. Yet, when a question implies a long answer that contains words those can be replaces by valid synonyms, word overlap may lead to false-negative results. For example, in a question-answer pair "What is the role of a prototype program in problem solving?"-"To simulate the behaviour of portions of the desired software product" "software product" can be replaced be "program" and simulate -- by "mimic" without a significant sense alteration. An answer can even be formulated completely differently, e.g. "Abstraction and reusability", and still be correct. The examples are taken from Mohler's dataset. It shows an importance of usage of various features, not only word-overlap.\\
+
  
 Table \ref{Corpus} shows the comparison of various corpus-based methods those are in part of the cases combined with various similarity metrics. A dataset column was not added intentionally, because most of the works use their own datasets. The works using Mohler's dataset marked as "(MD)".
+
+
  
 \begin{table}[h!]
 \centering
@@ -857,7 +944,8 @@ Table \ref{Corpus} shows the comparison of various corpus-based methods those ar
  Klein & 2011 & LSA + clustering &  80\%-95\% \\ \hline
  Noorbehbahani & 2011 & M-BLEU & 85\% \\ \hline
  Gomaa & 2012 & bag of words & 50.4\% (MD) \\ \hline
- Li & 2012 & Approach & 77.8\% \\ \hline
+ Li & 2012 & \begin{tabular}[l]{@{}c@{}}  Jaccard, Dice\\and Manhattan distances,\\keywords coverage\end{tabular} & 77.8\% \\ \hline
+ Pribadi & 2017 & \begin{tabular}[l]{@{}c@{}}  Jaccard, Dice\\and cosine distances \end{tabular}  &  unknown (MD) \\ \hline
 \end{tabular}
 \end{table}
  
@@ -886,14 +974,14 @@ To evaluate the performance of the system datasets from The Institute for Inform
 
 Content Assessment Module (\textbf{CAM}) ~\cite{CAM} is a system for grading of assignments on  English as a Second Language (ESL) test. A dataset for evaluation of the system is taken from this test. It includes 75 questions 566 students' answers, having an example answer is not required. In this method the answers are divided into a graded and test sets and the answers from the test set are compared to the ones from the graded set using a number of NLP techniques: tokenization, lemmatization, spelling correction and noun phrase chunking -- for preprocessing, and similarity metrics -- for preprocessed text similarity calculation. For these tasks the following tools were used:
 \begin{itemize}
-\item MontyLingua -- Java/Python NLP toolkit (\url{http://alumni.media.mit.edu/~hugo/montylingua/doc/MontyLingua.html}),
-\item PC-KIMMO --  morphological analysis two-level processor  (\url{http://www.ai.mit.edu/courses/6.863/doc/pckimmo.html}),
-\item Spell Checker Oriented Word Lists (SCOWL) -- spelling correction for English (\url{https://github.com/en-wl/wordlist}),
-\item TreeTagger -- part-of-speech annotation tool for many languages (\url{http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/}),
-\item CASS -- a tool for chunking (\url{http://spraakdata.gu.se/svedk/cass_swe.html}),
-\item WordNet -- considered in "Information extraction methods" section,
-\item PMI-IR -- considered in "Corpus-based methods and metric" section,
-\item Stanford parser -- a statistical tool for structure of sentences parsing (\url(https://nlp.stanford.edu/software/lex-parser.shtml)).
+\item MontyLingua
+\item PC-KIMMO
+\item Spell Checker Oriented Word Lists (SCOWL)
+\item TreeTagger
+\item CASS
+\item WordNet
+\item PMI-IR 
+\item Stanford parser
 \end{itemize}
 
 
@@ -918,7 +1006,7 @@ Content Assessment Module (\textbf{CAM}) ~\cite{CAM} is a system for grading of 
 \item Variety of match -- number of token-level alignments types
 \end{itemize}
 
-These features are used with Tilburg Memory-Based Learner (TiMBL) classifier and thereby reach 88\% of human-computer correlation. TiMBL is based on k-nearest neighbor (KNN) classifier modified in such a way that the nearest neighbors are searched in a decision-tree structure ~\cite{TiMBL}. It is open-source and can be downloaded on the following website: \url{https://languagemachines.github.io/timbl/}. The last commit in TiMBL's github repository (\url{https://github.com/LanguageMachines/timbl}) was on 7th of February 2018, which shows that it is still relevant. \\
+These features are used with Tilburg Memory-Based Learner (TiMBL) classifier and thereby reach 88\% of human-computer correlation. TiMBL is based on KNN classifier modified in such a way that the nearest neighbors are searched in a decision-tree structure ~\cite{TiMBL}. It is open-source and can be downloaded on the following website: \url{https://languagemachines.github.io/timbl/}. The last commit in TiMBL's github repository (\url{https://github.com/LanguageMachines/timbl}) was on 7th of February 2018, which shows that it is still relevant. \\
 
 Comparing Meaning in Context (\textbf{CoMiC-EN}) ~\cite{CoMiC-EN} and \textbf{CoMiC-DE} ~\cite{CoMiC-DE} are systems for grading reading comprehension assignments in English and German correspondingly. The work is strongly based to CAM approach. It uses the same dataset (for CoMiC-EN) and ML method -- TiMBL. However, there are the following differences:
 
@@ -935,9 +1023,9 @@ Comparing Meaning in Context (\textbf{CoMiC-EN}) ~\cite{CoMiC-EN} and \textbf{Co
 
 \item CoMiC uses different NLP tools for their extraction:
 \begin{itemize}
-\item Apache OpenNLP toolkit (\url{https://opennlp.apache.org/}) instead of MontyLingua and CASS,
-\item Morpha -- Java tool for morphological analysis (\url{https://github.com/knowitall/morpha}) instead of PC-KIMMO,
-\item MaltParser -- a data-driven dependency parsing (\url{http://www.maltparser.org/}) instead of Stanford parser.
+\item Apache OpenNLP toolkit instead of MontyLingua and CASS
+\item Morpha instead of PC-KIMMO
+\item MaltParser instead of Stanford parser
 \end{itemize}
 The rest of the tools (SCOWL, TreeTagger, WordNet and PMI-IR) remained the same.
 \item CoMiC uses the following features: "cosine distance, dot product, weighted overlap, Levenshtein distance, Euclidean distance, modified value difference, Jeffrey divergence and numeric overlap" ~\cite{CoMiC-EN}. All of the have already been described above.
@@ -949,121 +1037,158 @@ CoMiC shows an insignificantly better result than CAM -- 88.4\% vs 88\%. Neverth
 CoMiC-DE is conceptually identical to CoMiC-EN, but focuses on German languag and uses Corpus of Reading comprehension Exercises
 in German (CREG). It is the first work that considers automated grading of reading comprehension in German. One can suggest that English and German languages might require slightly different NLP-prepsocessing, however, in this paper the same tools are used and results of English and German ASAG were identical.\\
 
-In \textbf{Zbontar}'s ~\cite{Zbontar} paper a stacking method is used. The main idea of the stacking is combining not only of several metrics, but also of several machine learning methods. The following preprocessing was used: lowercasing, removal of all punctuation, spelling correction, breaking text into 4- and 6-character-grams and creating bag-of-words model based on the n-grams. It is important that character n-grams were used, for usually sentences are broken into word-n-grams. Word-n-grams were already considered before. Character n-grams, e.g. with n = 4, would break a sentence in the following way: "finnegans wake" = \{"finn", "inne", "nneg", "nega", "egan", "gans", "ans ", "ns w", "s wa", " wak", "wake"\}. The following machine learning methods were used: Ridge Regression (RR), SVM -- with lineal and RBF kernels, Gradient Boosting Machine (GBM), Random Forests (RF) and KNN. Different combination of methods were used with different preprocessing:
+\textbf{Hou}'s ~\cite{Hou} is interesting because he introduces POS tagging those were not widely used in ASAG before. Hou preprocesses the students' answers by removing punctuation and digits, and lemmatization. The following features were used for SVM-classification:
+\begin{itemize}
+\item POS
+\item TF
+\item TF-IDF
+\item EV
+\end{itemize} 
+For evaluation of the algorithm was taken a dataset that contains 9 questions with 38 student answers for each. Algorithm reached 71.9\% of human-computer correlation.
+
+In \textbf{Zbontar}'s ~\cite{Zbontar} paper a stacking method is used. The main idea of the stacking is combining not only of several metrics, but also of several machine learning methods. The following preprocessing was used: lowercasing, removal of all punctuation, spelling correction, breaking text into 4- and 6-character-grams and creating bag-of-words model based on the n-grams. It is important that character n-grams were used, for usually sentences are broken into word-n-grams. Word-n-grams were already considered before. The following machine learning methods were used: Ridge Regression (RR), SVM -- with lineal and RBF kernels, Gradient Boosting Machine (GBM), RF and KNN. Different combination of methods were used with different preprocessing:
 \begin{itemize}
 \item RR, GBM and RF -- with 4-grams
 \item RR, SVM-RBF, GMB -- with spelling correction + 4-grams
 \item RR, SVM-RBF -- with 6-grams
 \item RR, SVM-RBF, KNN -- with spelling correction + 6-grams
-\item SVM-RBF -linear, KNN -- with bag-of-word model based on 4-grams + latent semantic indexing with 200 components // TODO: what it is
+\item SVM-RBF and -linear, KNN -- with bag-of-word model based on 4-grams + latent semantic indexing with 200 components
 \item SVM-RBF, GBR, KNN -- with bag-of-word model based on 4-grams + latent semantic indexing with 500 components
 \end{itemize}
 
-For evaluation of the method a Kaggle dataset ~\cite{kaggleSas} was used. As Mohler's dataset, this one also contains grades of two human graders. To avoid ambiguity, author just discards the answers graded differently. For the rest of the answers only the grade given by the first human was considered for the learning.
+For evaluation of the method a Kaggle dataset ~\cite{kaggleSas} was used. As Mohler's dataset, this one also contains grades of two human graders. To avoid ambiguity, author just discards the answers graded differently. For the rest of the answers only the grade given by the first human was considered for the learning.\\
+
+Another work from ETS organization by Madnani ~\cite{Madnani} describes a Reading for Understanding (\textbf{RfU})framework  for evaluation of summaries. The following features were used: 
+\begin{itemize}
+\item BLEU. Contributes negatively to the score.
+\item ROUGE. Contributes positively to the score.
+\item CopiedSumm -- number of occurrences of n-grams (n$>$2) common with the topic formulation divided by the length of a student's answer, basically ”copied-prompt” gibberish detection. Contributes negatively to the score.
+\item CopiedPassage -- number of occurrences of n-grams (n$>$2) common with the topic formulation divided by the length of topic formulation. Contributes negatively to the score.
+\item MaxCopy -- maximum n in n-grams copied from the topic formulation. Contributes negatively to the score.
+\item FirstSent -- number of task formulation sentences those have common n-grams (n$>$1) with the first sentence of the answer. Contributes positively to the score.
+\item Length in sentences. Not mentioned how it contributes to the score.
+\item Coherence -- semantic similarity between the answer and an the topic -- related to "bad faith" and ”unexpected-topic” gibberish detection. Contributes positively to the score.
+\end{itemize}
+
+FirstSent and Coherence were shown to be least useful features, whereas BLUE, ROUGE and CopiedSumm -- the most useful. It is different that the contribution of the features into the score are different for different summary topics. The features are combined with a logistic regression classifier. To evaluate the algorithm a dataset containing 2695 summaries of two topics -- 1016 for the first one and 1679 for the second one -- was used. The most important of the metrics mentioned here for ASAG related to technical subjects are BLUE, ROUGE and coherence.\\
+
+\textbf{SemEval} ~\cite{SemEval} paper is a result the Joint Student Response Analysis and 8th Recognizing Textual Entailment Challenge. The approach is based on usage of TE. One of the important take-away messages from this paper is that the algorithm considers not just a student answer-example answer entailment, but a joint student answer plus question-example answer entailment. The reason is that the students tend to omit the information already given in an answer to save time, whereas an example question may contain a longer version of solution. Participants of the competition used such approaches as LSA and such metrics as BLEU, ROUGE and other similar ones. To evaluate the algorithm the Student Response Analysis corpus was used. The corpus consists of two parts: BEETLE contains 56 questions, each of which has one or several example answers, and around 3000 students' answers; and SCIENTSBANK that contains 197 questions, each of which has one or several example answers, and around 10,000 students' answers. The best result was achieved by ETS: 70\% for BEETLE and 62\% for SCIENTSBANK. ETS team used the following features: lexical similarity, n-grams similarity, BLUE and PERP. PERP is a similarity measure based on finding sequences of edit operations ~\cite{Heilman}.\\
+
+\textbf{Sultan} ~\cite{Sultan} uses the following methods:
+\begin{itemize}
+\item word alignment:
+\begin{itemize}
+\item proportion of words semantically similar to an example answer in a student's answer
+\item proportion of words semantically similar to a student's answer in an example answer
+\end{itemize}
+It is important to use both features, because both, student's or an example answers, may have different number words those are not changing the meaning but change the percentage of aligned words, e.g. introductory words. 
+\item Semantic vector cosine similarity based on word2vec ~\cite{Baroni}. Each sentence is represented as sum of lemmatized words' vectors.
+\item TF-IDF
+\item answer length
+\end{itemize} 
+
+It is interesting that whereas SemEval combines a question and student's answer, Sultan subtracts the words used in a question from the students' answers, which would make the students' answers equally far from an example answer in case it contains a partial reformulation of the question. It can help to avoid ”copied-prompt” gobberish, but may too much reduce an answer. A ridge regression model from Python's library sklear was used to classify the students' answers. The algorithm was tested on Mohler's dataset and human-computer correlation reached 63\%.\\
+
+
+Deep learning methods were already widely applied to AES, but so far there is only one paper by \textbf{Zhang} ~\cite{Zhang} that applies a deep learning approach to ASAG. The author proposes usage of deep belief networks (DBN) that uses restricted Boltzmann machine and compares it with such classic classifiers as Naive Bayes, logistic regression, decision tree, artificial neutral network and SVM. An important idea proposed in the paper is usage not only of an \underline{answer model}, as it was done in the papers considered above, but also taking into account a question and a student models. \underline{Question model} is based on spotting various knowledge components in the questions. In a way in is similar to LSA approach, because a matrix with knowledge components-rows and question-columns is built for the question classification. \underline{Student model} is based on Bayesian Knowledge Tracing. It means that the system keeps track of student performance during examination and considers it as a Markov Chain. Basically, this model shows the learning progress of a students in various knowledge areas. This model allows to predict, if student will answer a next question from a certain knowledge area correctly. Therefore, the following features were used:
+\begin{itemize}
+\item answer model:
+\begin{itemize}
+\item TF-IDF match
+\item TF-IDF-based cosine similarity
+\item answer length
+\item weighted text similarity
+\item LSA
+\end{itemize}
+\item question model:
+\begin{itemize}
+\item question type based on question-knowledge components matrix
+\item question difficulty -- derived from a training corpus and based on a percent of good and bad grades given to answers to the question
+\end{itemize}
+\item student model:
+\begin{itemize}
+\item probabilistic prediction of answer correctness
+\end{itemize}
+\end{itemize}
+
+To evaluate the algorithm a dataset collected from a college physics exam was used. It consists of 482 questions answered by 158 students. Each student answered around 280  questions. It was shown that DBN outperforms all classifiers except for SVM. Including question and student models helps to improve the results greatly. Moreover, it is interesting that answer model contributes to accuracy and precision (how many of returned values are true positives) of grading, whereas question and student models contribute more to recall (how many true positives are found). Using all three feature models combined with SVM Zhang achieved 85\% of grading accuracy.\\
+
+The most important ASAG works have already been considered, however, it is essential to have a glimpse to the latest 2018 works. \textbf{Wang} ~\cite{Wang} represents the sentences as a weighted GloVe vector sum and trains the weights in such a way that the distance between similarly-graded answers is minimized and between differently-graded -- maximized. After the training vectors are clusterized by KNN based on cosine distance between them. To evaluate the algorithm two datasets are used: X-CSD and SciEntsBank. X-CSD has 87 questions with 2442 students' answers and SciEntsBank has 135 questions with 4969 students' answers. The answers are graded from 0 to 5. Human-computer correlation is not provided, but root-mean-square error (RMSE) for X-CSD is 1.133, while state of the art RMSE is 0.887; RMSE for SciEntsBank is 0.606, while state of the art RMSE is 0.643.\\
 
 \begin{table}[h!]
 \centering
-\caption{Machine learning systems}
+\caption{Machine learning systems }
 \label{ML}
 \begin{tabular}{|l|l|l|l|}
 \hline
-System & Year & Approach & Accuracy \\ \hline
-e-Examiner & 2007 & \begin{tabular}[x]{@{}c@{}} ROUGE (all) + cosine similarity + \\linear regression \end{tabular} & 81\% \\ \hline
-CAM & 2008 &  \begin{tabular}[x]{@{}c@{}} keyword, token, chunk and\\ triple overlaps+\\+ TiMBL-based classifier \end{tabular}  & 88\% \\ \hline
-CoMiC-EN/-DE & 2011 &  \begin{tabular}[l]{@{}c@{}} keyword, token, chunk and\\ triple overlaps+\\+ TiMBL-based classifier \end{tabular}  & 88.4\% \\ \hline
-Hou & 2011 &  \begin{tabular}[l]{@{}c@{}}   \end{tabular}  &  \% \\ \hline
-Zbontar & 2012 & \begin{tabular}[l]{@{}c@{}} bag-of-words of\\character-n-grams\\RR, SVM-RBF,\\GMB, KNN, RF \end{tabular}  &  73.892\% \\ \hline
-Horbach & 2013 & \begin{tabular}[l]{@{}c@{}}   \end{tabular}  &  \% \\ \hline
-Madnani & 2013 & \begin{tabular}[l]{@{}c@{}}   \end{tabular}  &  \% \\ \hline
-SemEval & 2013 &  \begin{tabular}[x]{@{}c@{}} \end{tabular}  & \% \\ \hline
-Sultan & 2016 & \begin{tabular}[l]{@{}c@{}}   \end{tabular}  &  \% \\ \hline
-Zhang & 2016 & \begin{tabular}[l]{@{}c@{}}   \end{tabular}  &  \% \\ \hline
-Pribadi & 2017 & \begin{tabular}[l]{@{}c@{}}   \end{tabular}  &  \% \\ \hline
+System & Year & Approach (features + ML algorithms) & Accuracy \\ \hline
+e-Examiner & 2007 & \begin{tabular}[x]{@{}c@{}} ROUGE (all), cosine similarity + linear regression \end{tabular} & 81\% \\ \hline
+CAM & 2008 &  \begin{tabular}[x]{@{}c@{}} keyword, token, chunk and triple overlaps +\\+ TiMBL-based classifier \end{tabular}  & 88\% \\ \hline
+\begin{tabular}[l]{@{}c@{}} CoMiC-EN\\CoMiC-DE \end{tabular}  & 2011 &  \begin{tabular}[l]{@{}c@{}} keyword, token, chunk and triple overlaps +\\+ TiMBL-based classifier \end{tabular}  & 88.4\% \\ \hline
+Hou & 2011 & \begin{tabular}[l]{@{}c@{}} POS tags, TF, TF-IDF, EV + SVM \end{tabular} & 71.9\% \\ \hline
+Zbontar & 2012 & \begin{tabular}[l]{@{}c@{}} bag-of-words of character-n-grams+\\+ RR, SVM-RBF, GMB, KNN, RF \end{tabular}  &  73.892\% \\ \hline
+RfU & 2013 & \begin{tabular}[l]{@{}c@{}} BLUE, ROUGE, answer length, coherence,\\common with topic formulation n-grams +\\+logistic regression  \end{tabular}  &  52\%-65\% \\ \hline
+SemEval & 2013 &  \begin{tabular}[x]{@{}c@{}} Dzikovska team ~\cite{Burrows}: word overlap,\\Lesk (see Mohler's paper description),\\cosine distance, F1(WordNet relation)+\\+ C4.5 decision tree;\\ ETS team ~\cite{Heilman}: lexical similarity,\\n-grams, BLUE, PERP + logistic regression  \end{tabular}  & 62\%-70\% \\ \hline
+Sultan & 2016 & \begin{tabular}[l]{@{}c@{}} word alignment, cosine semantic similarity,\\ answer length, TF-IDF + ridge regression  \end{tabular}  & 63\% \\ \hline
+Zhang   & 2016 & \begin{tabular}[l]{@{}c@{}} cosine semantic similarity, answer length,\\TF-IDF, weighted text similarity, question\\difficulty, student-based answer correctness\\prediction + DBN, SVM \end{tabular} & 85\% \\ \hline
+Wang  & 2018 & \begin{tabular}[l]{@{}c@{}} cosine distance + KNN \end{tabular} & \begin{tabular}[l]{@{}c@{}} unknown,\\RMSE=\\=0.606 \end{tabular}  \\ \hline
 \end{tabular}
 \end{table}
 
 
- 
-
-\begin{table}[h!]
-\centering
-\caption{Machine learning systems}
-\label{ML}
-\begin{tabular}{|l|l|l|l|}
-\hline
- System & Year & Features &  Learning algorithm\\ \hline
- CAM & 2008 & \begin{tabular}[x]{@{}c@{}} teacher-student answers \\ overlap \end{tabular} & k-nearest neighbor classifier \\ \hline
- Nielsen '08 & 2008 & \begin{tabular}[l]{@{}c@{}} lexical \\ and syntactic features \end{tabular} & C4.5 decision tree \\ \hline
- CoMiC-EN & 2011 & \begin{tabular}[l]{@{}c@{}} keyword, token, chunk and\\ triple overlaps \end{tabular}  & TiMBL-based classifier\\ \hline
- CoMiC-DE & 2011 & \begin{tabular}[l]{@{}c@{}} keyword, token, chunk and\\ triple overlaps \end{tabular}  & TiMBL-based classifier \\ \hline
- Hou '11 & 2011 & \begin{tabular}[l]{@{}c@{}} POS tags, term frequency,\\ tf.idf, and entropy \end{tabular} & SVM  \\ \hline
- Horbach '13 & 2013 & \begin{tabular}[l]{@{}c@{}} n-gram features + used in \\ CoMiC-EN  \end{tabular}  & k-nearest neighbors \\ \hline
- Madnani '13 & 2013 & \begin{tabular}[l]{@{}c@{}} BLEU, ROUGE, \\number of sentences \end{tabular}  & logistic regression classifier \\ \hline
- Tandella '12 & 2012 & four- and six-grams & \begin{tabular}[l]{@{}c@{}}Stacking of the following:\\ random forests, \\ k-nearest neighbor \\ classifier, SVM, \\ gradient boosting machine, \\ ridge regression)  \end{tabular} \\ \hline
-\begin{tabular}[l]{@{}c@{}} Deep Learning \\Student Modeling \\Clustering \end{tabular}  & 2016 & \begin{tabular}[l]{@{}c@{}} text similarity between \\ student and example answer\end{tabular} &  \begin{tabular}[l]{@{}c@{}}  Deep Belief Networks\\ with restricted \\ Boltzmann machine \end{tabular} \\ \hline
-\end{tabular}
-\end{table}
-
-Deep learning methods were already widely applied to AES, but so far there is only one paper that applies a deep learning approach to ASAG ~\cite{Zhang}. The author proposes usage of deep belief networks (DBN) that uses restricted Boltzmann machine and compares it with classic classifiers such as naive Bayes, logistic regression, decision tree, artificial neutral network and SVM. It was shown that DBN outperforms the other classifiers, except for SVM and SVM is better only in sensitivity. However, the paper focuses mostly on various text similarity measurements, which alone, as mentioned in ~\cite{Sultan}, is not an adequate measure of answer accuracy. \\
 
 
-\subsubsection{State of the art summary}
+\section{\textbf{State of the art summary}}
 
 "Natural language processing development" section provides a brief overview of a language structure and the general trends of NLP development (Fig. \ref{fig:NLPLevels}). Understanding of linguistic base of NLP helps to see how it is possible to preprocess text in order to improve the process of grading, e.g. by spelling correction, lemmatization and disambiguation. Moreover, it shows the importance of usage of sublanguage that can reduce the amount of words from thousands to several hundreds. Considering various fields of NLP is also important, because ASAG is not a separate scientific discipline -- most or all of the ASAG techniques has already been used in other NLP-fields, for example, BLUE -- for translation and ROUGE -- for evaluation of summaries. It is always important to look for the new methods in various adjacent fields.\\
 
-AES is the most adjacent to ASAG area. The very first AES and ASAG methods were on the opposite sides of automated grading methods: for ASAG it was keyword-spotting, a very specific approach, and for AES it was evaluation of the most general features -- the length of words and sentences. However, in later works one can see how these two areas are moving towards each other and towards understanding of real meaning and style of the text. ASAG and AES share some common methods, like LSA and various metrics, but all of the methods from AES are interesting for ASAG. For example, it is much less than AES vulnerable to gibberish on the word level. \\
+AES is the most adjacent to ASAG area. The very first AES and ASAG methods were on the opposite sides of automated grading methods: for ASAG it was keyword-spotting, a very specific approach, and for AES it was evaluation of the most general features -- the length of words and sentences. However, in later works one can see how these two areas are moving towards each other and towards understanding of real meaning and style of the text. ASAG and AES share some common methods, e.g. LSA, but not all of the methods from AES are interesting for ASAG. For example, ASAG is much less than AES vulnerable to gibberish on the word level. \\
 
 AES research started earlier than ASAG and that is why papers on this topic contain some useful general information. The first important idea is the comparison of human graders and computers. The correlation between the human rates was lower -- around 76\% -- than even the very first AES system. ASAG questions are more straightforward, which usually rises the correlation between humans to 80\%-85\%, but it is still far from perfect. That is why 80\%-90\% result for an ASAG system is already satisfying. Moreover, it is not possible to reach 100\% correlation with a human rater, because the human raters simply give different grades.\\
 
-Another important moment is the reason why the first AES system achieved good results. It was trained on rather convenient dataset. The system was vulnerable to any sort of gibberish, but was only trained and tested on a meaningful dataset. It shows that it is always important to test the method on different datasets and, to compare to other works, try to use the same datasets those were used in those works. Moreover, it is essential to keep in mind that certain types of gibberish, namely "word salad" and "bad faith", can become a problem not only for an AES system, but also for ASAG. The importance of datasets one can see also in further ASAG papers, when in the paper that presents the system it achieves 87\% to 94\% ~\cite{c-rater} and, when tested on another dataset by other author, it reaches only 22\% ~\cite{Mohler}. That is why all the accuracies provided in the tables above or below don't provide enough clarity on how good the methods are. However, without testing the each system manually on different kinds of data, it is the only way to compare them at least approximately. The performance of the most significant ASAG systems is shown in Table *ref*.
+Another important moment is the reason why even the first AES system achieved good results. It was trained on rather convenient dataset. The system was vulnerable to any sort of gibberish, but was only trained and tested on a meaningful dataset. It shows that it is always important to test the method on different datasets and, to compare to other works, try to use the same datasets those were used in those works. Moreover, it is essential to keep in mind that certain types of gibberish, namely "word salad" and "bad faith", can become a problem not only for an AES system, but also for ASAG. The importance of datasets one can see also in further ASAG papers, when in the paper that presents the system it achieves 87\% to 94\% ~\cite{c-rater} and, when tested on another dataset by other author, it reaches only 22\% ~\cite{Mohler}. That is why all the accuracies provided in the tables above or below don't provide enough clarity on how good the methods are. However, without testing teach system ourselves on different kinds of data, it is the only way to compare them at least approximately. The performance of the most significant ASAG systems is shown in Tables \ref{CFM}, \ref{IE}, \ref{Corpus} and \ref{ML}.\\
 
--- best methods table
-
-Current work focuses on machine learning methods for ASAG and that is why concept or facet mapping and information extraction are considered mostly to complete the picture. However, the corpus-based section was considered in details, because many machine learning approaches often use similarity metrics those were mentioned in the "Corpus-based methods" section. In table \ref{sim} the similarity metrics are summarized. The accuracy column is taken from Noorbehbahani's ~\cite{Noorbehbahani} (marked as "N"), Mohler's ~\cite{Mohler} ("M"), Li's ("L") and Gomaa's ("G") works. It is important not to forget that the accuracy was obtained on different datasets, and therefore the comparison is not entirely valid. Also, Noorbehbahani doesn't mention, which of the ROUGE methods was used, and it is confusing, because in other papers *ref* it performed significantly better. //TODO: add formulas and  Mohler's metrics. Add ROUGE ref\\
-
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=0.7\textwidth]{img/ruleVSstat}
-    \caption{  trade-offs between rule-based and statistical methods~\cite{Burrows}. }\label{fig:rVSs}
-\end{figure}
-
-Dealing with two human graders -- consider only one -- Zbontar. Discard the discord.
-
-Mostly used languages: Java. Python.\\
-
-Add a list of actually used systems -- the ones with interface and stuff\\
-
-Add a tool table -- word2vec, glove, disco, montilingua, etc.\\
-
-English/German -- the same NLP tools used in CoMiC-EN and -DE. \\
-
-Add list of corpora (wiki \url{https://en.wikipedia.org/wiki/List_of_text_corpora}):
-Google Books Ngram Corpus[1][2]
-American National Corpus
-Bank of English
-British National Corpus
-Corpus Juris Secundum
-Corpus of Contemporary American English (COCA) 425 million words, 1990–2011. Freely searchable online.
-Brown Corpus, forming part of the "Brown Family" of corpora, together with LOB, Frown and F-LOB.
-International Corpus of English
-Oxford English Corpus
-Scottish Corpus of Texts \& Speech
-Corpus Resource Database (CoRD), more than 80 English language corpora.[3]
-RE3D (Relationship and Entity Extraction Evaluation Dataset)
+Current work focuses on machine learning methods for ASAG and that is why concept or facet mapping and information extraction are mentioned mostly to complete the picture. However, the "Corpus-based methods" section was considered in details, because many machine learning approaches use similarity metrics those were mentioned there. In table \ref{sim} the similarity measures are summarized. The accuracy column is taken from Noorbehbahani's (marked as "N") ~\cite{Noorbehbahani}, Mohler's ("M") ~\cite{Mohler}, Li's ("L") ~\cite{Li}, Gomaa's ("G") ~\cite{Gomaa} and e-Examiner ("E") ~\cite{e-examiner} works. It is important not to forget that the accuracy was obtained on different datasets, and therefore the comparison is not entirely valid. Also, Noorbehbahani doesn't mention, which of the ROUGE methods was used, and it is confusing, because in other papers ~\cite{e-examiner}, ~\cite{Madnani} it performed significantly better.\\
 
 \begin{table}[h!]
 \centering
-\caption{Similarity metrics}
+\caption{Similarity metrics tested separately}
 \label{sim}
-\begin{tabular}{|l|l|l|}
+\begin{tabular}{|l|l|}
 \hline
- System & Formula & Accuracy \\ \hline
- ROUGE (N)& 2009 & 22\%  \\ \hline
- BLEU (N)& 2006 & 36\% \\ \hline
- ERB (N)& 2009 & 41\%  \\ \hline
- n-gram co-occurrence (N)& 2006 & 48\% \\ \hline
- LSA & n/a & 51\% (N) or 67.35\% (M) \\ \hline
- LSA \& n-grams (N)&  & 59\%  \\ \hline
- M-BLEU (N)& 2011 & 85\% \\ \hline
+ System &  Accuracy \\ \hline
+ BLEU & 36\% (N) \\ \hline
+ ERB & 41\% (N)  \\ \hline 
+ M-BLEU  & 85\% (N) \\ \hline
+ ROUGE & 22\% (N), 81\% (E) \\ \hline
+ n-gram co-occurrence & 48\% (N) 43.5\% (G) \\ \hline
+ Jaccard distance & 73.9\% (L) 34.9\% (G) \\ \hline
+ Levenshtein distance & 64.6\% (L), 31.7\% (G) \\ \hline
+ S{\o}rensen-Dice distance & 76.6\% (L) 37.9\% (G) \\ \hline
+ Jaro-Winkler distance & 24.5\% (G) \\ \hline
+ cosine distance & 75.3\% (L), 37.7\% (G) \\ \hline
+ Euclidean distance & 33.8\% (G) \\ \hline
+ Manhattan distance & 76.2\% (L) \\ \hline
+ shortest path & 44.14\% (M) \\ \hline
+ C-Rater & 22.31\% (M) \\ \hline
+ Lesk & 36.3\% (M) \\ \hline
+ Wu and Palmer & 33.66\% (M) \\ \hline
+ Resnik & 25.20\% (M) \\ \hline
+ Lin & 39.16\% (M) \\ \hline
+ Jiang and Conrath & 44.99\% (M) \\ \hline
+ Hirst and St-Onge & 19.61\% (M) \\ \hline
+ LSA & 51\% (N), 67.35\% (M) \\ \hline
+ ESA & 64.98\% (M) \\ \hline
 \end{tabular}
 \end{table}
+
+All works except for one concentrate on various parameters of students' answers and their similarity to the example or well-graded answer. Moreover, answers to each question are usually considered separately. Zhang ~\cite{Zhang}, however, offers to take into account difficulty of the questions and students' dynamic over the questions into account. These features can improve results significantly, but they also require a large amount of data from one examination.\\
+
+Most of the authors use their own datasets. However, there is one similarity that occurs relatively often -- a dataset contains grades from two human raters. As mentioned above, human raters' grades are often significantly different. Two main solutions to this problem was named:
+
+\begin{itemize}
+\item taking an averaging grade. This method is used in several papers ~\cite{Mohler}, ~\cite{Sultan}, however, human-computer correlation, which is calculated based on the average value, is questionable. Each human rater has a certain set of rules for grading. Averaging of grades derived from different sets of rules gives a senseless number, for grades here cannot be considered as linear functions. 
+\item discarding questions graded differently ~\cite{Zbontar}. It is reasonable, because these questions must be ambiguous. However, in certain datasets, e.g. Mohler's, it would cause discarding of almost half of the questions.
+\end{itemize}
+
+Both approaches have significant disadvantages, therefore it is one of the problem that should be addressed.
