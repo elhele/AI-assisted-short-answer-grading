@@ -50,7 +50,7 @@ M.Sc. Deebul Nair\\
 \statementpage
 
 \begin{abstract}
-Assignment evaluation is one of the most time-consuming parts of teacher's work. Therefore nowadays many assignment types, such as multiple-choice answers or fill-the-gap, are automated. Free text answer grading is a harder task. There are two types of free text assignments: automated essay grading (AES) and short answer grading (ASAG). AES systems are already successfully used by some organizations including Educational Testing Service (ETS). However, ASAG is still not popular, because the existing systems haven't shown sufficient robustness yet. This research concentrates on development of an AI assistant for grading assessments and exams in the fields of computer science, electrical engineering, physics and other technical disciplines. In this case answers are shorter than one paragraph and concrete. Furthermore, stylistics and spelling are not of interest, only the meaning of the answer should be taken into account. This study focuses on comprehensive analysis of existing ASAG methods. Based on this analysis a new ASAG system is developed. It uses similarity between the students' and teachers' answers for grading. Such sentence similarity measures as ROUGE, BLUE and various k-skip-n-gram distances in combination with Kernel Principal Component Analysis (KPCA) are considered. A significant advantage of this vectorization technique is that it allows an efficient clusterization of small amount of data, which is often a case for ASAG, since an offline course can be attended by 10-300 people and not by thousands. KPCA has already been shown to be more powerful than word2vec for word embedding, and this work shows that it is more powerful than doc2vec for paragraph embedding as well.
+Assignment evaluation is one of the most time-consuming parts of teacher's work. Therefore, nowadays many assignment types, such as multiple-choice answers or fill-the-gap, are automated. Free text answer grading is a harder task. There are two types of free text assignments: automated essay grading (AES) and short answer grading (ASAG). AES systems are already successfully used by some organizations including Educational Testing Service (ETS). However, ASAG is still not popular, because the existing systems haven't shown sufficient robustness yet. This research concentrates on development of an AI assistant for grading assessments and exams in the fields of computer science, electrical engineering, physics and other technical disciplines. In this case answers are shorter than one paragraph and concrete. Furthermore, stylistics and spelling are not of interest, only the meaning of the answer should be taken into account. This study focuses on comprehensive analysis of existing ASAG methods. Based on this analysis a new ASAG system is developed. It uses similarity between the students' and teachers' answers for grading. Such sentence similarity measures as ROUGE, BLUE and various k-skip-n-gram distances in combination with Kernel Principal Component Analysis (KPCA) are considered. A significant advantage of this vectorization technique is that it allows an efficient clusterization of small amount of data, which is often a case for ASAG, since an offline course can be attended by 10-300 people and not by thousands. KPCA has already been shown to be more powerful than word2vec for word embedding, and this work shows that it is more powerful than doc2vec for paragraph embedding as well.
 \end{abstract}
 
 
@@ -72,8 +72,8 @@ I would like to express my great appreciation to Professor Pl{\"o}ger and Mr. Na
 \pagestyle{mainmatter}
 
 \subfile{chapters/ch01_introduction}
-\subfile{chapters/ch02_stateoftheart}
-\subfile{chapters/ch03_problem_statement}
+\subfile{chapters/ch02_problem_statement}
+\subfile{chapters/ch03_stateoftheart}
 \subfile{chapters/ch04_solution}
 \subfile{chapters/ch05_evaluation_results}
 \subfile{chapters/ch06_conclusion}
@@ -132,7 +132,6 @@ I would like to express my great appreciation to Professor Pl{\"o}ger and Mr. Na
 \bibitem{DISCO} \url{http://www.linguatools.de/disco/disco_en.html}, last visited 19.04.2018
 \bibitem{Hearst} Marti A. Hearst, "The debate on automated essay grading" (http://www.knowledge-technologies.com/presskit/KAT\_IEEEdebate.pdf) 
 \bibitem{LSA} Landauer, Thomas K., Peter W. Foltz, and Darrell Laham. "An introduction to latent semantic analysis." Discourse processes 25.2-3 (1998): 259-284.
-\bibitem{Dikli} Dikli, Semire. "An overview of automated scoring of essays." The Journal of Technology, Learning and Assessment 5.1 (2006).
 \bibitem{IntelliMetric} Rudner, Lawrence M., Veronica Garcia, and Catherine Welch. "An evaluation of IntelliMetric$^{TM}$ essay scoring system." The Journal of Technology, Learning and Assessment 4.4 (2006).
 \bibitem{BETSY} Rudner, Lawrence M., and Tahung Liang. "Automated essay scoring using Bayes' theorem." The Journal of Technology, Learning and Assessment 1.2 (2002).
 \bibitem{Madala} Madala, Deva Surya Vivek, et al. "An empirical analysis of machine learning models for automated essay grading." PeerJ PrePrints (2018).
