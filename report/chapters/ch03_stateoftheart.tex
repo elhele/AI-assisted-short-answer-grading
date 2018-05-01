@@ -201,6 +201,8 @@ All of the ASAG systems considered below in this work use either Java or Python.
 \item Natural Language Toolkit (NLTK) -- a Python tool for NLP. Mainly used in scientific projects (\url{https://www.nltk.org/}).
 \item Industrial-Strength Natural Language Processing (spaCy) -- another Python tool for NLP. The tool is meant for industrial usage, but it is also used in scientific projects (\url{https://spacy.io/})
 \item WordNet -- a lexical database for English language (\url{https://wordnet.princeton.edu/})
+\item Apache OpenNLP -- Java NLP toolkit (\url{https://opennlp.apache.org/})
+\item SharpNLP -- a C\# tool for NLP, based on Apache OpenNLP
 \item extracting DIstributionally related words using CO-occurrences (DISCO) -- Java application for calculating similarity between words or short texts, finding the most similar words in texts, e.g. "smart" and "clever", and finding the related words, e.g. "beer" $\rightarrow$ "K\"olsch", alcohol, foam, barrel. It requires a database of word similarities (word space) precalculated on a large text corpora by "DISCO Builder". It is similar to word2vec and GloVe. Architecture of the system is shown in Fig. \ref{fig:DISCO}. DISCO Builder is trained on Wikipedia and British National Corpus (BNC) (\url{http://www.linguatools.de/disco/disco_en.html}). 
 \begin{figure}[h!]
   \centering
@@ -217,7 +219,6 @@ All of the ASAG systems considered below in this work use either Java or Python.
 syntax to calculate the matching between word pairs by calculating the
 probability of co-occurrence of the words based on web pages corpus.
 \item Stanford parser -- a statistical tool for structure of sentences parsing (\url{https://nlp.stanford.edu/software/lex-parser.shtml})
-\item Apache OpenNLP -- Java NLP toolkit (\url{https://opennlp.apache.org/})
 \item Morpha -- Java tool for morphological analysis (\url{https://github.com/stanfordnlp/CoreNLP})
 \item MaltParser -- a tool data-driven sentence dependency parsing (\url{http://www.maltparser.org/})
 \end{itemize}
@@ -537,7 +538,7 @@ Another mapping system is Automatic Text Marker (\textbf{ATM}). It operates with
 
 A concept mapping system developed by ETS is called a Concept Rater or \textbf{c-rater}. It focuses on sentence-level comparison of example and students' answers. An example answer is intentionally formulated in such a way that each sentence contains only one concept. Sentence comparison is rule-based and includes a paraphrase recognizer that can distinguish syntactic variations, pronoun references, morphological variations, and synonyms. Moreover, it uses spelling correction ~\cite{c-rater}. \\
 
-Later concept mapping stated including machine learning. \textbf{Wang} in ~\cite{Wang} compares pure heuristics-based concept mapping with  data-driven classification by SVM and combination of those two methods. In a combination of methods SVM was used with bag-of-words features, whereas pure machine learning used unigrams and bigrams. The best result was reached using the combination of methods.\\
+Later concept mapping stated including machine learning. \textbf{Wang} in ~\cite{Wang1} compares pure heuristics-based concept mapping with  data-driven classification by SVM and combination of those two methods. In a combination of methods SVM was used with bag-of-words features, whereas pure machine learning used unigrams and bigrams. The best result was reached using the combination of methods.\\
 
 Table \ref{CFM} shows the comparison of methods above. Accuracy between certain numbers means that the algorithm gives different correlation with human graders on different datasets.
 
@@ -583,7 +584,7 @@ Information extraction (IE) has already been cosidered in NLP section of the wor
 \item \textbf{eMax} uses both syntactic and semantic analysis. User of the system must provide one or multiple correct answers and highlight important elements of them. It is important that the system provides a confidence level, so a human grader could check the low-confidence answers him/herself ~\cite{Burrows}, ~\cite{Hasanah}.
 \item \textbf{FreeText Author} operates on a sentence-level. Every sentence is being semantically analyzed and the system returns a certain feedback that is compared to the feedback from the syntactic-semantic templates those are automatically created based on example answers. User of the system can specify keywords and accepted synonyms. The system has a user-friendly interface and it is easy to use ~\cite{Burrows}, ~\cite{Hasanah}.
 \end{itemize}
-\item \textbf{semantic word matching} is based on individual terms matching. An example of such a system is \textbf{Auto-Assessor}. To rate answers it uses such NLP tools as bag-of-words, WordNet.NET and SharpNLP. The system can only accept one example answer, but of this example it automatically generates a range of acceptable solutions. It grades based on can only grade one-sentence answers. Auto-Assessor has a user-friendly interface ~\cite{Burrows}, ~\cite{Hasanah}. 
+\item \textbf{semantic word matching} is based on individual terms matching. An example of such a system is \textbf{Auto-Assessor}. To rate answers it uses such NLP tools as bag-of-words, WordNet.NET and SharpNLP. The system can only accept one example answer, but based on this example it automatically generates a range of acceptable solutions. Auto-Assessor can only grade one-sentence answers. Auto-Assessor has a user-friendly interface ~\cite{Burrows}, ~\cite{Hasanah}. 
 \item \textbf{Lexical Resource Semantics (LRS) representation matching} system -- \textbf{CoSeC-DE} -- was developed by Hahn in 2012. The system uses Corpus of Reading Comprehension Exercises in German (CREG) ~\cite{CREG}. The answers are preprocessed using TreeTagger and dependency parser MaltParser and afterwards the system creates syntax-semantics-interface representations and then builds lexical resource semantics representations. Comparison of example and the answer to grade is performed by alignment afterwards. It is more accurate than bag-of-words model, because it allows to avoid consider a sentence of a higher level and avoid such problems: consider the sentences below: "CoSeC-DE is more advanced than AutoMark", "CoSeC-DE outperforms AutoMark", "AutoMark is more advanced than CoSeC-DE". Bag-of -words would assume that the first and third sentences are the same and the second one is different, whereas the first two are the same and the third one contradicts them. CoSeC-DE evaluates these sentences correctly  ~\cite{Hahn}.
 \end{itemize}
 
@@ -630,11 +631,11 @@ BP = \begin{cases}
 
 where BP is a brevity penalty, c -- length of the student's answer and r -- effective reference corpus length.
 
-\begin{equation} \label{eq:BLUE}
-SIM_{BLUE} = BP \times e^{\sum^N_{n=1}w_n \times log(MUP_n)},
+\begin{equation} \label{eq:BLEU}
+SIM_{BLEU} = BP \times e^{\sum^N_{n=1}w_n \times log(MUP_n)},
 \end{equation}
 
-where N is a maximum size of an n-gram and $w_n$ -- weight of the corresponding n-gram size. For estimation of BLUE similarity usually $log(SIM_{BLUE})$ is used. \\
+where N is a maximum size of an n-gram and $w_n$ -- weight of the corresponding n-gram size. For estimation of BLEU similarity usually $log(SIM_{BLEU})$ is used. \\
 
 An extended version of BLEU -- Evaluating Responses with BLEU (\textbf{ERB}) adds recall accommodating to precision that uses modified brevity penalty (MBP) factor. The ERB similarity is calculated in the following way ~\cite{ERB}:
 
@@ -831,26 +832,26 @@ The work of \textbf{Noorbehbahani} ~\cite{Noorbehbahani} deserves a special atte
 
 \begin{itemize}
 \item n-gram co-occurrence -- see Equation \ref{eq:n-gram}. Accuracy: 48\%.
-\item BLUE \ref{eq:BLUE} -- see Equation \ref{eq:BLUE}. Noorbehbahani mentions the following drawbacks of the system ~\cite{Noorbehbahani}:
+\item BLEU \ref{eq:BLEU} -- see Equation \ref{eq:BLEU}. Noorbehbahani mentions the following drawbacks of the system ~\cite{Noorbehbahani}:
 \begin{itemize}
-\item BLUE only recognizes exactly-matching words, which means that it discards even misspelled words, and will certainly ignore synonyms;
+\item BLEU only recognizes exactly-matching words, which means that it discards even misspelled words, and will certainly ignore synonyms;
 \item all words have the same weights, which means that the essential for the meaning of the answer special terms would have as much meaning as articles or transition words;
 \item the system compares the student answer with all reference answers and counts matches from different references;
 \item brevity penalty punishes all answers those are longer than the reference ones, which doesn't always makes sense.
 \end{itemize}
 Accuracy: 36\%.
-\item M-BLUE -- the system proposed by Noorbehbahani. It is based on the same idea, but includes the following modifications:
+\item M-BLEU -- the system proposed by Noorbehbahani. It is based on the same idea, but includes the following modifications:
 \begin{itemize}
 \item spelling correction;
 \item acceptance of synonym-n-grams, understanding of paraphrasing: the system generates synonym example answers based on the given reference answers in such a way that it is as close as it is possible to the student answers, but still keeps the meaning of the reference answers;
 \item weighting of the n-grams by their importance, i.e. special terms should have higher weights, whereas an n-gram like "and the" can have a nearly-zero weight;
 \item the system compares student's answers with all the example answers, but the final similarity measure is calculated only with the most similar one.
 \item brevity penalty is calculated based on weights, because the length of the answer doesn't help to estimate the correctness;
-\item the final M-BLUE similarity measure is calculated in the following way:
-\begin{equation} \label{eq:M-BLUE}
-SIM_{M-BLUE} = \lambda \times BP_r \times SIM_{M-BLUE} + (1 - \lambda) \times S_0,
+\item the final M-BLEU similarity measure is calculated in the following way:
+\begin{equation} \label{eq:M-BLEU}
+SIM_{M-BLEU} = \lambda \times BP_r \times SIM_{M-BLEU} + (1 - \lambda) \times S_0,
 \end{equation}
-where $BP_r$ is a modified weighted brevity penalty, $SIM_{BLUE_ra}$ -- weighted similarity measure between a student answer and one reference answer, $S_0$ --  measure for calculating the common-words order similarity and $\lambda$ is a similarity components weight parameter, which is taken in range between 0.5 and 1. In Noorbehbahani's work $\lambda = 0.85$ was chosen experimentally. The whole derivation of the equation \ref{eq:M-BLUE} is intentionally omitted, because the meaning of the equation members is clear from the list items above and the formulas for them can be found in ~\cite{Noorbehbahani}.
+where $BP_r$ is a modified weighted brevity penalty, $SIM_{BLEU_ra}$ -- weighted similarity measure between a student answer and one reference answer, $S_0$ --  measure for calculating the common-words order similarity and $\lambda$ is a similarity components weight parameter, which is taken in range between 0.5 and 1. In Noorbehbahani's work $\lambda = 0.85$ was chosen experimentally. The whole derivation of the equation \ref{eq:M-BLEU} is intentionally omitted, because the meaning of the equation members is clear from the list items above and the formulas for them can be found in ~\cite{Noorbehbahani}.
 \end{itemize}
 Accuracy: 85\%.
 \item ERB -- see equation \ref{eq:ERB}. Accuracy: 41\%.
@@ -943,7 +944,7 @@ Table \ref{Corpus} shows the comparison of various corpus-based methods those ar
  Mohler & 2009 & LSA & 67.35\% (MD) \\ \hline
  Klein & 2011 & LSA + clustering &  80\%-95\% \\ \hline
  Noorbehbahani & 2011 & M-BLEU & 85\% \\ \hline
- Gomaa & 2012 & bag of words & 50.4\% (MD) \\ \hline
+ Gomaa & 2012 & bag-of-words & 50.4\% (MD) \\ \hline
  Li & 2012 & \begin{tabular}[l]{@{}c@{}}  Jaccard, Dice\\and Manhattan distances,\\keywords coverage\end{tabular} & 77.8\% \\ \hline
  Pribadi & 2017 & \begin{tabular}[l]{@{}c@{}}  Jaccard, Dice\\and cosine distances \end{tabular}  &  unknown (MD) \\ \hline
 \end{tabular}
@@ -1070,9 +1071,9 @@ Another work from ETS organization by Madnani ~\cite{Madnani} describes a Readin
 \item Coherence -- semantic similarity between the answer and an the topic -- related to "bad faith" and ”unexpected-topic” gibberish detection. Contributes positively to the score.
 \end{itemize}
 
-FirstSent and Coherence were shown to be least useful features, whereas BLUE, ROUGE and CopiedSumm -- the most useful. It is different that the contribution of the features into the score are different for different summary topics. The features are combined with a logistic regression classifier. To evaluate the algorithm a dataset containing 2695 summaries of two topics -- 1016 for the first one and 1679 for the second one -- was used. The most important of the metrics mentioned here for ASAG related to technical subjects are BLUE, ROUGE and coherence.\\
+FirstSent and Coherence were shown to be least useful features, whereas BLEU, ROUGE and CopiedSumm -- the most useful. It is different that the contribution of the features into the score are different for different summary topics. The features are combined with a logistic regression classifier. To evaluate the algorithm a dataset containing 2695 summaries of two topics -- 1016 for the first one and 1679 for the second one -- was used. The most important of the metrics mentioned here for ASAG related to technical subjects are BLEU, ROUGE and coherence.\\
 
-\textbf{SemEval} ~\cite{SemEval} paper is a result the Joint Student Response Analysis and 8th Recognizing Textual Entailment Challenge. The approach is based on usage of TE. One of the important take-away messages from this paper is that the algorithm considers not just a student answer-example answer entailment, but a joint student answer plus question-example answer entailment. The reason is that the students tend to omit the information already given in an answer to save time, whereas an example question may contain a longer version of solution. Participants of the competition used such approaches as LSA and such metrics as BLEU, ROUGE and other similar ones. To evaluate the algorithm the Student Response Analysis corpus was used. The corpus consists of two parts: BEETLE contains 56 questions, each of which has one or several example answers, and around 3000 students' answers; and SCIENTSBANK that contains 197 questions, each of which has one or several example answers, and around 10,000 students' answers. The best result was achieved by ETS: 70\% for BEETLE and 62\% for SCIENTSBANK. ETS team used the following features: lexical similarity, n-grams similarity, BLUE and PERP. PERP is a similarity measure based on finding sequences of edit operations ~\cite{Heilman}.\\
+\textbf{SemEval} ~\cite{SemEval} paper is a result the Joint Student Response Analysis and 8th Recognizing Textual Entailment Challenge. The approach is based on usage of TE. One of the important take-away messages from this paper is that the algorithm considers not just a student answer-example answer entailment, but a joint student answer plus question-example answer entailment. The reason is that the students tend to omit the information already given in an answer to save time, whereas an example question may contain a longer version of solution. Participants of the competition used such approaches as LSA and such metrics as BLEU, ROUGE and other similar ones. To evaluate the algorithm the Student Response Analysis corpus was used. The corpus consists of two parts: BEETLE contains 56 questions, each of which has one or several example answers, and around 3000 students' answers; and SCIENTSBANK that contains 197 questions, each of which has one or several example answers, and around 10,000 students' answers. The best result was achieved by ETS: 70\% for BEETLE and 62\% for SCIENTSBANK. ETS team used the following features: lexical similarity, n-grams similarity, BLEU and PERP. PERP is a similarity measure based on finding sequences of edit operations ~\cite{Heilman}.\\
 
 \textbf{Sultan} ~\cite{Sultan} uses the following methods:
 \begin{itemize}
@@ -1113,7 +1114,7 @@ Deep learning methods were already widely applied to AES, but so far there is on
 
 To evaluate the algorithm a dataset collected from a college physics exam was used. It consists of 482 questions answered by 158 students. Each student answered around 280  questions. It was shown that DBN outperforms all classifiers except for SVM. Including question and student models helps to improve the results greatly. Moreover, it is interesting that answer model contributes to accuracy and precision (how many of returned values are true positives) of grading, whereas question and student models contribute more to recall (how many true positives are found). Using all three feature models combined with SVM Zhang achieved 85\% of grading accuracy.\\
 
-The most important ASAG works have already been considered, however, it is essential to have a glimpse to the latest 2018 works. \textbf{Wang} ~\cite{Wang} represents the sentences as a weighted GloVe vector sum and trains the weights in such a way that the distance between similarly-graded answers is minimized and between differently-graded -- maximized. After the training vectors are clusterized by KNN based on cosine distance between them. To evaluate the algorithm two datasets are used: X-CSD and SciEntsBank. X-CSD has 87 questions with 2442 students' answers and SciEntsBank has 135 questions with 4969 students' answers. The answers are graded from 0 to 5. Human-computer correlation is not provided, but root-mean-square error (RMSE) for X-CSD is 1.133, while state of the art RMSE is 0.887; RMSE for SciEntsBank is 0.606, while state of the art RMSE is 0.643.\\
+The most important ASAG works have already been considered, however, it is essential to have a glimpse to the latest 2018 works. \textbf{Wang} ~\cite{Wang2} represents the sentences as a weighted GloVe vector sum and trains the weights in such a way that the distance between similarly-graded answers is minimized and between differently-graded -- maximized. After the training vectors are clusterized by KNN based on cosine distance between them. To evaluate the algorithm two datasets are used: X-CSD and SciEntsBank. X-CSD has 87 questions with 2442 students' answers and SciEntsBank has 135 questions with 4969 students' answers. The answers are graded from 0 to 5. Human-computer correlation is not provided, but root-mean-square error (RMSE) for X-CSD is 1.133, while state of the art RMSE is 0.887; RMSE for SciEntsBank is 0.606, while state of the art RMSE is 0.643.\\
 
 \begin{table}[h!]
 \centering
@@ -1126,9 +1127,9 @@ e-Examiner & 2007 & \begin{tabular}[x]{@{}c@{}} ROUGE (all), cosine similarity +
 CAM & 2008 &  \begin{tabular}[x]{@{}c@{}} keyword, token, chunk and triple overlaps +\\+ TiMBL-based classifier \end{tabular}  & 88\% \\ \hline
 \begin{tabular}[l]{@{}c@{}} CoMiC-EN\\CoMiC-DE \end{tabular}  & 2011 &  \begin{tabular}[l]{@{}c@{}} keyword, token, chunk and triple overlaps +\\+ TiMBL-based classifier \end{tabular}  & 88.4\% \\ \hline
 Hou & 2011 & \begin{tabular}[l]{@{}c@{}} POS tags, TF, TF-IDF, EV + SVM \end{tabular} & 71.9\% \\ \hline
-Zbontar & 2012 & \begin{tabular}[l]{@{}c@{}} bag-of-words of character-n-grams+\\+ RR, SVM-RBF, GMB, KNN, RF \end{tabular}  &  73.892\% \\ \hline
-RfU & 2013 & \begin{tabular}[l]{@{}c@{}} BLUE, ROUGE, answer length, coherence,\\common with topic formulation n-grams +\\+logistic regression  \end{tabular}  &  52\%-65\% \\ \hline
-SemEval & 2013 &  \begin{tabular}[x]{@{}c@{}} Dzikovska team ~\cite{Burrows}: word overlap,\\Lesk (see Mohler's paper description),\\cosine distance, F1(WordNet relation)+\\+ C4.5 decision tree;\\ ETS team ~\cite{Heilman}: lexical similarity,\\n-grams, BLUE, PERP + logistic regression  \end{tabular}  & 62\%-70\% \\ \hline
+Zbontar & 2012 & \begin{tabular}[l]{@{}c@{}} bag-of-words and character-n-grams+\\+ RR, SVM-RBF, GMB, KNN, RF \end{tabular}  &  73.892\% \\ \hline
+RfU & 2013 & \begin{tabular}[l]{@{}c@{}} BLEU, ROUGE, answer length, coherence,\\common with topic formulation n-grams +\\+logistic regression  \end{tabular}  &  52\%-65\% \\ \hline
+SemEval & 2013 &  \begin{tabular}[x]{@{}c@{}} Dzikovska team ~\cite{Burrows}: word overlap,\\Lesk (see Mohler's paper description),\\cosine distance, F1(WordNet relation)+\\+ C4.5 decision tree;\\ ETS team ~\cite{Heilman}: lexical similarity,\\n-grams, BLEU, PERP + logistic regression  \end{tabular}  & 62\%-70\% \\ \hline
 Sultan & 2016 & \begin{tabular}[l]{@{}c@{}} word alignment, cosine semantic similarity,\\ answer length, TF-IDF + ridge regression  \end{tabular}  & 63\% \\ \hline
 Zhang   & 2016 & \begin{tabular}[l]{@{}c@{}} cosine semantic similarity, answer length,\\TF-IDF, weighted text similarity, question\\difficulty, student-based answer correctness\\prediction + DBN, SVM \end{tabular} & 85\% \\ \hline
 Wang  & 2018 & \begin{tabular}[l]{@{}c@{}} cosine distance + KNN \end{tabular} & \begin{tabular}[l]{@{}c@{}} unknown,\\RMSE=\\=0.606 \end{tabular}  \\ \hline
@@ -1140,7 +1141,7 @@ Wang  & 2018 & \begin{tabular}[l]{@{}c@{}} cosine distance + KNN \end{tabular} &
 
 \section{\textbf{State of the art summary}}
 
-"Natural language processing development" section provides a brief overview of a language structure and the general trends of NLP development (Fig. \ref{fig:NLPLevels}). Understanding of linguistic base of NLP helps to see how it is possible to preprocess text in order to improve the process of grading, e.g. by spelling correction, lemmatization and disambiguation. Moreover, it shows the importance of usage of sublanguage that can reduce the amount of words from thousands to several hundreds. Considering various fields of NLP is also important, because ASAG is not a separate scientific discipline -- most or all of the ASAG techniques has already been used in other NLP-fields, for example, BLUE -- for translation and ROUGE -- for evaluation of summaries. It is always important to look for the new methods in various adjacent fields.\\
+"Natural language processing development" section provides a brief overview of a language structure and the general trends of NLP development (Fig. \ref{fig:NLPLevels}). Understanding of linguistic base of NLP helps to see how it is possible to preprocess text in order to improve the process of grading, e.g. by spelling correction, lemmatization and disambiguation. Moreover, it shows the importance of usage of sublanguage that can reduce the amount of words from thousands to several hundreds. Considering various fields of NLP is also important, because ASAG is not a separate scientific discipline -- most or all of the ASAG techniques has already been used in other NLP-fields, for example, BLEU -- for translation and ROUGE -- for evaluation of summaries. It is always important to look for the new methods in various adjacent fields.\\
 
 AES is the most adjacent to ASAG area. The very first AES and ASAG methods were on the opposite sides of automated grading methods: for ASAG it was keyword-spotting, a very specific approach, and for AES it was evaluation of the most general features -- the length of words and sentences. However, in later works one can see how these two areas are moving towards each other and towards understanding of real meaning and style of the text. ASAG and AES share some common methods, e.g. LSA, but not all of the methods from AES are interesting for ASAG. For example, ASAG is much less than AES vulnerable to gibberish on the word level. \\
 
