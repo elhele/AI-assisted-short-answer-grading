@@ -139,7 +139,7 @@ def get_features(question_index, answer_array, correct_answers, keywords):
     summaries.append(reference[0][0])
     to_vectorize = answer_array[question_index][0]
     to_vectorize.append(correct_answers[question_index])
-    features = KernelPCA(summaries, 15, 'poly', 3, 'similarity_rougeL').training_results()
+    features = KernelPCA(summaries, 2, 'poly', 3, 'similarity_rougeL').training_results()
     # For one feature classification:
     #features = np.asarray(kpca_score)
     #features = features.reshape(-1, 1)
