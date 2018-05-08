@@ -1,0 +1,1 @@
+4.1 1. Declare the length of the array (int array[10];)<br>2. Initialize the array (int array[] = {0, 1, 2, 3}; //compiler will assume size of 4)

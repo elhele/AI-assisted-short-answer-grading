@@ -1,0 +1,1 @@
+2.4 C++ creates a default constructor during compilation if one is not provided.

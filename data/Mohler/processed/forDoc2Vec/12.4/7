@@ -1,0 +1,1 @@
+12.4 You select the smallest element and place it on the left.  You select the smallest element and sort it with respect the the item already on the left.  You continue this till the end of the collection of items.

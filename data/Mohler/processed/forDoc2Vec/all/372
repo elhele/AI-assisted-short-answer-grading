@@ -1,0 +1,1 @@
+2.6 prototype states all functions in that class before compilation, where the definition actually holds the source for the functions

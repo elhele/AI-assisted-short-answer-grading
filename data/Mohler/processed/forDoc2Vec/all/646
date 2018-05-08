@@ -1,0 +1,1 @@
+4.1 You can use an initializer list, or simply tell the compiler how many elements you want in the array...For an Initializer list: .int a[] = {10, 2, 3, -4, 5};..For an elemental declaration:.int b[5];..Both arrays have 5 elements in them, but array a is already initialized.

@@ -1,0 +1,1 @@
+6.4 First, some pointer variable must reference the first entity in the array. Any variable in the array can then be accessed by referring to that first entity's address plus some offset. i.e. ptrToArray = array;  nthEntity = *(ptrToArray + n);

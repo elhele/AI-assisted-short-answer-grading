@@ -1,0 +1,1 @@
+11.5 A recursive function is a function that calls itself repeatedly until a base case is achieved. The fundamental idea is to break one large problem into a series of smaller, similar problems.

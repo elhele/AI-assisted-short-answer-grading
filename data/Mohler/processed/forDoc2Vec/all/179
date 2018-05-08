@@ -1,0 +1,1 @@
+1.7 The termination condition of a do...while statement is usually at the end of the loop so it will run at least once. As for the while statement, if the condition is false to begin with, then the loop will never run.

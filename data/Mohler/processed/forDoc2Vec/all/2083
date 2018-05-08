@@ -1,0 +1,1 @@
+11.8 The difference is that a string that is declared a variable of type char[] is each char is included in the array versus the string of characters that is read into a variable.

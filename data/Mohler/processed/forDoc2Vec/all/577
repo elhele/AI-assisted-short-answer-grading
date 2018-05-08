@@ -1,0 +1,1 @@
+3.6 If at each recursive call the problem does not diminish or if it does not diminish to a base case, can cause infinite recursion.

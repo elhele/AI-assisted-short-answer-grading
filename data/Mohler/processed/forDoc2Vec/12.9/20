@@ -1,0 +1,1 @@
+12.9 You must first traverse the tree to find the appropriate value.  Then you must make sure that the node is a leaf node.  If it is, then you can delete the pointer to that specific node.

@@ -1,0 +1,1 @@
+7.3 direct access to elements, and speed, linked lists have increased search times to access elements even if the list is sorted. ( like getting the last element without a pointer directly to the end of the list. )

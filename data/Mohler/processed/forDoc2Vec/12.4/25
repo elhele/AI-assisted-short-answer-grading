@@ -1,0 +1,1 @@
+12.4 It starts at the first element and replaces it with the smallest element found to the right. It then repeats with the next element in the list.

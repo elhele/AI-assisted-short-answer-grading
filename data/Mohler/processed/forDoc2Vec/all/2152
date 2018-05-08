@@ -1,0 +1,1 @@
+11.10 merge sort breaks the array down in halves until it is comparing two values, sorts those two values, then merges that back with the other broken down parts that it sorted, each level merging more sets together till you return back to your whole array in order.

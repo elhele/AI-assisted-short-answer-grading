@@ -1,0 +1,1 @@
+1.7 a while statement will only process if the statement is met, while a do...while will always process once, then only continue if the statement is met.

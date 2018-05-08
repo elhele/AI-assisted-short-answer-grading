@@ -1,0 +1,1 @@
+2.3 Unlike regular functions, constructors are only used to initialize an objects data when it is created. Constructors must also be given the same name as the class and cannot return any values..

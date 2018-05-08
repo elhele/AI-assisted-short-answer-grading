@@ -1,0 +1,1 @@
+4.2 the type string uses less storage and you have to change the string all at once. with an array of characters you can make permutations of words using the characters stored in the array, without needing to actually access and change the variables. with an array of characters you can just change how they're accessed.

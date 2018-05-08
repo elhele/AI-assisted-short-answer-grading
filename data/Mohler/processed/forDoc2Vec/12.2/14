@@ -1,0 +1,1 @@
+12.2 You run a program with different data sizes, like 10^x.  As you increase x and measure the completion speeds for the program, you can find patterns and attempt the measure the running time.  It's very important to keep the same software and hardware however, which makes experimental testing inferior to theoretical in the eyes of most.

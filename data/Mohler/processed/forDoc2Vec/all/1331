@@ -1,0 +1,1 @@
+8.1 a stack is an Abstract data type which operates on a last in first out basis for storing a list of objects, and does not support ( at least in the pure stack) peeking at a element without removing the rest of the stack first.

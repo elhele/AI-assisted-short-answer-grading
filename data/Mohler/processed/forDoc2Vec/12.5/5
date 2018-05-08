@@ -1,0 +1,1 @@
+12.5 Linked lists do not have a definite size. They can be as big or as small as needed, and they don't have to allocate extra memory for elements you don't need. Arrays size must be defined.

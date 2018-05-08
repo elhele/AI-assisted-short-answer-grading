@@ -1,0 +1,1 @@
+2.3 Constructors cannot return values, so they cannot specify a return type. Normally, constructors are declared public.

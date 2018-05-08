@@ -1,0 +1,1 @@
+1.7 -WHILE statement --The condition is checked for validity, then is repeated until the conditon is false.<br><br>  -Do...WHILE statement--The code is performed at least once then checked for valid condition.  Will continue to <br>

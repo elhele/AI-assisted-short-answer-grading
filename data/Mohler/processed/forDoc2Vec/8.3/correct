@@ -1,0 +1,1 @@
+8.3 Keep the top of the stack toward the end of the array, so the push and pop operations will add or remove elements from the right side of the array.

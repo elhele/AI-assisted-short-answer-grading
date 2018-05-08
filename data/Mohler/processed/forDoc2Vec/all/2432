@@ -1,0 +1,1 @@
+12.10 worst case scenario = the number of levels of the tree, ie: the node at the farthest position from the root node.  best case = 1 step if its the root node.

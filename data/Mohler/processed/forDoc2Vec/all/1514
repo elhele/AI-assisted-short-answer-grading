@@ -1,0 +1,1 @@
+9.1 A queue is similar to an array, except that the data can only be accessed sequentially rather than at random. Unlike a stack, a queue follows FIFO. First in, First out.

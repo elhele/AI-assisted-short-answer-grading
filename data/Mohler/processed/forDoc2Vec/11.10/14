@@ -1,0 +1,1 @@
+11.10 A merge sort recursively divides the array into half until only one element remains, then it sorts the data on its way out of the recursive call by merging the cells.

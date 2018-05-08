@@ -1,0 +1,1 @@
+8.1 A stack is similar to an array, but does not allow for random access. Stacks only allow a user to retrieve the last item put into the stack. Last in, fist out.

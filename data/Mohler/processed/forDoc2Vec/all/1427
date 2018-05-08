@@ -1,0 +1,1 @@
+8.5 Array-based prevents the push operation  from adding an item to the stack if the stack's size limit, which is the size of the array, has been reached.  List-base much simpler to write and does not have a fixed size.

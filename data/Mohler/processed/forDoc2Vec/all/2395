@@ -1,0 +1,1 @@
+12.9 The way you delete a node from a binary search tree is first you have take the root and then see the nodes that are coming from the root. And delete the nodes and set the root to NULL.

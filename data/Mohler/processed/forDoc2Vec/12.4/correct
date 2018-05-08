@@ -1,0 +1,1 @@
+12.4 It selects the minimum from an array and places it on the first position, then it selects the minimum from the rest of the array and places it on the second position, and so forth.

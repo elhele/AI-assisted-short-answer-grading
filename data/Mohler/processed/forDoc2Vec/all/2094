@@ -1,0 +1,1 @@
+11.8 When the string is passed into the array char, individual characters are stored and can be manipulated.  Although when a word is stored into a string variable, it is stored as one word and not as individual characters.

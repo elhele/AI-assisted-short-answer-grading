@@ -1,0 +1,1 @@
+12.9 if the node is a leaf, you set it's parent's pointer to null..if the node is in the tree you must replace the node with one in the tree:.either the largest in the left of the tree or the smallest in the right of the tree..this can be done recursively if needed.

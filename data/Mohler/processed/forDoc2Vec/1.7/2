@@ -1,0 +1,1 @@
+1.7 do...while statements evaluate whether or not to loop after running the block contained within it at least once. So the main differance is that while statements have a possibility of never being used. Do ... while statements on the other hand are always run at least once before evaluating whether to run again.

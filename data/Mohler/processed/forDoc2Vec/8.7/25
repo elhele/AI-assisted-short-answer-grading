@@ -1,0 +1,1 @@
+8.7 you would pop each element and compare it to what you are looking for and then push it back on the stack so that it is not lost

@@ -1,0 +1,1 @@
+4.2 an array is passed by reference therefore if an array of characters is changed, the memory is changed not just the variable

@@ -1,0 +1,1 @@
+10.6 Inorder traversal visits the left branch of a node (all the way to it's deepest left-most leaf) before visiting the node itself. After visiting the entire left branch and the node, it visits the node's right branch following the same pattern of left child, node, right child.

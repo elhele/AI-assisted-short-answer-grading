@@ -1,0 +1,1 @@
+12.8 Traversing a tree down to it's terminal child and then all of it's siblings, then it traverses up the terminal child's parent and all of it's siblings (repeating the first step if those siblings have children) until the root node has been visited.

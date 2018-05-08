@@ -1,0 +1,1 @@
+11.8 A string of characters is a specific variable type that has no extra data at the end. A string of type char[] is all the characters and a null ('\0')

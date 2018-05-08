@@ -1,0 +1,1 @@
+12.2 In experimental terms, the running time of an algorithm is measured by the number of operations required to complete the function. This number can usually be expressed in big-O notation.

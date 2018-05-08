@@ -1,0 +1,1 @@
+10.6 you would go to the furthest down left most node, then to the root then to the right (if left and right exist) then you would return one node previous and do the same until you reached the root, then go to the furthest down left most node on the right side of the root and continue this process

@@ -1,0 +1,1 @@
+11.10 merge sort splits the array of elements into smaller arrays until the arrays reach size 1 and then the merge sort merges the smaller arrays into arrays of size 2 then it moves to the next step and merges the next arrays.

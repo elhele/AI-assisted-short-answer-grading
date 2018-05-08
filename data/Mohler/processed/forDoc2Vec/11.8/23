@@ -1,0 +1,1 @@
+11.8 a string variable can change in size and is passed to functions by value, whereas a type char[] cannot change in size and is passed to functions by reference only

@@ -1,0 +1,1 @@
+5.4 if (right &gt; left)  {    mid = (right + left) / 2;    m_sort(numbers, temp, left, mid);   m_sort(numbers, temp, mid+1, right);   merge(numbers, temp, left, mid+1, right); }

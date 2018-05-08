@@ -1,0 +1,1 @@
+11.7 a non static array must reinitialize itself every function call, while a static array will only initialize itself once, unless otherwise forced.

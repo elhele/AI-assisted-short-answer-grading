@@ -1,0 +1,1 @@
+6.1 A pointer is a way to get at another object. Essentially it is a way to grab an instance of an object and then either pass that instance a message or retreive some data from that object. A pointer is actually just an address of where an instance is held in memory.

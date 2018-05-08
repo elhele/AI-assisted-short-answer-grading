@@ -1,0 +1,1 @@
+9.5 list based is prefered because it doesn't have a set size and insertion and deletion can be done very quickly of you keep pointers to first element and last.

@@ -1,0 +1,1 @@
+10.5 A tree data structure where each node has a value, where the total order is defined on these values.  the left subtree contains only values less than the parent node, and vice versa for the right subtree.

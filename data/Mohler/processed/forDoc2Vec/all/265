@@ -1,0 +1,1 @@
+2.3 all constructors are functions but not all functions are constructors. Also functions can have nearly infinite purposes, while constructors always create an instance of whichever class you are using. You can change how a constructor does something but not what it does. With functions you can change not only the how but also the what.

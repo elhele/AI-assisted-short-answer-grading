@@ -1,0 +1,1 @@
+10.5 it is a binary tree where each node has a unique key, the left child of a node has only values less than that node, and the right child of each node has higher values than that node.

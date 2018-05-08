@@ -1,0 +1,1 @@
+1.7 The statements within the block of the do while loop will always be executed at least once regardless of the conditions. Whereas the while loops may never be executed if the conditions are not met.

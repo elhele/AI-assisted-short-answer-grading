@@ -1,0 +1,1 @@
+4.4 The arrays declared as static live throughout the life of the program; that is, they are initialized only once, when the function that declares the array it is first called.

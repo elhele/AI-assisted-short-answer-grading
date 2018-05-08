@@ -1,0 +1,1 @@
+11.3 Objects are initialized essentially as copies of the corresponding classes, complete with their own separate variables.

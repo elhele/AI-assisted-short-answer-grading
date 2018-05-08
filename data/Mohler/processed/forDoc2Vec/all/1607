@@ -1,0 +1,1 @@
+9.4 each element of a queue can be allocated in the nodes of an linked list. New elements should be added to the head of the list, with each dequeued element coming off the tail.

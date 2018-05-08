@@ -1,0 +1,1 @@
+7.6 A doubly-linked list allows you to delete a node without traversing the list to establish a trailing pointer.

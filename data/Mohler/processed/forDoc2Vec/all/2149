@@ -1,0 +1,1 @@
+11.10 It takes an array, splits itself in half, sorts the two halves (either by recursion or iteration) and compares them together giving a third array a full sorted list with both halves rejoined.

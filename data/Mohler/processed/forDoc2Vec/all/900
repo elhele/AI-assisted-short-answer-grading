@@ -1,0 +1,1 @@
+5.3 Best case would be O(n) or n-1, because that's what it takes to scan the array and make one swap. The array would then be sorted and would take only 1 operation.

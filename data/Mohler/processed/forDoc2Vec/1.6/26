@@ -1,0 +1,1 @@
+1.6 Variables are usually declared at the very beginning of a C++ program, but can be declared any in the program as long as they appear before they are called upon.

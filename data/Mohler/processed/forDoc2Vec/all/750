@@ -1,0 +1,1 @@
+4.4 if they are declared fixed or static that means they can't change size once their storage has been allocated, however one that is not or dynamic arrarys can be resized.

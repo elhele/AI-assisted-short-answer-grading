@@ -1,0 +1,1 @@
+5.3 The best case scenario for an insertion sort, where all the elements of the array have been already sorted, will cause the for loop to iterate "x" times ("x" being the number of elements in the array) and the while loop to never have to iterate, resulting in the insertion sort to require "x" operations.

@@ -1,0 +1,1 @@
+12.4 Selection sort iterates through the array one element at a time, seeking the least value from the right and replacing the current value with it.

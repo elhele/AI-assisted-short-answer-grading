@@ -1,0 +1,1 @@
+3.4 It is often more efficient to pass references, rather than large objects, to functions. This allows the compiler to pass the address of the object while maintaining the syntax that would have been used to access the object.

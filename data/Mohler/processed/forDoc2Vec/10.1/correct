@@ -1,0 +1,1 @@
+10.1 A collection of nodes, which has a special node called root, and the rest of the nodes are partitioned into one or more disjoint sets, each set being a tree.

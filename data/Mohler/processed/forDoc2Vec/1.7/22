@@ -1,0 +1,1 @@
+1.7 While loop evaluates its expression at the top of its loop and decides if it needs to execute, and the do-while always executes at least once and then evaluates its expression at the bottom of its loop.

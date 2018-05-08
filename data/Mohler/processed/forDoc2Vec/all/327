@@ -1,0 +1,1 @@
+2.5 It depends what type of class is being defined.  Typically you would have a constructor call for each object.

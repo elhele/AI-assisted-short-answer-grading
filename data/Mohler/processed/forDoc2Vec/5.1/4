@@ -1,0 +1,1 @@
+5.1 It starts with the second element and checks it to see if it is less than the element(s) to the left of it and if it is it inserts it into its corrected position.

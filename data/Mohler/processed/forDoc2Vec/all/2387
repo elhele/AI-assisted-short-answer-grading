@@ -1,0 +1,1 @@
+12.9 if root, set root to NULL.else if deleting right leaf, set rightPtr of parent node to NULL.else if deleting left leaf, set leftPtr of parent node to NULL.else if deleting a left or right subtree child node, set the max leaf child in the left subtree as the new child node.

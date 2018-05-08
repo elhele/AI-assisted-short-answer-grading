@@ -1,0 +1,1 @@
+5.1 Insertion sort divides the list into sorted and unsorted regions, then takes each item from the unsorted region and inserts it into its correct order in the sorted region.

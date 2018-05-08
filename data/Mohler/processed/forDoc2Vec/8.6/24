@@ -1,0 +1,1 @@
+8.6 Computers convert an infix expression into a postfix expression. They then push the numbers onto a stack and pop them out as they are needed.

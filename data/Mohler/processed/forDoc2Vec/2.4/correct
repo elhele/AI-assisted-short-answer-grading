@@ -1,0 +1,1 @@
+2.4 If no constructor is provided, the compiler provides one by default. If a constructor is defined for a class, the compiler does not create a default constructor.

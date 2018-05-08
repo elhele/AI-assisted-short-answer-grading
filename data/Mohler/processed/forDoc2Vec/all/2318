@@ -1,0 +1,1 @@
+12.6 a first in first out list of items, like if you put 5, 4, 3, 2, and 1 in the queue it will when you dequeue items remove the items in the same order as put in, so thus it will put out, 5, 4, 3, 2, and 1 in that exact order.

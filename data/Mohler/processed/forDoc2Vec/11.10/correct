@@ -1,0 +1,1 @@
+11.10 It splits the original array into two, sorts each of the two halves, and then merges the sorted arrays.

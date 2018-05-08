@@ -1,0 +1,1 @@
+10.5 A tree which is split based on values. This makes it very easy to search. One can compare the desired value to the root, and if the root is greater than, we search the left side of the tree, if it is less than, we search the right side... and do the same thing recursively.

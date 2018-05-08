@@ -1,0 +1,1 @@
+7.7 using more pointers to enable the backward movement takes up more memory, having more pointers make it slightly more work to add or remove a node from the list

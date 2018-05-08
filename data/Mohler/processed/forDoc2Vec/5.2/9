@@ -1,0 +1,1 @@
+5.2 Find the lowest unsorted value in the array and place it at the current position (starting at the first element in the array) and advance the "current" position by one.

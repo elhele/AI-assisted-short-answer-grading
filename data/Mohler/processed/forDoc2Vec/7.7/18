@@ -1,0 +1,1 @@
+7.7 each node requires an extra pointer, taking up more storage.  insertions and deletions require more pointer operations.

@@ -1,0 +1,1 @@
+3.3 When the program compiles,it will copy the function inplace, avoiding a function call.

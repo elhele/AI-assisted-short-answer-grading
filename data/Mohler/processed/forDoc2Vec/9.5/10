@@ -1,0 +1,1 @@
+9.5 array-based is preferred because all you have to keep track of is the array itself and the count.

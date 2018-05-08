@@ -1,0 +1,1 @@
+8.5 Array based implementation requires less memory than a list based. inceasing the size of a  resizeable array can waste storage and time

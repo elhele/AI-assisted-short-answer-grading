@@ -1,0 +1,1 @@
+5.3 insertion sort will make zero operations (and length - 1 comparisons) in the best case scenario, that is, when the array its given is already in order.

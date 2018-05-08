@@ -1,0 +1,1 @@
+9.3 To use and array to implement a Queue, element or item 0, should be the top element in the array. Every time an element is inserted, all the items in the array are pushed back one space. The top element is always removed first.

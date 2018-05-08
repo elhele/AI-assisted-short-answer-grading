@@ -1,0 +1,1 @@
+3.3 instead of calling the function every time it is invoked, the compiler will replace the function call with a copy of the function body

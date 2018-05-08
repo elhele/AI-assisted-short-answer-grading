@@ -1,0 +1,1 @@
+2.3 constructors cannot return values, so they cannot specify a return type like functions can.

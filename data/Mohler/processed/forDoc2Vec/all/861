@@ -1,0 +1,1 @@
+5.1 Every iteration of an insertion sort takes away an element from the input data, inserting it at the right position in the sorted list.

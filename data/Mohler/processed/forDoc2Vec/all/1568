@@ -1,0 +1,1 @@
+9.3 Declare two variables, front and rear, to be used to denote which elements in the array can be accessed. Increment rear whenever data is enqueued to the end and increment front whenever data is dequeued.

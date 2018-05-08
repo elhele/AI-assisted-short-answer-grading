@@ -1,0 +1,1 @@
+7.5 The circular linked list's tail points to the head, whereas the basic linked list's tail points to a NULL.

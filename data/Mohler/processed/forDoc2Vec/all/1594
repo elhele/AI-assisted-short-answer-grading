@@ -1,0 +1,1 @@
+9.4 Utilizing a front pointer and a back pointer.  The front poiner and back pointer points to the first item into the queue.  As you add items, the front remains the same but the back poiner 'next' points to the new item and the new item is assigned to become the 'new' back pointer.

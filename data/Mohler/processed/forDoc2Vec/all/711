@@ -1,0 +1,1 @@
+4.3 1st you must specify the array name without brackets and then the array name and size are passed as two arguments in the function call.

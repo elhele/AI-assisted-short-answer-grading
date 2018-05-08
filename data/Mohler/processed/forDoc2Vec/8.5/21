@@ -1,0 +1,1 @@
+8.5 List-based implementation is much easier to implement, and allows the stack to scale as necessary. It is therefore the preferred implementation.

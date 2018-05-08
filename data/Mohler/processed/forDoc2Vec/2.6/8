@@ -1,0 +1,1 @@
+2.6 Function prototype is located in the .h file and only contains the access function name and paramater type.<br><br>Function definition contains the code for the function to perform its activity.

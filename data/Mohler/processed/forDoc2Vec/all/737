@@ -1,0 +1,1 @@
+4.4 Static arrays are those with a declared size, that is known to the program, whereas non-static arrays leave the size undeclared and open so it can be assigned later. Usually used for input purposes.

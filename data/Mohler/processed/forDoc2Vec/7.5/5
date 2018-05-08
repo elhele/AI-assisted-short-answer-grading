@@ -1,0 +1,1 @@
+7.5 On a circular linked list, the end element points to the head, thus making the circle. A basic link list has nothing pointing to the head, and the last element points to null.

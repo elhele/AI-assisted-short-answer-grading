@@ -1,0 +1,1 @@
+8.3 Allocate an array of some size. The bottom stack element is stored at some element. Last index in the array is the top. Increment top when one element is pushed, decrement after pop.

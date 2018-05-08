@@ -1,0 +1,1 @@
+9.5 list bases implementatoin is best because you use pointers to keep track of the front and back pointers. Easier to maintain, but uses more memory

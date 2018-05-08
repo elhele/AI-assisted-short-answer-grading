@@ -1,0 +1,1 @@
+9.1 Its like a stack, but uses the linked list to stack a little differently. It's FIFO so the first thing enqueued is the first thing dequeued

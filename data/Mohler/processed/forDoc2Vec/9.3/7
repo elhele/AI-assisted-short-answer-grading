@@ -1,0 +1,1 @@
+9.3 you could use the first element of the list as the remove point and insert at the end f you do this you would have to shift the elements down each time you remove an item unless you make the array circular.

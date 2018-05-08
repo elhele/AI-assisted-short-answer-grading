@@ -1,0 +1,1 @@
+12.4 Selection sort sorts an array one element at at time. It first finds the element with the smallest key and puts it into the first location within its array or list, then finds the next smallest and puts it in the second location, and so on.

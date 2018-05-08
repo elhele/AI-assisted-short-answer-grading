@@ -1,0 +1,1 @@
+10.1 A data structure that contains a root, internal nodes and external nodes. Each node references another node by means of pointers (pass-by-reference). The root is the "base" of the tree, it has no parents. A "leaf" is a node at the end of the tree which points to NULL.

@@ -1,0 +1,1 @@
+8.4 Keep the top of the stack pointing to the head of the linked list, so the push and pop operations will add or remove elements at the beginning of the list.

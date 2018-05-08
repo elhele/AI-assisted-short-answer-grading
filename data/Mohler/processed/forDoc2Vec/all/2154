@@ -1,0 +1,1 @@
+11.10 Take the initial array and split it into two, temporary, smaller arrays, sort the two smaller arrays, and merge them back into a single array.

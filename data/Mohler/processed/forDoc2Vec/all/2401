@@ -1,0 +1,1 @@
+12.9 It all depends on where the node is located. If its a child it can just be deleted but for a node inside the tree it must be replaced with another node that works in its place.

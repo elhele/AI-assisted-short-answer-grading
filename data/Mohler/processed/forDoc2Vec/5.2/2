@@ -1,0 +1,1 @@
+5.2 Selection sort searches the whole array for the largest item and puts it at the end of the array, then searches for the second largest item and puts it at the second to last spot and so on.

@@ -1,0 +1,1 @@
+9.4 Have a pointer to the last element in the list and then use enqueue to insert items there. Link the first and last elements together to dequeue the list.

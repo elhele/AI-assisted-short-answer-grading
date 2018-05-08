@@ -1,0 +1,1 @@
+4.1 In a string you can specify with the strlen(arrayname) command. This gets the length of the string. Another way is with integers where you initiate the size from the start, ex array[40] specifying a possible length of up to 40. Then it is passed by an object the actual ammout in the array. Another way is to declare it in an initializing program.

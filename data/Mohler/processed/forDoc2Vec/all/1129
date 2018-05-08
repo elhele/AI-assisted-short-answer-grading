@@ -1,0 +1,1 @@
+6.7 A function pointer contains the memory address of a function. Using a function pointer, a function can be passed to or returned by another function. Function pointers can also be stored in arrays.

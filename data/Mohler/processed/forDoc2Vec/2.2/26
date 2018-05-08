@@ -1,0 +1,1 @@
+2.2 data members <br><br>local variables are declared in a function definitionâ€™s body.<br>they Cannot be used outside of that function body.<br>When a function terminates, the values of its local variables are lost.<br><br><br>

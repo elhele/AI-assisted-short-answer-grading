@@ -1,0 +1,1 @@
+11.8 In arrays strings are stored as a characters (char[]), each character of string will be stored in each memory location of the array, while string of characters is only one memory location.

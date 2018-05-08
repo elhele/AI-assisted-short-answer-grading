@@ -1,0 +1,1 @@
+10.5 it is a binary tree where each node has a value, a total order is defined on these values, the left subtree of a node contains only values less than the node's value, and the right subtree of a node contains only values greater than or equal to the node's value.

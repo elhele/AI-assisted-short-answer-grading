@@ -1,0 +1,1 @@
+6.2 the ampersand (&) means "pass by reference". When the function is called, a pointer to the variable, instead of the variable itself, will be passed into the function.

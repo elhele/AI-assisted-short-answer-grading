@@ -1,0 +1,1 @@
+11.8 the variable of type char[], each character is stored into a different memory address and can be accessed easly, where as in a string of character, its not easy to be able to access each character in the string.

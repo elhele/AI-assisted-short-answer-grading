@@ -1,0 +1,1 @@
+11.5 A recursive function only knows how to solve base cases A recursive function calls itself directly or indirectly until a base case is reached.

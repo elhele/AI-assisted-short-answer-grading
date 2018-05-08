@@ -1,0 +1,1 @@
+3.7 they both are able to do repetiive tasks. however recurisve calls itself with different parameters and defines and exit clause that is guaranteeed to be reached. Iterative includes a loop which iterates a pre-determined number of times, or checks for an exit clause every time through

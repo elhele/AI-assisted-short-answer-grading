@@ -1,0 +1,1 @@
+12.4 Selection sorts works by going through a certain list. Goes through the unsorted list and selecting the largest item in the list and placing it in a sorted array. There are two arrays, unsorted and sorted. Complete these steps until the list is sorted.

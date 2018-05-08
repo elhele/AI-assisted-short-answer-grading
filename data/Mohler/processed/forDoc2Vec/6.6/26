@@ -1,0 +1,1 @@
+6.6 there are only two ways to pass something, by value and by reference. Use of dot or pointer operators within the receiving function and use of '&' operator inside the passing function

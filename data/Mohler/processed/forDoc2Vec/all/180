@@ -1,0 +1,1 @@
+1.7 A while loop will check the statement to make sure it is true before executing. A do while loop will execute before checking the statement to see if it should run again.

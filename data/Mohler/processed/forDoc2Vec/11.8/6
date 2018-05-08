@@ -1,0 +1,1 @@
+11.8 a string is a variable with a single entinty of letters combined into one while in a char[] each letter is assigned a memory value and each has its own variable assigned i.e. char[0] char[1].

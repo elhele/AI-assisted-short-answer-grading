@@ -1,0 +1,1 @@
+4.4 A static member prevents naming conflicts (not put into global namespace) while allowing for information hiding (private, public).

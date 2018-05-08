@@ -1,0 +1,1 @@
+8.2 push and pop. Push adds a given node to the top of the stack leaving previous nodes below. Pop removes and returns the current top node of the stack

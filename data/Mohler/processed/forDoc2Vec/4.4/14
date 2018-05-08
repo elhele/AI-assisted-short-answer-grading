@@ -1,0 +1,1 @@
+4.4 A static array has a set size that cannot change. The data may not need all of the space assigned, or could go beyond the size.

@@ -1,0 +1,1 @@
+2.2 data members are declared in a class definition but outside the bodies of a class's member-function definitions. Local variables are declared in a function definition's body

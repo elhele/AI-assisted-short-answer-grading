@@ -1,0 +1,1 @@
+9.4 create a node with the input data, continue to add to the list.  when dequeueing - get the first elements data and set the next element in the list as the new first element

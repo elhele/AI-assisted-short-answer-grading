@@ -1,0 +1,1 @@
+7.7 In a doubly linked list, there are more pointers to set and the mechanics of inserting and deleting are more difficult. Also, the special cases at the beginning or end of the list are more complicated.

@@ -1,0 +1,1 @@
+7.2 Does not have a fixed size. Linked list is able to grow as needed. The time to access an array bases list takes a contant amount of time where as an linked-base like depends on 'i'

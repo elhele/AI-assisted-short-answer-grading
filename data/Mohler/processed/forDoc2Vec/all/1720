@@ -1,0 +1,1 @@
+10.2 The height of a tree is in terms of the levels of its nodes such that, if  the tree is empty its height is 0 otherwise its height is equal to the maximum level of its nodes.

@@ -1,0 +1,1 @@
+3.4 It is more efficient and it changes the variable not online inside the function but outside so that the new value can be used elsewhere.

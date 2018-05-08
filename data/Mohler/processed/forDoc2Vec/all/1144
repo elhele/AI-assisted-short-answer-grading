@@ -1,0 +1,1 @@
+7.1 A data structure in a sequence of nodes, each containing arbitrary data fields and one or two references ("links") pointing to the next and/or previous nodes.

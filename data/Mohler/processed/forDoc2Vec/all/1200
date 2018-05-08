@@ -1,0 +1,1 @@
+7.3 Arrays have a set list of values. Meaning you can pick a spot in the array such as a[7] picks the 8th spot in the array. With linked lists you have to keep track with pointers if you want to take specific nodes out, otherwise you must traverse the entire list.

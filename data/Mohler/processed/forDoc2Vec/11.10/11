@@ -1,0 +1,1 @@
+11.10 Merge sort breaks the array in half, and continues to do so until it has 2 elements to compare and sorts them, after doing so it "merges" back as it keeps on sorting the algorithm as it does so.

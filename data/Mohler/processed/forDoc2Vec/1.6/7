@@ -1,0 +1,1 @@
+1.6 They can be declared globally just before the main method (but also outside of it)... or variables can be subject to only the method they're scoped within, but would still be declared at the beginning of that method (but inside of it).

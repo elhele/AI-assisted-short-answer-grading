@@ -1,0 +1,1 @@
+11.10 Merge sort recursively divides an array into two arrays until all arrays have 1 element, at which point it merges the 1 element arrays into larger sorted arrays, the final returned array being the sorted version of the initial array.

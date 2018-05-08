@@ -1,0 +1,1 @@
+11.10 merge sort divides the data into halves until data of one element is reached and then merges each element together according to its placement in comparison to the rest of the data

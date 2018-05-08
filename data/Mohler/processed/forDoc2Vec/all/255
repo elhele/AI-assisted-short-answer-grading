@@ -1,0 +1,1 @@
+2.2 Local variables cannot be used outside of that function body. When a function terminates the values of its local variables are lost. Where as data members are variables in a class definition, and they exist throughout the life of the object..

@@ -1,0 +1,1 @@
+12.8 Euler tour traversal of a tree traverses down each branch straight to one leaf then starts again at the root and repeats until all elements have been traversed.

@@ -1,0 +1,1 @@
+10.5 A binary tree where the value in any node n is greater than the value in every node in n's left subtree, but less than the value of every node in n's right subtree.

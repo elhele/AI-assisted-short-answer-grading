@@ -1,0 +1,1 @@
+1.7 a while loop checks if the condition is true or not first, if it was true, it excutes the statement.<br>a do.. while loop executes the statement before it checks the condition. if the condition was true it would excute the statement again. so a do...while loop would excute the statement atleast once.

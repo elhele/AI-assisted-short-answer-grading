@@ -1,0 +1,1 @@
+11.10 Merge sort takes an array and splits it in half and sends each half back to itself recursively and merges and sorts the two halves when it starts going back up.

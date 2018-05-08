@@ -1,0 +1,1 @@
+4.2 The array of characters has a null character \0 at the end of the array to signify the array's end.  The string does not have this.

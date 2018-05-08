@@ -1,0 +1,1 @@
+2.2 A data member is accessible anywhere in the class, while i local variable in a member function is only accessible in that particular function, and is freed after the function exits.

@@ -1,0 +1,1 @@
+8.6 Computers cannot evaulate infix expressions, it must first convert infix to postfix expression then it can evaluate.

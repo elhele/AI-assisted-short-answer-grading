@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import itertools
 
+plt.rcParams.update({'font.size': 14})
+
 def get_grades(path):
     with codecs.open(path, "r") as fIn:
         grades = [ grade.rstrip() for grade in fIn.readlines()]
@@ -67,6 +69,8 @@ def plot_confusion_matrix(cm, classes,
     plt.xlabel('Second grader')
 
 # Compute confusion matrix
+
+
 class_names = ['1', '2','3','4','5']
 print(grades_all_me[0:10])
 cnf_matrix = confusion_matrix(grades_all_me, grades_all_other, labels=['1', '2', '3', '4', '5'])

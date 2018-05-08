@@ -1,0 +1,1 @@
+1.7 A while statement will test the condition of the while loop FIRST - there is a chance the loop will never run. A do...while loop will ALWAYS run once, and then the while test will determine if it will run again.

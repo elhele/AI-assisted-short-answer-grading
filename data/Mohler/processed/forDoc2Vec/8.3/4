@@ -1,0 +1,1 @@
+8.3 Create a int value that stores the "head" of the stack. Increment the top when one element is pushed and decrement after it is popped.

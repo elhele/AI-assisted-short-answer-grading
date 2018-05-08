@@ -1,0 +1,1 @@
+10.5 a binary tree where the children are ordered such that the right side is greater than the current node, and the left is less than or equal the current node.

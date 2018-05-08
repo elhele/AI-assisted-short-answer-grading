@@ -1,0 +1,1 @@
+10.5 a special binary tree that has a rule that all the subtrees on the right are smaller than the node value and all the subtrees on the left are larger than the node value

@@ -1,0 +1,1 @@
+4.7 A bi-dimensional/two-dimensional array is stored in a row-column matrix.  Where the first index indicates the row and the second indicates the column.  This means that when array elements are accessed in the order in which they are actually stored in memory, the right index changes faster than the left.

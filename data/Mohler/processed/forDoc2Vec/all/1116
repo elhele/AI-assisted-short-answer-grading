@@ -1,0 +1,1 @@
+6.7 A pointer to a function itself, contains the address of the function and can be used to call that function

@@ -1,0 +1,1 @@
+4.4 Static arrays are created and initialized only once, and the values aren't destroyed <br>when the function terminates in the program.<br>Automatic arrays reset everytime the function is called.

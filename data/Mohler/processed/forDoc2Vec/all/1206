@@ -1,0 +1,1 @@
+7.3 Any entitiy in an array may accessed immediately, whereas a linked list must be traversed one item at a time because each object only points adjacent objects

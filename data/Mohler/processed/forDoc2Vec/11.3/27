@@ -1,0 +1,1 @@
+11.3 By declaring the class first, the name of the variable, and then any variables that need to be put in the constructor. Ex. Class myClass(x, y)

@@ -1,0 +1,1 @@
+2.2 A local variable cannot be accessed outside the function in which it is declared. Data members normally are private. Variables of functions declared private are accessible only to member functions of the class in which they are declared.

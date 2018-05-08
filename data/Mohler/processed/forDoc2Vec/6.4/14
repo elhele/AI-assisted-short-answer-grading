@@ -1,0 +1,1 @@
+6.4 With int x[10]; int *xPtr; xPtr = x; Address &x[1] is the same as xPtr + 1.

@@ -1,0 +1,1 @@
+2.7 the header file has access to the C++ Standard Library and makes certain classes like class string work.

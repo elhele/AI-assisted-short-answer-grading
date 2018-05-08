@@ -1,0 +1,1 @@
+4.4 a static array will only be initilized once, a non static array will be re-initilized once the program reaches the initilization line again.

@@ -1,0 +1,1 @@
+11.10 Merge sort uses the "divide and conquer" idea where it divides the array in half multiple times and then joins each element of the array back into one sorted array. This is one of the best sorting algorithms besides Quicksort.

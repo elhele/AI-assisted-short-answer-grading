@@ -1,0 +1,1 @@
+4.4 A static array exists in memory until the program terminates, whereas an automatic (or normal) array is removed when the function that created it terminates

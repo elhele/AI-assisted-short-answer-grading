@@ -1,0 +1,1 @@
+5.2 you loop through the entire list, and for each iteration you find the smallest element and move it to the current position.

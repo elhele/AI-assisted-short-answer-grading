@@ -1,0 +1,1 @@
+2.2 Data members are declared inside the class, but outside of any member functions. Unlike with local variables, each object of the class keeps its own copy of the data members stored in memory.

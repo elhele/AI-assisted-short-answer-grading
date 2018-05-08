@@ -1,0 +1,1 @@
+4.3 In two parts, the array itself, and it's size, so that the function it's being passed to can avoid out of bounds errors.

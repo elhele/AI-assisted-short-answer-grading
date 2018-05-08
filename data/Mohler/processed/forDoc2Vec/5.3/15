@@ -1,0 +1,1 @@
+5.3 In the best case scenario of an already sorted list, insertion sort will progress once through the list.  So the number of operations is directly proportional to the number of elements in the list.  Also noted as O(n) in big o notation.

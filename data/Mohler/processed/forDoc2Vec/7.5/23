@@ -1,0 +1,1 @@
+7.5 A circular linked list does not have a last element. Instead, it's last item points to the head of the list.

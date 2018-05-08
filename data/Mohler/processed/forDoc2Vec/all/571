@@ -1,0 +1,1 @@
+3.6 Infinite recursion can occur when the base case is omitted or the recursion step is written incorrectly so that it never converges on the base case.

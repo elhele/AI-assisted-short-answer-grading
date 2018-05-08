@@ -1,0 +1,1 @@
+4.4 When we declare it static the array is not destroyed after the function is over.  When an array is not declared as static, the array is created and initialized every time a function calls it.

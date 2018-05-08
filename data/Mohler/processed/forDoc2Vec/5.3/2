@@ -1,0 +1,1 @@
+5.3 Insertion sort is O(n) and performs n-1 operations in the best-case scenario, which is when the list or array is already sorted.

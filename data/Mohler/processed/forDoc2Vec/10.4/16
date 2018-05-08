@@ -1,0 +1,1 @@
+10.4 A binary tree is a set of nodes that is either empty or partitioned into a root node and one or two subsets that are binary subtrees of the root. Each node has at most two children, the left child and the right child.

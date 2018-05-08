@@ -1,0 +1,1 @@
+7.6 Double-linked lists require more space per node, and their elementary operations are more expensive; but they are often easier to manipulate because they allow sequential access to the list in both directions.

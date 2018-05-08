@@ -1,0 +1,1 @@
+4.2 They're basically the same, however, a string ends w/ a null character, denoting the end of the string (and the size). A char array has potential to be any size, so it must be declared or limited.

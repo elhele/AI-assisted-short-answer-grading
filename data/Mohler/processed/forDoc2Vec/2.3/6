@@ -1,0 +1,1 @@
+2.3 A constructor is a method that starts new instances of a class. (Example: Employee employee1(parameters) starts a new instance of object of type Employee). A function is simply a module w/in a program that completes its single desired task.

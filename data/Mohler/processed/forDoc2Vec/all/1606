@@ -1,0 +1,1 @@
+9.4 a queue can be implemented in a list by keeping track of two pointers, a head and a tail

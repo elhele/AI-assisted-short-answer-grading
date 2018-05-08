@@ -1,0 +1,1 @@
+9.4 By implementing a list in which a tail pointer points to the item most recently inserted onto the back of the list and a head pointer which points to the item least recently inserted onto the list. Also, items can only be removed from the front of the list and can only be added to the back of the list.

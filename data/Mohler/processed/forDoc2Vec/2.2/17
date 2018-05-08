@@ -1,0 +1,1 @@
+2.2 The local variable is lost once it exits the block of code, while the data member is not.

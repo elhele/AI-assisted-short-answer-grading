@@ -1,0 +1,1 @@
+3.5 Based on the function signature. When an overloaded function is called, the compiler will find the function whose signature is closest to the given function call.

@@ -1,0 +1,1 @@
+6.3 The * operator returns the dereferenced pointer variable (ie: it returns the value of whatever variable the pointer is pointing to)

@@ -1,0 +1,1 @@
+9.3 create a fixed array size, with with 2 integers to point to the beginning and the end of the que, and special cases to know when the que is empty or full.

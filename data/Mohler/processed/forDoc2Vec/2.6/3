@@ -1,0 +1,1 @@
+2.6 A function prototype tells the compiler the function name, return type and the number and type of parameters without revealing the implementations contained in the function definition.

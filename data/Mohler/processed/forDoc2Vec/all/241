@@ -1,0 +1,1 @@
+2.2 Data members are the atributes of the function and can be used outside the function..Local variable can not be used outside the function and the value is lost after the function terminates.

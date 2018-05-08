@@ -1,0 +1,1 @@
+11.3 Objects are usually initialized at the beginning of the program and are initialized usually in the main function. They are initialized after the class's name.

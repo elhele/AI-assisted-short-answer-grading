@@ -1,0 +1,1 @@
+10.7 at the minimum log(n)/log(2), at the maximum N searches, where N is the number of nodes.

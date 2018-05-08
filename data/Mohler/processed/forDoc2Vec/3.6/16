@@ -1,0 +1,1 @@
+3.6 If the recursion function never reaches or successfully defines the base case it will recurse forever.<br><br>This happens many ways, such as the function doesn't progress towards the base case, or the function is coded poorly and doesn't even contain a base case.

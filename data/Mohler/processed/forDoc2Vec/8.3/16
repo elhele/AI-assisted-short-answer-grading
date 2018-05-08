@@ -1,0 +1,1 @@
+8.3 Create an array based on a pre-defined size N. There can't be more elements than N. Bottom stack element stored at element 0 last index in the array is the top Increment top when one element is pushed, decrement after pop

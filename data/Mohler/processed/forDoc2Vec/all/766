@@ -1,0 +1,1 @@
+4.5 All dimensions except for the first one need to be specified when passing an array to a function, the compiler needs to know how many memory addresses to skip to make it back to the 2nd element in the first dimension.  The size of the first dimension does not need to be specified.

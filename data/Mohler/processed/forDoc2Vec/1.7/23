@@ -1,0 +1,1 @@
+1.7 A do...while statement will always execute the "do" piece of code at least once before checking the condition. A while statement will always check the condition first.

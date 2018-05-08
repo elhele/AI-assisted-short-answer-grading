@@ -1,0 +1,1 @@
+11.10 it splits a large array into small arrays and recurs until the array is a size of 1, and then merges all of the arrays back together until the source array is completely sourted.

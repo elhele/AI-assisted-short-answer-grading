@@ -1,0 +1,1 @@
+12.8 The Euler tour visits every node in a tree, starting with the root and working around the tree counterclockwise. in-order, post-order, and pre-order traversals can be seen as variations of the Euler tour traversal.

@@ -1,0 +1,1 @@
+3.2 The scope of global variables are created by placing variable declarations outside any class or function definition.  Global variables retain their values throughout the execution of the program and they can be referenced by any function that follows their declarations or definitions in the source file.

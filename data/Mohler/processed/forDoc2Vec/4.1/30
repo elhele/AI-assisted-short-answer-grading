@@ -1,0 +1,1 @@
+4.1 use an arraylist, or have your program ask the array how many elements it has. As an obj it it should have member length that is the number of slots it has.

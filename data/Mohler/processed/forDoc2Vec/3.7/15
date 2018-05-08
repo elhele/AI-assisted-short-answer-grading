@@ -1,0 +1,1 @@
+3.7 Many problems can be solved by both iteration and recursion, and either may go into a condition of infinite execution if a termination test is omitted.

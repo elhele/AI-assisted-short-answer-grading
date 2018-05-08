@@ -1,0 +1,1 @@
+11.8 char array needs an end character signature and is made up of characters each separate from each other, a string is an object in itself, with a value that the user enters.

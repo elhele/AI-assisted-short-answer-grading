@@ -1,0 +1,1 @@
+9.4 A linked list with Stack principles. The Queue's top element is the element that is always being removed first. Must use nodes to contain each element, with a pointer to the top element, which also could  be called the head pointer.

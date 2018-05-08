@@ -1,0 +1,1 @@
+12.9 if it has no children, you just delete it. if it only has one child, just replace the node with whichever child it has. if it has both children, replace it with one of its children, and send the other child down along the other side of the new node.

@@ -1,0 +1,1 @@
+9.5 List-based, because when you enqueue (or dequeue depending upon your implementation) you would need to shift all elements to another space with an array, causing a horrid time complexity for large data sets, where as you can just modify the pointers in a list for a constant time complexity

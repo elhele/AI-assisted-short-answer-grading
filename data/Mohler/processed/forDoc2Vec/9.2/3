@@ -1,0 +1,1 @@
+9.2 The two main functions are enqueue which inserts an item at the back of the queue and dequeue which removes an item from the front of the queue.

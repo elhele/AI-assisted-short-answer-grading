@@ -1,0 +1,1 @@
+9.6 Push in a stack operation corresponds to the enqueue operation in queues.  These operations insert a new item into one end(the top and back, respectively) of the ADT.

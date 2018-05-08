@@ -1,0 +1,1 @@
+8.1 Stacks are a type of container adaptors, specifically designed to operate in a LIFO context (last-in first-out), where elements are inserted and extracted only from the end of the container.

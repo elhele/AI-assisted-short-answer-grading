@@ -1,0 +1,1 @@
+3.3 The complier includes copies of inline functions instead of making function calls, but usually only with very small functions.

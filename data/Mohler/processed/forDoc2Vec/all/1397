@@ -1,0 +1,1 @@
+8.3 Stack usually holds a bunch of items with the same type, therefore u can use an array, to hold the content of the stack and an integer top that holds the index of the element at the top of the stack. u Choose an array size. Then the sequence of operations used. u have to decide what data types are needed for this stack data structure.

@@ -1,0 +1,1 @@
+11.7 Standard arrays terminate when the functions that call them finish..A static array is not removed from memory when it's parent function terminates, leaving it available for other functions (or new instances of the original function).

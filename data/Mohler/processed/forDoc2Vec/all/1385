@@ -1,0 +1,1 @@
+8.3 for efficiency it is easiest to implement the left to right method, with the right most item being the one that is retrieved when a pop is performed, and a push places an object on the furthest element.

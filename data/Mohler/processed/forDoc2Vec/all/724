@@ -1,0 +1,1 @@
+4.4 A program intializes static local arrays when their declarations are first encountered.  If a static array is not initialized explicityly by the programmer, earch element of that array is intialized to zero by the compiler when the array is created.  Non-static array members cannot be initialized at all in C++.

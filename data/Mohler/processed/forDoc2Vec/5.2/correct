@@ -1,0 +1,1 @@
+5.2 Taking one array element at a time, from left to right, it identifies the minimum from the remaining elements and swaps it with the current element.

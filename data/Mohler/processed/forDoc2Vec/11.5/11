@@ -1,0 +1,1 @@
+11.5 A recursive function is a function that calls itself. Usually called the base case. If the base case is not correct it causes a infinite loop.

@@ -1,0 +1,1 @@
+9.3 A pointer based implementation of a queue could use a linear linked list with two external pointers, one to the front and one to the back

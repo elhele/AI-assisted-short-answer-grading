@@ -1,0 +1,1 @@
+12.4 selection sort is when you pick a data member and put it in a new array, then you pick another data member and put it in order with the new array, then pick another and insert it in the correct place in the new array, etc etc

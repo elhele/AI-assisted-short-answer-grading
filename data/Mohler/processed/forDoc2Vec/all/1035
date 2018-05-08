@@ -1,0 +1,1 @@
+6.4 An element b[3] can be referenced by using *( bPtr + 3) instead.

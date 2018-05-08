@@ -1,0 +1,1 @@
+11.8 A string contains a null character at the end of the string, which makes it easily possible to get the string length. A char array can have a virtually unlimited length, therefore, its size must be declared/limited.

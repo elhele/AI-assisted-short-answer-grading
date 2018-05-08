@@ -1,0 +1,1 @@
+2.3 A constructor typically used to intialize data members and allocate resources, for instance memory, files, etc.  Also a constructor cannot return values.  Functions are operations that maybe globally defined.

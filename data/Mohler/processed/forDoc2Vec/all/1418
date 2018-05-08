@@ -1,0 +1,1 @@
+8.4 A singly linked list can already be easily used for LIFO data storage. Members of a stack can simply be pushed and popped from a list, the first item in will be the last out.

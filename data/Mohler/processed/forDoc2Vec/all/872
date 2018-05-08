@@ -1,0 +1,1 @@
+5.2 It finds the minimum element in the array and swaps it with the first element then repeats this step swapping the minimum element with nth positions in the array.

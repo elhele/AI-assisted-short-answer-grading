@@ -1,0 +1,1 @@
+5.3 The run time for this sorting program is n^2.  Best case is the list is already sorted, worst case is the list is sorted but in reverse.

@@ -1,0 +1,1 @@
+11.8 Type char[] may contain a null value as the last element, whereas type string will not.

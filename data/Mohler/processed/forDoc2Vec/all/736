@@ -1,0 +1,1 @@
+4.4 A static local array exists for the duration of the program and its elements are initialized to 0 if not explicitly initialized. So a static local array's elements will still be the same when called later unless specifically initialized to something else.  This doesn't happen for automatic arrays.

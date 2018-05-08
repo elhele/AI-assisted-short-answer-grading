@@ -1,0 +1,1 @@
+2.2 a Data member is encapsulated within a class or object,  it is static and can be shared by all instances of that class. <br>however local variable's are only used from the function or block in which it is declared and not the whole class. other wise they would be called global variables.

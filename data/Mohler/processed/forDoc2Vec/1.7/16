@@ -1,0 +1,1 @@
+1.7 A do...while statement's body always executes at least once.  Where as a while statement will not execute at all unless the condition for the while is true.

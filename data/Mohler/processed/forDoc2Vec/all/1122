@@ -1,0 +1,1 @@
+6.7 They are pointers that contain the addresses to functions, they can be passed and returned from functions, as well as stored in arrays and assigned to other function pointers.

@@ -1,0 +1,1 @@
+5.1 insertion sort is were after k iterations the first k items in the array are sorted it take the k+1 item and inserts it into the correct position in the already sorted k elements.

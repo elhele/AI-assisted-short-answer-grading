@@ -1,0 +1,1 @@
+12.4 by selecting the first object and comparing it with the next objects to find one that is smaller, if it does it switches the two.  then it comes back the other way and sees if the objects previous to the last one is greater, if it does it switches them.  it does this while decreasing the range it looks at until it finishes in the middle.

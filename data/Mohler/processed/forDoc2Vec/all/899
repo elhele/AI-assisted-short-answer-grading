@@ -1,0 +1,1 @@
+5.3 The number of operations for insertions sort, under best-case, is  n(n-1)/2. The best case for insertion sort is on a sorted list where it runs is O(n).

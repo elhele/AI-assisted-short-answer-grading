@@ -1,0 +1,1 @@
+6.2 It returns the memory address of it's operand. That is, if applied to a normal variable, it gives the variable's memory address, just as a pointer variable might.

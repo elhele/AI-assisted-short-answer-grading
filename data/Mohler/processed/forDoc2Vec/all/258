@@ -1,0 +1,1 @@
+2.2 Variable declared in a function defination's body cannot be used outside of that function...Data members accessible only to member function of that class.

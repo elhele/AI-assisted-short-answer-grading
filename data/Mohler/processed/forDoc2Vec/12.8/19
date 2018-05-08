@@ -1,0 +1,1 @@
+12.8 The Euler traveral is when you go through a tree looking for nodes to put in the order of left, root, right. Like inOrder traversal.

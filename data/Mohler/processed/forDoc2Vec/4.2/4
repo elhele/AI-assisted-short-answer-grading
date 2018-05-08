@@ -1,0 +1,1 @@
+4.2 All strings represented by character arrays end with the null character. You declare an object of type string just like any other type, for example:<br><br>string s;

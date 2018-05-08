@@ -1,0 +1,1 @@
+11.3 They are initialized as a named instance of the template formed by the class. This named instance can then be modified to be different from the class that it was created from.

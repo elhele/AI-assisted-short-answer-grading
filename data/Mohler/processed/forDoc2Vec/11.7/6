@@ -1,0 +1,1 @@
+11.7 a static array will be called only once. once it has been declared the complier will ignore the static line if it comes to it again.

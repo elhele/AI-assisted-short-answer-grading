@@ -1,0 +1,1 @@
+8.3 An array has a fixed size.  You can add and delete elements to the end of the array and you use a pointer to keep track of the last element added.  Each time you add or delete an element you update the pointer and check if it is equal to the max size of the array.

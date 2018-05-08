@@ -1,0 +1,1 @@
+12.8 it starts node on the left of the root and then proceeds to visits each node in a left to right order, visits the root, and then proceeds to repeat the previous step on the right side of the tree.

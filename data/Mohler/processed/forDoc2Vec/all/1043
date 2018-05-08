@@ -1,0 +1,1 @@
+6.4 The pointer to the array will initially point to the first element of that array.  When the pointer is incremented, it will point to the next element, and so on.

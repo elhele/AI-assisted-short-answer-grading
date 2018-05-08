@@ -1,0 +1,1 @@
+10.4 A tree data structure in which each done has at most two children, typical called left and right nodes.  The right node is usually greater than the left node and the parent node.

@@ -1,0 +1,1 @@
+11.10 divides an array in half and sorts each half by calling its self, thus dividing each half again and again and sorting it until the array is sorted. then putting the elements back in the original array sorted.

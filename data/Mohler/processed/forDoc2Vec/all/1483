@@ -1,0 +1,1 @@
+8.7 Pop each item off the top until you find what you are looking for. If the stack ends up empty and you never found the item, then it does not exist in the stack. It may also be necessary to save the popped values in case you want to recreate the stack.

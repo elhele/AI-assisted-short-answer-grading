@@ -1,0 +1,1 @@
+2.6 Function prototypes tell the compiler the function names, its return type, and the types of its parameters where as, function definitions actually implement the member functions.

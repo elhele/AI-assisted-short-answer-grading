@@ -1,0 +1,1 @@
+2.3 A constructor is a function used to initialize an object's data when it is created. It's call is made implicitly when the object is created and must be defined with the same name as the class. Constructor also cannot return a value like a function can.

@@ -1,0 +1,1 @@
+8.3 By allocating an array of predetermined size, and an integer to track the top element of the stack. The bottom member of the stack will go in element 0 of the array, and for each element pushed the "top" tracking integer is incremented.

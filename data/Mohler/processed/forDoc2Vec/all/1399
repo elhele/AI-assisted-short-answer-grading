@@ -1,0 +1,1 @@
+8.4 You implement a list in which the head pointer points to the element most recently pushed onto the list and the pop function changes the head pointer to point to the next to last element in the list and removes the element head pointer previously pointed to.

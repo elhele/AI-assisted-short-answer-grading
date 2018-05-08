@@ -1,0 +1,1 @@
+4.4 static arrays keep the values after the end of a function, while non static reinitialize every time.

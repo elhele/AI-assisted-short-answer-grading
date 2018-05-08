@@ -1,0 +1,1 @@
+4.1 One way is to declare a size of the array using a variable that is equal to an integer. The other way, if the size is omitted in the declaration, the compiler determines the size of the array based on the size of the initializer list.

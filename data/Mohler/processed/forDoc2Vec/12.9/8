@@ -1,0 +1,1 @@
+12.9 Link the to-be-deleted's left child to the to-be-deleted's parent's left child pointer.

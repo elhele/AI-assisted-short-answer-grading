@@ -1,0 +1,1 @@
+12.4 Selection sort is usually a recursive sorting method where you divide the elements to be sorted in half repeatedly. You then sort the smallest case, then work your way up, sorting each until they are all sorted.

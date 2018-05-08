@@ -1,0 +1,1 @@
+9.4 Use a linked list with 2 pointers, one to the front and one to the back. As long as back != front, the queue is not empty.

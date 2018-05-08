@@ -1,0 +1,1 @@
+11.5 A function that calls itself. Each time it does, it must get smaller, and eventually MUST converge to a base case, otherwise you can start an infinite loop.

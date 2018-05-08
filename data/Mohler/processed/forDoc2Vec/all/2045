@@ -1,0 +1,1 @@
+11.7 Arrays declared as static are not created and initialized when a function is called and destroyed when the function terminates.

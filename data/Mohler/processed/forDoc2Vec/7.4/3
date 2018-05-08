@@ -1,0 +1,1 @@
+7.4 - A function with access to a linked list's head pointer has access to the entire list.    - Pass the head ponter to a function as a reference argument.

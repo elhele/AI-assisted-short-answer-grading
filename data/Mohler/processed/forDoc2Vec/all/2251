@@ -1,0 +1,1 @@
+12.4 Iterate through the list (assume list of integers), find the smallest one, and put it in a separate "sorted" list... then traverse again and find the next smallest, and move it to the sorted section... and repeat until you run out of elements to sort.

@@ -1,0 +1,1 @@
+1.7   The main difference between a do and a do...while statement is in a do...while statement is the statements in a do block are always executed atleast once..  The while statement will only execute if its condition is true.

@@ -1,0 +1,1 @@
+9.4 You create a list of nodes that had a head and a top pointer, and the functions are basically the same substituting pop and push with enqueue and dequeue

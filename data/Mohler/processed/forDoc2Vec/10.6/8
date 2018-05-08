@@ -1,0 +1,1 @@
+10.6 Inorder traversal of a binary tree will retrieve start at the furthest left hand leaf and checks it, itâ€™s parent, and itâ€™s right side sibling, then it goes up a level and repeats until it gets to the root.

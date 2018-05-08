@@ -1,0 +1,1 @@
+12.9 Must delete the information that the node contains (to free up memory/ "garbage collect") and also delete the pointer (in that node's "parent") that points to the node you wish to delete.

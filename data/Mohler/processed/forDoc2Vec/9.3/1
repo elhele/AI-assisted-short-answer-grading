@@ -1,0 +1,1 @@
+9.3 Make use of a front pointer and a tail pointer.  When the tail pointer reaches the end of an array it gets reset to the front of the array.  If the two pointers are equal then the queue is either full or just has one element.

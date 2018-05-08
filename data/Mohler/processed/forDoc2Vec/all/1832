@@ -1,0 +1,1 @@
+10.6 a traversal that visits the left branch first, then the parent node, then the right branch, recursively.

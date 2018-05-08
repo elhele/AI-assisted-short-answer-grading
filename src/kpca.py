@@ -25,6 +25,9 @@ import termcolor
 from unidecode import unidecode
 from nltk import ngrams
 import matplotlib.pyplot as plt
+from pythonrouge.pythonrouge import Pythonrouge
+
+plt.rcParams.update({'font.size': 14})
 
 class KernelPCA:
 
@@ -119,6 +122,17 @@ class KernelPCA:
 
         return 1 - sum
 
+    def similarity_rouge(self, s1, s2):
+        rouge = Pythonrouge(summary_file_exist=False,
+                            summary=s1, reference=s2,
+                            n_gram=2, ROUGE_SU4=True, ROUGE_L=True,
+                            recall_only=True, stemming=False, stopwords=False,
+                            word_level=True, length_limit=True, length=50,
+                            use_cf=False, cf=95, scoring_formula='average',
+                            resampling=True, samples=1000, favor=True, p=0.5)
+        ROUGE_score = rouge.calc_score()
+        return list(ROUGE_score.values())[2]
+
     def similarity_sentence_bag_of_ngrams(self, s1, s2):
         ng1 = self.init_list_of_objects(min(len(s1.split()) + 1, self.max_ngrams) - 2)
         ng2 = self.init_list_of_objects(min(len(s2.split()) + 1, self.max_ngrams) - 2)
@@ -191,6 +205,8 @@ class KernelPCA:
         if (self.plot):
             fig = plt.figure(figsize=(10, 10))
             ax = fig.add_subplot(111)
+            plt.xlabel('KPCA vector[0]')
+            plt.ylabel('KPCA vector[1]')
             ax.plot(x_train[:, 0], x_train[:, 1], 'go')
             for i, label in enumerate(vocabulary):
                 plt.text(x_train[:, 0][i], x_train[:, 1][i], label)

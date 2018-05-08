@@ -1,0 +1,1 @@
+11.7 an array that is declared as static will retain the values stored in it's elements between function calls, and will not reinitialize them to default values.

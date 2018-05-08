@@ -1,0 +1,1 @@
+4.4 An array that is not declared as static will re-initialize every time the function declaring it is called. A static array will initialize only once, at the declaration, and will store the values in it's elements throughout the duration of the program, even if the same function is called multiple times, a static array will only initialize once.

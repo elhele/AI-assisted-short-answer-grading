@@ -1,0 +1,1 @@
+7.1 A linked list is a data structure that is not necessarily in the same contiguous memory space (such as arrays). It holds the data type and points to the next data item in the list, or in a doubly linked list also to the previous item.

@@ -1,0 +1,1 @@
+2.2 Every member function can access and modify a data member.<br>A local variable can only be used from the line of declaration to the next closing } before it is lost from memory.

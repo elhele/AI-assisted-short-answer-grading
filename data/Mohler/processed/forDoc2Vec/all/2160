@@ -1,0 +1,1 @@
+11.10 merge sort splits an array into two halves and then sorts the two smaller arrays, and then merges them back together to form a sorted array

@@ -1,0 +1,1 @@
+2.5 A very large amount of constructors can be created for any given class through overloading.  When two constructors with a different type or number of parameters are created, they are said to be overloaded, and C++ can recognize which constructor to use based on the type of the variables that are passed/returned.

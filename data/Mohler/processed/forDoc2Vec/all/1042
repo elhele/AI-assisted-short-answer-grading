@@ -1,0 +1,1 @@
+6.4 you can have a pointer to the front of the array and add to the memory location (or offset from the initial value).

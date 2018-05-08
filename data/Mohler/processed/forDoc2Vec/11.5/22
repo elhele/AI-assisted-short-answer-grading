@@ -1,0 +1,1 @@
+11.5 A function that divides and conquers a problem.  There is a base case that will eventually be reached.  The function calls itself over and over until the base case is satisfied.

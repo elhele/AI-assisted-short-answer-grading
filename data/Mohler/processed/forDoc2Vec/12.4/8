@@ -1,0 +1,1 @@
+12.4 A selection sort scrolls through the data structure looking for the lowest (or highest) unsorted piece of data, moves it to the held spot, increments that spot by one, and starts the process over.

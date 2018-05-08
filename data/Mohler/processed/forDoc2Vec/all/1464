@@ -1,0 +1,1 @@
+8.6 By throwing variables into a postfix expression and operands onto a parentheses regulated stack until end parentheses and enough variables to operate on are encountered.

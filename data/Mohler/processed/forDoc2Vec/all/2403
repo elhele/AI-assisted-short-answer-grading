@@ -1,0 +1,1 @@
+12.9 Create a temp Node..Set temp's values to the Node after head .or NULL in the case of only head Node in the list. ..Set head equal to temp..Delete temp.

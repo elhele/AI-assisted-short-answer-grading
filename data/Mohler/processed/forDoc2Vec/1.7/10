@@ -1,0 +1,1 @@
+1.7 while statements will evaluate the statement BEFORE executing a cycle of the loop, including the first cycle, meaning that a while loop will not always execute. A do...while will run evaluate the statement AFTER running through a cycle of the loop, ensuring that the loop always executes at least one time.

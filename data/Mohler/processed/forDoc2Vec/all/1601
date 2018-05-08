@@ -1,0 +1,1 @@
+9.4 fairly easy... singly linked list with a pointer to the head and tail of hte list...deque first item in que, create temp pointer to next element, delete head, and then make head the temporary pointer...enque new item, use pointer to end of list, add a new item to the next item of the tail, and make the tail the next item of the current tail.

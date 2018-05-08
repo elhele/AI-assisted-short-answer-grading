@@ -1,0 +1,1 @@
+5.1 Assume the first number is sorted, then move down the list and 'insert' the numbers you come across into the corresponding place on the sorted side of the list.

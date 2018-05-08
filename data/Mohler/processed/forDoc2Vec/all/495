@@ -1,0 +1,1 @@
+3.3 tells the compiler to make a copy of function's code in place to avoid a function call.  it typically ignores it, except for the smallest functions.

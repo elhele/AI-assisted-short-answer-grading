@@ -1,0 +1,1 @@
+4.3 Usually the same way you pass anything else... you do not have to specify the length of a char array, just pass it to the function by sending the name of the array. .Example:.char str[20];.isPalindrome(str); // this sends the char array to the function isPalindrome...Otherwise, would need to send the length of the array as well.

@@ -1,0 +1,1 @@
+4.2 type string is an array of chars that will make an array of single letter characters while an array of strings will be an actual array of words (or an array of char arrays)

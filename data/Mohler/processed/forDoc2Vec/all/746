@@ -1,0 +1,1 @@
+4.4 Only constants can be used to declare the size of automatic and static arrays.Exists for the duration of the program.Is initialized when its declaration is first encountered.All elements are initialized to zero if not explicitly initialized.

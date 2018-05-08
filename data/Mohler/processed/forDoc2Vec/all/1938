@@ -1,0 +1,1 @@
+11.3 If you had a class Gradebook, you would initialize it in your main function by use of a constructor in the Gradebook class.  If no constructor is specified or found, c++ will use a default one with no parameters...Gradebook myGradebook;..In this bit of code, the class Gradebook has been initialized as object myGradebook.

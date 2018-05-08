@@ -1,0 +1,1 @@
+7.1 A linked list is a collection of Objects each containing at least one data member, and a pointer to the next object in the list (and the previous object in the case of a doubly linked list)

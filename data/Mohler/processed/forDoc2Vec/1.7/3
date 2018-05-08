@@ -1,0 +1,1 @@
+1.7 The main difference between a while and a do...while loop is that the do...while loop always cycles through the loop at least once, but the while loop does not always do so.

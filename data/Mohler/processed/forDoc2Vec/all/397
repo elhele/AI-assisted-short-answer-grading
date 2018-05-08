@@ -1,0 +1,1 @@
+2.7 #include "hat.h"  allows the use of the hat container, so called from the act of pulling names from a hat.  The header file for hat includes functions for storage and retrieval of it's contents, mainly put(), peek(), and pull().

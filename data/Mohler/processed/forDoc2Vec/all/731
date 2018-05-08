@@ -1,0 +1,1 @@
+4.4 All elements are initialized to zero if not explicitly initialized, this does not happen for automatic local arrays..

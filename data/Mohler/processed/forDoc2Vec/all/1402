@@ -1,0 +1,1 @@
+8.4 Use the head as the top of the stack, only modify the head when you push/pop... push would add a new item to the head, pop would remove the item from the head.

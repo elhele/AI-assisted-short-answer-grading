@@ -1,0 +1,1 @@
+10.6 Level order traversal is a traversal method by which levels are visited successively starting with level 0 (the root node), and nodes are visited from left to right on each level, with Push and Pop methods.

@@ -1,0 +1,1 @@
+12.6 A queue is an abstract data type that involves putting an element at the back of the list. Queues use the FIFO, first in first out, idea where the first element in the list is the first that comes out.

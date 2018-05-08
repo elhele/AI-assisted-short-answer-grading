@@ -1,0 +1,1 @@
+1.3 Encapsulation - Objects use operations without knowing how the operation works.<br>Inheritance - cuts redundancy by reusing earlier classes.<br>Polymorphism - objects select the correct operation to use in the situation.

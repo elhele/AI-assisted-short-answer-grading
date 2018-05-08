@@ -1,0 +1,1 @@
+2.2 data member is accessible to all functions in the class, where local variable is only available to the member function and value is lost when function closes

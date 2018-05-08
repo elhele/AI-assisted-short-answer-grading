@@ -1,0 +1,1 @@
+2.6 Function definitions are just that, the definition. The prototype is what the compiler uses to check that calls to function are correct.

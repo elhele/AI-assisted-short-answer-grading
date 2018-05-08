@@ -1,0 +1,1 @@
+12.6 an ordered list that performs task in the order of first in first out. adding items to the queue places items behind the rest of them. taking items off the queue takes the one that has waited the longest.

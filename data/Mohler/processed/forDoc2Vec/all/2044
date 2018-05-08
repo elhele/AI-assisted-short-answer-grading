@@ -1,0 +1,1 @@
+11.7 A static array only has a specific size and it cannot grow. Also static arrays cannot be accessed outside the program which created it.

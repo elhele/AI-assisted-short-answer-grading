@@ -1,0 +1,1 @@
+2.2 A data member exists permanently in that program's memory as long as it's run...A local variable inside a member function is temporal and only used to operate in the function and exists as long as the function is run.

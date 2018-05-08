@@ -1,0 +1,1 @@
+8.3 Declare a variable that points the last item in the array, which increases (++) when items are pushed onto the stack, and decreases (--) when an item is popped off the top.

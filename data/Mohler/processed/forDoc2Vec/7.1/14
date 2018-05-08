@@ -1,0 +1,1 @@
+7.1 A series of "Nodes" structures with a value and a pointer that point to a similar "Node". Not quite an array, but still can carry a list of values.

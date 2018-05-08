@@ -1,0 +1,1 @@
+8.5 The list-based implementation is preferred since the big O(1) is very efficient.

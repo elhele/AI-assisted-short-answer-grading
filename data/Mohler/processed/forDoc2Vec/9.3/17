@@ -1,0 +1,1 @@
+9.3 add items into a fixed size array, pull the items out by calling on them with the starting index, increase starting index so when it calls again its now the next index element in the array.

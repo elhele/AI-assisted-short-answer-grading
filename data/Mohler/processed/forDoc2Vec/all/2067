@@ -1,0 +1,1 @@
+11.7 by defining static array it doese not lose scope in locala function. static array makes programm more scalable..non static array lose scope inside the local function.

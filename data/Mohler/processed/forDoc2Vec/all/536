@@ -1,0 +1,1 @@
+3.4 only the memory address is sent to the function, so no copy of the object sent needs to be made. It makes the function run faster, and saves memory.

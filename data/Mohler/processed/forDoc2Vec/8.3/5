@@ -1,0 +1,1 @@
+8.3 Use a pointer that always points to the end of the array list for push/pop modifications.

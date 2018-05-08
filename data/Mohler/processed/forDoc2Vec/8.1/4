@@ -1,0 +1,1 @@
+8.1 An ADT whose most recently inserted item is the first item removed or retrieved. This property is called last in, first out (LIFO). Items enter and leave a stack at its top.

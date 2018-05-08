@@ -1,0 +1,1 @@
+4.3 -Arrays are passed by reference <br><br>      -Individual array elements passed by value<br><br>      -Functions that take arrays as arguments <br><br>      -Function prototypes may include parameter names<br><br>      -const array parameters

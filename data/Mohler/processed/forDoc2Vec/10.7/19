@@ -1,0 +1,1 @@
+10.7 At most it takes one less comparisons than the tree's height. In big-O notation it takes O(log n) comparisons if the tree is balanced.

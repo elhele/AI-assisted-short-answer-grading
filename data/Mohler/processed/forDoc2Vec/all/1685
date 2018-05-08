@@ -1,0 +1,1 @@
+9.7 A Queue data structure is more appropriate for scheduling printing jobs at a printer. The first job sent to the printer is the first job printed.

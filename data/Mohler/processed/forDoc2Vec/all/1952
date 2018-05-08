@@ -1,0 +1,1 @@
+11.3 obj. are initialized by the variables that call them, when they are created within a class. ..e.i. classname objectname etc.

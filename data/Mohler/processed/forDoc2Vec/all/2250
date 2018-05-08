@@ -1,0 +1,1 @@
+12.4 Selection sort is a sorting algorithm that divides a list in half and has two lists. It then compares the first elements in both these lists and puts these elements in another list, having the smaller element before the bigger one.

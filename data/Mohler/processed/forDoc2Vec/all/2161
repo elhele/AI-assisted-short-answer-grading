@@ -1,0 +1,1 @@
+11.10 the merge sort continually divides the array (or set of containers) into halves, until it reaches the point where there is just one element left, then merges each of the sets of two sorted arrays (containers).

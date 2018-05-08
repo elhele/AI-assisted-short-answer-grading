@@ -1,0 +1,1 @@
+12.4 Selection sort searches the array for the lowest value and swaps it with the first value in the array. Then searches for the next lowest value and swaps it with the second item in the array, and so on.

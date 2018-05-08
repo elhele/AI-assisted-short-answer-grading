@@ -1,0 +1,1 @@
+4.6 Generates a compilation error. The compiler will complain that the variable you are referring to was never declared.

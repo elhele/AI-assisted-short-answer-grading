@@ -1,0 +1,1 @@
+11.7 A static array cannot be changed. A regular array can be changed when it is passed to a function or manually.

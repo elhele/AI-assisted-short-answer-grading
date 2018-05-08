@@ -1,0 +1,1 @@
+9.7 queue, because of the first in first out principles, and if it was a stack it would be last in last out,  because it could possibly not let the first item that was added get removed in a timely manner.

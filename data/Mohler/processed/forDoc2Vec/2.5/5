@@ -1,0 +1,1 @@
+2.5 In C++, the constructor can be overloaded in that there can be more than one constructor for a class, each having different parameters.

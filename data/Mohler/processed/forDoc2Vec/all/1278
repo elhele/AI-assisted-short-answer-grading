@@ -1,0 +1,1 @@
+7.6 they have double pointers, so each node can point forwards or backwards. Making it a little easer to get to where you need.

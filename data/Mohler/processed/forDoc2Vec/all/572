@@ -1,0 +1,1 @@
+3.6 Infinite recursion is an infinite loop if the condition is not met.  Either omitting the base case, or writing the recursion step incorrectly so that it does not converge on the base case causes "indefinite" recursion, eventually exhausting memory.

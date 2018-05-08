@@ -1,0 +1,1 @@
+1.6 For good programing practice they should be declared before main(), but should at least be declared before they are used.

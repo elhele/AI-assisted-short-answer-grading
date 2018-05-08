@@ -1,0 +1,1 @@
+9.1 An ADT whose first inserted item is the first item removed. This uses the FIFO idea where items enter a queue at its back and leave at its front.

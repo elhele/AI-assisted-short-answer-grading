@@ -1,0 +1,1 @@
+5.1 Takes an element of an array and compares it with the next element, depending on the values of the two elements they will switch and then the program will compare the new switched element with the next one in the array.

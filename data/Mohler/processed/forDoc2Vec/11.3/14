@@ -1,0 +1,1 @@
+11.3 When the object is initialized, its constructor is called (whether one is provided or c++ assigns a default constructor).

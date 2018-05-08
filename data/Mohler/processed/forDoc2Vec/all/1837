@@ -1,0 +1,1 @@
+10.6 it means that you traverse one subtree of a node, then look at the node itself before traversing the other subtree of the node

@@ -1,0 +1,1 @@
+7.6 All the deletion and insertion operations can be performed in constant time, including those operations performed before a given location in the list or at the end of the list.

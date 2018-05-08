@@ -1,0 +1,1 @@
+6.7 a pointer that points to a function itself, which allows passing a function as a parameter to another function.

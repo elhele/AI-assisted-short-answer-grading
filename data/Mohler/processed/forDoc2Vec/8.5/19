@@ -1,0 +1,1 @@
+8.5 Array is preferred.  Linked list implementation requires extra space to store pointers.  Space is allocated dynamically in the list-based which takes more time.

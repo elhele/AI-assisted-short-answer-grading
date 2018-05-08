@@ -1,0 +1,1 @@
+5.2 Find the smallest value in the list and make it the first element, then find the smallest value of the leftover list and make it the first element of the leftover list and continue until the list is sorted.

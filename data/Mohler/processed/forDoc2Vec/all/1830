@@ -1,0 +1,1 @@
+10.6 void inorder(ptNode ptr).{.if (ptr).{.inorder (ptr-&gt;left);.cout&lt;&lt;ptr-&gt;data;.inorder(ptr-&gt;right);.}.}

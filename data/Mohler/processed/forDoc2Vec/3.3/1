@@ -1,0 +1,1 @@
+3.3 It expands the function's definition in that place.  Once the functions is called you can use it as many times as you need.  The compiler just expands on the function.

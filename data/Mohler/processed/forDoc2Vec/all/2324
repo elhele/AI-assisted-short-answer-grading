@@ -1,0 +1,1 @@
+12.6 A queue is a linear, first-in first-out data structure. Data must be accessed in the same order it was put into the queue, so only the oldest item in the queue is accessible at any time. Main functions defined are enqueue and dequeue.

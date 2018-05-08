@@ -1,0 +1,1 @@
+11.7 The array that is declared static retains its modified elements so once it is called upon again the latest elements are modified again.  An array that is not declared static will keep its original elements.

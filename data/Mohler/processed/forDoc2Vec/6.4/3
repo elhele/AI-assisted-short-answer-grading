@@ -1,0 +1,1 @@
+6.4 Element b[ n ] can be accessed by  *( bPtr + n ).

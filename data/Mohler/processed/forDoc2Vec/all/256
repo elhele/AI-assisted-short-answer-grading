@@ -1,0 +1,1 @@
+2.2 a local variable in a member function has to be static. a data member can change its value freely.

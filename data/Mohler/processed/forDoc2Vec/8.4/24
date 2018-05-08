@@ -1,0 +1,1 @@
+8.4 Keep a pointer pointing to the last element entered at the front of the array and move the pointer "back" when you delete an element.

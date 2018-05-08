@@ -1,0 +1,1 @@
+11.5 A recursive function solves a problem by repeatedly calling itself. the initial problem is broken into successively smaller parts until a much simpler base case is reached. the solutions to each piece of the problem are then returned a step at a time.

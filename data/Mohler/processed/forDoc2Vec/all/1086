@@ -1,0 +1,1 @@
+6.6 Four different ways: Nonconstant pointer to nonconstant data, a nonconstant pointer to constant data, a constant pointer to nonconstant data and a constant pointer to constant data.

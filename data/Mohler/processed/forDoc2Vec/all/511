@@ -1,0 +1,1 @@
+3.4 Pass by reference is good for performance reasons, because it can eliminate the pass by value overhead of copying large amounts of data.

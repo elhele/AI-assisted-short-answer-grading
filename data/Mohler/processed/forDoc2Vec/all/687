@@ -1,0 +1,1 @@
+4.2 Strings declared using the type string can vary in length. Strings declared using an array of characters can not extend past the array length.

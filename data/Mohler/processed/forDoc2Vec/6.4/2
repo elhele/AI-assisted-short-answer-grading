@@ -1,0 +1,1 @@
+6.4 An array can be addressed in pointer/offset notation by setting a pointer variable equal to the variable name of the array. Elements of the array can then be accessed by adding an offset value to the pointer variable.

@@ -1,0 +1,1 @@
+1.6 Local variables are declared inside the method or function they will be used in at the beginning of the method. Global variables are declared outside of any function or method, generally before functions are defined.

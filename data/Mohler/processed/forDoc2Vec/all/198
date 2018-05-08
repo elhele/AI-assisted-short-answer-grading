@@ -1,0 +1,1 @@
+1.7 A do-while passes atleast 1 time before checking the condition, however, a while would fail to enter the loop if the condition fails in its first place.

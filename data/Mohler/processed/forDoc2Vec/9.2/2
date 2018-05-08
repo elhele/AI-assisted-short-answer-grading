@@ -1,0 +1,1 @@
+9.2 enqueue , which inserts a specified element at the head of the specified queue, and dequeue , which removes the specified element from the queue.

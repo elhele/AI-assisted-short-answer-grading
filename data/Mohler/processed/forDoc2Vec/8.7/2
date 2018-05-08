@@ -1,0 +1,1 @@
+8.7 You would have to keep using peek or getTop to see what the top element is then popping the top element until peek or getTop provides the element you are looking for.

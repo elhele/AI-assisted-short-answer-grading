@@ -1,0 +1,1 @@
+3.6 Lack of defining a base case, or writing the recursion step incorrectly so that it does not converge on the base case

@@ -1,0 +1,1 @@
+2.2 A data member is globally accessible, while a local variable is only accessible inside the member function.

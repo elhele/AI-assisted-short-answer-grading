@@ -1,0 +1,1 @@
+12.2 run the code for n-times and get average values, drop the constant and lowest number. for example if .           f(x) = 3n +1.the running time will bef  f(x) = O(n)

@@ -1,0 +1,1 @@
+2.6 A function definition is the code that defines the function placed in the {} brackets that determines that function's operation...A function prototype shows the function's public interface without exposing implementation.  It shows name, return type and type of paramaters.

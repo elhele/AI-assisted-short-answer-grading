@@ -1,0 +1,1 @@
+2.3 A constructor cannot return values, not even void, but function get a return value.

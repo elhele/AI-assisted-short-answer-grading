@@ -1,0 +1,1 @@
+2.2 A data member is part of a C++ class or structure that stores data of a certain type... A local variable inside a member function is only available inside that function, and can be used to derive a desired outcome.

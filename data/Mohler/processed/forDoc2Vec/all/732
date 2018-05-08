@@ -1,0 +1,1 @@
+4.4 All elements are initialized to zero if not explicitly initialized for a static array, while a non-static array is not initialized to zero.

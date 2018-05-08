@@ -1,0 +1,1 @@
+7.3 Arrays are good for random access and good for sequential access which are both in constant time. Where linked lists are linear for random access. Arrays are faster in this case.

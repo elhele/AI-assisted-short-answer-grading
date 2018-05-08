@@ -1,0 +1,1 @@
+2.2 A data member is a more general term describing all objects instantiated within a member function.  "Local" in local variables refers more to the scope of a variable, which may be located in anything from a control structure to a class.  Local variables whose scope are in a member function are the same as data members of member functions.

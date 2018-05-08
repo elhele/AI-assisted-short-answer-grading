@@ -1,0 +1,1 @@
+2.6 in a function prototype you include the return type, the name of the function, and its parameters if any are needed...in a function definition you write the code of what the function will do.

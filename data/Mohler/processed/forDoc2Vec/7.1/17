@@ -1,0 +1,1 @@
+7.1 A linked list is a chain of structs or records called nodes.  Each node has at least two members, one of which points to the next item or node in the list.

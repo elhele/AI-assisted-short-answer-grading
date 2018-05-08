@@ -1,0 +1,1 @@
+4.1 Array lengths can be explicitly specified by inputing the number of elements between the brackets [ ] during declaration, or implicitly by including an initializer list WITHOUT specifying a number between [ ], the compiler will automatically declare the array with the proper number of elements needed for the list.

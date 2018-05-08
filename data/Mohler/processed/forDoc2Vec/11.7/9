@@ -1,0 +1,1 @@
+11.7 Arrays declared static can not be changed.  One not declared static can be altered.

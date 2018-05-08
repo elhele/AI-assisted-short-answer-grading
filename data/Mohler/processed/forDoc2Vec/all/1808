@@ -1,0 +1,1 @@
+10.5 a set of numbers arranged by links. each node can contain two pointers to other elements. each node to the left of the parent is smaller and each node to the right is larger. recursive implementation implies that if traversed in order, the output would be sorted

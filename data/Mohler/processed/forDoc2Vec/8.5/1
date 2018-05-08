@@ -1,0 +1,1 @@
+8.5 List based is preferred because it is not constrained to a fix size.  The down fall is that it takes up more memory because each node has at least two parts, the item and the pointer.

@@ -1,0 +1,1 @@
+2.1 For us it is usually a set, get, and displayMessge or other messages that tell you what properties a class has but does not reveal its implementations. You could have anything you want in your own class definition.

@@ -1,0 +1,1 @@
+4.4 a static array can only be referenced not accessed. Also static arrays can be used without creating an object.

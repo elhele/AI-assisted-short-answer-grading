@@ -1,0 +1,1 @@
+11.9 Divide the big problem into small problem, solve small problem and join small solved elements of the problem..if there is two ore more elements in the array, divide the array into parts and compare the elements, after comperison, conquer the elements. If array have n element, first half have n/2 elements

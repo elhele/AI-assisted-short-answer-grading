@@ -1,0 +1,1 @@
+2.2 The data member can be accessed outside of the class, whereas the local variable cannot.

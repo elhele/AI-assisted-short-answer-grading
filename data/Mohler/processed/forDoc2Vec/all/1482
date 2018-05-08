@@ -1,0 +1,1 @@
+8.7 Using linked lists and stacks, you would need a temp stack to retain the values. Then you would use the Pop( ) function to pop off each element and then compare it. If its not the element your looking for, Push ( ) it to the temp stack. Repeat until the element is found. When you find it,  Pop ( ) off the temp stack back onto the regular stack to have a complete stack again.

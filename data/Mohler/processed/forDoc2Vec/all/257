@@ -1,0 +1,1 @@
+2.2 a local variable is only useable within the function it is defined, whereas a data member is available to any method within its class

@@ -1,0 +1,1 @@
+4.2 The strings declared using an array of characters have a null element added at the end of the array.

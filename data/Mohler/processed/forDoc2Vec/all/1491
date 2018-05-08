@@ -1,0 +1,1 @@
+8.7 Keep popping nodes and storing them in an alternate stack until the given element is found, then pop the given element and push the previously popped nodes back onto the stack.

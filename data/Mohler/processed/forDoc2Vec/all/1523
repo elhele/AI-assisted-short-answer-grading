@@ -1,0 +1,1 @@
+9.1 A quese is an list that stores a set of elements in a particular order. It has Stack principle, but in this case, its "First In, First Out". The first element inserted is the first element to be removed.

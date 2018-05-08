@@ -1,0 +1,1 @@
+5.2 finds the smallest element and places in 1st position. then the process is repeated on the rest of the array.

@@ -1,0 +1,1 @@
+10.4 Starting at the root node, it branches off into one or two subsets that are binary subtrees of the root. Each node has at most two children, the left child and the right child.

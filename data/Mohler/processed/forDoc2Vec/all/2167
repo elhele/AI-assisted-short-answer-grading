@@ -1,0 +1,1 @@
+12.1 A data type that points to an address in memory which contains certain information. Used for pass-by-reference to save memory.

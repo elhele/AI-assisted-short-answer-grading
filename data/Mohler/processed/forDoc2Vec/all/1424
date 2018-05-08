@@ -1,0 +1,1 @@
+8.4 Using a linked list is one way to implement a stack so that it can handle essentially any number of elements. It is usually convenient to put a data structure in its own module, thus, you'll want to create files stack.h and a stack.c

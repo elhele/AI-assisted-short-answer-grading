@@ -1,0 +1,1 @@
+2.2 local variables can only be used within the function, where as data members can be set to public access and can be used throughout

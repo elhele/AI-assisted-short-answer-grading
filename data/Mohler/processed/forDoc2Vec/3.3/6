@@ -1,0 +1,1 @@
+3.3 You declare your inline function in the header or before your int main(). You then can call that function at anytime in your main program quickly and easily.

@@ -1,0 +1,1 @@
+4.2 Unlike in a string declared using type string, in a string declared using an array of characters the programmer must provide the null terminating character and must ensure the array is large enough to hold the string and null terminating character.

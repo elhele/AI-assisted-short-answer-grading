@@ -1,0 +1,1 @@
+7.6 The advantage is that each node points to bothe its predecessor and its successor. There are no special cases for insertion and deletion.

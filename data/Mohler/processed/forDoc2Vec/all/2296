@@ -1,0 +1,1 @@
+12.5 The primary advantage of linked lists over arrays is their ability to become larger or smaller as data is added and removed from the list, whereas arrays may waste memory for small data sets, and run out of space for large data sets.

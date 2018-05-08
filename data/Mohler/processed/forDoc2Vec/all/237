@@ -1,0 +1,1 @@
+2.2 Data member are variables that represent an attribute in a class definition.  Local variables declared in a function body cannot be used outside of that function body.  When a function terminates the values of its local variables are lost.

@@ -1,0 +1,1 @@
+6.7 When dereferenced, a function pointer invokes a function, passing it zero or more arguments just like a normal function. In programming languages like C, function pointers can be used to simplify code, such as replacing large switch statements.

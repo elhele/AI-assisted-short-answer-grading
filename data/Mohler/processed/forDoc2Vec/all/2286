@@ -1,0 +1,1 @@
+12.5 Inserts into a linked list are far cheaper than an insert into an array. With an array, all items after the one being inserted must me shifted, with a linked list, only the pointers are replaced.

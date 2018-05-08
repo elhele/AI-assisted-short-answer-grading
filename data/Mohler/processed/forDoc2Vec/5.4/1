@@ -1,0 +1,1 @@
+5.4 The base case for a recursive merge sort is one number.  One number by itself is a sorted list, regardless of what number it is.

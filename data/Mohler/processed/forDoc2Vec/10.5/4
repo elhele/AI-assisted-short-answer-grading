@@ -1,0 +1,1 @@
+10.5 A binary tree where the search key in any node n is greater than the search key in any node in n's left subtree, but less than the search key in any node in n's right subtree.

@@ -149,7 +149,7 @@ In this section some general NLP methods those are used in various ASAG systems 
 
 where n is strictly higher than one. For better understanding of the concept the following example can be made. A sentence "A new art colour for our Irish poets: snotgreen. " ~\cite{Ulysses} broken into bigrams and 2-skip-bigrams takes the following form: bigrams = \{"A new", "new art", "colour for", "for our", "our Irish", "Irish poets", "poets snotgreen"\}, 2-skip-bigrams = \{"A new", "A art", "A colour", "new art", "new colour", "new for", "for our", "for Irish", "for poets", "our Irish", "our poets", "our snotgreen", "Irish poets", "Irish snotgreen",  "poets snotgreen"\}. One can see that in many cases it creates senseless sequences of the words like "A art", however, k-skip-n-gram "for Irish" would make total sense, because the sentence without word "our" is as valid as the initial one. Moreover, the wrong k-skip-n-grams are too random and often grammatically senseless, that is why they can with very low probability create false positives, which means that it is at least harmless to use them.\\
 
-\textbf{Tokenization} is breaking a sentence into separate words – tokens – and removing punctuation, which is basically extraction of unigrams ~\cite{token}. For example, a sentence "Tokenization is breaking a sentence into separate words – tokens – and removing punctuation, which is basically extraction of unigrams" will take the following form: \{Tokenization"", "is","breaking", "a", "sentence", "into", "separate", "words", "tokens", "and", "", "removing", "punctuation", "which","unigrams","is","basically","extraction","of","unigrams"\}. \\
+\textbf{Tokenization} is breaking a sentence into separate words – tokens – and removing punctuation, which is basically extraction of unigrams ~\cite{token}. For example, a sentence "Tokenization is breaking a sentence into separate words – tokens – and removing punctuation, which is basically extraction of unigrams" will take the following form: \{Tokenization"", "is","breaking", "a", "sentence", "into", "separate", "words", "tokens", "and", "removing", "punctuation", "which", "unigrams", "is", "basically", "extraction", "of", "unigrams"\}. \\
 
 \textbf{Stemming and lemmatization} are techniques those allow to returned a word in a specific form to its original form, e.g. a verb "is" is lemmatized as "be", genitive case "des Herzens" -- as "das Herz", plural "mice" -- as "mouse", etc. ~\cite{lemm}.\\
 
@@ -671,7 +671,7 @@ SIM_{Levenshtein} = \frac{max(length(currentWord,keyword)) - minLev}{length(keyw
 \end{equation}
 where $minLev$ is the distance between the current keyword the most similar word in a student's answer. If it is larger or equal to the minimal length of the two words, $SIM_{Levenshtein}$ nullifies. \\
 
-\textbf{S{\o}rensen-Dice} coefficient -- a number of overlap words in two answers:
+\textbf{S{\o}rensen-Dice} coefficient -- a number of overlap words in two answers ~\cite{Gomaa}:
 \begin{equation} \label{eq:Dice}
 SIM_{Dice} = \frac{2 \times (answer_1 \cap answer_2)}{|answer_1| + |answer_2|}.
 \end{equation}
@@ -1188,7 +1188,7 @@ All works except for one concentrate on various parameters of students' answers 
 Most of the authors use their own datasets. However, there is one similarity that occurs relatively often -- a dataset contains grades from two human raters. As mentioned above, human raters' grades are often significantly different. Two main solutions to this problem was named:
 
 \begin{itemize}
-\item taking an averaging grade. This method is used in several papers ~\cite{Mohler}, ~\cite{Sultan}, however, human-computer correlation, which is calculated based on the average value, is questionable. Each human rater has a certain set of rules for grading. Averaging of grades derived from different sets of rules gives a senseless number, for grades here cannot be considered as linear functions. 
+\item taking an average grade. This method is used in several papers ~\cite{Mohler}, ~\cite{Sultan}, however, human-computer correlation, which is calculated based on the average value, is questionable. Each human rater has a certain set of rules for grading. Averaging of grades derived from different sets of rules gives a senseless number, for grades here cannot be considered as linear functions. 
 \item discarding questions graded differently ~\cite{Zbontar}. It is reasonable, because these questions must be ambiguous. However, in certain datasets, e.g. Mohler's, it would cause discarding of almost half of the questions.
 \end{itemize}
 

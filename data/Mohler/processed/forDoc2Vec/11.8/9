@@ -1,0 +1,1 @@
+11.8 When you read a string of characters, you also read in the white space.  When you read characters declared char you only read the characters, no white space.

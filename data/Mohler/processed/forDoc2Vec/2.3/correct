@@ -1,0 +1,1 @@
+2.3 A constructor is called whenever an object is created, whereas a function needs to be called explicitely. Constructors do not have return type, but functions have to indicate a return type.

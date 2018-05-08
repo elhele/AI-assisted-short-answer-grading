@@ -1,0 +1,1 @@
+8.4 adding the element to the end of the list so that it links to the element before it. when popping the element it takes the last element in the list and sets the previous one as the end of the list.

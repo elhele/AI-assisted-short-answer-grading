@@ -1,0 +1,1 @@
+6.4 The array can act as a pointer or be referenced by a pointer. *(arrayPtr + 3) or *(array + 3)

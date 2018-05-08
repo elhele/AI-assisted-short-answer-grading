@@ -1,0 +1,1 @@
+7.4 Linked lists are passed as arguments to a function by passing the head pointer of the list by reference.

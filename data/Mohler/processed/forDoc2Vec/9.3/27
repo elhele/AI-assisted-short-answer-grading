@@ -1,0 +1,1 @@
+9.3 Boolean isFullQ(queue) ::= rear == MAX_QUEUE_SIZE-1

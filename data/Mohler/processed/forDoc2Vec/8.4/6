@@ -1,0 +1,1 @@
+8.4 you implement a stack with a list by changing the pointer to the first element of the list to the new item and move the pointer from the top of the stack to the next item when removing an item.

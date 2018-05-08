@@ -1,0 +1,1 @@
+12.4 Selection sort traverses an unsorted array looking for the smallest value, when it's found it is put at the beginning of the unsorted array.  Performed several times, this will output a sorted array.

@@ -1,0 +1,1 @@
+5.2 the sort finds the largest item and places it at the end, then then next largest is found and placed next to last, continue until there is only one number left, this is the beginning of the sorted array

@@ -1,0 +1,1 @@
+11.10 It uses the divide and conqure technique recursively and then when merging back together it compares each element together in a sorted list, this is done by reversing the divide and conquer technique

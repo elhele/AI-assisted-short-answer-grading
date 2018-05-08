@@ -1,0 +1,1 @@
+11.1 A class definition includes the definitions of the class' constructor(s) and any public or private functions. Of course, it also #includes the class header and any necessary C libraries

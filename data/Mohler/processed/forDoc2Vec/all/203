@@ -1,0 +1,1 @@
+1.7 ) The do while construct consists of a block of code and a condition. First, the code within the block is executed, and then the condition is evaluated, this is done until it is proven false. The difference between the While loop is it tests the condition before the code within the block is executed..

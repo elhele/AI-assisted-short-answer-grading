@@ -1,0 +1,1 @@
+2.2 data members are permanent attributes of the class, local variables inside a member function are lost when the scope of the member function ends.

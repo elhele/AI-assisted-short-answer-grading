@@ -1,0 +1,1 @@
+9.3 Declare the size of an array, and have special conditional statements (pointers) to make sure you re-use ALL of the array. Say, you have an array of 20 elements, you load up 18, then dequeue 3, when you enqueue 4 more elements, you want to loop back to index 0 and continue from there... this process saves resources.

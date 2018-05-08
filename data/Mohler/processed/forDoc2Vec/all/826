@@ -1,0 +1,1 @@
+4.7 x by y is row by column..So x is rows, and y is columns..Since the length of the row is not needed when passing the array to the function, this leads me to believe that bi-dimensional arrays are stored by rows at a time.

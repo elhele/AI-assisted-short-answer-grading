@@ -1,0 +1,1 @@
+6.7 A pointer to a function is the address where the code for the function resides. They can be passed to functions, returned from functions, stored in arrays and assigned to other pointers.

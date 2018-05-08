@@ -1,0 +1,1 @@
+11.3 Objects are assigned a space in memory when they are created. the name given to the object points to the memory address where the objects data resides.

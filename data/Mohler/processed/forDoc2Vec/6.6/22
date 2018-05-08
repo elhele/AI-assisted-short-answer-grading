@@ -1,0 +1,1 @@
+6.6 There are four way to pass pointer to a function 1. non constant pointer to non constant data 2.non constant pointer to  constant data. 3. constant pointer to non constant data. 4. constant pointer to  constant data.

@@ -1,0 +1,1 @@
+12.8 An Euler traversal is a traversal that begins with the root, and travels around the outside of the tree.  Each element in the tree is visited 3 times.  From the left, from the bottom and from the right.

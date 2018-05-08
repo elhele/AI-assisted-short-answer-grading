@@ -1,0 +1,1 @@
+3.5 Overloaded functions are distinguished by their signatures, Name mangling or name decoration, and type-safe linkage ensures that proper overloaded functions is called and types of the arguments conform to tpes to the parameters.

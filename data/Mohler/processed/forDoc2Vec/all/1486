@@ -1,0 +1,1 @@
+8.7 Pop an element from one stack, check to see if it is the desired element, if not push it onto another stack. When finished, pop the items from the second stack and push them back onto the first stack (this will ensure the order of the elements is maintained).

@@ -1,0 +1,1 @@
+2.7 Header files separate files in which classes are defined and allow the compiler to recognize classes when used elsewhere.

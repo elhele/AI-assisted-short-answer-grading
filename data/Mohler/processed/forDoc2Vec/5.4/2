@@ -1,0 +1,1 @@
+5.4 The base case for a recursive implementation of merge sort is when the sequence being passed to merge sort has less than 2 elements.

@@ -1,0 +1,1 @@
+1.6 Global variables are declared in the body of the code. Local variables are declared in the function they are to be used (unless the function is being passed a variable). Variables should always be declared before use.

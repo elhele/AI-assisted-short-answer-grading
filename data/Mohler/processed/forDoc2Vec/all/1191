@@ -1,0 +1,1 @@
+7.3 An array is capable of accessing any part of that array based on the index. The link list must be traversed from the beginning or the end, that is, data can only be accessed if it is adjacent to the previous or next nodes.

@@ -1,0 +1,1 @@
+4.2 strings with type string are just that. Strings. They are not part of an array list at all where as one declared by an array is actually an array of characters able to be pointed and detected.

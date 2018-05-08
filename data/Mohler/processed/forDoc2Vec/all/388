@@ -1,0 +1,1 @@
+2.7 A header file consists of "reusable" source code such as a class in a file that by convention has a .h filename extension. This differs from .cpp files that contain "source-code."

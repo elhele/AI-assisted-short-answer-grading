@@ -1,0 +1,1 @@
+10.5 A binary search tree is a tree that also has the condition that each node may have at maximum 2 children and where the input data is compared to the data in the tree starting with the root. If the value is smaller than the root it traverses left, if it is larger it traverses right until it becomes a leaf.

@@ -1,0 +1,1 @@
+3.6 recursion refers to situations in which functions call themselves. These types of functions are known as recursive functions. That being said Infinite recursion occurs when the function is designed in such a way as to call it self forever without stopping possible causes

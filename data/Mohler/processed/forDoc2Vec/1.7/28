@@ -1,0 +1,1 @@
+1.7 a while loop is pre-check (it checks the condition statement before it executes the code within the while block)<br><br>a do while loop is post-check (it checks the condition AFTER the block executes, it runs at least once no matter what the condition statement is)

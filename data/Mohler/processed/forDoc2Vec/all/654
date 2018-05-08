@@ -1,0 +1,1 @@
+4.1 explicitly, by declaring it in brackets (i.e. int array[50];) and implicitly, by initializing several values (i.e. int array[] = {1, 2, 3};)

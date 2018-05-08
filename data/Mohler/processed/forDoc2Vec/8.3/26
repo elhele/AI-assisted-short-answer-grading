@@ -1,0 +1,1 @@
+8.3 by having a max number of elements, allocating an array with that number of elements, storing the elements starting at 0, and keeping track of how many elements are currently in the list

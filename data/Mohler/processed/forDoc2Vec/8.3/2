@@ -1,0 +1,1 @@
+8.3 By implementing an array of a pre-defined size with the bottom stack element stored at element 0 and the last element stored in the array is the top. You increment top when an element is pushed and you decrement it when an item is popped.

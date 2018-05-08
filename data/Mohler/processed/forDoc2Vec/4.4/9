@@ -1,0 +1,1 @@
+4.4 If an array is declared as static, it is not created each time the array is called.

@@ -1,0 +1,1 @@
+2.3 constructor is a special block of statements called when an object is created, either when it is declared statically or constructed on the stack. However a function is a portion of code within a larger program, which performs a specific task and independent to the rest of the code.

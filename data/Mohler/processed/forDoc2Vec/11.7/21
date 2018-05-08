@@ -1,0 +1,1 @@
+11.7 an array that is declared as static can only be used in the function that its being called in. Its a constant array. Static is another way of say const.

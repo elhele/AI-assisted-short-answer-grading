@@ -1,0 +1,1 @@
+7.3 On the other hand, arrays allow random access, while linked lists allow only sequential access to elements. Singly-linked lists, in fact, can only be traversed in one direction.

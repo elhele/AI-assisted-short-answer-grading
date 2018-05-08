@@ -1,0 +1,1 @@
+11.7 one declared as static is one that is already defined. The program knows the length and the array from the start, whereas non-static arrays are declared or assigned later.

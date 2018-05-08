@@ -1,0 +1,1 @@
+3.7 Both rely on repetition, both have a base case, both can become an infinite loop. Anything recursive can also be solved with iteration.

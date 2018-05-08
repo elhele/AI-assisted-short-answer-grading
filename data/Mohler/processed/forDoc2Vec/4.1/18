@@ -1,0 +1,1 @@
+4.1 Implicit, namely when you give it values, like {1,2,3,4,5,6,7,8,9}, at which the compiler will automatically give this a size.<br>Static, during the declaration.<br>

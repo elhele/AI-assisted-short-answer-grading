@@ -1,0 +1,1 @@
+12.9 by searching down the tree until you find the node, and replacing the link to that node with the greatest child node on the left subtree or the least child node on the right subtree.

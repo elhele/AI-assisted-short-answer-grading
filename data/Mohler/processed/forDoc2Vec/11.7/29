@@ -1,0 +1,1 @@
+11.7 An array that is declared static is allocated when the program begins to run, and is not freed until the program exits, but has limited scope. A non-static array is allocated and freed every time that it comes in and out of scope.

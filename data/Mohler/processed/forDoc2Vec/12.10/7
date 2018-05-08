@@ -1,0 +1,1 @@
+12.10 Depends on the location of the node you are looking for. If it is the root it is one step.  else If it is smaller than the current you are on node you go to the left.  If it is larger than the current node you are on go to the right.

@@ -1,0 +1,1 @@
+11.8 The programmer must provide the null terminating character in a string of characters using type char[] and must also ensure that the array is large enough to contain the input string of characters and the null terminating character.

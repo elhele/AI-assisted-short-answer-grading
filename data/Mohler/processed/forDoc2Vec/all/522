@@ -1,0 +1,1 @@
+3.4 If a function's arguments are large in size, computing time and memory space is not wasted copying down the argument and passing it to the function.  Also pass by reference gives the function called the permission to read edit the argument directly.

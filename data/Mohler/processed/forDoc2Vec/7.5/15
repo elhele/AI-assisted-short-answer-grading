@@ -1,0 +1,1 @@
+7.5 how to determine the end of the list, in basic linked lists the last element links to a null pointer, while circular linked lists link to the head element at the end.

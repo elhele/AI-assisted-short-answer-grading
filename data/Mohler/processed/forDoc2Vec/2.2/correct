@@ -1,0 +1,1 @@
+2.2 Data members can be accessed from any member functions inside the class defintion. Local variables can only be accessed inside the member function that defines them.

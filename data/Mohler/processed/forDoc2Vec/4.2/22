@@ -1,0 +1,1 @@
+4.2 strings declared using an array of characters could result in data loss if character array not initialized large enough.

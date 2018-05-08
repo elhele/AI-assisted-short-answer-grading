@@ -1,0 +1,1 @@
+4.1 Explicitly int array[10];.or by variable.const int size = 10;.int array[size];

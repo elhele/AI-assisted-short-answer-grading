@@ -1,0 +1,1 @@
+12.4 goes to the middle of the list, checks to see if it is greater or less then the value given and moves through the list accordingly to add the value into the proper place.

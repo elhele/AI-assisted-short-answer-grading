@@ -1,0 +1,1 @@
+11.7 A static array has class scope, allowing it to remain where other arrays might be recycled.

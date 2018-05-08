@@ -1,0 +1,1 @@
+2.4 at the very beginning when you run a complier, matter a fact in C++ it generates its own default constructor for the class provided if no other constructors have been provided by user

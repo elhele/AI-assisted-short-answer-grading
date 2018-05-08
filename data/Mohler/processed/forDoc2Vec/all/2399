@@ -1,0 +1,1 @@
+12.9 If the node is a leaf, just set it's parent's pointer to null and delete it, if it has a single child, set the parent's pointer to the child and delete; if it has two children, set the node to one of the middle children and remove that child from its previous position as a leaf (rightmost child of the left subtree or leftmost child of the right subtree).

@@ -1,0 +1,1 @@
+11.7 Values in an array that is not delcared as static will remain constant.  When an array is declared const values within the array can be manipulated.

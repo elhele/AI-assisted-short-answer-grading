@@ -1,0 +1,1 @@
+10.1 A tree is a branched data structure with nodes, and leaves... a special node called root has no parent node, but however like all other nodes can and does have 2 nodes that it links to, namely one on the right, and one on the left.

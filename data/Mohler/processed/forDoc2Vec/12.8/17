@@ -1,0 +1,1 @@
+12.8 Travel from the root to the farthest left child Backup, travel the leftmost children in the right side repeat until reaching the rightmost child.

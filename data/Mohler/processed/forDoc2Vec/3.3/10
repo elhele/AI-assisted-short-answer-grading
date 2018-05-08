@@ -1,0 +1,1 @@
+3.3 It replaces all instances of that function call with the inline code itself, resulting in longer but faster programs.

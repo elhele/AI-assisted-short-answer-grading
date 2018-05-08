@@ -1,0 +1,1 @@
+6.3 It returns a synonym, alias or nickname of the name of the object that its operand points to in memory (dereferencing the pointer).

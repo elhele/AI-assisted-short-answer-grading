@@ -1,0 +1,1 @@
+8.4 Elements are only inserted and removed from the head of the list.  There is no header node or current pointer.

@@ -1,0 +1,1 @@
+2.7 A header file is a cross communication method between source files, to help limit the size of each individual program. Without header files a program will be 1 large lump of code and thus fairly hard to debug and traverse.

@@ -1,0 +1,1 @@
+1.6 Variables are declared before they are actually used. They can be declared before main() to use globally

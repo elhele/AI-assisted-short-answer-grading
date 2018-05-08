@@ -1,0 +1,1 @@
+6.4 by referencing a pointer and referring to other pointers relative to the first pointer(pointer+1, pointer +2, etc)

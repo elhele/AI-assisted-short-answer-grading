@@ -1,0 +1,1 @@
+7.6 Doubly-linked lists can traverse backwards, though they still cannot access data at any point in the list, it can be shorter to traverse backwards.

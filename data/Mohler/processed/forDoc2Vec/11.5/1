@@ -1,0 +1,1 @@
+11.5 A function that calls upon it self to solve a problem.  Each time it calls upon it self it splits up a problem into a simplier form until it reaches a 'base case' which is the most simplest form of the problem.

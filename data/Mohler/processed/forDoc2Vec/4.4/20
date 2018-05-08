@@ -1,0 +1,1 @@
+4.4 its not created and initialized each time program calls the function, and is not destroyed every time the function ends in the program.

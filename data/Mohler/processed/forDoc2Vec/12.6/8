@@ -1,0 +1,1 @@
+12.6 A queue is a data structure that inserts data into a FIFO configuration, that is, data input to the structure is always at it's end, and data taken is always from the beginning.

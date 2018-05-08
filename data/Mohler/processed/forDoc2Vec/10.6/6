@@ -1,0 +1,1 @@
+10.6 printing a tree in order from least to greatest. This done by going as far left down the tree as possible and printing the parent and then right tree. Then move up the tree.

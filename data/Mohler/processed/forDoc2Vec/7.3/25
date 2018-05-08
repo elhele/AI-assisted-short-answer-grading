@@ -1,0 +1,1 @@
+7.3 In arrays you have direct access to each element, but in linked lists you have to traverse the list up to the element that you need.

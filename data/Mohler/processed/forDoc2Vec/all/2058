@@ -1,0 +1,1 @@
+11.7 An array that is static does not change or uninitialize if called later unless explicitly acted upon.  It does not terminate or change across objects...An automatic local array will be cleared and uninitialized if called later outside of it's specific scope.

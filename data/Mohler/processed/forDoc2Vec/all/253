@@ -1,0 +1,1 @@
+2.2 Data members are variables that are declared inside the class definition but outside of the bodies of the class member functions. Local variables can only be used within the function declaration.

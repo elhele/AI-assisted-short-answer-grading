@@ -1,0 +1,1 @@
+12.9 if the node has no children, delete it right away, otherwise, put either the furthest right node on the left side or the furthest left node on the right side in that place and perform a the above on that node to guarantee that it's children get handled properly.

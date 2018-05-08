@@ -1,0 +1,1 @@
+7.2 Linked list is able to grow in size as needed. Does not require the shifting of items during insertions and deletions.

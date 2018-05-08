@@ -1,0 +1,1 @@
+12.5 you can add as many nodes as you like without having to specify a list size, if an array gets too big you have to copy its entire contents to another larger array to get more room

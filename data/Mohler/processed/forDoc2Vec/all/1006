@@ -1,0 +1,1 @@
+6.3 The star operator returns a synonym for the object to which its pointer operand points.

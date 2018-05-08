@@ -1,0 +1,1 @@
+9.5 queue's are best with lists, especially if the tail is kept track of, as the list can be dynamically grown without losing track of the head or tail.

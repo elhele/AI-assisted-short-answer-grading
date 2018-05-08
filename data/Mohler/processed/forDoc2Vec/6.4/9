@@ -1,0 +1,1 @@
+6.4 Element b[ n ] can be accessed by  *( bPtr + n ) is an example of how an array can be addressed as pointer/offset notation.

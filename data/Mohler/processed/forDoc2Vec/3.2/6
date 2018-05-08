@@ -1,0 +1,1 @@
+3.2 Global Variables can be used in any function as long as the appropriate .h file that holds the variable is included

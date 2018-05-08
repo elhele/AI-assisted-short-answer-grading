@@ -1,0 +1,1 @@
+4.4 a static array has pre-runtime size and that size cannot be changed. A dynamic array gets its size at runtime.

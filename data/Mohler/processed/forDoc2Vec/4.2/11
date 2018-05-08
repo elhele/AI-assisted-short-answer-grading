@@ -1,0 +1,1 @@
+4.2 string declared used in an array of characters contains each character in the array and a special string-termination character called the null character versus the type string.

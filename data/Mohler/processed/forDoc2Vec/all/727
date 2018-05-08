@@ -1,0 +1,1 @@
+4.4 An array declared as static is available from beginning of program to end. One w/o static declaration disappears if it is not accessed within the right scope.

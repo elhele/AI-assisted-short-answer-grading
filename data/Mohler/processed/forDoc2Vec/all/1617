@@ -1,0 +1,1 @@
+9.5 A list-based implementation would be preferred. The array is slightly more complicated, where you would need to keep track of both front and rear.

@@ -1,0 +1,1 @@
+11.2 public - can be accessed from outside the class.private - accessible only from inside the class, not inherited.protected - accessible only from inside the class, inherited

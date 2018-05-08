@@ -1,0 +1,1 @@
+2.6 A function prototype is just a declaration of the function existing, and cant be used as an actual function. A function has to be created with a definition within to tell the compiler what the function does.

@@ -1,0 +1,1 @@
+4.3 arrays are passed by reference, passing the starting address of array. programmer specifies the array name without brackets and passes the array size as another argument so the function can process the specific number of elements in the array

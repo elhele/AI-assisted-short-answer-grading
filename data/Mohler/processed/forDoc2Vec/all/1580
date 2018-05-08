@@ -1,0 +1,1 @@
+9.3 Using an array for a queue, the size of the array allocated limits the size of the queue. An array based queue class must keep track of both the front and back of the queue, which may need to wrap around the array.

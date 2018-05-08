@@ -1,0 +1,1 @@
+12.4 selection sort works by pulling all of the values off to the side, leaving one value in the list.  It will then insert a value into the list.  if the value is bigger it will go to the right, if smaller if will go to the left.

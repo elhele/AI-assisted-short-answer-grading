@@ -1,0 +1,1 @@
+12.9 You traverse the tree till you find the node you are wanting to delete.  If the node has no children you delete it.  If the node has children, before you delete, you find the left-most of its children and attach it to the root then you can delete the node.

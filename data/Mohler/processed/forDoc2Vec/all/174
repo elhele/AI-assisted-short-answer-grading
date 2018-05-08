@@ -1,0 +1,1 @@
+1.6 It depends if its a global then they have to be declared out side the source code to be used in every scope however a local variable is one declared in a local function etc. which obviously doesnt need to be declared outside the variable seeing how it is used for the function or block its being called for.

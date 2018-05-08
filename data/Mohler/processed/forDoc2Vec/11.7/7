@@ -1,0 +1,1 @@
+11.7 The static array will be available to the whole of the program, whereas an array that is not static is only available within the scope in which it is declared.  //pass-by-reference???

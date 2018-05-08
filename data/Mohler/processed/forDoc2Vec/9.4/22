@@ -1,0 +1,1 @@
+9.4 Implement the operation dequeue() as the list operation remove(1) and the operation getFront(queueFront) as the list operation retrieve(1, queueFront)

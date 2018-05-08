@@ -1,0 +1,1 @@
+11.7 An array that is declared static causes anything that is not initialized to be set to 0.

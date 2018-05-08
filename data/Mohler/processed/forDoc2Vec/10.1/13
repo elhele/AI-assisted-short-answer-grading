@@ -1,0 +1,1 @@
+10.1 It is a list of numbers in a list made by comparing values of nodes already in the tree and adding to the appropriate spot. Its a list made up of nodes with left and right pointers.

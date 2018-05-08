@@ -1,0 +1,1 @@
+12.4 it scans the list and selects the smallest(largest) element and places it in the front, increment the curPtr by one, scan the list again for the next smallest(largest) element and place it in with respect with the other sorted elements.

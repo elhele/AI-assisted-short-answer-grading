@@ -1,0 +1,1 @@
+8.7 if the stack is implemented using an array you could simply search the array for the item. If the stack is implemented using a linked list you would have to pop the values off of the stack until either the value is found or the stack is empty, you would then have to have the items put back into the list.

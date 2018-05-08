@@ -1,0 +1,1 @@
+2.3 a constructor cannot return values, its not even void. it is used to initialize an object's data when it is created.<br>whereas, a function is created to do a specific task, and it can return values.

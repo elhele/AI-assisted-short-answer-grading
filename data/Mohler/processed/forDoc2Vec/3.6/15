@@ -1,0 +1,1 @@
+3.6 No base case, or an incorrectly written recursion step that does not converge on the base case will lead to infinite recursion.

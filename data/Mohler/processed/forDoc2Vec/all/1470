@@ -1,0 +1,1 @@
+8.6 infix expressions are converted to postfix expressions before they can be evaluated by a computer.  Operands stay in the same order.  Operators always follow the operands.

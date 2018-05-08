@@ -1,0 +1,1 @@
+11.8 Character arrays will terminate at any whitespace, including spaces. Strings terminate when they encounter the new line character.

@@ -1,0 +1,1 @@
+10.5 A binary tree that has the property that for any node the left child is smaller than the parent which in turn is smaller than the right child.

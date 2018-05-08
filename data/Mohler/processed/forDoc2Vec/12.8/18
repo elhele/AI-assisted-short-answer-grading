@@ -1,0 +1,1 @@
+12.8 has preorder, in order, and postorder of a tree.  preorder = puts the parent node in front of the child node(s).  in order = puts the parent node between the left child and right child node(s).  postorder = puts the parent node after the child node(s).

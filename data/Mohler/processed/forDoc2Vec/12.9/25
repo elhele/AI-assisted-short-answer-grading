@@ -1,0 +1,1 @@
+12.9 You search the tree for the node using recursion. When you find the node, you determine whether it is a leaf or a internal node. If it is a leaf, you just delete it and set the parent pointer to that node to NULL. If it is a  node, you replace the node with either of the children nodes.

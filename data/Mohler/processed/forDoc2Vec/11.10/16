@@ -1,0 +1,1 @@
+11.10 Merge sort continuously breaks an array in half then sorts the arrays as it concatenates them back together into one sorted array.

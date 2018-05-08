@@ -1,0 +1,1 @@
+11.8 A string type string acts as a single object, with individual char entities accessible only through specific string class functions. A char array is less robust, but allows direct access to specific char entities.

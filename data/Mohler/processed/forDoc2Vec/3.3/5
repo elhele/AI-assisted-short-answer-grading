@@ -1,0 +1,1 @@
+3.3 Placing the qualifier inline before a function's return type in the function definition "advises" the compiler to generate a copy of the function's code in place to avoid a function call.

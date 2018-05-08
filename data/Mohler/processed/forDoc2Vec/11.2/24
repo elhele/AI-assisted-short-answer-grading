@@ -1,0 +1,1 @@
+11.2 functions and data members can be given access-specifications of public, private, and friend. public access is given to any functions or members not given specific access rights.

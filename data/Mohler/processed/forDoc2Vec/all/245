@@ -1,0 +1,1 @@
+2.2 A variable inside a member function can only be accessed inside that member and a data member can be accessed throughought the program.

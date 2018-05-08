@@ -1,0 +1,1 @@
+12.9 If you delete a node from a tree, you have to link that nodes parents to the children of that node.

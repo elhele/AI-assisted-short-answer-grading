@@ -1,0 +1,1 @@
+6.4 Element A[n] can be accessed by *(APtr + n)

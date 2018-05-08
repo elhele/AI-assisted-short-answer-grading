@@ -1,0 +1,1 @@
+1.6 local variables are declared inside the method while global variables are declared in the body.

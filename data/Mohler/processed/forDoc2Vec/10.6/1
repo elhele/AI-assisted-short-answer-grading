@@ -1,0 +1,1 @@
+10.6 For every node in the binary tree we first visit its left sub-tree (if its there) and then visit the parent node itself, and then the right sub-tree (if its there).

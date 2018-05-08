@@ -1,0 +1,1 @@
+9.3 Use a circular array. Keep the rear of the queue toward the end of the array, and the front toward the beginning, and allow the rear pointer to wrap around.

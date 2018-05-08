@@ -1,0 +1,1 @@
+12.8 When you traverse a tree of any size you will visit each node three times.  Its on the order of 3n or O(n) running time.

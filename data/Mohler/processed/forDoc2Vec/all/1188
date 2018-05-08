@@ -1,0 +1,1 @@
+7.3 Arrays require less memory than linked lists and allow direct access to a specified item. Also, insertion and deletion in arrays does not require a list traversal.

@@ -1,0 +1,1 @@
+9.1 A queue stores a set of elements in a particular order.  Its principle of operation is FIFO(first in first out), which means the first element inserted is the first one to be removed.

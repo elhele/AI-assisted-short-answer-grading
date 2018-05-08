@@ -1,0 +1,1 @@
+12.9 Traverse the tree and find the node, if the node has no children, simply delete it; otherwise set the node's data equal to the data of one of its children then set the pointer for that child to NULL.

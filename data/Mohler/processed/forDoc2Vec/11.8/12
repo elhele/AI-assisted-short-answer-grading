@@ -1,0 +1,1 @@
+11.8 An array of strings reads the string literals, meaning anything within "quotes". A char array reads a string as each individual character.

@@ -1,0 +1,1 @@
+12.6 a list of objects that follow the rule first in first out, essentially a linked list that goes in order of the first object in the list is the first to be taken off.

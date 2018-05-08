@@ -1,0 +1,1 @@
+4.1 Supply an integer inside the brackets<br>or the compiler counts the number of elements in the initializer list.<br>int n[5];<br>int n[] = { 1,2,3,4,5 }

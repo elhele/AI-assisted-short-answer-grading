@@ -1,0 +1,1 @@
+9.3 By having the head pointer point to the first or least current data entered and having the tail point to the most current data entered. A method must be created so that the tail pointer doesn't leave the array.

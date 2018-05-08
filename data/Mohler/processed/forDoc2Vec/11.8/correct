@@ -1,0 +1,1 @@
+11.8 The char[] will automatically add a null \0 character at the end of the string.

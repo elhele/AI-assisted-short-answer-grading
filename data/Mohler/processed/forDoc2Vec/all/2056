@@ -1,0 +1,1 @@
+11.7 An array they is declared as static can be accessed outside of the method it was declared without passing it as an argument to other functions in the same class.

@@ -1,0 +1,1 @@
+5.3 the best case is if it only has to look through the list once. The best case scenario is when it goes through the list and doesn't have to make any changes (the list is already sorted)

@@ -1,0 +1,1 @@
+3.6 Infinite recursion may occur if no base case is defined or if the call is not varied.

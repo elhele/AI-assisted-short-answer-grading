@@ -1,0 +1,1 @@
+11.8 a string has variable size and function calls available, while an character array usually has a static size.
