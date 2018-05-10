@@ -26,6 +26,7 @@ from unidecode import unidecode
 from nltk import ngrams
 import matplotlib.pyplot as plt
 import scipy
+import nltk
 from pythonrouge.pythonrouge import Pythonrouge
 
 class KernelPCA:

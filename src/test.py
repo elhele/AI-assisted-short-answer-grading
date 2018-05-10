@@ -4,7 +4,7 @@ from kpca import KernelPCA
 # test code
 #print(KernelPCA('../../data/1.1.txt').description())
 data_folder = '../data/Mohler/'
-KernelPCA(data_folder + 'raw/1.5', 2, 'rbf', 0.7, 3, True, 4, 'similarity_rouge', 'sentence').training_results()
+KernelPCA(data_folder + 'raw/1.1', 25, 'poly', 3, 3, True, 4, 'similarity_rouge', 'sentence').training_results()
 
 #print(alphas)
 #print(lambdas)

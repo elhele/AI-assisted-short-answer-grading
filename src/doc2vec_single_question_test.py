@@ -54,7 +54,7 @@ data = data_from_pickle[q_number]
 
 it = LabeledLineSentence(data, docLabels)
 
-model = gensim.models.Doc2Vec(vector_size=2, min_count=0, alpha=0.025, min_alpha=0.0205)
+model = gensim.models.Doc2Vec(vector_size=20, min_count=0, alpha=0.025, min_alpha=0.0205)
 model.build_vocab(it)
 #training of model
 for epoch in range(100):

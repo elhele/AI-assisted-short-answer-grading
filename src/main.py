@@ -18,6 +18,7 @@ import pickle
 import os
 import distance
 from kpca_vectorization import KernelPCA
+from doc2vec_vectorization import Doc2vec_vectorization
 
 
 def filter(sentence, spelling):
@@ -109,19 +110,19 @@ def get_keywords_count(answer, keywords):
         return 0
 
 
-def get_features(question_index, answer_array, correct_answers, keywords):
+def get_features(question_index, answer_array, correct_answers, keywords, labels):
     print("question number:" + str(question_index))
-    keyword = keywords[question_index]
-    reference = [[[' '.join(word for word in correct_answers[question_index])]]]
+    # keyword = keywords[question_index]
+    reference = [[[' '.join(word for word in correct_answers[question_index])]]] #ROUGE
     features = []
-    summaries = []
-    for i in range(len(answer_array[question_index][1])):
+    #summaries = [] # ROUGE KPCA
+    #for i in range(len(answer_array[question_index][1])):
         # BLUE calculation:
         #BLEU_score = nltk.translate.bleu_score.sentence_bleu([correct_answers[question_index]],
         #                                                     answer_array[question_index][0][i])
         # ROUGE calculation:
-        summary = [[' '.join(word for word in answer_array[question_index][0][i])]]
-        summaries.append(summary[0])
+        #summary = [[' '.join(word for word in answer_array[question_index][0][i])]]
+        #summaries.append(summary[0]) # ROUGE KPCA
         #rouge = Pythonrouge(summary_file_exist=False,
         #                    summary=summary, reference=reference,
         #                    n_gram=2, ROUGE_SU4=True, ROUGE_L=True,
@@ -136,13 +137,15 @@ def get_features(question_index, answer_array, correct_answers, keywords):
         #features.append(list(ROUGE_score.values())[2])
         #features.append([list(ROUGE_score.values())[0], list(ROUGE_score.values())[2], BLEU_score])
         #answer_array[question_index][0] = answer_array[question_index][0].append(correct_answers[question_index])
-    summaries.append(reference[0][0])
-    to_vectorize = answer_array[question_index][0]
-    to_vectorize.append(correct_answers[question_index])
-    features = KernelPCA(summaries, 2, 'poly', 3, 'similarity_rougeL').training_results()
+        #summaries.append(reference[0][0]) # ROUGE KPCA
+    to_vectorize = answer_array[question_index][0] # BLUE KPCA
+    to_vectorize.append(correct_answers[question_index]) # BLUE KPCA
+    #features = KernelPCA(summaries, 3, 'poly', 3, 'similarity_rouge1').training_results() # KPCA
+    features = KernelPCA(to_vectorize, 25, 'poly', 3, 'similarity_blue').training_results()
+    #features = Doc2vec_vectorization(labels[question_index], 2).training_results()
     # For one feature classification:
-    #features = np.asarray(kpca_score)
-    #features = features.reshape(-1, 1)
+    features = np.asarray(features)
+    features = features.reshape(-1, 1)
     return features
 
 
@@ -171,6 +174,9 @@ def main():
     r1kpca_features_filepath_other = data_folder + "/processed/r1kpca.pickle"
     rLkpca_features_filepath_other = data_folder + "/processed/rLkpca.pickle"
     bluekpca_features_filepath_other = data_folder + "/processed/bluekpca.pickle"
+    allkpca_features_filepath_other = data_folder + "/processed/allkpca.pickle"
+    doc2vec_features_filepath_other = data_folder + "/processed/doc2vec.pickle"
+
 
 
     correct_answers = get_from_file(data_folder + 'raw/answers')
@@ -180,10 +186,12 @@ def main():
         keywords[i] = filter(keywords[i], True)
     correct_answer_index = 0
     answer_array = []
+    labels = []
     for chapter in range(1, len(question_number) + 1):
         for question in range(1, question_number[chapter - 1] + 1):
             answers = get_from_file(data_folder + 'raw/' + str(chapter) + '.' + str(question))
             grades = get_from_file(data_folder + 'scores/' + str(chapter) + '.' + str(question) + '/other')
+            labels.append(str(chapter) + '.' + str(question))
             answer_array.append([answers, grades])
             correct_answer_index += 1
 
@@ -196,9 +204,9 @@ def main():
     fileObject = open(answer_array_filepath_other, 'rb')
     answer_array = pickle.load(fileObject)
     fileObject.close()
-#len(correct_answers)
-    features = thread.starmap(get_features, zip(range(10), repeat(answer_array),
-                                              repeat(correct_answers), repeat(keywords)))
+
+    #features = thread.starmap(get_features, zip(range(len(correct_answers)), repeat(answer_array),
+    #                                          repeat(correct_answers), repeat(keywords), repeat(labels)))
 
     fileObject = open(r1_features_filepath_other, 'rb')
     features_r1 = pickle.load(fileObject)
@@ -227,19 +235,39 @@ def main():
     fileObject = open(combined_features_filepath_other, 'rb')
     features_combined = pickle.load(fileObject)
     fileObject.close()
-    #fileObject = open(r1kpca_features_filepath_other, 'rb')
-    #features_r1_kpca = pickle.load(fileObject)
-    #fileObject.close()
-
-    features_r1_kpca = features
-
-    features_all = [features_r1, features_rL, features_blue, features_combined, features_r1_kpca]
-    colors = ["r", "orange", "b", "black", "pink"]
-    names = ["ROUGE-1", "ROUGE-L", "BLEU", "combined", "ROUGE-1 KPCA"]
-
-    fileObject = open(r1kpca_features_filepath_other, 'wb')
-    pickle.dump(features, fileObject)
+    fileObject = open(r1kpca_features_filepath_other, 'rb')
+    features_r1_kpca = pickle.load(fileObject)
     fileObject.close()
+    fileObject = open(rLkpca_features_filepath_other, 'rb')
+    features_rL_kpca = pickle.load(fileObject)
+    fileObject.close()
+    fileObject = open(bluekpca_features_filepath_other, 'rb')
+    features_blue_kpca = pickle.load(fileObject)
+    fileObject.close()
+    fileObject = open(allkpca_features_filepath_other, 'rb')
+    features_all_kpca_blue = pickle.load(fileObject)
+    fileObject.close()
+    fileObject = open(doc2vec_features_filepath_other, 'rb')
+    features_doc2vec = pickle.load(fileObject)
+    fileObject.close()
+
+    features_kpca_all = []
+    for i in range(len(features_r1_kpca)):
+        r1 = np.asarray(features_r1_kpca[i]).flatten()
+        rL = np.asarray(features_rL_kpca[i]).flatten()
+        feat = []
+        for j in range(len(r1)):
+            feat.append([r1[j], rL[j]])
+        features_kpca_all.append(feat)
+
+
+    features_all = [features_r1, features_rL, features_blue, features_combined, features_r1_kpca, features_rL_kpca,     features_blue_kpca, features_kpca_all, features_all_kpca_blue, features_doc2vec]
+    colors = ["r", "orange", "b", "black", "pink", "magenta", "lightskyblue", "firebrick", "mediumpurple", "darkblue"]
+    names = ["ROUGE-1", "ROUGE-L", "BLEU", "combined", "ROUGE-1 KPCA", "ROUGE-L KPCA", "BLEU KPCA", "combined ROUGE KPCA", "combined KPCA", "doc2vec"]
+
+    #fileObject = open(allkpca_features_filepath_other, 'wb')
+    #pickle.dump(features_kpca_all, fileObject)
+    #fileObject.close()
 
     average_feature_scores = []
     split_positions = list(range(3, 24, 2))
@@ -255,17 +283,16 @@ def main():
             for i in range(1):
                 score_for_question = []
                 #for question_index in range(len(correct_answers)):
-                for question_index in range(10):
+                for question_index in range(len(correct_answers)):
                     print(names[feature_number])
                     # clf = RandomForestClassifier(n_estimators=5)
                     clf = SVC()
                     # clf = MLPClassifier(solver='lbfgs', alpha=1e-5,
                     #                    hidden_layer_sizes=(6, 4), random_state=1)
-
                     features_to_train = features[question_index][0:split_position]
+                    print(features_to_train)
                     grades_to_classify = answer_array[question_index][1][0:split_position]
                     # for SVMs only since they need at least several classes
-                    print(features_to_train)
                     features_to_train = np.row_stack((features_to_train, [np.ones(len(features_to_train[0]))*596]))
                     grades_to_classify.append(596)
                     clf.fit(features_to_train, grades_to_classify)
