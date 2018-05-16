@@ -71,9 +71,9 @@ def plot_confusion_matrix(cm, classes,
 # Compute confusion matrix
 
 
-class_names = ['1', '2','3','4','5']
+class_names = ['0','1', '2','3','4','5']
 print(grades_all_me[0:10])
-cnf_matrix = confusion_matrix(grades_all_me, grades_all_other, labels=['1', '2', '3', '4', '5'])
+cnf_matrix = confusion_matrix(grades_all_me, grades_all_other, labels=['0','1', '2', '3', '4', '5'])
 np.set_printoptions(precision=2)
 
 # Plot non-normalized confusion matrix

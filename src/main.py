@@ -1,5 +1,6 @@
 from autocorrect import spell
 import nltk
+from dask.array.learn import predict
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from nltk import ngrams
@@ -12,6 +13,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
 from sklearn.neural_network import MLPClassifier
 from itertools import repeat
+from sklearn.metrics import confusion_matrix
 import numpy as np
 import matplotlib.pyplot as plt
 import pickle
@@ -19,6 +21,46 @@ import os
 import distance
 from kpca_vectorization import KernelPCA
 from doc2vec_vectorization import Doc2vec_vectorization
+import itertools
+import difflib
+from scipy import spatial
+import math
+
+#plt.rcParams.update({'font.size': 14})
+
+def plot_confusion_matrix(cm, classes,
+                          normalize=False,
+                          title='Confusion matrix',
+                          cmap=plt.cm.Blues):
+    """
+    This function prints and plots the confusion matrix.
+    Normalization can be applied by setting `normalize=True`.
+    """
+    if normalize:
+        cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
+        print("Normalized confusion matrix")
+    else:
+        print('Confusion matrix, without normalization')
+
+    print(cm)
+
+    plt.imshow(cm, interpolation='nearest', cmap=cmap)
+    plt.title(title)
+    plt.colorbar()
+    tick_marks = np.arange(len(classes))
+    plt.xticks(tick_marks, classes, rotation=45)
+    plt.yticks(tick_marks, classes)
+
+    fmt = '.2f' if normalize else 'd'
+    thresh = cm.max() / 2.
+    for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
+        plt.text(j, i, format(cm[i, j], fmt),
+                 horizontalalignment="center",
+                 color="white" if cm[i, j] > thresh else "black")
+
+    plt.tight_layout()
+    plt.ylabel('Automatic grader')
+    plt.xlabel('Human grader')
 
 
 def filter(sentence, spelling):
@@ -148,6 +190,20 @@ def get_features(question_index, answer_array, correct_answers, keywords, labels
     features = features.reshape(-1, 1)
     return features
 
+def get_inconfidence_level(test_features, train_features, name):
+    feature_distances = []
+    for test_feature in test_features:
+        shortest_distance = abs(test_features[0][0] - train_features[0][0]) if (len(test_features[0]) < 1) else spatial.distance.cosine(test_features[0], train_features[0])
+        for train_feature in train_features:
+            if(len(test_feature) > 1):
+                temp_distance = spatial.distance.cosine(test_feature, train_feature)
+            else:
+                temp_distance = abs(test_feature[0] - train_feature[0])
+            shortest_distance = temp_distance if ((temp_distance < shortest_distance) or math.isnan(shortest_distance)) and not(math.isnan(temp_distance)) else shortest_distance
+        feature_distances.append(shortest_distance)
+    return feature_distances
+
+
 
 def main():
     pool = multiprocessing.Pool(processes=multiprocessing.cpu_count())
@@ -177,9 +233,9 @@ def main():
     allkpca_features_filepath_other = data_folder + "/processed/allkpca.pickle"
     doc2vec_features_filepath_other = data_folder + "/processed/doc2vec.pickle"
 
-
-
     correct_answers = get_from_file(data_folder + 'raw/answers')
+    correct_answers_raw = get_from_file(data_folder + 'raw/answers')
+    questions = get_from_file(data_folder + 'raw/questions')
     keywords = get_from_file(data_folder + 'processed/keywords')
     for i in range(len(correct_answers)):
         correct_answers[i] = filter(correct_answers[i], True)
@@ -264,6 +320,7 @@ def main():
     features_all = [features_r1, features_rL, features_blue, features_combined, features_r1_kpca, features_rL_kpca,     features_blue_kpca, features_kpca_all, features_all_kpca_blue, features_doc2vec]
     colors = ["r", "orange", "b", "black", "pink", "magenta", "lightskyblue", "firebrick", "mediumpurple", "darkblue"]
     names = ["ROUGE-1", "ROUGE-L", "BLEU", "combined", "ROUGE-1 KPCA", "ROUGE-L KPCA", "BLEU KPCA", "combined ROUGE KPCA", "combined KPCA", "doc2vec"]
+    class_names = ['0', '1', '2', '3', '4', '5']
 
     #fileObject = open(allkpca_features_filepath_other, 'wb')
     #pickle.dump(features_kpca_all, fileObject)
@@ -273,6 +330,10 @@ def main():
     split_positions = list(range(3, 24, 2))
     feature_number = -1
     for features in features_all:
+        grading_correlation_file = open(data_folder + 'processed/grading_correlation' + names[feature_number] + '.txt', 'w')
+        grading_correlation_file.writelines(names[feature_number] + "\n")
+        all_predictions = []
+        all_grades = []
         feature_number += 1
         average_scores = []
         scores_for_position = []
@@ -284,38 +345,97 @@ def main():
                 score_for_question = []
                 #for question_index in range(len(correct_answers)):
                 for question_index in range(len(correct_answers)):
-                    print(names[feature_number])
+
                     # clf = RandomForestClassifier(n_estimators=5)
                     clf = SVC()
                     # clf = MLPClassifier(solver='lbfgs', alpha=1e-5,
                     #                    hidden_layer_sizes=(6, 4), random_state=1)
                     features_to_train = features[question_index][0:split_position]
-                    print(features_to_train)
+                    #print(features_to_train)
                     grades_to_classify = answer_array[question_index][1][0:split_position]
                     # for SVMs only since they need at least several classes
                     features_to_train = np.row_stack((features_to_train, [np.ones(len(features_to_train[0]))*596]))
                     grades_to_classify.append(596)
                     clf.fit(features_to_train, grades_to_classify)
-                    score = clf.score(features[question_index][split_position:len(answer_array[question_index][1])],
-                                      answer_array[question_index][1][
-                                      split_position:len(answer_array[question_index][1])])
+
+                    features_confidence = get_inconfidence_level(
+                        features[question_index][split_position:len(answer_array[question_index][1])],
+                        features[question_index][0:split_position], names[feature_number])
+
+                    test_features = []
+                    test_grades = []
+                    if(names[feature_number] == "combined ROUGE KPCA"):
+                        for conf in range(len(features_confidence)):
+                            if features_confidence[conf] < 0.005:
+                                test_features.append(features[question_index][split_position:len(answer_array[question_index][1])][                             conf])
+                                test_grades.append(answer_array[question_index][1][
+                                          split_position:len(answer_array[question_index][1])][conf])
+                            else:
+                                print("discarded")
+                        if (test_features == []):
+                            score = 1
+                        else:
+                            score = clf.score(test_features, test_grades)
+                    else:
+                        score = clf.score(features[question_index][split_position:len(answer_array[question_index][1])],
+                                      answer_array[question_index][1][split_position:len(answer_array[question_index][1])])
+
+                    # if (split_position == 13):
+                    #     prediction = clf.predict(features[question_index][split_position:len(answer_array[                                  question_index][1])])
+                        # for item in range(len(prediction)):
+                        #     all_predictions.append(prediction[item])
+                        #     all_grades.append(answer_array[question_index][1][split_position:len(answer_array[                                  question_index][1])][item])
+                        #
+                        # grading_correlation_file.writelines("correct answer and question\n")
+                        # grading_correlation_file.writelines(questions[question_index] + "\n")
+                        # grading_correlation_file.writelines(str(correct_answers_raw[question_index]) + "\n")
+                        # grading_correlation_file.writelines("inconfidence level \n")
+                        # grading_correlation_file.writelines(str(
+                        #     get_inconfidence_level(features[question_index][split_position:len(answer_array[question_index][1])], features[question_index][0:split_position], names[feature_number])
+                        # ) + "\n")
+                        # grading_correlation_file.writelines("prediction for the question " + str(question_index) + "\n")
+                        # grading_correlation_file.writelines(str(prediction) + "\n")
+                        # grading_correlation_file.writelines(str(answer_array[question_index][1][split_position:len(answer_array[question_index][1])]).replace(',', '') + "\n")
+                        # grading_correlation_file.writelines("train grades\n")
+                        # grading_correlation_file.writelines(str(answer_array[question_index][1][0:split_position]) + "\n")
+                        # grading_correlation_file.writelines("HCC\n")
+                        # grading_correlation_file.writelines(str(score)  + "\n\n")
                     scores.append(score)
                     score_for_question.append(score)
                     # print(score)
-                print(score_for_question)
+                #print(score_for_question)
                 average_score_for_question = sum(score_for_question) / len(score_for_question)
-                print(average_score_for_question)
+                #print(average_score_for_question)
                 scores_for_question.append(average_score_for_question)
             scores_for_position.append(scores_for_question)
             average_score = sum(scores) / len(scores)
             average_scores.append(average_score)
+        if (names[feature_number] == "combined ROUGE KPCA"):
+            print(average_scores)
         # plt.boxplot(scores_for_position, positions=split_positions, sym='', widths=0.6)
         average_feature_scores.append(average_scores)
+        grading_correlation_file.close()
+        # all_predictions = np.asarray(all_predictions)
+        # all_grades = np.asarray(all_grades)
+        # cnf_matrix = confusion_matrix(np.asarray(all_predictions).flatten(), np.asarray(all_grades).flatten(), labels=['0','1', '2', '3', '4', '5'])
+        # np.set_printoptions(precision=2)
+        #
+        # # Plot non-normalized confusion matrix
+        # plt.figure()
+        # plot_confusion_matrix(cnf_matrix, classes=class_names, title='Confusion matrix, without normalization for ' + names[feature_number])
+        #
+        # # Plot normalized confusion matrix
+        # plt.figure()
+        # plot_confusion_matrix(cnf_matrix, classes=class_names, normalize=True,
+        #                       title='Normalized confusion matrix for ' + names[feature_number])
+
+    plt.show()
+    np.set_printoptions(precision=2)
     plt.ylabel('HCC')
     plt.xlabel('Split position')
     for feature in range(len(features_all)):
-        print(names[feature])
-        print(average_feature_scores[feature])
+        #print(names[feature])
+        #print(average_feature_scores[feature])
         plt.plot(split_positions, average_feature_scores[feature], colors[feature], label=names[feature])
         plt.scatter(split_positions, average_feature_scores[feature], c=colors[feature])
         plt.legend(loc='lower center')

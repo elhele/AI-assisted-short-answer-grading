@@ -253,15 +253,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.9899495"
-     inkscape:cx="716.66088"
+     inkscape:cx="241.03855"
      inkscape:cy="806.5887"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1366"
-     inkscape:window-height="739"
+     inkscape:window-height="703"
      inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-y="480"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata5">
@@ -271,7 +271,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -694,15 +694,15 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:4.23333311px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="-115.89845"
-       y="14.478985"
+       x="-117.2348"
+       y="14.211716"
        id="text4832-4-3"
        transform="rotate(-90)"><tspan
          sodipodi:role="line"
          id="tspan4830-7-0"
-         x="-115.89845"
-         y="14.478985"
-         style="stroke-width:0.26458332">Teahcer</tspan></text>
+         x="-117.2348"
+         y="14.211716"
+         style="stroke-width:0.26458332">Professor</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.4862721;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend-1-8)"
        d="m 22.014157,53.045817 13.746442,0.06473 h -0.03733 v 0 0"

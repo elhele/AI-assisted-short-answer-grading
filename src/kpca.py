@@ -59,6 +59,9 @@ class KernelPCA:
                             self.similarity_function, self.word_or_sentence)
         return description_output
 
+    def test_test(self, a):
+        return a
+
     def similarity_function_tuple(self, tuple):
         word_array1, word_array2 = tuple
         similarity_method_to_call = getattr(self, self.similarity_function)
