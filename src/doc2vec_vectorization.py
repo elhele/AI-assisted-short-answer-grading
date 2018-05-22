@@ -33,7 +33,7 @@ class Doc2vec_vectorization:
 
         it = LabeledLineSentence(data, docLabels)
 
-        model = gensim.models.Doc2Vec(vector_size=self.n_vectors, min_count=0, alpha=0.025, min_alpha=0.0205)
+        model = gensim.models.Doc2Vec(vector_size=self.n_vectors, min_count=0, alpha=0.025, min_alpha=0.0205, dm=0)
         #model = gensim.models.Doc2Vec(vector_size=self.n_vectors, min_count=0, alpha=0.1, min_alpha=0.0205)
         model.build_vocab(it)
         # training of model

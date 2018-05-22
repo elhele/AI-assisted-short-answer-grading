@@ -1,0 +1,22 @@
+     BLUE   ROUGE
+2.1 What is typically included in a class definition?
+2.1 Data members (attributes) and member functions.
+     0.764  0.705  B
+2.3 What is the difference between a constructor and a function?
+2.3 A constructor is called whenever an object is created, whereas a function needs to be called explicitely. Constructors do not have return type, but functions have to indicate a return type.
+     0.294  0.353  R
+2.6 What is the difference between a function prototype and a function definition?
+2.6 A function prototype includes the function signature, i.e., the name of the function, the return type, and the parameters' type. The function definition includes the actual body of the function.
+     0.471  0.411  B
+3.3 How does the compiler handle inline functions?
+3.3 It makes a copy of the function code in every place where a function call is made.
+     0.500  0.389  B
+8.7 What operations would you need to perform to find a given element on a stack?
+8.7 Pop all the elements and store them on another stack until the element is found, then push back all the elements on the original stack.
+     0.571  0.643  R
+11.1 What are the elements typically included in a class definition?
+11.1 Function members and data members.
+     0.294  0.353  R
+12.4 Briefly, how does selection sort work?
+12.4 It selects the minimum from an array and places it on the first position, then it selects the minimum from the rest of the array and places it on the second position, and so forth.
+     0.333  0.467  R

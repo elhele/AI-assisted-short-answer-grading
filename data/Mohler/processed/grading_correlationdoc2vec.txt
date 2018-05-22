@@ -1,1 +1,1142 @@
 doc2vec
+correct answer and question
+1.1 What is the role of a prototype program in problem solving?
+1.1 To simulate the behaviour of portions of the desired software product.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 0
+['2' '2' '2' '5' '2' '2' '2' '5' '5' '2' '2' '5' '2' '2' '2' '2']
+['5' '2' '5' '5' '2' '2' '2' '5' '5' '2' '3' '5' '2' '2' '2' '2']
+train grades
+['3', '5', '3', '5', '3', '2', '2', '5', '2', '5', '5', '5', '2']
+HCC
+0.8125
+
+correct answer and question
+1.2 What stages in the software life cycle are influenced by the testing stage?
+1.2 The testing stage can influence both the coding stage (phase 5) and the solution refinement stage (phase 7)
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 1
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['3' '1' '5' '4' '1' '3' '1' '3' '5' '4' '0' '4' '4' '2' '3' '2']
+train grades
+['2', '5', '5', '4', '3', '2', '4', '5', '1', '5', '3', '4', '2']
+HCC
+0.125
+
+correct answer and question
+1.3 What are the main advantages associated with object-oriented programming?
+1.3 Abstraction and reusability.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 2
+['4' '4' '5' '4' '5' '4' '4' '4' '4' '5' '4' '4' '4' '4' '4' '4']
+['4' '4' '5' '5' '4' '3' '4' '4' '4' '5' '5' '4' '4' '4' '4' '4']
+train grades
+['5', '5', '4', '3', '4', '1', '4', '3', '3', '5', '5', '4', '2']
+HCC
+0.75
+
+correct answer and question
+1.4 Where do C++ programs begin to execute?
+1.4 At the main function.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 3
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+train grades
+['5', '5', '5', '5', '5', '5', '5', '0', '5', '5', '5', '5', '5']
+HCC
+1.0
+
+correct answer and question
+1.5 What is a variable?
+1.5 A location in memory that can store a value.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 4
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+train grades
+['3', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '3']
+HCC
+1.0
+
+correct answer and question
+1.6 Where are variables declared in a C++ program?
+1.6 Variables can be declared anywhere in a program. They can be declared inside a function (local variables) or outside the functions (global variables)
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 5
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '3' '4' '3' '3' '1' '3' '2' '4' '4' '5' '5' '4' '3' '5' '5']
+train grades
+['3', '5', '5', '5', '5', '3', '5', '5', '3', '5', '4', '3', '2']
+HCC
+0.3125
+
+correct answer and question
+1.7 What is the main difference between a while and a do...while statement?
+1.7 The block inside a do...while statement will execute at least once.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 6
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['4' '5' '5' '5' '5' '5' '4' '4' '5' '5' '5' '5' '0' '5' '5' '5']
+train grades
+['5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5']
+HCC
+0.75
+
+correct answer and question
+2.1 What is typically included in a class definition?
+2.1 Data members (attributes) and member functions.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 7
+['4' '5' '4' '4' '5' '4' '5' '5' '5' '4' '5' '4' '5' '4' '5' '4' '4']
+['3' '5' '4' '4' '5' '4' '5' '5' '5' '5' '5' '3' '5' '4' '5' '5' '4']
+train grades
+['3', '4', '5', '5', '3', '4', '5', '5', '5', '4', '5', '4', '4']
+HCC
+0.764705882353
+
+correct answer and question
+2.2 What is the difference between a data member and a local variable inside a member function?
+2.2 Data members can be accessed from any member functions inside the class defintion. Local variables can only be accessed inside the member function that defines them.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 8
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['4' '5' '5' '5' '5' '5' '5' '5' '5' '4' '5' '5' '4' '5' '5' '5' '5']
+train grades
+['5', '4', '5', '5', '5', '5', '4', '5', '5', '5', '5', '5', '4']
+HCC
+0.823529411765
+
+correct answer and question
+2.3 What is the difference between a constructor and a function?
+2.3 A constructor is called whenever an object is created, whereas a function needs to be called explicitely. Constructors do not have return type, but functions have to indicate a return type.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 9
+['5' '5' '5' '3' '3' '3' '3' '3' '5' '3' '3' '5' '5' '3' '3' '5' '5']
+['4' '3' '5' '4' '5' '4' '5' '3' '5' '4' '4' '5' '5' '4' '3' '3' '4']
+train grades
+['3', '4', '5', '5', '5', '4', '3', '5', '4', '5', '3', '3', '3']
+HCC
+0.352941176471
+
+correct answer and question
+2.4 When does C++ create a default constructor?
+2.4 If no constructor is provided, the compiler provides one by default. If a constructor is defined for a class, the compiler does not create a default constructor.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 10
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+train grades
+['5', '5', '5', '3', '5', '2', '5', '5', '5', '5', '2', '5', '5']
+HCC
+1.0
+
+correct answer and question
+2.5 How many constructors can be created for a class?
+2.5 Unlimited number.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 11
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '5' '4' '5' '5' '5' '5' '0' '0' '5' '3' '0' '5' '5' '0' '5' '5']
+train grades
+['0', '5', '5', '2', '5', '0', '5', '0', '5', '5', '5', '5', '5']
+HCC
+0.647058823529
+
+correct answer and question
+2.6 What is the difference between a function prototype and a function definition?
+2.6 A function prototype includes the function signature, i.e., the name of the function, the return type, and the parameters' type. The function definition includes the actual body of the function.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 12
+['4' '4' '4' '3' '3' '3' '4' '4' '3' '4' '4' '3' '4' '4' '3' '4' '3']
+['5' '5' '4' '4' '4' '4' '5' '4' '4' '5' '4' '4' '5' '4' '4' '5' '4']
+train grades
+['3', '4', '5', '3', '5', '4', '4', '5', '4', '4', '3', '3', '3']
+HCC
+0.235294117647
+
+correct answer and question
+2.7 What is the role of a header-file?
+2.7 To store a class interface, including data members and member function prototypes.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 13
+['3' '3' '3' '3' '3' '3' '3' '3' '3' '3' '3' '3' '3' '3' '3' '3' '3']
+['3' '3' '5' '4' '3' '3' '2' '3' '4' '3' '3' '3' '4' '3' '3' '5' '2']
+train grades
+['4', '3', '3', '0', '3', '4', '4', '4', '3', '3', '3', '3', '3']
+HCC
+0.588235294118
+
+correct answer and question
+3.1 What does a function signature include?
+3.1 The name of the function and the types of the parameters.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 14
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '5' '5' '3' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+train grades
+['5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5']
+HCC
+0.944444444444
+
+correct answer and question
+3.2 What is the scope of global variables?
+3.2 File scope.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 15
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+train grades
+['5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5']
+HCC
+1.0
+
+correct answer and question
+3.3 How does the compiler handle inline functions?
+3.3 It makes a copy of the function code in every place where a function call is made.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 16
+['4' '4' '5' '4' '4' '4' '5' '4' '4' '4' '4' '5' '5' '5' '4' '5' '5' '5']
+['2' '5' '5' '5' '0' '5' '5' '2' '5' '3' '5' '5' '5' '5' '4' '5' '5' '5']
+train grades
+['5', '5', '5', '4', '5', '4', '4', '3', '5', '5', '4', '4', '4']
+HCC
+0.5
+
+correct answer and question
+3.4 What is the main advantage associated with function arguments that are passed by reference?
+3.4 It avoids making copies of large data structures when calling functions.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 17
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '5' '5' '4' '3' '3' '4' '3' '3' '5' '4' '4' '5' '4' '4' '4' '5' '3']
+train grades
+['5', '4', '5', '5', '5', '3', '5', '5', '5', '4', '4', '4', '3']
+HCC
+0.333333333333
+
+correct answer and question
+3.5 How are overloaded functions differentiated by the compiler?
+3.5 Based on the function signature. When an overloaded function is called, the compiler will find the function whose signature is closest to the given function call.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 18
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '5' '5' '3' '5' '5' '5' '4' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+train grades
+['5', '2', '5', '5', '5', '4', '5', '5', '5', '5', '5', '5', '0']
+HCC
+0.888888888889
+
+correct answer and question
+3.6 When defining a recursive function, what are possible causes for infinite recursion?
+3.6 If the recursion step is defined incorrectly, or if the base case is not included.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 19
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+train grades
+['5', '3', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5']
+HCC
+1.0
+
+correct answer and question
+3.7 What are the similarities between iteration and recursion?
+3.7 They both involve repetition; they both have termination tests; they can both occur infinitely.
+inconfidence level 
+[0.0, 0.16666, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.16666000000000003, 0.0, 0.16666000000000003, 0.0, 0.0, 0.16666000000000003, 0.16666000000000003, 0.0, 0.0]
+prediction for the question 20
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['4' '5' '5' '5' '3' '5' '5' '5' '5' '5' '5' '5' '5' '4' '5' '5' '3' '5']
+train grades
+['5', '3', '5', '5', '5', '5', '5', '4', '5', '4', '5', '5', '0']
+HCC
+0.777777777778
+
+correct answer and question
+4.1 What are the two different ways of specifying the length of an array?
+4.1 In the array declaration, or by using an initializer list.
+inconfidence level 
+[0.0, 0.19999999999999996, 0.0, 0.0, 0.0, 0.19999999999999996, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.19999999999999996, 0.0, 0.0]
+prediction for the question 21
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['3' '5' '5' '5' '5' '5' '5' '5' '5' '3' '5' '5' '5' '5' '5' '5' '5']
+train grades
+['5', '5', '5', '4', '5', '5', '5', '3', '5', '5', '5', '4', '5']
+HCC
+0.882352941176
+
+correct answer and question
+4.2 What is the main difference between strings declared using the type string versus strings declared using an array of characters?
+4.2 The strings declared using an array of characters have a null element added at the end of the array.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 22
+['4' '4' '4' '4' '4' '4' '4' '4' '4' '4' '4' '4' '4' '4' '4' '4' '4']
+['4' '5' '5' '4' '4' '3' '5' '4' '4' '4' '4' '3' '5' '4' '4' '4' '4']
+train grades
+['4', '5', '5', '5', '4', '4', '5', '4', '4', '5', '5', '4', '4']
+HCC
+0.647058823529
+
+correct answer and question
+4.3 How are arrays passed to functions?
+4.3 by reference.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 23
+['4' '5' '5' '4' '5' '4' '5' '4' '5' '5' '5' '5' '5' '4' '5' '5' '4']
+['3' '5' '5' '3' '5' '4' '5' '4' '5' '5' '5' '5' '5' '4' '5' '5' '4']
+train grades
+['5', '5', '5', '5', '5', '4', '4', '3', '5', '4', '5', '5', '3']
+HCC
+0.882352941176
+
+correct answer and question
+4.4 What is the difference between an array declared as static, and one that is not?
+4.4 The arrays declared as static live throughout the life of the program; that is, they are initialized only once, when the function that declares the array it is first called.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 24
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '0' '5' '5' '5' '5' '5']
+train grades
+['5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5']
+HCC
+0.941176470588
+
+correct answer and question
+4.5 How many dimensions need to be specified when passing a multi-dimensional array as an argument to a function?
+4.5 All the dimensions, except the first one.
+inconfidence level 
+[0.0, 0.0, 0.25, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 25
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '3' '5' '5' '5' '3' '5' '5' '5' '5' '5' '0' '3' '5' '4' '5' '5']
+train grades
+['4', '5', '5', '5', '5', '5', '5', '3', '4', '5', '5', '5', '3']
+HCC
+0.705882352941
+
+correct answer and question
+4.6 Using an index outside the bounds of the array generates an error. Is this a compilation error or a run-time error?
+4.6 Run-time error.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 26
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['2' '5' '5' '5' '5' '2' '5' '5' '5' '2' '5' '0' '5' '2' '2' '5' '5']
+train grades
+['2', '2', '5', '5', '5', '5', '5', '5', '2', '5', '5', '5', '5']
+HCC
+0.647058823529
+
+correct answer and question
+4.7 How are bi-dimensional arrays stored in memory, by rows or by columns?
+4.7 By rows.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 27
+['5' '5' '5' '2' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '2']
+['5' '5' '5' '4' '4' '5' '5' '5' '5' '5' '5' '5' '5' '5' '4' '5' '2']
+train grades
+['5', '5', '5', '4', '5', '5', '5', '5', '4', '5', '5', '2', '2']
+HCC
+0.823529411765
+
+correct answer and question
+5.1 In one sentence, what is the main idea implemented by insertion sort?
+5.1 Taking one array element at a time, from left to right, it inserts it in the right position among the already sorted elements on its left.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 28
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '4' '4' '4' '5' '4' '4' '5' '4' '5' '5' '5' '4' '5' '4']
+train grades
+['5', '5', '4', '5', '3', '5', '4', '5', '5', '5', '5', '4', '3']
+HCC
+0.466666666667
+
+correct answer and question
+5.2 In one sentence, what is the main idea implemented by selection sort?
+5.2 Taking one array element at a time, from left to right, it identifies the minimum from the remaining elements and swaps it with the current element.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 29
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['4' '5' '4' '5' '4' '5' '4' '5' '4' '5' '5' '4' '4' '5' '5']
+train grades
+['5', '4', '5', '5', '5', '4', '5', '5', '5', '5', '4', '5', '5']
+HCC
+0.533333333333
+
+correct answer and question
+5.3 What is the number of operations for insertion sort under a best-case scenario, and what is the best-case scenario?
+5.3 N (the length of the array) operations achieved for a sorted array.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 30
+['4' '4' '4' '4' '4' '4' '4' '4' '4' '4' '4' '4' '4' '4' '4']
+['4' '5' '3' '4' '4' '4' '4' '5' '5' '4' '4' '5' '3' '3' '3']
+train grades
+['3', '4', '3', '4', '4', '5', '4', '3', '5', '3', '5', '4', '4']
+HCC
+0.466666666667
+
+correct answer and question
+5.4 What is the base case for a recursive implementation of merge sort?
+5.4 When the size of the array to be sorted is 1 (or 2)
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 31
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['3' '5' '4' '5' '5' '4' '2' '5' '5' '5' '5' '5' '3' '4' '3']
+train grades
+['5', '5', '5', '3', '5', '5', '4', '5', '4', '4', '5', '5', '3']
+HCC
+0.533333333333
+
+correct answer and question
+6.1 What is a pointer?
+6.1 A variable that contains the address in memory of another variable.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 32
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '5' '5' '5' '5' '4' '5' '5' '5' '5' '4' '4' '5']
+train grades
+['5', '5', '5', '5', '5', '4', '4', '5', '5', '5', '5', '5', '5']
+HCC
+0.769230769231
+
+correct answer and question
+6.2 What does the address (&) operator return?
+6.2 The memory address of its operand.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 33
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '5' '5' '4' '5' '5' '4' '5' '5' '3' '5' '4' '3']
+train grades
+['5', '5', '5', '5', '5', '3', '5', '5', '3', '5', '5', '4', '5']
+HCC
+0.615384615385
+
+correct answer and question
+6.3 What does the star (*) operator return?
+6.3 An alias (synonym) for the name of the object that its operand points to in memory. It is the dereferencing operator.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 34
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['3' '5' '4' '4' '5' '5' '5' '5' '4' '3' '5' '3' '3']
+train grades
+['5', '5', '5', '5', '5', '4', '4', '5', '5', '5', '4', '4', '4']
+HCC
+0.461538461538
+
+correct answer and question
+6.4 How can an array be addressed in pointer/offset notation?
+6.4 By initializing a pointer to point to the first element of the array, and then incrementing this pointer with the index of the array element.
+inconfidence level 
+[0.0, 0.0, 0.090909999999999991, 0.0, 0.0, 0.0, 0.0, 0.090909999999999991, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 35
+['3' '3' '3' '3' '3' '3' '3' '3' '3' '3' '3' '3' '3']
+['3' '3' '3' '3' '4' '3' '4' '5' '3' '3' '3' '3' '2']
+train grades
+['4', '4', '3', '3', '3', '5', '3', '4', '4', '3', '3', '5', '5']
+HCC
+0.692307692308
+
+correct answer and question
+6.5 What does the sizeof operator return?
+6.5 The size in bytes of its operand.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 36
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '5' '5' '2' '5' '5' '5' '3' '5' '5' '5' '5' '5']
+train grades
+['5', '3', '5', '5', '5', '3', '5', '5', '3', '5', '4', '3', '5']
+HCC
+0.846153846154
+
+correct answer and question
+6.6 What are the different ways to pass a pointer to a function?
+6.6 There are four ways: nonconstant pointer to constant data, nonconstant pointer to nonconstant data, constant pointer to constant data, constant pointer to nonconstant data.
+inconfidence level 
+[0.055559999999999943, 0.0, 0.0, 0.0, 0.055559999999999943, 0.0, 0.0, 0.055550000000000002, 0.11110999999999993, 0.0, 0.0, 0.055550000000000002, 0.055550000000000002]
+prediction for the question 37
+['5' '5' '3' '3' '5' '5' '5' '3' '5' '5' '3' '3' '3']
+['5' '5' '3' '2' '5' '5' '5' '3' '5' '5' '3' '3' '3']
+train grades
+['3', '5', '5', '5', '3', '3', '3', '5', '3', '5', '3', '3', '5']
+HCC
+0.923076923077
+
+correct answer and question
+6.7 What is a function pointer?
+6.7 The address of the location in memory where the function code resides.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 38
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '5' '5' '3' '5' '5' '5' '5' '5' '5' '5' '5' '4']
+train grades
+['5', '5', '5', '5', '5', '3', '2', '5', '5', '5', '5', '5', '5']
+HCC
+0.846153846154
+
+correct answer and question
+7.1 What is a linked list?
+7.1 A collection of elements that can be allocated dynamically.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 39
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '5' '5' '5' '4' '5' '5' '4' '5' '4' '5' '5' '5']
+train grades
+['5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5']
+HCC
+0.769230769231
+
+correct answer and question
+7.2 What is the main advantage of linked lists over arrays?
+7.2 The linked lists can be of variable length.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 40
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+train grades
+['5', '5', '5', '4', '5', '5', '5', '5', '5', '5', '3', '3', '5']
+HCC
+1.0
+
+correct answer and question
+7.3 What is the main advantage of arrays over linked lists?
+7.3 The elements in an array can be accessed directly (as opposed to linked lists, which require iterative traversal).
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 41
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '4' '5' '4' '5' '4' '5' '4' '4' '5' '5' '5' '5']
+train grades
+['5', '5', '5', '5', '5', '5', '3', '4', '3', '4', '4', '4', '3']
+HCC
+0.615384615385
+
+correct answer and question
+7.4 How are linked lists passed as arguments to a function?
+7.4 By reference.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 42
+['3' '3' '3' '5' '5' '3' '5' '5' '5' '3' '3' '3' '3']
+['3' '3' '3' '5' '5' '3' '5' '5' '5' '3' '3' '3' '3']
+train grades
+['5', '5', '5', '3', '5', '3', '3', '4', '3', '5', '0', '3', '3']
+HCC
+1.0
+
+correct answer and question
+7.5 What is the difference between a circular linked list and a basic linked list?
+7.5 The last element in a circular linked list points to the head of the list.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.125, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 43
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '5' '5' '5' '4' '5' '5' '3' '5' '5' '5' '5' '5']
+train grades
+['1', '5', '4', '5', '5', '5', '5', '5', '3', '5', '5', '5', '5']
+HCC
+0.846153846154
+
+correct answer and question
+7.6 What is the main advantage of a doubly-linked list over a basic linked list?
+7.6 All the deletion and insertion operations can be performed in constant time, including those operations performed before a given location in the list or at the end of the list.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.071420000000000011, 0.071420000000000011]
+prediction for the question 44
+['4' '4' '4' '4' '4' '4' '4' '4' '4' '4' '4' '4' '4']
+['4' '3' '4' '5' '3' '5' '4' '4' '4' '4' '4' '5' '4']
+train grades
+['4', '4', '4', '4', '4', '4', '4', '4', '3', '4', '4', '4', '4']
+HCC
+0.615384615385
+
+correct answer and question
+7.7 What is the main disadvantage of a doubly-linked list over a basic linked list?
+7.7 Extra space required to store the back pointers.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 45
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['3' '3' '3' '3' '5' '5' '4' '5' '5' '5' '5' '5' '0']
+train grades
+['5', '3', '4', '3', '5', '5', '3', '5', '5', '3', '5', '5', '5']
+HCC
+0.538461538462
+
+correct answer and question
+8.1 What is a stack?
+8.1 A data structure that can store elements, which has the property that the last item added will be the first to be removed (or last-in-first-out)
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 46
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '5' '5' '5' '5' '4' '5' '5' '4' '5' '5' '4' '5' '5']
+train grades
+['5', '5', '4', '5', '5', '5', '5', '5', '5', '4', '5', '5', '5']
+HCC
+0.785714285714
+
+correct answer and question
+8.2 What are the two main functions defined by a stack?
+8.2 push and pop
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 47
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+train grades
+['5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5']
+HCC
+1.0
+
+correct answer and question
+8.3 How can you implement a stack with an array?
+8.3 Keep the top of the stack toward the end of the array, so the push and pop operations will add or remove elements from the right side of the array.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 48
+['4' '4' '4' '4' '4' '4' '4' '4' '4' '4' '4' '4' '4' '4']
+['3' '4' '4' '4' '4' '4' '3' '4' '4' '3' '3' '4' '3' '4']
+train grades
+['5', '5', '4', '5', '4', '4', '4', '5', '4', '3', '4', '4', '4']
+HCC
+0.642857142857
+
+correct answer and question
+8.4 How can you implement a stack with a list?
+8.4 Keep the top of the stack pointing to the head of the linked list, so the push and pop operations will add or remove elements at the beginning of the list.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 49
+['4' '4' '4' '4' '4' '4' '4' '4' '4' '4' '4' '4' '4' '4']
+['3' '4' '4' '4' '4' '4' '4' '4' '3' '3' '3' '4' '5' '4']
+train grades
+['4', '5', '5', '4', '4', '4', '4', '5', '4', '3', '4', '4', '4']
+HCC
+0.642857142857
+
+correct answer and question
+8.5 Which implementation (array-based vs. list-based) is preferred, and why?
+8.5 Link-based, because they are dynamic (no size constraints)
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 50
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '5' '5' '5' '5' '3' '5' '5' '3' '5' '5' '5' '5' '2']
+train grades
+['5', '5', '5', '2', '5', '5', '5', '5', '5', '5', '5', '5', '5']
+HCC
+0.785714285714
+
+correct answer and question
+8.6 How are infix expressions evaluated by computers?
+8.6 First, they are converted into postfix form, followed by an evaluation of the postfix expression.
+inconfidence level 
+[0.125, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.125, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 51
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['3' '4' '5' '5' '5' '5' '3' '5' '5' '4' '5' '5' '5' '5']
+train grades
+['5', '5', '5', '3', '5', '5', '5', '5', '5', '5', '5', '3', '5']
+HCC
+0.714285714286
+
+correct answer and question
+8.7 What operations would you need to perform to find a given element on a stack?
+8.7 Pop all the elements and store them on another stack until the element is found, then push back all the elements on the original stack.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 52
+['4' '5' '4' '4' '4' '4' '4' '5' '4' '4' '4' '4' '4' '4']
+['4' '5' '4' '3' '4' '4' '4' '4' '4' '5' '5' '5' '3' '4']
+train grades
+['4', '4', '4', '5', '5', '5', '4', '5', '4', '3', '4', '5', '5']
+HCC
+0.571428571429
+
+correct answer and question
+9.1 What is a queue?
+9.1 A data structure that can store elements, which has the property that the last item added will be the last to be removed (or first-in-first-out).
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 53
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+train grades
+['5', '4', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5']
+HCC
+1.0
+
+correct answer and question
+9.2 What are the two main functions defined by a queue?
+9.2 enqueue and dequeue
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 54
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '3']
+train grades
+['5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5']
+HCC
+0.928571428571
+
+correct answer and question
+9.3 How can you implement a queue with an array?
+9.3 Use a circular array. Keep the rear of the queue toward the end of the array, and the front toward the beginning, and allow the rear pointer to wrap around.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 55
+['4' '4' '4' '4' '4' '4' '4' '4' '4' '4' '4' '4' '4' '4']
+['4' '4' '4' '4' '4' '4' '5' '5' '4' '4' '5' '3' '5' '5']
+train grades
+['4', '4', '4', '4', '4', '4', '5', '4', '4', '4', '4', '4', '4']
+HCC
+0.571428571429
+
+correct answer and question
+9.4 How can you implement a queue with a list?
+9.4 Keep the rear of the queue pointing to the tail of the linked list, so the enqueue operation is done at the end of the list, and keep the front of the queue pointing to the head of the linked list, so the dequeue operation is done at the beginning of the list.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 56
+['4' '4' '4' '4' '4' '4' '4' '4' '4' '4' '4' '4' '4' '4']
+['4' '4' '4' '4' '4' '4' '4' '5' '5' '4' '5' '4' '5' '4']
+train grades
+['5', '4', '5', '3', '4', '5', '5', '4', '4', '4', '4', '4', '5']
+HCC
+0.714285714286
+
+correct answer and question
+9.5 Which implementation (array-based vs. list-based) is preferred for a queue, and why?
+9.5 Link-based, because they are dynamic (no size constraints)
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 57
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '5' '5' '5' '5' '5' '5' '5' '3' '5' '5' '5' '5' '5']
+train grades
+['5', '5', '5', '5', '5', '5', '5', '5', '5', '3', '5', '5', '5']
+HCC
+0.928571428571
+
+correct answer and question
+9.6 What is the stack operation corresponding to the enqueue operation in queues?
+9.6 push
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 58
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '5' '5' '5' '5' '5' '4' '5' '3' '5' '5' '5' '5' '5']
+train grades
+['5', '5', '5', '5', '5', '4', '5', '5', '5', '5', '5', '5', '5']
+HCC
+0.857142857143
+
+correct answer and question
+9.7 What data structure is more appropriate for scheduling printing jobs at a printer, a stack or a queue?
+9.7 queue
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 59
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+train grades
+['2', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5']
+HCC
+1.0
+
+correct answer and question
+10.1 What is a tree?
+10.1 A collection of nodes, which has a special node called root, and the rest of the nodes are partitioned into one or more disjoint sets, each set being a tree.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 60
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '5' '5' '5' '4' '5' '5' '4' '5' '5' '5']
+train grades
+['5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '4', '5']
+HCC
+0.818181818182
+
+correct answer and question
+10.2 What is the height of a tree?
+10.2 The length of the longest path from the root to any of its leaves.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 61
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['4' '5' '5' '5' '5' '5' '5' '5' '5' '5' '3']
+train grades
+['4', '5', '5', '5', '5', '5', '5', '5', '5', '4', '5', '5', '4']
+HCC
+0.818181818182
+
+correct answer and question
+10.3 What is a leaf?
+10.3 A node that has no children.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 62
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+train grades
+['5', '5', '5', '5', '5', '5', '4', '4', '5', '5', '5', '5', '5']
+HCC
+1.0
+
+correct answer and question
+10.4 What is a binary tree?
+10.4 A tree for which the maximum number of children per node is two.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 63
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+train grades
+['5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '3']
+HCC
+1.0
+
+correct answer and question
+10.5 What is a binary search tree?
+10.5 A binary tree that has the property that for any node the left child is smaller than the parent which in turn is smaller than the right child.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 64
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '5' '4' '5' '4' '5' '5' '5' '4' '5' '3']
+train grades
+['5', '5', '5', '5', '5', '5', '3', '4', '5', '3', '5', '4', '4']
+HCC
+0.636363636364
+
+correct answer and question
+10.6 What is the inorder traversal of a binary tree?
+10.6 Traverse the left subtree, then the root, then the right subtree.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 65
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '4' '5' '5' '5' '5' '5' '5' '5' '4' '4']
+train grades
+['5', '3', '4', '4', '5', '5', '5', '5', '5', '3', '3', '5', '3']
+HCC
+0.727272727273
+
+correct answer and question
+10.7 How many comparisons does it take to find an element in a binary search tree?
+10.7 The height of the tree (or log of the number of elements in the tree).
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 66
+['5' '5' '5' '5' '5' '5' '5' '5' '5' '5' '5']
+['5' '4' '3' '5' '5' '5' '5' '5' '3' '5' '2']
+train grades
+['5', '5', '4', '5', '5', '5', '4', '5', '3', '5', '5', '4', '5']
+HCC
+0.636363636364
+
+correct answer and question
+11.1 What are the elements typically included in a class definition?
+11.1 Function members and data members.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 67
+['6' '6' '6' '10' '6' '10' '10' '10' '6' '10' '6' '6' '6' '10' '6' '6' '6']
+['2.5' '5' '7.5' '10' '6' '10' '10' '10' '5' '7.5' '5' '5' '5' '10' '7.5' '7.5' '6']
+train grades
+['7.5', '6', '10', '10', '10', '6', '10', '5', '8', '10', '8', '6', '5']
+HCC
+0.411764705882
+
+correct answer and question
+11.2 What are the access-specifiers that can be used in a C++ class definition?
+11.2 Private and public.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 68
+['10' '10' '2.5' '10' '10' '10' '10' '10' '10' '10' '10' '2.5' '10' '10'
+ '10' '10' '10']
+['9.5' '10' '5' '10' '9.5' '10' '10' '10' '10' '9.5' '9.5' '2.5' '10' '10' '10' '9.5' '10']
+train grades
+['10', '9.5', '10', '9.5', '10', '10', '10', '9.5', '10', '9.5', '10', '10', '2.5']
+HCC
+0.647058823529
+
+correct answer and question
+11.3 How are objects initialized when they are created?
+11.3 By using constructors.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 69
+['10' '5' '10' '5' '10' '5' '10' '10' '5' '5' '5' '10' '5' '10' '5' '5' '5']
+['10' '6' '10' '7.5' '10' '7.5' '10' '8' '2.5' '5' '2.5' '10' '2.5' '10' '7.5' '2.5' '7.5']
+train grades
+['5', '7.5', '0', '5', '9', '5', '10', '5', '10', '10', '7.5', '7.5', '2.5']
+HCC
+0.411764705882
+
+correct answer and question
+11.4 What is a function signature?
+11.4 The name of the function and the list of parameters, including their types.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 70
+['10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10'
+ '10' '10']
+['8' '10' '10' '10' '8' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '7.5']
+train grades
+['10', '8', '10', '10', '10', '6', '10', '10', '10', '10', '10', '10', '5']
+HCC
+0.823529411765
+
+correct answer and question
+11.5 What is a recursive function?
+11.5 A function that calls itself.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 71
+['10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10'
+ '10' '10']
+['10' '10' '8' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10']
+train grades
+['10', '10', '0', '10', '10', '10', '10', '10', '10', '10', '10', '10', '10']
+HCC
+0.941176470588
+
+correct answer and question
+11.6 What is the alternative way to solve a problem that could be solved through recursive functions?
+11.6 Through iteration.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 72
+['10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10'
+ '10' '10']
+['10' '6' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '5']
+train grades
+['10', '5', '10', '10', '10', '10', '10', '10', '10', '10', '10', '10', '10']
+HCC
+0.882352941176
+
+correct answer and question
+11.7 What is the difference between an array that is declared as static and one that is not?
+11.7 The static arrays are intialized only once when the function is called.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 73
+['7.5' '7.5' '7.5' '7.5' '7.5' '7.5' '7.5' '7.5' '7.5' '7.5' '7.5' '7.5'
+ '7.5' '7.5' '7.5' '7.5' '7.5']
+['6' '6.5' '9' '7.5' '10' '7.5' '8' '8' '7.5' '7.5' '5' '9' '2.5' '7.5' '7.5' '7.5' '7.5']
+train grades
+['9', '7.5', '10', '8', '8', '10', '7.5', '7.5', '7.5', '8', '7.5', '5', '7.5']
+HCC
+0.470588235294
+
+correct answer and question
+11.8 What is the main difference between a string of characters that is read into a variable of type string versus a variable of type char[]?
+11.8 The char[] will automatically add a null \0 character at the end of the string.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 74
+['7.5' '10' '10' '10' '7.5' '10' '10' '10' '10' '7.5' '7.5' '10' '10' '10'
+ '10' '10' '7.5']
+['10' '10' '10' '10' '8' '10' '10' '8' '8' '7.5' '7.5' '7.5' '10' '10' '10' '10' '6']
+train grades
+['10', '7.5', '10', '10', '7.5', '8', '5', '10', '8', '10', '7.5', '7.5', '7.5']
+HCC
+0.647058823529
+
+correct answer and question
+11.9 Briefly describe the divide-and-conquer paradigm.
+11.9 Divide a problem into smaller subproblems, solve them recursively, and then combine the solutions into a solution for the original problem.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 75
+['9' '9' '9' '9' '9' '9' '9' '9' '9' '9' '9' '9' '9' '9' '9' '9' '9']
+['9' '10' '9' '9' '9' '9' '10' '9' '9' '9' '10' '10' '6' '9' '9' '9' '10']
+train grades
+['9', '10', '9', '9', '9', '10', '9', '9', '9', '9', '8.5', '9', '9']
+HCC
+0.647058823529
+
+correct answer and question
+11.10 Briefly describe in one sentence how does merge sort work?
+11.10 It splits the original array into two, sorts each of the two halves, and then merges the sorted arrays.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 76
+['10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10'
+ '10' '10']
+['10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10']
+train grades
+['10', '10', '10', '10', '10', '10', '10', '10', '10', '10', '10', '10', '10']
+HCC
+1.0
+
+correct answer and question
+12.1 What is a pointer?
+12.1 The address of a location in memory.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 77
+['10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10']
+['10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10']
+train grades
+['10', '10', '10', '10', '10', '10', '10', '10', '10', '10', '10', '10', '8.5']
+HCC
+1.0
+
+correct answer and question
+12.2 What is the experimental approach for measuring the running time of an algorithm?
+12.2 Implement the algorithm and measure the physical running time.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 78
+['7.5' '7.5' '7.5' '7.5' '7.5' '7.5' '7.5' '7.5' '7.5' '7.5' '7.5' '7.5'
+ '7.5' '7.5' '7.5']
+['6' '7' '6' '6' '8.5' '6' '10' '6' '7.5' '9' '10' '6' '10' '10' '7.5']
+train grades
+['7.5', '0', '6', '7.5', '10', '7.5', '8.5', '0', '7.5', '10', '7.5', '6', '10']
+HCC
+0.133333333333
+
+correct answer and question
+12.3 Order the following functions by their running time: n^2; log(log n) ; 2^(log n) ; n! ; n^3.
+12.3 log(log n);  2^(log n) ; n^2 ; n^3; n!
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 79
+['10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10']
+['10' '8' '8.5' '10' '10' '6' '6' '8' '6' '9' '10' '8.5' '9' '10' '10']
+train grades
+['10', '8', '10', '10', '10', '8.5', '6', '9', '10', '10', '7', '7', '10']
+HCC
+0.4
+
+correct answer and question
+12.4 Briefly, how does selection sort work?
+12.4 It selects the minimum from an array and places it on the first position, then it selects the minimum from the rest of the array and places it on the second position, and so forth.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 80
+['10' '7.5' '7.5' '10' '7.5' '10' '7.5' '7.5' '10' '7.5' '10' '7.5' '10'
+ '10' '7.5']
+['10' '7.5' '10' '7.5' '7.5' '7.5' '7.5' '7.5' '10' '9' '8.5' '8.5' '10' '6' '6']
+train grades
+['10', '10', '7.5', '6', '9', '10', '10', '10', '7.5', '8', '7.5', '7.5', '7.5']
+HCC
+0.466666666667
+
+correct answer and question
+12.5 What is the advantage of linked lists over arrays?
+12.5 Linked lists are dynamic structures, which allow for a variable number of elements to be stored.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 81
+['10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10']
+['10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10']
+train grades
+['10', '10', '10', '10', '10', '10', '10', '10', '10', '10', '10', '10', '10']
+HCC
+1.0
+
+correct answer and question
+12.6 What is a queue?
+12.6 A data structure that stores elements following the first in first out principle. The main operations in a queue are enqueue and dequeue.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 82
+['10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10']
+['10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '5']
+train grades
+['10', '10', '10', '10', '10', '10', '10', '10', '10', '5', '10', '10', '10']
+HCC
+0.933333333333
+
+correct answer and question
+12.7 What are the main operations associated with a stack?
+12.7 push and pop
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 83
+['10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10']
+['10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10']
+train grades
+['10', '10', '10', '10', '10', '10', '10', '10', '10', '10', '10', '10', '10']
+HCC
+1.0
+
+correct answer and question
+12.8 What is the Euler tour traversal of a tree?
+12.8 A walk around the tree, starting with the root, where each node is seen three times: from the left, from below, from the right.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 84
+['6' '6' '6' '6' '6' '6' '6' '6' '6' '6' '6' '6' '6' '6' '6']
+['7.5' '6' '7.5' '10' '7.5' '10' '10' '7.5' '9' '0' '9' '10' '10' '6' '6']
+train grades
+['6', '10', '6', '7.5', '8.5', '6', '8.5', '8.5', '7.5', '6', '7.5', '7.5', '6']
+HCC
+0.2
+
+correct answer and question
+12.9 How do you delete a node from a binary search tree?
+12.9 Find the node, then replace it with the leftmost node from its right subtree (or the rightmost node from its left subtree).
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 85
+['7.5' '7.5' '7.5' '7.5' '7.5' '7.5' '7.5' '7.5' '7.5' '7.5' '7.5' '7.5'
+ '7.5' '7.5' '7.5']
+['7.5' '7.5' '10' '7.5' '8.5' '6' '7.5' '10' '9' '0' '5' '7.5' '10' '7.5' '7.5']
+train grades
+['8', '7.5', '7.5', '7.5', '6', '10', '8.5', '10', '7.5', '7.5', '6', '10', '10']
+HCC
+0.466666666667
+
+correct answer and question
+12.10 How many steps does it take to search a node in a binary search tree?
+12.10 The height of the tree.
+inconfidence level 
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+prediction for the question 86
+['10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10' '10']
+['10' '10' '10' '10' '10' '6' '10' '10' '10' '9' '10' '6' '9.5' '10' '6']
+train grades
+['10', '10', '10', '10', '6', '10', '7.5', '7.5', '8', '6', '10', '10', '10']
+HCC
+0.666666666667
+

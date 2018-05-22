@@ -1,0 +1,29 @@
+3-skip-bigrams  ROUGE
+
+2.1 What is typically included in a class definition?
+2.1 Data members (attributes) and member functions.
+0.765  0.706
+
+2.6 What is the difference between a function prototype and a function definition?
+2.6 A function prototype includes the function signature, i.e., the name of the function, the return type, and the parameters' type. The function definition includes the actual body of the function.
+0.235  0.412
+
+3.3 How does the compiler handle inline functions?
+3.3 It makes a copy of the function code in every place where a function call is made.
+0.5  0.389
+
+8.7 What operations would you need to perform to find a given element on a stack?
+8.7 Pop all the elements and store them on another stack until the element is found, then push back all the elements on the original stack.
+0.571  0.643
+
+11.1 What are the elements typically included in a class definition?
+11.1 Function members and data members.
+0.412  0.353
+
+11.2 What are the access-specifiers that can be used in a C++ class definition?
+11.2 Private and public.
+0.647  0.588
+
+11.8 What is the main difference between a string of characters that is read into a variable of type string versus a variable of type char[]?
+11.8 The char[] will automatically add a null \0 character at the end of the string.
+0.647  0.471

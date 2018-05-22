@@ -183,11 +183,11 @@ def get_features(question_index, answer_array, correct_answers, keywords, labels
     to_vectorize = answer_array[question_index][0] # BLUE KPCA
     to_vectorize.append(correct_answers[question_index]) # BLUE KPCA
     #features = KernelPCA(summaries, 3, 'poly', 3, 'similarity_rouge1').training_results() # KPCA
-    features = KernelPCA(to_vectorize, 25, 'poly', 3, 'similarity_blue').training_results()
-    #features = Doc2vec_vectorization(labels[question_index], 2).training_results()
+    #features = KernelPCA(to_vectorize, 25, 'poly', 3, 'similarity_blue').training_results()
+    features = Doc2vec_vectorization(labels[question_index], 2).training_results()
     # For one feature classification:
-    features = np.asarray(features)
-    features = features.reshape(-1, 1)
+    #features = np.asarray(features)
+    #features = features.reshape(-1, 1)
     return features
 
 def get_inconfidence_level(test_features, train_features, name):
@@ -232,6 +232,7 @@ def main():
     bluekpca_features_filepath_other = data_folder + "/processed/bluekpca.pickle"
     allkpca_features_filepath_other = data_folder + "/processed/allkpca.pickle"
     doc2vec_features_filepath_other = data_folder + "/processed/doc2vec.pickle"
+    doc2vecbow_features_filepath_other = data_folder + "/processed/doc2vecbow.pickle"
 
     correct_answers = get_from_file(data_folder + 'raw/answers')
     correct_answers_raw = get_from_file(data_folder + 'raw/answers')
@@ -261,7 +262,7 @@ def main():
     answer_array = pickle.load(fileObject)
     fileObject.close()
 
-    #features = thread.starmap(get_features, zip(range(len(correct_answers)), repeat(answer_array),
+    # features = thread.starmap(get_features, zip(range(len(correct_answers)), repeat(answer_array),
     #                                          repeat(correct_answers), repeat(keywords), repeat(labels)))
 
     fileObject = open(r1_features_filepath_other, 'rb')
@@ -285,9 +286,9 @@ def main():
     # fileObject = open(ngrams_features_filepath_other, 'rb')
     # features_ngrams = pickle.load(fileObject)
     # fileObject.close()
-    # fileObject = open(kskip_features_filepath_other, 'rb')
-    # features_kskip = pickle.load(fileObject)
-    # fileObject.close()
+    fileObject = open(kskip_features_filepath_other, 'rb')
+    features_kskip = pickle.load(fileObject)
+    fileObject.close()
     fileObject = open(combined_features_filepath_other, 'rb')
     features_combined = pickle.load(fileObject)
     fileObject.close()
@@ -306,6 +307,9 @@ def main():
     fileObject = open(doc2vec_features_filepath_other, 'rb')
     features_doc2vec = pickle.load(fileObject)
     fileObject.close()
+    fileObject = open(doc2vecbow_features_filepath_other, 'rb')
+    features_doc2vecbow = pickle.load(fileObject)
+    fileObject.close()
 
     features_kpca_all = []
     for i in range(len(features_r1_kpca)):
@@ -316,15 +320,16 @@ def main():
             feat.append([r1[j], rL[j]])
         features_kpca_all.append(feat)
 
+    #features_doc2vecbow = features
 
-    features_all = [features_r1, features_rL, features_blue, features_combined, features_r1_kpca, features_rL_kpca,     features_blue_kpca, features_kpca_all, features_all_kpca_blue, features_doc2vec]
-    colors = ["r", "orange", "b", "black", "pink", "magenta", "lightskyblue", "firebrick", "mediumpurple", "darkblue"]
-    names = ["ROUGE-1", "ROUGE-L", "BLEU", "combined", "ROUGE-1 KPCA", "ROUGE-L KPCA", "BLEU KPCA", "combined ROUGE KPCA", "combined KPCA", "doc2vec"]
+    features_all = [features_r1, features_rL, features_blue, features_combined, features_r1_kpca, features_rL_kpca,     features_blue_kpca, features_kpca_all, features_all_kpca_blue, features_doc2vec, features_doc2vecbow]
+    colors = ["r", "orange", "b", "black", "pink", "magenta", "lightskyblue", "firebrick", "mediumpurple", "darkblue", "yellow"]
+    names = ["ROUGE-1", "ROUGE-L", "BLEU", "combined", "ROUGE-1 KPCA", "ROUGE-L KPCA", "BLEU KPCA", "combined ROUGE KPCA", "combined KPCA", "doc2vec PV-DM", "doc2vec PV-DBOW"]
     class_names = ['0', '1', '2', '3', '4', '5']
 
-    #fileObject = open(allkpca_features_filepath_other, 'wb')
-    #pickle.dump(features_kpca_all, fileObject)
-    #fileObject.close()
+    # fileObject = open(doc2vecbow_features_filepath_other, 'wb')
+    # pickle.dump(features_kpca_all, fileObject)
+    # fileObject.close()
 
     average_feature_scores = []
     split_positions = list(range(3, 24, 2))
@@ -343,14 +348,15 @@ def main():
             scores_for_question = []
             for i in range(1):
                 score_for_question = []
-                #for question_index in range(len(correct_answers)):
                 for question_index in range(len(correct_answers)):
-
                     # clf = RandomForestClassifier(n_estimators=5)
                     clf = SVC()
                     # clf = MLPClassifier(solver='lbfgs', alpha=1e-5,
                     #                    hidden_layer_sizes=(6, 4), random_state=1)
-                    features_to_train = features[question_index][0:split_position]
+                    if (names[feature_number] == "ROUGE-1" and len(correct_answers[question_index]) > 5):
+                        features_to_train = features_kskip[question_index][0:split_position]
+                    else:
+                        features_to_train = features[question_index][0:split_position]
                     #print(features_to_train)
                     grades_to_classify = answer_array[question_index][1][0:split_position]
                     # for SVMs only since they need at least several classes
@@ -358,34 +364,35 @@ def main():
                     grades_to_classify.append(596)
                     clf.fit(features_to_train, grades_to_classify)
 
-                    features_confidence = get_inconfidence_level(
-                        features[question_index][split_position:len(answer_array[question_index][1])],
-                        features[question_index][0:split_position], names[feature_number])
+                    # features_confidence = get_inconfidence_level(
+                    #     features[question_index][split_position:len(answer_array[question_index][1])],
+                    #     features[question_index][0:split_position], names[feature_number])
 
-                    test_features = []
-                    test_grades = []
-                    if(names[feature_number] == "combined ROUGE KPCA"):
-                        for conf in range(len(features_confidence)):
-                            if features_confidence[conf] < 0.005:
-                                test_features.append(features[question_index][split_position:len(answer_array[question_index][1])][                             conf])
-                                test_grades.append(answer_array[question_index][1][
-                                          split_position:len(answer_array[question_index][1])][conf])
-                            else:
-                                print("discarded")
-                        if (test_features == []):
-                            score = 1
-                        else:
-                            score = clf.score(test_features, test_grades)
+                    # test_features = []
+                    # test_grades = []
+                    # if(names[feature_number] == "combined ROUGE KPCA"):
+                    #     for conf in range(len(features_confidence)):
+                    #         if features_confidence[conf] < 0.005:
+                    #             test_features.append(features[question_index][split_position:len(answer_array[question_index][1])][                             conf])
+                    #             test_grades.append(answer_array[question_index][1][
+                    #                       split_position:len(answer_array[question_index][1])][conf])
+                    #         else:
+                    #             print("discarded")
+                    #     if (test_features == []):
+                    #         score = 1
+                    #     else:
+                    #         score = clf.score(test_features, test_grades)
+                    # else:
+                    if (names[feature_number] == "ROUGE-1" and len(correct_answers[question_index]) > 5):
+                        score = clf.score(features_kskip[question_index][split_position:len(answer_array[question_index][1])], answer_array[question_index][1][split_position:len(answer_array[question_index][1])])
                     else:
-                        score = clf.score(features[question_index][split_position:len(answer_array[question_index][1])],
-                                      answer_array[question_index][1][split_position:len(answer_array[question_index][1])])
-
+                        score = clf.score(features[question_index][split_position:len(answer_array[question_index][1])],answer_array[question_index][1][split_position:len(answer_array[question_index][1])])
                     # if (split_position == 13):
                     #     prediction = clf.predict(features[question_index][split_position:len(answer_array[                                  question_index][1])])
-                        # for item in range(len(prediction)):
-                        #     all_predictions.append(prediction[item])
-                        #     all_grades.append(answer_array[question_index][1][split_position:len(answer_array[                                  question_index][1])][item])
-                        #
+                    #     for item in range(len(prediction)):
+                    #         all_predictions.append(prediction[item])
+                    #         all_grades.append(answer_array[question_index][1][split_position:len(answer_array[                                  question_index][1])][item])
+
                         # grading_correlation_file.writelines("correct answer and question\n")
                         # grading_correlation_file.writelines(questions[question_index] + "\n")
                         # grading_correlation_file.writelines(str(correct_answers_raw[question_index]) + "\n")
@@ -410,26 +417,25 @@ def main():
             scores_for_position.append(scores_for_question)
             average_score = sum(scores) / len(scores)
             average_scores.append(average_score)
-        if (names[feature_number] == "combined ROUGE KPCA"):
-            print(average_scores)
         # plt.boxplot(scores_for_position, positions=split_positions, sym='', widths=0.6)
         average_feature_scores.append(average_scores)
         grading_correlation_file.close()
-        # all_predictions = np.asarray(all_predictions)
-        # all_grades = np.asarray(all_grades)
-        # cnf_matrix = confusion_matrix(np.asarray(all_predictions).flatten(), np.asarray(all_grades).flatten(), labels=['0','1', '2', '3', '4', '5'])
-        # np.set_printoptions(precision=2)
+        # if (names[feature_number] == "doc2vec PV-DBOW"):
+        #     all_predictions = np.asarray(all_predictions)
+        #     all_grades = np.asarray(all_grades)
+        #     cnf_matrix = confusion_matrix(np.asarray(all_predictions).flatten(), np.asarray(all_grades).flatten(), labels=class_names)
+        #     np.set_printoptions(precision=2)
         #
-        # # Plot non-normalized confusion matrix
-        # plt.figure()
-        # plot_confusion_matrix(cnf_matrix, classes=class_names, title='Confusion matrix, without normalization for ' + names[feature_number])
+        #     # Plot non-normalized confusion matrix
+        #     plt.figure()
+        #     plot_confusion_matrix(cnf_matrix, classes=class_names, title='Confusion matrix, without normalization for ' + names[feature_number])
         #
-        # # Plot normalized confusion matrix
-        # plt.figure()
-        # plot_confusion_matrix(cnf_matrix, classes=class_names, normalize=True,
-        #                       title='Normalized confusion matrix for ' + names[feature_number])
+        #     # Plot normalized confusion matrix
+        #     plt.figure()
+        #     plot_confusion_matrix(cnf_matrix, classes=class_names, normalize=True,
+        #                           title='Normalized confusion matrix for ' + names[feature_number])
 
-    plt.show()
+    #plt.show()
     np.set_printoptions(precision=2)
     plt.ylabel('HCC')
     plt.xlabel('Split position')
