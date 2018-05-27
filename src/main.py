@@ -262,6 +262,22 @@ def main():
     answer_array = pickle.load(fileObject)
     fileObject.close()
 
+    # unique word count:
+    # unique_words = set([])
+    #
+    # for question_number in range(len(answer_array)):
+    #     words_pro_question = set([])
+    #     answers = answer_array[question_number][0]
+    #     for answer in answers:
+    #         for word in answer:
+    #             words_pro_question.add(word)
+    #             unique_words.add(word)
+    #     print("question_number: " + str(question_number + 1))
+    #     print(len(words_pro_question))
+    #
+    # print(unique_words)
+    # print(len(unique_words))
+
     # features = thread.starmap(get_features, zip(range(len(correct_answers)), repeat(answer_array),
     #                                          repeat(correct_answers), repeat(keywords), repeat(labels)))
 
@@ -353,10 +369,10 @@ def main():
                     clf = SVC()
                     # clf = MLPClassifier(solver='lbfgs', alpha=1e-5,
                     #                    hidden_layer_sizes=(6, 4), random_state=1)
-                    if (names[feature_number] == "ROUGE-1" and len(correct_answers[question_index]) > 5):
-                        features_to_train = features_kskip[question_index][0:split_position]
-                    else:
-                        features_to_train = features[question_index][0:split_position]
+                    # if (names[feature_number] == "ROUGE-1" and len(correct_answers[question_index]) > 5):
+                    #     features_to_train = features_kskip[question_index][0:split_position]
+                    # else:
+                    features_to_train = features[question_index][0:split_position]
                     #print(features_to_train)
                     grades_to_classify = answer_array[question_index][1][0:split_position]
                     # for SVMs only since they need at least several classes
@@ -383,30 +399,30 @@ def main():
                     #     else:
                     #         score = clf.score(test_features, test_grades)
                     # else:
-                    if (names[feature_number] == "ROUGE-1" and len(correct_answers[question_index]) > 5):
-                        score = clf.score(features_kskip[question_index][split_position:len(answer_array[question_index][1])], answer_array[question_index][1][split_position:len(answer_array[question_index][1])])
-                    else:
-                        score = clf.score(features[question_index][split_position:len(answer_array[question_index][1])],answer_array[question_index][1][split_position:len(answer_array[question_index][1])])
-                    # if (split_position == 13):
-                    #     prediction = clf.predict(features[question_index][split_position:len(answer_array[                                  question_index][1])])
-                    #     for item in range(len(prediction)):
-                    #         all_predictions.append(prediction[item])
-                    #         all_grades.append(answer_array[question_index][1][split_position:len(answer_array[                                  question_index][1])][item])
+                    # if (names[feature_number] == "ROUGE-1" and len(correct_answers[question_index]) > 5):
+                    #     score = clf.score(features_kskip[question_index][split_position:len(answer_array[question_index][1])], answer_array[question_index][1][split_position:len(answer_array[question_index][1])])
+                    # else:
+                    score = clf.score(features[question_index][split_position:len(answer_array[question_index][1])],answer_array[question_index][1][split_position:len(answer_array[question_index][1])])
+                    if (split_position == 13):
+                        prediction = clf.predict(features[question_index][split_position:len(answer_array[                                  question_index][1])])
+                        for item in range(len(prediction)):
+                            all_predictions.append(prediction[item])
+                            all_grades.append(answer_array[question_index][1][split_position:len(answer_array[                                  question_index][1])][item])
 
-                        # grading_correlation_file.writelines("correct answer and question\n")
-                        # grading_correlation_file.writelines(questions[question_index] + "\n")
-                        # grading_correlation_file.writelines(str(correct_answers_raw[question_index]) + "\n")
-                        # grading_correlation_file.writelines("inconfidence level \n")
-                        # grading_correlation_file.writelines(str(
-                        #     get_inconfidence_level(features[question_index][split_position:len(answer_array[question_index][1])], features[question_index][0:split_position], names[feature_number])
-                        # ) + "\n")
-                        # grading_correlation_file.writelines("prediction for the question " + str(question_index) + "\n")
-                        # grading_correlation_file.writelines(str(prediction) + "\n")
-                        # grading_correlation_file.writelines(str(answer_array[question_index][1][split_position:len(answer_array[question_index][1])]).replace(',', '') + "\n")
-                        # grading_correlation_file.writelines("train grades\n")
-                        # grading_correlation_file.writelines(str(answer_array[question_index][1][0:split_position]) + "\n")
-                        # grading_correlation_file.writelines("HCC\n")
-                        # grading_correlation_file.writelines(str(score)  + "\n\n")
+                        grading_correlation_file.writelines("correct answer and question\n")
+                        grading_correlation_file.writelines(questions[question_index] + "\n")
+                        grading_correlation_file.writelines(str(correct_answers_raw[question_index]) + "\n")
+                        grading_correlation_file.writelines("inconfidence level \n")
+                        grading_correlation_file.writelines(str(
+                            get_inconfidence_level(features[question_index][split_position:len(answer_array[question_index][1])], features[question_index][0:split_position], names[feature_number])
+                        ) + "\n")
+                        grading_correlation_file.writelines("prediction for the question " + str(question_index) + "\n")
+                        grading_correlation_file.writelines(str(prediction) + "\n")
+                        grading_correlation_file.writelines(str(answer_array[question_index][1][split_position:len(answer_array[question_index][1])]).replace(',', '') + "\n")
+                        grading_correlation_file.writelines("train grades\n")
+                        grading_correlation_file.writelines(str(answer_array[question_index][1][0:split_position]) + "\n")
+                        grading_correlation_file.writelines("HCC\n")
+                        grading_correlation_file.writelines(str(score)  + "\n\n")
                     scores.append(score)
                     score_for_question.append(score)
                     # print(score)
@@ -440,8 +456,6 @@ def main():
     plt.ylabel('HCC')
     plt.xlabel('Split position')
     for feature in range(len(features_all)):
-        #print(names[feature])
-        #print(average_feature_scores[feature])
         plt.plot(split_positions, average_feature_scores[feature], colors[feature], label=names[feature])
         plt.scatter(split_positions, average_feature_scores[feature], c=colors[feature])
         plt.legend(loc='lower center')

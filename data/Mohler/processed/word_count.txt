@@ -1,0 +1,202 @@
+MRC:
+
+question_number: 1
+62
+question_number: 2
+76
+question_number: 3
+82
+question_number: 4
+89
+question_number: 5
+33
+question_number: 6
+52
+question_number: 7
+91
+question_number: 8
+41
+question_number: 9
+79
+question_number: 10
+51
+{'becomes', 'computation', 'equal', 'transform', 'translation', 'which', '4*4', 'ansate', 'may', 'could', 'lock', 'describe', 'a.t.a', 'help', 'combine', 'r', 'degree', 'fully', 'magnitude', 'term', 'ruler', 'causing', 'elimination', 'shape', 'reduces', 'a-\\lambda', 'representing', 'form', 'arises', 'also', 'well', 'multidimensional', 'versa', 'eigenvectors', 'instead', 'preserve', '\\|=0', 'normalized', 'multiplying', 'root', 'applied', 'perpendicular', 'axis', 'plu', 'computes', 'eigenvector', 'align', 'identity', 'we', 'change', 'unitvectors', 'distance', 'function', 'consists', 'a-lamda*i', 'diagonal', 'determinant', 'perform', 'addition', 'property', 'alters', 'within', 'different', 'order', 'given', 'separating', 'euler', 'place', 'wirer', 'number', 'lambda*i', 'all', 'solution', 'system', 'solving', 'allow', 're', 'mean', 'extension', 'is', 'regular', 'correct', 'scale', 'happens', 'base', 'range', 'tha', 'quadrin', 'solve', 'result', 'integration', 'arrises', 'hence', 'semidefinite', 'overcomes', 'variant', 'Runge', 'similar', 'called', 'od', 'endeffector', 'relation', 'multiplied', 'p', 'complies', 'along', 'trappose', 'give', 'compound', 'kinematic', 'written', 'unitary', 'backward', 'application', 'characteristic', 'jacobian', 'conversion', 'y', 'derivative', 'maximum', 'varying', 'eigenvalue', 'effector', 'important', 'eg', 'triangle', 'unit', 'torque', 'numerical', 'replaced', 'orthonormal', 'space', 'individual', 'basis', 'combination', 'length', 'represent', 'external', 'robotics', 'z-y-x', 'information', 'quaternials', 'unchanged', 'satisfies', 'lost', 'WP', 'rotates', 'experienced', 'ie', 'describing', 'large', 'zero', 'apply', 'satisfy', 'robot', 'partial', 'link', 'joint', 'represents', 'gimbal', 're^i\\theta', 'decompose', 'remains', 'rk', 'x', 'speeding', 'reference', 'at', 'tip', 'used', 'representation.the', 'even', 'Arta', 'aka', 'Eiger', 'ax', 'runge-kutta', 'educated', 'way', 'of', 'assumed', 'pointing', 'direction', 'variable', 'refers', 'permutation', 'object', 'turn', 'vice-versa', 'egg', 'occureswhen', 'set', 'combined', 'done', 'show', 'occur', 'loses', 'complex', 'map', 'alter', 'separation', 'rotation', 'frame', 'qr', 'end-effector', 'arranged', 'lambda', 'rat', 'force', 'alternative', 'matrix', 'lose', 'a*x=lambda*x.', 'by', 'vector', 'another', 'find', 'found', 'corresponding', 'ze', 'Jacobians', 'linearly', 'singular', 'express', 'like', 'the', 'in', 'lu', 'parallel', 'transformation', 'ax=\\lambda', 'transforming', 'second', 'kutta', 'modified', 'mutually', 'constant', 'lower', 'fixpoint', 'pivot', 'general', 'following', '6\\.', 'quaternion', 'problem', 'single', 'two', 'orientation', 'acted', 'timber', 'q', 'apart', 'joint-angle', 'pose', 'compute', 'spectral', '3\\.orthogonal', 'performed', 'w', 'quartations', 'point', 'ab', 'descending', 'internal', 'put', 'loss', 'expressing', 'start', 'lenth', 'losing', 'said', 'yield', 'AAX', 'integrating', 'variation', 'easy', 'particular', 'consist', 'infinitely', '\\lambda^2', 'based', 'decomposing', 'around', 'triangular', 'sad', 'a.transpose*a', 'operation', 'product', 'example', 'other.for', 'desired', '2.qr', 'get', '/x-lambda*i/', 'avoided', 'towards', 's', 'motion', 'always', 'relationship', 'solvable', 'value', 'kinematics', 'determined', 'scaling', 'polynomial', 'location', 'calculation', 'together', 'lie', 'part', 'solved', 'newton', 'three', 'b', 'position', 'la', 'u', 'comprise', '2.runge-kutta', 'automatically', 'nonlinear', 'alert', 'factor', 'rigid', 'end', 'undetermined', 'prime', 'rotate', 'diagonalisation', 'element', 'obtained', 'termed', 'scaled', 'basically', 'a', 's^-1', 'rotational', 'det', 'resulting', 'involves', '3.euler', 'associated', 'use', 'matrix.this', 'velocity', 'configuration', 'finding', 'homogeneous', 'data', 'original', 'expanded', 'square', 'ex', 'guess', 'ode', 'using', 'aam', 'decomposes', 'preserving', 'contain', 'aha', 'retain', 'cast', 'satisfied', 'scalar', 'differential', 'upper', 'transpose', 'd', 'angle', 'forward', 'remain', 'analytical', 'Prvert', 'l', 'due', 'composed', 'v', 'tax', 'decomposition', 'differentiating', 'dimensional', 'coefficient', 'de', 'meanwhile', 'symmetric', 'diagonalization', 'diagnose', 'manipulation', 'parameter', 'column', 'occurs', 'would', 'many', 'spelling', 'ice', 'linear', '0,0,0,1', 'might', 'upon', 'freedom', 'tool', 'format', 'component', 'equation', '2\\.preserves', 'polar', 'containing', 'method', 'fixed', 'calculate', 'inverse', 'not', 'quickly', 'amplifier', 'includes', 'quarternion', 'projected', 'transforms', 'eigenspace', 'norm', 'multiplication', 'vice', 'span', 'one', 'representation', 'lead', 'pink', 'solves', 'contains', 'a*a.transpose', 'dimension', 'arise', 'determine', 'positive', 'gaussian', 'orthogonal', 'e^i\\theta', 'decomposed', 'z', 'trigonometric', 'non', 'overcome'}
+444
+
+Mohler:
+question_number: 1
+187
+question_number: 2
+129
+question_number: 3
+223
+question_number: 4
+37
+question_number: 5
+103
+question_number: 6
+103
+question_number: 7
+110
+question_number: 8
+87
+question_number: 9
+103
+question_number: 10
+135
+question_number: 11
+56
+question_number: 12
+61
+question_number: 13
+153
+question_number: 14
+130
+question_number: 15
+45
+question_number: 16
+61
+question_number: 17
+107
+question_number: 18
+112
+question_number: 19
+76
+question_number: 20
+102
+question_number: 21
+140
+question_number: 22
+124
+question_number: 23
+168
+question_number: 24
+110
+question_number: 25
+135
+question_number: 26
+74
+question_number: 27
+33
+question_number: 28
+42
+question_number: 29
+113
+question_number: 30
+90
+question_number: 31
+79
+question_number: 32
+50
+question_number: 33
+67
+question_number: 34
+40
+question_number: 35
+40
+question_number: 36
+79
+question_number: 37
+44
+question_number: 38
+50
+question_number: 39
+54
+question_number: 40
+86
+question_number: 41
+108
+question_number: 42
+128
+question_number: 43
+47
+question_number: 44
+73
+question_number: 45
+85
+question_number: 46
+92
+question_number: 47
+90
+question_number: 48
+35
+question_number: 49
+125
+question_number: 50
+122
+question_number: 51
+128
+question_number: 52
+134
+question_number: 53
+124
+question_number: 54
+110
+question_number: 55
+23
+question_number: 56
+151
+question_number: 57
+154
+question_number: 58
+130
+question_number: 59
+37
+question_number: 60
+67
+question_number: 61
+113
+question_number: 62
+71
+question_number: 63
+29
+question_number: 64
+53
+question_number: 65
+102
+question_number: 66
+88
+question_number: 67
+42
+question_number: 68
+60
+question_number: 69
+35
+question_number: 70
+104
+question_number: 71
+71
+question_number: 72
+106
+question_number: 73
+69
+question_number: 74
+129
+question_number: 75
+130
+question_number: 76
+141
+question_number: 77
+131
+question_number: 78
+47
+question_number: 79
+149
+question_number: 80
+24
+question_number: 81
+144
+question_number: 82
+119
+question_number: 83
+120
+question_number: 84
+36
+question_number: 85
+122
+question_number: 86
+156
+question_number: 87
+75
+{'pass-by-value', 'alternative', '-iteration-modifies', 'wise', 'follows', 'merge', 'where', 'buy', 'checked', 'circular', 'made', 'account', 'super', 'layer', 'currently', 'product', 'insertion', 'repetitive', 'finish', 'recognizes', 'logic', 'temp', 'ability', '7*5', 'block', 'measured', 'attaching', 'accordance', 'simulating', 'getting', 'designated', 'hierarchical', 'whileâ€\x9d', 'maintainability', 'altered', 'keep', 'usurped', 'longer', 'book', 'located', 'alternate', 'drawn', 'objectname', 'assign', 'compiles', 'withdrawing', 'sum', 'bound', 'mathematical', 'independent', 'compiler-time', 'postfix', 'module', 'execute', 'delineates', 'list-based', 'simpler', 'hassle', 'output', 'replace', 'enables', '2+3', 'because', 'specially', 'affected', 'specifier', 'food', 'header', 'mind', 'examines', 'till', 'prefered', 'enclosed', 'bef', 'recognize', 'ispalindrome.', 'subunit', 'all', 'character', 'developing', 'making', 'implantation', 'naturally', 'expands', 'popped', 'proof', 'subscript', 'alt', 'shape', 'line', 'parameterless', 'smallest', 'format', 'effort', 'singular', 'amount', 'tangible', 'similarity', 'solution', 'maybe', 'vary', 'mathematics', 'rightward', 'do/look', 'advantage', 'already', 'refining', 'gt', 'recursive', 'definitionâ€™s', 'correct', 'ad', 'reusuablitly', 'improves', 'requiring', 'container', 'going', 'easily', 'executes', 'together', 'several', 'effective', 'ispalindrome', 'equivalent', 'complex', 'interface', 'termination', 'requires', 'mangling', 'core', 'splitting', 'expressed', 'shuts', '-iteration-explicitly', 'shifting', 'max_queue_size-1', 'pre-runtime', 'reason', 'largest', ' ', 'terminate', 'collect', 'structure', 'swap', 'burn', 'close', 'question', 'â€™', 'multisets', 'thus', 'full', 'require', 'halt', 'even', 'anther', 'whitespace', 'regardless', 'wish', 'accessed', 'closing', 'indicates', 'Depue', 'work', 'increase', 'precedes', 'recuruivly', 'intensity', 'along', 'take', 'normal', 'choose', 'object-oriented', 'diminish', 'non', 'corresponds', 'criterion', 'changed', 'deleted', 'influence', 'determining', 'minimum', 'holding', 'none', '1.54', 'commonly', 'help', 'whose', 'singly', 'omitting', 'leftptr', 'determine', 'elemental', 'scale', 'tour', 'principle', 'four', 'parenthesis', 'seen', 'built', 'reusing', 'haft', 'wrapped', 'done', 'allocating', 'calling', 'pointed', 'measure', 'estimate', 'procedure', 'list', 'rule', 'post', 'initialize', 'logical', 'euler', 'andor', 'looping', 'object', 'increment', 'advises', 'standard', 'tackle', 'seeing', 'usual', 'referring', 'permutation', 'remains', 'subject', 'subsection', 'ancestor', 'while/for', 'identified', 'edited', 'state', '1,2,3,4,5,6,7,8,9', 'lose', 'mathematically', 'happen', 'showing', 'fifo', 'longes', 'therefore', 'hitting', 'versa', 'sending', 'allocation', 'value/number', 'place', 'mechanic', 'jumping', 'temporary', 'proven', 'destroyed', 'higher', 'quite', 'progressing', 'part', 'remove', 'exclusively', 'deepest', 'repeating', 'insertion/deletion', 'could', 'easier', 'gone', 'spec', 'arbitrary', 'usually', 'encapsulation-objects', 'undirected', 'dynamic', 'traveling', 'reaching', 'attatched', 'breaking', 'side', 'complicate', '1.24', 'initializer', 'sequential', 'recur', 'indirectly', 'incident', 'appear', 'important', 'others', 'broken', 'easy', 'rely', 'sorting', 'subtrees', 'cost', 'described', 'specify', 'known', 'file', 'increased', 'distinct', '0x000000', 'role', 'resizeable', 'progress', 'join', 'required', 'to-be-deleted', 'comparison', 'translates', 'hierarchically', 'modify', 'three', 'original', 'enable', 'height', 'create', 'potential', 'thing', 'mainly', 'programing', 'subclass', 'nonempty', 'starting', 'ordered', 'prevent', 'created', 'replacement', 'clause', 'art', 'organizes', 'discussion', 'initially', 'ba', 'contact', 'youre', 'semicolon', 'constuctor', 'instead', 'physical', 'clock', 'each', 'first', 'period', 'manipulate', 'user-written', 'stop', 'idea', 'eliminate', 'check', 'cache', 'nearly', 'declaring', 'completely', 'multiple', 'modified', 'finished', 'tested', '8.8123', 're-initilized', 'template', 'who', 'early', 'string/line', 'postorder', 'implement', 'away', 'spread', 'versatile', 'definition', 'reached', 'neither', 'matter', 'boolean', 'int', 'scope', 'restricted', 'like', 'split-problems', 'deletes', 'flexibility', 'respective', 'correspondence', 'count', 'waited', 'avoid', 'separately', 'theater', 'change', 'c', 'simplify', 'observer', 'a', 'subtree', 'temporal', 'lead', 'out', 'cut', 'omitted', 'power', 'high', 'group', 'reversing', 'perform', 'first-out', 'concept', 'push', 'grows', 'internal', 'joint', 'allocate', 'serviced', 'parameter', 'addition', 'permission', 'o', 'differentiates', 'loss', 'capable', 'balanced', 'appropriate', 'path', 'passed', 'dereferencing', 'type', 'str', 'also', 'written', 'downside', 'arrayptr', 'instantiating', 'managed', 'defines', 'combine', 'e', 'evaluated', 'doesnt', 'letter', 'trailing', '256', 'empty', 'writing', 'system', 'suppose', 'solve', 'arraysize', 'que', 'initiation', 'defined', 'looking', 'differently', 'reduce', 'info', 'unmodifiable', 'still', 'represents', 'might', 'option', 'safe', 'successively', 'trying', 'initializing', 'involve', 'excessive', 'feedback', 'quadratic', 'theoretically', 'cupping', 'view', 'move', 'distance', 'objectâ€™s', 'confusing', 'requirement', 'n', 'exponential', 'freed', 'return', 'throwing', 'returned', 'movement', '1,2,3,4,5,6,7,8,9,10', 'moved', 'yield', 'may', 'call', 'read', 'edit', 'proper', 'iterate', 'varied', 'solved', 'purpose', 'display', 'd', 'star', 'priority', 'declare', 'grab', 'avoiding', 'open', 'multiarray', 'you', 'sometimes', 'record', 'ensuring', 'employee', 'p', 'deleting', 'access-modifier', 'smaller', 'subprogram', 'prevents', 'namely', 'access', 'earlier', 'pushed', 'exact', 'often', 'hold', 'inserted', 'drift', 'people', 'connected', 'assuming', 'exposing', 'printer', 'backup', 'peek', 'list/array', 'end', 'good', 'column', 'removed', 'scan', 'operate', 'contiguous', 'macro', 'array', 'byte', 'debugging', 'substitution', 'arraylist', 'strategic', 'extent', 'relative', 'base', 'building', 'mid', 'linked-base', 'represent', 'retrieve', 'implicitly', 'final', 'unit', 'push/pop', 'difference', 'obviously', 'producing', 'expensive', 'attempted', 'shifted', 'chooses', 'ami', '1,2,3', 'counting', 'rejoined', 'computes', 'passing', 'assigning', 'allot', 'third', 'repetition', 'duration', 'challenge', 'basis', 'example', 'declared/limited', 'referencing', 'area', 'continuously', 'readability', 'refuse', 'sent', 'easer', 'hiding', 'fall', 'node', 'limitation/declaration', 'scenario', '-recursion-base', 'creating', 'shared', 'progressively', 'bigger', 'add', 'cross', 'treated', 'function', 'bug', 'onto', 'void', 'linked', 'kind', 'word', 'rightmost', 'lt', 'contains', 'belonging', 'queue', 'll', 'immediately', 'potentially', 'invoked', 'literal', 'via', 'lifo', 'sequentially', 'dont', 'inherit', 'row-column', 'actually', 'counter', 'shorter', 'he/she', 'vi', 'encountered', 'reduces', 'depth', 'keyboard', 'iteration-repetition', 'maintained', 'exit', 'maintenance', 'sub', 'specificly', 'buffer', 'root', 'wasted', 'body', 'real', 'functionality', 'consists', 'deletion', 'programer', 'ptrtoarray', 'being', 'component', 'merging', 'forward', 'efficiency', 'within', 'practice', 'action', 'recursuivly', 'seeking', 'pas', 'checking', 'list-base', 'user-defined', 'needed', 'entry', 'terminates', 'continues', 'swapping', 'losing', 'look', 'valid', 'possibility', 'backwards', 'actual', 'estimation', 'describing', 'cetera', 'visited', 'problem', 'createstack', 'child', 'signature', 'prefix', 'completion', 'ordering', 'element-index', 'name', 'native', 'resized', 'disadvantage', 'tail', 'identify', 'relationship', 'application', 'differentiated', 'direction', 'left', 'strut', 'experimental', 'file-scope', 'store', 'epi', 'testing', 'grow', 'polish', 'limit', 'single', 'deployment', 'among', 'itâ€™s', 'gave', 'occurs', 'terminating', 'dividing', 'into', 'informer', 'head', 'benefit', 'extracted', 'reduced', 'isolate', 'nickname', 'oop', 'contiguously', 'usage', 'useable', 'oldest', 'individual', 'directly', 'based', 'essentially', 'decreasing', 'encapsulated', 'pop', 'tha', 'preferred', 'handling', 'evaluate', 'explicitly', 'ensure', 'logarithmic', 'allowed', 'another', 'decide', 'simplifies', 'result', 'unambiguous', 'enters', 'source-code', 'max', 'furthest', 'traverse', 'locally', 'range', 'series', 'nonconstant', 'traversed', 'depends', 'algorithm', 'backtrack', '*bptr', 'large', 'dequeuing', 'self-referential', 'direct', '-recursion-if', 'provide', 'dimension', 'ignores', 'expects', 'auto-create', 'iteration', 'worse', 'easiest', 'conquers', 'ampersand', 'tell', 'company', 'branching', 'mergesort', 'revealing', 'pass-by-reference', 'simply', 'attribute', 'describe', 'lot', 'stored', 'copied', 'switch', 'creates', 'issue', 'let', 'following', 'recursion', 'sort', 'estimated', 'remaining', 'subroutine', 'successfully', 'elementary', 'im', 'specifically', 'viable', 'accordingly', 'numerical', 'small', 'thought', 'u', 'equation', 'supply', 'farthest', 'list-bases', 'type-safe', 'nothing', 'describes', 'organization', 'fundamental', 'recommended', 'polynomial', 'inherits', 'finalization', 'every', 'coded', 'hath', 'current', 'combined', 'â€œinstructâ€\x9d', 'backward', 'rather', 'cheaper', 'endpoint', 'it', 'anytime', 'affecting', 'distinguished', 'track', 'float', 'receives', 'edge', 'theta', 'downwards', 'leftmost', 'enqueue', 'library', 'preferable', 'included', 'denoting', 'allows', 'decides', 'extensively', 'lay', 'brain', 'lasting', 'reference', 'treat', 'expect', 'limited', 'depending', 'vice', 'term', 'datatype', 'enacted', 'differs', 'elsewhere', 'cant', 'declared', 'code', 'complicated', 'row', 'proceeding', '55.55', 'select', 'towards', 'adjusted', 'concatenates', 'with', 'ore', 'toe', 'divide', 'shrink', 'rest', 'friend', 'optimizer', 'converge', 'removing', 'become', 'best', 'stack_display', 'navigate', 'awesome', 'entered', 'evaluation', 'derive', 'retain', 'source', 'programmed', 'lessened', 'random', 'robust', 'isemptry', 'stating', 'handle', 'vector', 'processing', 'signed', 'pretty', 'best-case', 'description', 'harder', 'caller', 'usability', 'solving', 'point', 'stackisempty', 'customer', 'faster', 'see', 'giving', 'excludes', 'prone', 'placement', 'go', 'separate', 'equal', 'dot', 'leftover', 'travel', 'namespaces', 'hierarchy', 'disjoint', 'redundant', 'worth', 'descendent', 'accepted', 'unworkable', 'simplest', 'k', '35+', 'handled', 'elaboration', 'debug', 'well', 'install', 'shown', 'wit', 'degree', 'to', 'content', 'performs', 'access-specifiers', 'computer', 'advance', 'closer', 'poorly', 'label', 'nonentity', '400/5', 'converges', 'applies', '0,1,2', 'contain', 'spot', 'security', 'overload', 'doesnâ€™t', 'originally', 'common', 'model', 'complain', 'cause', 'inserting/deleting', 'sublists', 'particular', 'pushing', 'necessarily', 'evaluates', 'given', 'moving', "'\\0", 'attempt', 'extension', 'conceptually', 'CPP', 'override', 'complete', 'lower', 'specifying', 'vision', 'taking', 'traversal', 'optionally', 'having', 'speed', 'someone', 'conquering', 'invokes', 'fly', 'conform', 'restriction', 'detected', 'integer', 'available', 'undeclared', 'zillion', 'merged', 'write', 'asking', 'size', 'primary', 'popping', 'expand', 'send', 'obj', 'up', 'operates', 'safer', 'number', 'minimal', 'right', 'modifies', 'adapt', 'assume', 'timely', 'chain', 'resides', 'dequeued', 'link', 'act', 'slowest', 'case', 'sig', 'twice', 'forever', 'one-way', 'ensue', 'the', 'get', 'statically', 'added/subtracted', 'nonconst', 'person', 'substituting', 'carry', 'process', 'feature', 'affect', 'used', 'recursively', 'indicate', 'compilation', 'analysis', 'badly', 'allowing', '400/', 'life', 'detail', 'last', 'something', 'graph', 'fails', 'either', '5+2', 'remainder', 'stage', 'stolen', 'descendant', 'validity', 'first-in', 'discussed', 'printing', 'specifies', 'selects', 'bi-dimensional/two-dimensional', 'bottom', 'previously', 'solves', 'null', 'backing', 'uniquely', 'stopping', 'assigned', 'index', 'proportional', 'future', '-iteration-loop-termination', 'incremented', 'taken', 'added', 'say', 'recycled', 'reveals', 'storage', 'job', 'â€˜int', 'constrained', 'utilizing', 'time', 'selection', 'fixed-sized', 'access-specifications', 'eliminates', 'information', 'chance', 'wanted', 'predefined', 'entire', 'unsigned', 'associated', 'member', 'connection', 'porter', 'providing', 'pack', 'date', 'controlled', 'bunch', 'unwinds', 'risk', 'space', 'much', 'precedence', 'initializes', 'keeping', 'achieved', 'midst', 'slightly', 'jingle', 'costumer', 'remain', 'yet', 'attach', 'adjust', 'raise', 'respect', 'casern', 'introduce', 'inlace', 'greatest', 'â€œdoâ€\x9d', 'preorder', 'always', 'grow/shrink', 'band', 'optimize', 'basically', 'error', 'provides', 'singly-linked', 'false', 'script', 'acknowledged', 'theatre', 'attached', 'waiting', 'scheme', 'applied', 'similarly', 'compiler', 'arithmetic', 'efficient', 'enhance', 'command', 'presence', 'grouping', 'symbol', 'modular', 'eye', 'thats', 'maximum', 'finalized', 'followed', 'hardware', 'post-check', 'multideminsional', 'pulling', 'pseudo', 'ice', 'subtract', '*xptr', 'unfair', 'regulated', 'bidimensional', 'iteratively', 'curly', 'whenever', 'course', 'indefinitely', 'nth', 'opposed', 'inverted', 'define', 'try', 'stackpush', 'dived', 'print', 'deallocated/deleted', 'next', 'quest', 'no', 'determines', 'sting', 'local-variable', 'generally', 'recombine', 'rightptr', 'ease', 'iterates', 'hidden', 'promote', 'way', 'doubly-linked', 'according', 'meet', 'designed', 'recreate', 'specification', '5.657', 'though', 'upon', 'variable', 'program', 'private', 'inline', 'm-by-n.', 'grown', 'flexible', 'datum', 'formed', 'inside', 'enter', 'latest', 'fist', '40.', 'of', 'piece', 'can', 'enough', 'arranged', 'increasing', 'lined', 'ever', 'explicit', 'keyword', 'stream', 'unorder', 'string-termination', 'stand', 'anything', 'understanding', 'redundancy', 'delete', 'characteristic', 'update', 'set', 'lowest', 'synonym', 'recurses', 'defining', 'infinitely', 'gradebook', 'titeration', 'dereferenced', 'partitioned', 'various', 'sends', 'find', 'qualifier', 'once', 'excuse', 'peeking', 'variation', 'merges', 'curt', 'goal', 'etc', 'whichever', 'factorial', 'signify', 'class', 'slot', "'a_used_number", 'specific', 'verify', 'forced', 'quote', 'satisfied', 'missing', 'matrix', 'eventually', 'searching', 'accurate', 'predetermine', 'feasible', 'opposite', 'waste', 'answer', '-recursion-repeated', 'blah', 'biggest', 'quick', 'kept', 'callerâ€™s', 'printed', 'movie', 'region', 'simulates', 'version', 'repeated', 'destructor', 'conditional', '-iteration-if', 'section', 'syntax', 'ending', 'intense', 'branch', 'language', 'text', 'stimulates', 'answered', 'predetermined', 'fused', 'subarrays', 'context', 'builtin', 'string', 'step', 'refer', 'refined', 'style', 'XMTR', 'refers', 'length', 'typically', 'corresponding', 'scroll', 'throughout', 'pointer-based', 'associative', 'quicker', 'array-based', 'adaptor', 'garbage', 'level', 'reusable', 'removal', 'phase-testing', 'yes', 'fail', 'decrement', 'embedded', 'incorrectly', 'retrain', 'subset', 'working', 'value/word', 'bind', 'shift', 'java', 'win', 'slowly', 'use', 'self', 'one', 'value', 'otherwise', 'ex', 'input', 'involved', 'illustrate', 'multiply', 'parent', 'present', 'implies', 'manipulated', 'establish', 'constructor', 'occur', 'project', 'method', 'ray', 'alarm', 'th', 'throw', 'pointing', 'serve', 'bracket', 'local', 'merry', 'causing', 'deceleration', 'displaymessge', 'regular', 'big', 'lost', 'prove', 'includes', 'almost', 'iterative', 'tracking', 'globally', 'improve', 'generates', 'enqueueing', 'performer', 'reinitialize', 'external', 'togt', 'received', 'global', 'circle', 'different', 'framework', 'traversing', 'never', 'development', 'disappears', 'mygradebook', 'lisp', 'identifies', 'Bothe', 'accessible', 'cast', 'generate', 'ana', 'possible', 'specified', 'skip', 'ie', 'interpreted', 'est', 'exhibit', 'disk', 'drop', '35+80', 'allocated', 'pointer', 'successor', 'true', 'br', '1,2,3,4,5', 'correctly', 'listed', 'overloaded', 'represented', 'completed', 'pure', 'influenced', 'do-while', 'nonlinear', 'needing', 'stay', 'distinguishes', 'hand', 'inner', 'f', 'bpt', 'arrayname', 'extended', 'however', 'hat', 'automatic', 'whatever', 'integrate', 'considered', 'sure', 'w', 'involves', 'x', 'initiate', 'scalable', 'difficult', 'improper', 'continue', 'post-programming', 'proceed', '115', 'finally', 'dimensional', 'offset', 'compare', 'classname', 'converted', 'n-1/2', 'worst', 'arise', 'major', 'declaration', 'address', 'ten', 'memory', 'b', 'implementing', 'message', 'besides', 'varioubles', 'put', 'fact', 'permanent', 'compile', 'met', 'new', 'leave', 'arrangement', 'default', 'quickly', 'untill', 'situation', 'little', 'recursion-selection', 'implemented', 'phrase', 'including', 'factor', 'by', 'design', 'want', 'conceptual', 'better', 'everytime', 'happens', 'opportunity', 'statement', 'except', 'construct', 'white', 'reverse', 'understand', 'constructed', 'invoke', 'while', 'loop-continuation', 'virtually', 'do/while', 'naming', 'storing', 'maintaining', 'finer', 's', 'ooa/design', 'rewrite', 'declares', 'reach', 'stated', 'multi', 'reducing', 'again', 'redition', 'sorted', 'instantiated', 'hide', 'static', 'anywhere', 'support', 'detect', 'field', 'clear', 'linearly', 'cleared', 'reconstruct', 'Patnode', 'fix', 'enqueued', 'horrid', 'reused', 'key', 'recall', 'passed/returned', 'leading', 'log', 'theoretical', 'beginning', 'alter', 'copy', 'effected', 'reuse', 'oftentimes', 'loading', 'sequence', 'adjacent', 'public', 'hard', 'addressed', 'accessing', 'accused', 'noted', 'visiting', 'batter', 'initialization', 'navigating', 'ignore', 'notation', 'split', 'constraint', 'calculate', 'unlike', 'initial', 'conflict', 'dependent', 'think', 'wrap', 'convention', 'contained', 'placeholder', 'decrease', 'Ina', 'getfront', 'finding', 'transition', 'middle', 'methods/classes', 'beneath', 'h', 'top', 'order', 'user', 'lack', 'found', 'held', 'nonstatic', 'infix', 'task', 'lesser', 'half', 'inserting', 'quicksort', 'incorrect', 'location', 'pass', 'i', 'identifier', '1-initializing', 'per', 'wanting', 'big-oh', 'cycle', 'dynamically', 'simple', 'mention', 'replaced', 'initialises', 'stuff', 'Abe', 'branched', 'gut', 'picking', 'said', 'uninitialized', 'double', 'software', 'retains', 'load', 'repeatedly', 'ticket', 'replaces', 'desired', 'long', 'performance', 'cpu', 'operation', 'doubly', 'queuefront', 'inferior', 'additional', 'infinite', 'plus', 'supposed', 'free', 'coming', 'repeat', 'save', 'practical', 'collection', 'money', 'interaction', 'alias/nickname', 'overall', 'bin', 'generation', 'around', 'give', 'becomes', 'lump', 'outside', 'share', 'revision', 'typical', 'least', 'growing', 'creation', 'else', 'explaining', 'whether', 'run', 'continuous', 'excluding', 'running', 'cell', 'gradually', 'general', 'palindrome', 'previous', 'special', 'placed', 'trivial', 'multidimensional', 'reviling', 'coding', 'pick', 'corrected', 'loop-termination', 'resulting', 'principal', 'simulate', 'pointer/offset', 'versus', 'basic', 'front', 'shortest', 'constricted', 'beyond', 'make', 'marker', 'accomplish', '3+2', 'execution-time', 'identification', 'fixed', 'computing', 'completes', 'calculation', 'prototype', 'rubber', 'quickest', 'performed', 'operand', 'retrieval', 'subsequent', 'inline-expands', 'follow', 'stackpop', 'bit', 'complexity', 'expanded', 'science', 'converting', 'definite', 'verification', 'recently', 'soon', 'modifying', '32+', 'accepts', 'exhausting', '//compiler', 'target', 'come', 'simplistic', 'employed', 'placing', 'zero', 'belong', 'tampering', 'dereferences', 'worry', 'recurse', 'diminished', 'ask', 'confined', 'le', 'served', 'able', 'arriving', 'knowing', '...', 'procedurally', 'highest', 'do', 'deal', 'evaluating', 'sibling', 'furtherest', 'exist', 'larger', 'respectively', 'deep', 'since', 'strategy', 'organized', 'organize', '10^x', 'include', 'segment', 'two-dimensional', 'gettop', 'greater', 'configuration', 'functioning', 'technique', 'parenthesized', 'build', 'consider', 'indefinite', 'unlimited', 'start', '100', 'far', 'about', 'main', 'encodes', 'selecting', 'unsorted', 'extend', 'resource', 'must', 'pattern', 'apt', 'predecessor', 'ca', 'average', 'â€œdo', 'client', 'imputing', 'meaning', 'prespecified', 'compared', 'guarantee', 'measuring', 'bank', 'receive', 'filo', 'exists', 'char', 'programmer', 'begin', 'complier', 'denote', 'data', 'encapsulation', 'normally', 'reassign', 'insert', 'production', 'noting', 'mean', 'doe', 'leaf', 'loop', 'dummy', 'is', 'relatively', 'brief', 'unary', 'counterclockwise', '2n-1', 'communication', 'not', 'programmar', 'leaving', 'instantiation', 'everything', 'outcome', 'implicit', 'foresight', 'portion', 'Teh', 'modularability', 'would', 'switched', 'alias', 'comparing', 'modulo', 'objectname.funciton', 'abstraction', 'fast', 'paradigm', 'retrieved', 'total', 'at', 'putting', 'member-function', 'online', 'especially', 'control', 'called', 'permanently', 'convert', 'linear', 'pivot', 'room', 'extensibility', 'using', 'automatically', 'behavior', 'nek', 'inheritance', 'separation', 'subarray', 'reset', 'reveal', 'architecture', 'continuing', 'constant', 'copying', 'nonstop', 'proceeds', 'overloading', 'somewhere', 'array-bases', 'know', 'argument', 'overhead', 'two', 'linkage', 'transformed', 'past', 'protected', 'visit', 'delete_end', 'an', 'second', 'representing', 'due', 'permit', 'named', 'conquer', 'v', 'although', 'operator', 'similar', 'terminal', 'dereference', 'manageable', 'across', 'ADT', 'thrown', 'phase', 'perspective', 'we', 'pointer-bases', 'reusability', 'longest', 'labeled', 'ensures', 'scheduling', 'r', 'crazy', 'determined', 'rear', 'entity', 'straight', 'telling', 'necessary', 'position', 'convenient', 'approach', 'activity', 'wanted/needed', 'execution', 'press', 'provided', 'allow', 'courted', 'divide-and-conquer', 'groundwork', 'adding', 'isfullq', 'conventional', 'separating', 'programming', 'useful', '//pass-by-reference', 'condition', 'dequeue', 'million', 'setting', 'lock', 'without', 'const', 'believe', 'extra', 'efficiently', 'test', 'scoped', 'filename', 'acted', 'show', 'element', 'later', 'implementation', 'unless', 'searched', 'receiving', 'referenced', 'linkedlist', 'relates', 'us', 'assessment', 'rubber-band', 'are', 'property', 'recurs', 'encounter', 'whole', 'entering', 'continually', 'conditions/inputs', 'many', 'fairly', 'containing', 'namesake', 'search', 'expecting', 'need', 'manually', 'expression', 'protection', 'candidate', 'executing', 'scalability', 'serf', 'back', 'certain', 'oriented', 'replacing', 'really', 'finite', 'item', 'unessesary', 'by-dimensional', 'decoration', 'break', 'any', 'abstract', 'difficulty', 'existing', 'in', 'fewer', 'and', 'individually', '-recursion-produces', 'runtime', 'behind', 'properly', 'possibly', 'double-linked', 'modification', 'analogy', 'miscellaneous', 'construction', 'polymorphism', 'assigns', 'whereas', 'stack', 'form', 'guaranteed', 'maintain', 'changing', 'precheck', 'positive', 'binary', 'instance', 'manner', 'unique', 'clockwise', 'inherited', 'brings', 'tree', 'displaying', 'executed', 'freely', 'initialized', 'pull'}
+2067
