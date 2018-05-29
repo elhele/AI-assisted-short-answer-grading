@@ -23,6 +23,8 @@ for chapter in range(1, len(question_number) + 1):
     for question in range(1, question_number[chapter - 1] + 1):
         grades_me = get_grades('../data/Mohler/scores/' + str(chapter) + '.' + str(question) + '/me')
         grades_other = get_grades('../data/Mohler/scores/' + str(chapter) + '.' + str(question) + '/other')
+        grades_me = grades_me[13:len(grades_me)]
+        grades_other = grades_other[13:len(grades_other)]
         sm = difflib.SequenceMatcher(None, grades_me, grades_other)
         #print(str(chapter) + '.' + str(question))
         #print(sm.ratio())

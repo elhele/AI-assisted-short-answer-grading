@@ -138,6 +138,9 @@ class KernelPCA:
     def training_results(self):
         termcolor.cprint("Projecting known vocabulary to KPCA embeddings\n", "blue")
         alphas, lambdas = self.alpha_lambda_calculation()
+        for i in range(len(lambdas)):
+            if(lambdas[i] == 0):
+                lambdas[i] = 0.00001
         pool = multiprocessing.Pool(processes=self.cores)
         x_train = pool.map(self.projection_matrix, [(line, self.answer_list, alphas, lambdas) for line in self.answer_list])
         x_train = np.asarray(x_train)
