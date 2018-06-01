@@ -1,0 +1,24 @@
+[NotebookApp | WARNING] No nbgrader_config.py file found (rerun with --debug to see where nbgrader is looking)
+[NotebookApp | INFO] Loading the validate_assignment nbgrader serverextension
+[NotebookApp | INFO] Serving notebooks from local directory: /home/elhe/Uni/RnDs/Autograder/AI-assisted-short-answer-grading
+[NotebookApp | INFO] 0 active kernels 
+[NotebookApp | INFO] The Jupyter Notebook is running at: http://localhost:8888/?token=c2866994cf2326b7a1a67fdf08430013c37d3ff51bed23fc
+[NotebookApp | INFO] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[NotebookApp | CRITICAL] 
+    
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://localhost:8888/?token=c2866994cf2326b7a1a67fdf08430013c37d3ff51bed23fc
+[NotebookApp | INFO] Accepting one-time-token-authenticated connection from ::1
+[NotebookApp | INFO] 302 GET /tree?token=07523719a2f69f91b24592155132d71bb7b9e8b821d88b13 (::1) 2.06ms
+[NotebookApp | INFO] 302 GET /?token=c2866994cf2326b7a1a67fdf08430013c37d3ff51bed23fc (::1) 1.13ms
+[NotebookApp | WARNING] Notebook data/Mohler/nbgrader_workspace/student_number_100.ipynb is not trusted
+[NotebookApp | WARNING] 404 GET /nbextensions/egal/main.js?v=20180601091710 (::1) 18.03ms referer=http://localhost:8888/notebooks/data/Mohler/nbgrader_workspace/student_number_100.ipynb
+[NotebookApp | INFO] Kernel started: 2ae31452-b32e-4f10-a7da-e7788989b4e4
+[NotebookApp | WARNING] 404 GET /nbextensions/widgets/notebook/js/extension.js?v=20180601091710 (::1) 4.40ms referer=http://localhost:8888/notebooks/data/Mohler/nbgrader_workspace/student_number_100.ipynb
+[NotebookApp | INFO] Adapting to protocol v5.1 for kernel 2ae31452-b32e-4f10-a7da-e7788989b4e4
+[NotebookApp | INFO] interrupted
+[NotebookApp | INFO] interrupted
+[NotebookApp | CRITICAL] Shutdown confirmed
+[NotebookApp | INFO] Shutting down kernels
+[NotebookApp | INFO] Kernel shutdown: 2ae31452-b32e-4f10-a7da-e7788989b4e4
